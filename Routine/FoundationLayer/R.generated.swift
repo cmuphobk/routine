@@ -973,10 +973,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: ru
       static let smCubic = Rswift.StringResource(key: "smCubic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
-      /// ru translation: Культура здоровья
-      /// 
-      /// Locales: ru
-      static let logo_string = Rswift.StringResource(key: "logo_string", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Курсы лекарств
       /// 
       /// Locales: ru
@@ -1429,6 +1425,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: ru
       static let str_drugedit_recomendations = Rswift.StringResource(key: "str_drugedit_recomendations", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Рутина
+      /// 
+      /// Locales: ru
+      static let logo_string = Rswift.StringResource(key: "logo_string", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: СПОСОБ ПОЛУЧЕНИЯ
       /// 
       /// Locales: ru
@@ -2540,13 +2540,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("smCubic", bundle: R.hostingBundle, comment: "")
       }
       
-      /// ru translation: Культура здоровья
-      /// 
-      /// Locales: ru
-      static func logo_string(_: Void = ()) -> String {
-        return NSLocalizedString("logo_string", bundle: R.hostingBundle, comment: "")
-      }
-      
       /// ru translation: Курсы лекарств
       /// 
       /// Locales: ru
@@ -3336,6 +3329,13 @@ struct R: Rswift.Validatable {
       /// Locales: ru
       static func str_drugedit_recomendations(_: Void = ()) -> String {
         return NSLocalizedString("str_drugedit_recomendations", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ru translation: Рутина
+      /// 
+      /// Locales: ru
+      static func logo_string(_: Void = ()) -> String {
+        return NSLocalizedString("logo_string", bundle: R.hostingBundle, comment: "")
       }
       
       /// ru translation: СПОСОБ ПОЛУЧЕНИЯ
