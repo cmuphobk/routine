@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drugs List View Controller-->
+        <scene sceneID="bSz-qL-kXd">
+            <objects>
+                <viewController storyboardIdentifier="DrugsListViewController" id="1N9-C7-Kfd" customClass="DrugsListViewController" customModule="HCulture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qce-ia-9jB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoQ-sz-E1I">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;placeholder&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuD-MR-ros">
+                                        <rect key="frame" x="16" y="313.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iuD-MR-ros" firstAttribute="leading" secondItem="QoQ-sz-E1I" secondAttribute="leading" constant="16" id="0Tp-kd-xhS"/>
+                                    <constraint firstItem="iuD-MR-ros" firstAttribute="centerX" secondItem="QoQ-sz-E1I" secondAttribute="centerX" id="Uqa-pN-uW3"/>
+                                    <constraint firstAttribute="trailing" secondItem="iuD-MR-ros" secondAttribute="trailing" constant="16" id="o5Q-Kv-LWI"/>
+                                    <constraint firstItem="iuD-MR-ros" firstAttribute="centerY" secondItem="QoQ-sz-E1I" secondAttribute="centerY" id="q7E-TT-spA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QoQ-sz-E1I" secondAttribute="bottom" id="WJQ-08-59w"/>
+                            <constraint firstItem="NTf-2R-xw2" firstAttribute="trailing" secondItem="QoQ-sz-E1I" secondAttribute="trailing" id="h0c-t4-jL7"/>
+                            <constraint firstItem="QoQ-sz-E1I" firstAttribute="leading" secondItem="NTf-2R-xw2" secondAttribute="leading" id="uhH-ap-XNk"/>
+                            <constraint firstItem="QoQ-sz-E1I" firstAttribute="top" secondItem="NTf-2R-xw2" secondAttribute="top" id="us7-1d-19g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NTf-2R-xw2"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="QoQ-sz-E1I" id="zOj-e3-Xgb"/>
+                        <outlet property="placeholderLabel" destination="iuD-MR-ros" id="sTo-qw-5mT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIw-kv-Toh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="40.929535232383813"/>
+        </scene>
+    </scenes>
+</document>

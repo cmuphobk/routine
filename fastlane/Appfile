@@ -1,0 +1,5 @@
+app_identifier "ru.hculture.HCulture" # The bundle identifier of your app
+apple_id "admin@hculture.ru" # Your Apple email address
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

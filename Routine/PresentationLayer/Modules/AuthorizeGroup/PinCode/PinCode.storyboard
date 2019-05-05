@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pin Code View Controller-->
+        <scene sceneID="bSz-qL-kXd">
+            <objects>
+                <viewController storyboardIdentifier="PinCodeViewController" id="1N9-C7-Kfd" customClass="PinCodeViewController" customModule="HCulture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qce-ia-9jB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-O6-iau">
+                                <rect key="frame" x="52" y="70" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBV-jx-qPU">
+                                <rect key="frame" x="52" y="102" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlC-v8-URK" customClass="PinCodeTextField" customModule="PinCodeTextField">
+                                <rect key="frame" x="52" y="173" width="271" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="1Wu-ZP-XWY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterLimit">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzh-yd-3Pl" customClass="StandartAcceptButton" customModule="HCulture" customModuleProvider="target">
+                                <rect key="frame" x="52" y="436" width="271" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Chl-8d-iuz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendPinCodeButtonAction:" destination="1N9-C7-Kfd" eventType="touchUpInside" id="ys1-06-G2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vh-A7-sS4">
+                                <rect key="frame" x="52" y="516" width="271" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uT4-sq-rIS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resendCodeButtonAction:" destination="1N9-C7-Kfd" eventType="touchUpInside" id="k59-IL-Rsu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAQ-Pf-2C9">
+                                <rect key="frame" x="52" y="569" width="271" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xxe-ES-Njn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="1N9-C7-Kfd" eventType="touchUpInside" id="Koi-i8-o2Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HlC-v8-URK" firstAttribute="top" secondItem="UBV-jx-qPU" secondAttribute="bottom" constant="50" id="2TT-tH-QS4"/>
+                            <constraint firstItem="3vh-A7-sS4" firstAttribute="top" secondItem="Pzh-yd-3Pl" secondAttribute="bottom" constant="25" id="3mo-IF-Kfh"/>
+                            <constraint firstItem="RAQ-Pf-2C9" firstAttribute="trailing" secondItem="3vh-A7-sS4" secondAttribute="trailing" id="63t-Zm-mIa"/>
+                            <constraint firstItem="RAQ-Pf-2C9" firstAttribute="leading" secondItem="3vh-A7-sS4" secondAttribute="leading" id="9Lr-tV-ATz"/>
+                            <constraint firstItem="UBV-jx-qPU" firstAttribute="top" secondItem="lMd-O6-iau" secondAttribute="bottom" constant="11" id="Dyx-IR-VNR"/>
+                            <constraint firstItem="NTf-2R-xw2" firstAttribute="trailing" secondItem="lMd-O6-iau" secondAttribute="trailing" constant="52" id="GYf-zg-O93"/>
+                            <constraint firstItem="Pzh-yd-3Pl" firstAttribute="leading" secondItem="HlC-v8-URK" secondAttribute="leading" id="I13-H6-0da"/>
+                            <constraint firstItem="3vh-A7-sS4" firstAttribute="trailing" secondItem="Pzh-yd-3Pl" secondAttribute="trailing" id="I9H-ml-daq"/>
+                            <constraint firstItem="NTf-2R-xw2" firstAttribute="bottom" secondItem="RAQ-Pf-2C9" secondAttribute="bottom" constant="68" id="JBI-Uc-qtR"/>
+                            <constraint firstItem="UBV-jx-qPU" firstAttribute="leading" secondItem="lMd-O6-iau" secondAttribute="leading" id="ObF-nX-2Vc"/>
+                            <constraint firstItem="lMd-O6-iau" firstAttribute="leading" secondItem="NTf-2R-xw2" secondAttribute="leading" constant="52" id="SId-Uv-x3Y"/>
+                            <constraint firstItem="UBV-jx-qPU" firstAttribute="trailing" secondItem="lMd-O6-iau" secondAttribute="trailing" id="YN9-cN-O5S"/>
+                            <constraint firstItem="lMd-O6-iau" firstAttribute="top" secondItem="NTf-2R-xw2" secondAttribute="top" constant="50" id="YZC-eO-PS4"/>
+                            <constraint firstItem="HlC-v8-URK" firstAttribute="trailing" secondItem="UBV-jx-qPU" secondAttribute="trailing" id="awG-Ty-NZo"/>
+                            <constraint firstItem="RAQ-Pf-2C9" firstAttribute="top" secondItem="3vh-A7-sS4" secondAttribute="bottom" constant="23" id="bGk-Co-DyZ"/>
+                            <constraint firstItem="HlC-v8-URK" firstAttribute="leading" secondItem="UBV-jx-qPU" secondAttribute="leading" id="bgk-qu-JOC"/>
+                            <constraint firstItem="3vh-A7-sS4" firstAttribute="leading" secondItem="Pzh-yd-3Pl" secondAttribute="leading" id="qdq-Ef-5ea"/>
+                            <constraint firstItem="Pzh-yd-3Pl" firstAttribute="trailing" secondItem="HlC-v8-URK" secondAttribute="trailing" id="vsm-s5-Ks3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NTf-2R-xw2"/>
+                    </view>
+                    <connections>
+                        <outlet property="acceptButton" destination="Pzh-yd-3Pl" id="tB7-Ul-9dR"/>
+                        <outlet property="cancelButton" destination="RAQ-Pf-2C9" id="mtA-KQ-ugo"/>
+                        <outlet property="descriptionLabel" destination="UBV-jx-qPU" id="U0A-Vg-mIC"/>
+                        <outlet property="heightAcceptConstraint" destination="Chl-8d-iuz" id="VmZ-FH-DrW"/>
+                        <outlet property="pinCodeTextField" destination="HlC-v8-URK" id="DgM-ex-1xB"/>
+                        <outlet property="resendCodeButton" destination="3vh-A7-sS4" id="aFz-mC-J4f"/>
+                        <outlet property="topLabel" destination="lMd-O6-iau" id="gX9-0Q-QDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIw-kv-Toh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="40.929535232383813"/>
+        </scene>
+    </scenes>
+</document>

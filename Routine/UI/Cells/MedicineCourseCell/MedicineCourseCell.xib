@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MedicineCourseCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MedicineCourseCell" rowHeight="180" id="J49-sK-pPD" customClass="MedicineCourseCell" customModule="HCulture" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="189"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J49-sK-pPD" id="3sr-0i-23f">
+                <rect key="frame" x="0.0" y="0.0" width="435" height="188.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-W9-RJk">
+                        <rect key="frame" x="16" y="9.5" width="403" height="170"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Наименование курса&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QZ-WL-PV6">
+                                <rect key="frame" x="16" y="16" width="299" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-He-2Nl">
+                                <rect key="frame" x="363" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="b9H-MR-jp2"/>
+                                    <constraint firstAttribute="height" constant="24" id="n7G-id-Keg"/>
+                                </constraints>
+                                <state key="normal" image="close_icon"/>
+                                <connections>
+                                    <action selector="deleteButtonDidPressed:" destination="J49-sK-pPD" eventType="touchUpInside" id="o3G-yM-lyJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFg-hW-7MA">
+                                <rect key="frame" x="327" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="I5A-3e-Bpn"/>
+                                    <constraint firstAttribute="height" constant="24" id="rFv-Qs-9it"/>
+                                </constraints>
+                                <state key="normal" image="edit_icon"/>
+                                <connections>
+                                    <action selector="editButtonDidPressed:" destination="J49-sK-pPD" eventType="touchUpInside" id="pc7-GQ-AFC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Лекарства: раз, два, три&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-dg-iww">
+                                <rect key="frame" x="16" y="51.5" width="371" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="t9z-vx-Amm" customClass="StandartProgressBar" customModule="HCulture" customModuleProvider="target">
+                                <rect key="frame" x="16" y="146" width="371" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="1Rw-tf-Mzu"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.31764705879999999" green="0.81483923830000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начало курса:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX2-Rr-6qA">
+                                <rect key="frame" x="16" y="106.5" width="84.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;дата&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGz-fU-kit">
+                                <rect key="frame" x="104.5" y="106.5" width="42.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Конец курса:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baz-sw-yba">
+                                <rect key="frame" x="16" y="123" width="78" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;дата&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDk-T2-USD">
+                                <rect key="frame" x="104.5" y="123" width="43" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t9z-vx-Amm" secondAttribute="trailing" constant="16" id="49U-hT-kst"/>
+                            <constraint firstItem="kGz-fU-kit" firstAttribute="leading" secondItem="jX2-Rr-6qA" secondAttribute="trailing" constant="4" id="6Wb-6S-b1X"/>
+                            <constraint firstAttribute="trailing" secondItem="1XD-dg-iww" secondAttribute="trailing" constant="16" id="A6J-hC-cf2"/>
+                            <constraint firstAttribute="bottom" secondItem="t9z-vx-Amm" secondAttribute="bottom" constant="16" id="Cmp-aK-Rzg"/>
+                            <constraint firstItem="1XD-dg-iww" firstAttribute="top" secondItem="3QZ-WL-PV6" secondAttribute="bottom" constant="16" id="DQm-Uq-jP7"/>
+                            <constraint firstItem="t9z-vx-Amm" firstAttribute="top" secondItem="baz-sw-yba" secondAttribute="bottom" constant="8" id="Fhi-M3-Rq1"/>
+                            <constraint firstItem="fFg-hW-7MA" firstAttribute="leading" secondItem="3QZ-WL-PV6" secondAttribute="trailing" constant="12" id="Fpj-KZ-c1c"/>
+                            <constraint firstItem="kGz-fU-kit" firstAttribute="centerY" secondItem="jX2-Rr-6qA" secondAttribute="centerY" id="IEb-dB-rl9"/>
+                            <constraint firstItem="3QZ-WL-PV6" firstAttribute="leading" secondItem="Bvn-W9-RJk" secondAttribute="leading" constant="16" id="KbM-Na-Ijj"/>
+                            <constraint firstItem="iDk-T2-USD" firstAttribute="leading" secondItem="kGz-fU-kit" secondAttribute="leading" id="MTf-jg-At0"/>
+                            <constraint firstAttribute="trailing" secondItem="xuf-He-2Nl" secondAttribute="trailing" constant="16" id="N5E-Fu-h9M"/>
+                            <constraint firstItem="fFg-hW-7MA" firstAttribute="centerY" secondItem="xuf-He-2Nl" secondAttribute="centerY" id="Obk-xL-oXk"/>
+                            <constraint firstItem="3QZ-WL-PV6" firstAttribute="top" secondItem="Bvn-W9-RJk" secondAttribute="top" constant="16" id="Pcb-my-ntW"/>
+                            <constraint firstItem="iDk-T2-USD" firstAttribute="centerY" secondItem="baz-sw-yba" secondAttribute="centerY" id="Vzw-JG-5Hc"/>
+                            <constraint firstItem="baz-sw-yba" firstAttribute="top" secondItem="jX2-Rr-6qA" secondAttribute="bottom" constant="2" id="ZOW-Af-XvN"/>
+                            <constraint firstItem="baz-sw-yba" firstAttribute="leading" secondItem="t9z-vx-Amm" secondAttribute="leading" id="adI-8v-hrr"/>
+                            <constraint firstItem="xuf-He-2Nl" firstAttribute="top" secondItem="Bvn-W9-RJk" secondAttribute="top" constant="16" id="b8a-RP-TL5"/>
+                            <constraint firstItem="1XD-dg-iww" firstAttribute="leading" secondItem="Bvn-W9-RJk" secondAttribute="leading" constant="16" id="eDP-Rd-Yaf"/>
+                            <constraint firstItem="xuf-He-2Nl" firstAttribute="leading" secondItem="fFg-hW-7MA" secondAttribute="trailing" constant="12" id="sLp-1c-fJT"/>
+                            <constraint firstItem="jX2-Rr-6qA" firstAttribute="leading" secondItem="t9z-vx-Amm" secondAttribute="leading" id="u9X-n5-ZhA"/>
+                            <constraint firstItem="t9z-vx-Amm" firstAttribute="leading" secondItem="Bvn-W9-RJk" secondAttribute="leading" constant="16" id="wBW-wh-HVj"/>
+                            <constraint firstAttribute="height" constant="170" id="ySC-bq-Zde"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Bvn-W9-RJk" firstAttribute="centerY" secondItem="3sr-0i-23f" secondAttribute="centerY" id="gtx-Dx-ARL"/>
+                    <constraint firstAttribute="trailing" secondItem="Bvn-W9-RJk" secondAttribute="trailing" constant="16" id="oL1-US-vN6"/>
+                    <constraint firstItem="Bvn-W9-RJk" firstAttribute="leading" secondItem="3sr-0i-23f" secondAttribute="leading" constant="16" id="qhA-BQ-wFI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardHeightConstraint" destination="ySC-bq-Zde" id="XJC-32-HfG"/>
+                <outlet property="cardView" destination="Bvn-W9-RJk" id="GTB-tD-oMi"/>
+                <outlet property="drugsListText" destination="1XD-dg-iww" id="zjc-jt-0UZ"/>
+                <outlet property="editButton" destination="fFg-hW-7MA" id="cm6-8E-nBL"/>
+                <outlet property="endDateLabel" destination="baz-sw-yba" id="WuH-Tm-w3s"/>
+                <outlet property="endDateValue" destination="iDk-T2-USD" id="yem-Rs-GZS"/>
+                <outlet property="prograssBar" destination="t9z-vx-Amm" id="EbG-pz-RdD"/>
+                <outlet property="progressBarHeightConstraint" destination="1Rw-tf-Mzu" id="1SE-XN-JGc"/>
+                <outlet property="startDateLabel" destination="jX2-Rr-6qA" id="EYm-yf-qy2"/>
+                <outlet property="startDateValue" destination="kGz-fU-kit" id="tH0-rU-XLs"/>
+                <outlet property="titleLabel" destination="3QZ-WL-PV6" id="rND-AT-xAd"/>
+            </connections>
+            <point key="canvasLocation" x="90.400000000000006" y="77.811094452773617"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="close_icon" width="15" height="15"/>
+        <image name="edit_icon" width="16" height="16"/>
+    </resources>
+</document>

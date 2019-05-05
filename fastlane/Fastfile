@@ -1,0 +1,99 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+
+    ensure_git_status_clean
+
+    @version = get_version_number(xcodeproj: "HCulture.xcodeproj", target:"HCulture")
+    @build_number = increment_build_number(xcodeproj: "HCulture.xcodeproj")
+    commit_version_bump(
+      message: "Version Bump #{version_and_build(@version, @build_number)}",
+      xcodeproj: "HCulture.xcodeproj"
+    )
+
+  end
+
+  lane :build do
+
+    gym(
+      workspace: "HCulture.xcworkspace",
+      output_directory: "./fastlane_builds",
+      output_name: "HCulture",
+      export_method: "ad-hoc",
+      configuration: "Release",
+      scheme: "HCulture"
+    )
+
+    hockey(
+  	  api_token: "a1d959a3107d432cb3106cb97efce0ab",
+  	  ipa: "#{lane_context[SharedValues::IPA_OUTPUT_PATH]}",
+  	  notes: "HCulture Beta"
+    )
+
+    message = hockey_message('HCulture', hockey_download_link(), version_and_build(@version, @build_number))
+
+    #telegram_send("message")
+
+    puts message
+
+  end
+
+  
+  after_all do |lane|
+
+  end
+
+  error do |lane, exception|
+
+  end
+end
+
+#def telegram_send(message) 
+#
+#  telegram(token: "768180016:AAHWA75wslZ203GQBfIBqzSbVmbpNvMKijk", chat_id: "369566313", #text: message)
+#
+#end
+
+def hockey_message(title, link, version)
+
+  message =  "\n++++++++++++++++++++++++++++++++\n" +
+  title + " \n" +
+  "Ссылка: " + link + " \n" +
+  "Версия: " + version +
+  " \n++++++++++++++++++++++++++++++++"
+
+end
+
+def hockey_download_link()
+
+  public_url = Actions.lane_context[ Actions::SharedValues::HOCKEY_DOWNLOAD_LINK ]
+  build_info = Actions.lane_context[ Actions::SharedValues::HOCKEY_BUILD_INFORMATION ]
+  if build_info
+    config_url = build_info['config_url']
+    download_link = "#{public_url}/app_versions/#{config_url.split('/').last}"
+    # puts "download_link = #{download_link}"
+  end
+
+  return download_link
+end
+
+
+def version_and_build(version, build)
+  version + '.' + build
+end
