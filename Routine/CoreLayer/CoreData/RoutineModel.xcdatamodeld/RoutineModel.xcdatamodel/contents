@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MedicineCourseEntity" representedClassName="MedicineCourseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="drugs" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="MedicineDrugEntity" syncable="YES"/>
+    </entity>
+    <entity name="MedicineCourseTimeEntity" representedClassName="MedicineCourseTimeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="dose" attributeType="Double" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="usageTime" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="course" maxCount="1" deletionRule="No Action" destinationEntity="MedicineDrugEntity" syncable="YES"/>
+    </entity>
+    <entity name="MedicineDrugEntity" representedClassName="MedicineDrugEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endingCourseType" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endingCourseValue" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="periodCourseType" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="periodCourseValue" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startDate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="unit" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="course" maxCount="1" deletionRule="No Action" destinationEntity="MedicineCourseEntity" syncable="YES"/>
+        <relationship name="times" toMany="YES" deletionRule="No Action" destinationEntity="MedicineCourseTimeEntity" inverseName="course" inverseEntity="MedicineDrugEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MedicineCourseEntity" positionX="7222.6328125" positionY="878.5703125" width="128" height="105"/>
+        <element name="MedicineCourseTimeEntity" positionX="7231.6328125" positionY="887.5703125" width="128" height="90"/>
+        <element name="MedicineDrugEntity" positionX="7249.6328125" positionY="905.5703125" width="128" height="225"/>
+    </elements>
+</model>

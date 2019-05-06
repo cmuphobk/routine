@@ -1,6 +1,6 @@
 import UIKit
 
-//FIXME: send to service
+// FIXME: - send to service
 extension UIViewController {
     
     func emptyCustomBarLeftButtonAction() {

@@ -100,21 +100,18 @@ extension DrugPeriodicEditViewController: UniversalTableViewManagerDelegate {
             if actionType == .select && index == self.tableViewManager.count - 1 {
                 for item in 0..<self.tableViewManager.count - 1 where !self.tableViewManager.selectedRows().contains(item) {
                     self.tableViewManager.selectRow(item)
-//                    self.tableViewManager.updateRowAtIndex(item)
                 }
             } else if actionType == .select && index != self.tableViewManager.count - 1 {
                 if self.daysValue() == DayOfWeek.allDay {
                     self.tableViewManager.selectRow(self.tableViewManager.count - 1)
-//                    self.tableViewManager.updateRowAtIndex(self.tableViewManager.count - 1)
                 }
             } else if actionType == .deselect && index != self.tableViewManager.count - 1 {
                 if self.daysValue() != DayOfWeek.allDay {
                     self.tableViewManager.deselectRow(self.tableViewManager.count - 1)
-//                    self.tableViewManager.updateRowAtIndex(self.tableViewManager.count - 1)
                 }
             }
         
-            //FIXME: неправильно работает выделение
+            // FIXME: - неправильно работает выделение
             self.output.valueChanged(self.daysValue())
         case .countDays:
             let daysCount = DaysPeriod.fromValue(index+1)

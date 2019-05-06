@@ -120,16 +120,16 @@ extension UniversalTableViewManager: UITableViewDataSource {
 extension UniversalTableViewManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cellObj = self.cellViewModels[indexPath.row]
+        let cellViewModel = self.cellViewModels[indexPath.row]
         
-        if cellObj.isSelected {
+        if cellViewModel.isSelected {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         } else {
             tableView.deselectRow(at: indexPath, animated: false)
         }
         
-        if let loclaizedConfigure = cell as? RoutineConfigure {
-            loclaizedConfigure.configureView(config: cellObj)
+        if let configure = cell as? RoutineConfigure {
+            configure.configureView(config: cellViewModel)
         }
     }
     

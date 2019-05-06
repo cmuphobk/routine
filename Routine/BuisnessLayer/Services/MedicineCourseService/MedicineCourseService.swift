@@ -45,7 +45,7 @@ final class MedicineCourseService: MedicineCourseServiceInterface {
     func createOrUpdate(_ model: MedicineCourse, complition: @escaping (MedicineCourse?) -> Void) {
         guard let entity = self.repository.createOrUpdateEntityWithModel(model: model) else { return }
         
-        self.repository.context.mr_saveToPersistentStore(completion: { [unowned self, unowned entity] (success, _) in
+        self.repository.context.mr_saveToPersistentStore(completion: { [unowned self] (success, _) in
             let model = MedicineCourse(entity: entity)
             DispatchQueue.main.async(execute: {
                 self.configureNotificatons()

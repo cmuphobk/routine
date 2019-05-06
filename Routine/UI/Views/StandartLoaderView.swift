@@ -1,6 +1,6 @@
 import UIKit
 
-//FIXME: send to navigation?
+// FIXME: - send to navigation?
 extension UIWindow {
     
     func showLoaderView() {

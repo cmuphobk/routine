@@ -4,7 +4,7 @@ import MagicalRecord
 
 final class MagicalRecordService: MagicalRecordServiceInterface {
     
-    private let cultureCoreDataModelName = "Routine"
+    private let cultureCoreDataModelName = "RoutineModel"
 
     static var shared = MagicalRecordService()
     

@@ -25,7 +25,7 @@ final class ErrorCodeViewController: RoutineViewController {
         
         //Setup Initial State
         
-        //FIXME: create assembly and inject
+        // FIXME: - create assembly and inject
         self.windowService = AppDelegate.serviceProvider.makeWindowService()
         
         let is5sAndLess = self.windowService.is5sAndLess

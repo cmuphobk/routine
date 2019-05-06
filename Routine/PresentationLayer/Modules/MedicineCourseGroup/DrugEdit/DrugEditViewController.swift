@@ -245,7 +245,7 @@ extension DrugEditViewController: UniversalTableViewManagerDelegate {
         self.hideAllPickers()
         self.hideKeyboard()
         
-        //FIXME: перенести всю логику добавления строк в презентер
+        // FIXME: - перенести всю логику добавления строк в презентер
         if cellViewModel.viewName == "add_times_view_model" {
             if actionType == .deselect { return }
             
@@ -393,7 +393,6 @@ extension DrugEditViewController: StandartPickerDelegate {
             
         } else if pickerView == self.drugunitPickerView {
             self.output.drugUnitChanged(row)
-            
         }
         
     }
@@ -419,6 +418,7 @@ extension DrugEditViewController: StandartDatePickerViewDelegate {
             self.output.usageTimeChanged(index: self.timeIndex, date: date)
             guard let cellViewModel = self.cellViewModelsTimes[self.timeIndex] as? UsingTimesCellViewModel else { return }
             
+            // FIXME: -
             var time = Time()
             time.setTime(milisec: Int(date.timeIntervalFromStartDay))
             

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-//FIXME: all factory to instance and protocol
+// FIXME: - all factory to instance and protocol
 final class DrugPeriodicEditTableViewFactory {
     
     static func makeDays(withValue: Int) -> [RoutineTableViewCellViewModel] {

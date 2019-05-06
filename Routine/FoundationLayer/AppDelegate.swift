@@ -1,6 +1,6 @@
 import UIKit
 
-//FIXME: remove all (need internal), create navigations and builders
+// FIXME: - remove all (need internal), create navigations and builders
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -163,7 +163,7 @@ extension UniversalCollectionViewManager: UICollectionViewDelegateFlowLayout {
         
     }
     
-    //FIXME: сделать вью модель для секций, чтобы можно было работать с секциями (для таблицы тоже самое)
+    // FIXME: - сделать вью модель для секций, чтобы можно было работать с секциями (для таблицы тоже самое)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }

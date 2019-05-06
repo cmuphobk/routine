@@ -75,7 +75,7 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
         let dates = self.obtainDatesNotificationsFromCourses(courses)
         
         let notifications: [MedicineLocalNotification] = dates.map { (timestamp) -> MedicineLocalNotification in
-            //FIXME: time in notification
+            // FIXME: - time in notification
             let body = "\(timestamp.model.name)\n\(timestamp.dose) \(timestamp.model.unit.pluralsStringFor(count: Int(timestamp.dose)))"
             
             let objectId = timestamp.model.objectId ?? ""
