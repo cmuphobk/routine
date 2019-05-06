@@ -1,6 +1,6 @@
 import UIKit
 
-final class MenuModuleCellViewModel: LocalizedTableViewCellViewModel {
+final class MenuModuleCellViewModel: RoutineTableViewCellViewModel {
     
     var text: String = ""
     

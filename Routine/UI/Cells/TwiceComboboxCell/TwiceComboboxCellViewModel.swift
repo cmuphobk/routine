@@ -1,14 +1,14 @@
 import UIKit
 
 protocol TwiceComboboxCellProtocol: class {
-    func expandLeft(viewModel: LocalizedComboboxViewModel)
-    func expandRight(viewModel: LocalizedComboboxViewModel)
+    func expandLeft(viewModel: RoutineComboboxViewModel)
+    func expandRight(viewModel: RoutineComboboxViewModel)
 }
 
-final class TwiceComboboxCellViewModel: LocalizedTableViewCellViewModel {
+final class TwiceComboboxCellViewModel: RoutineTableViewCellViewModel {
     
-    var leftCombobox: LocalizedComboboxViewModel = LocalizedComboboxViewModel()
-    var rightCombobox: LocalizedComboboxViewModel = LocalizedComboboxViewModel()
+    var leftCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
+    var rightCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
     var betweenSpace: CGFloat = 8.0
     var betweenPosition = 0.5  // в процентах
     

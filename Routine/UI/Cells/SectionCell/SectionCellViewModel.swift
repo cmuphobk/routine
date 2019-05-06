@@ -6,7 +6,7 @@ protocol SectionCellViewModelDelegate: class {
     
 }
 
-final class SectionCellViewModel: LocalizedTableViewCellViewModel {
+final class SectionCellViewModel: RoutineTableViewCellViewModel {
     
     var sectionHeaderViewModel = SectionHeaderViewModel()
     var sectionViewModel = SectionViewModel()

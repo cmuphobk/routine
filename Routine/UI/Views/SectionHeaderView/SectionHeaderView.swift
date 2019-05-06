@@ -1,17 +1,17 @@
 import UIKit
 import Stevia
 
-class SectionHeaderView: LocalizedView<SectionHeaderViewModel> {
-    weak var infoIcon: LocalizedImageView<LocalizedImageViewModel>!
-    weak var textLabel: LocalizedLabel<LocalizedLabelViewModel>!
-    weak var closeButton: LocalizedButton<LocalizedButtonViewModel>!
+class SectionHeaderView: RoutineView<SectionHeaderViewModel> {
+    weak var infoIcon: RoutineImageView<RoutineImageViewModel>!
+    weak var textLabel: RoutineLabel<RoutineLabelViewModel>!
+    weak var closeButton: RoutineButton<RoutineButtonViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let infoIcon = LocalizedImageView()
-        let textLabel = LocalizedLabel()
-        let closeButton = LocalizedButton()
+        let infoIcon = RoutineImageView()
+        let textLabel = RoutineLabel()
+        let closeButton = RoutineButton()
 
         self.sv(
             infoIcon,

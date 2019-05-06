@@ -2,7 +2,7 @@ import UIKit
 
 final class DrugsListTableViewFactory {
     
-    static func drugsListCellViewModels(model: MedicineCourse) -> [LocalizedTableViewCellViewModel] {
+    static func drugsListCellViewModels(model: MedicineCourse) -> [RoutineTableViewCellViewModel] {
         var cellObjs: [DrugCellViewModel] = []
         
         for item in model.drugs ?? [] {

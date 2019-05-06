@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kAcceptRestorePasswordModuleId = "accept_restore_password_name"

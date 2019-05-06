@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-final class DrugTimesEditViewController: LocalizedViewController {
+final class DrugTimesEditViewController: RoutineViewController {
     var output: DrugTimesEditViewOutput!
     var animator: DrugTimesEditModuleAnimating!
     var moduleService: ModuleServiceInterface!

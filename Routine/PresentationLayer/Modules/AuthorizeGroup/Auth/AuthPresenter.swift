@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kAuthModuleId = "auth_name"

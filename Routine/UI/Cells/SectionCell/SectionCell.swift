@@ -1,13 +1,13 @@
 import UIKit
 import Stevia
 
-class SectionCell: LocalizedTableViewCell<SectionCellViewModel> {
+class SectionCell: RoutineTableViewCell<SectionCellViewModel> {
     
     weak var sectionHeaderView: SectionHeaderView!
     weak var sectionView: SectionView!
     weak var sectionDescriptionView: SectionDescriptionView!
     
-    weak var shadowView: LocalizedView<LocalizedViewModel>!
+    weak var shadowView: RoutineView<RoutineViewModel>!
     
     override func setupView() {
         super.setupView()
@@ -26,7 +26,7 @@ class SectionCell: LocalizedTableViewCell<SectionCellViewModel> {
         self.sectionView = sectionView
         self.sectionDescriptionView = sectionDescriptionView
         
-        let shadowView = LocalizedView()
+        let shadowView = RoutineView()
         self.contentView.sv(
             shadowView
         )
@@ -92,7 +92,7 @@ class SectionCell: LocalizedTableViewCell<SectionCellViewModel> {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let viewModel = LocalizedViewModel()
+        let viewModel = RoutineViewModel()
         self.shadowView.configureView(config: viewModel)
         
         self.sectionHeaderView.configureView(config: self.viewModel.sectionHeaderViewModel)

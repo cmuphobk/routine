@@ -1,6 +1,6 @@
 import UIKit
 
-final class AuthViewController: LocalizedViewController {
+final class AuthViewController: RoutineViewController {
     var output: AuthViewOutput!
     var windowService: WindowServiceInterface!
     

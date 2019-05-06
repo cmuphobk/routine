@@ -1,18 +1,18 @@
 import UIKit
 
-final class DrugEditViewController: LocalizedViewController {
+final class DrugEditViewController: RoutineViewController {
     var output: DrugEditViewOutput!
     
-    private var tableViewModel = LocalizedTableViewModel()
-    weak private var tableView: LocalizedTableView<LocalizedTableViewModel>!
+    private var tableViewModel = RoutineTableViewModel()
+    weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
-    private var cellViewModels: [LocalizedTableViewCellViewModel] {
+    private var cellViewModels: [RoutineTableViewCellViewModel] {
         return self.cellViewModelsBeforeTimes + self.cellViewModelsTimes + self.cellViewModelsAfterTimes
     }
     
-    private var cellViewModelsBeforeTimes: [LocalizedTableViewCellViewModel] = []
-    private var cellViewModelsAfterTimes: [LocalizedTableViewCellViewModel] = []
-    private var cellViewModelsTimes: [LocalizedTableViewCellViewModel] = []
+    private var cellViewModelsBeforeTimes: [RoutineTableViewCellViewModel] = []
+    private var cellViewModelsAfterTimes: [RoutineTableViewCellViewModel] = []
+    private var cellViewModelsTimes: [RoutineTableViewCellViewModel] = []
     
     private var tableViewManager: UniversalTableViewManager!
     
@@ -30,7 +30,7 @@ final class DrugEditViewController: LocalizedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = LocalizedTableView()
+        let tableView = RoutineTableView()
         self.view.sv(
             tableView
         )
@@ -301,7 +301,7 @@ extension DrugEditViewController: UsingTimesCellViewModelDelegate {
 // MARK: - TextFieldCellProtocol
 extension DrugEditViewController: TextFieldCellProtocol {
 
-    func textChanged(object: LocalizedTextFieldViewModel, newValue: String) {
+    func textChanged(object: RoutineTextFieldViewModel, newValue: String) {
         self.output.drugNameChanged(newValue)
     }
     
@@ -310,7 +310,7 @@ extension DrugEditViewController: TextFieldCellProtocol {
 // MARK: - TextAreaCellProtocol
 extension DrugEditViewController: TextAreaCellProtocol {
     
-    func textBeginEdited(object: LocalizedTextViewModel) {
+    func textBeginEdited(object: RoutineTextViewModel) {
         
         for (index, cellViewModel) in self.cellViewModels.enumerated() {
             
@@ -326,7 +326,7 @@ extension DrugEditViewController: TextAreaCellProtocol {
         
     }
     
-    func textChanged(object: LocalizedTextViewModel, newValue: String) {
+    func textChanged(object: RoutineTextViewModel, newValue: String) {
         self.textAreaHandler(object, newText: newValue)
     }
     
@@ -346,7 +346,7 @@ extension DrugEditViewController: StandartModalViewDelegate {
 // MARK: - SingleButtonCellProtocol
 extension DrugEditViewController: SingleButtonCellProtocol {
     
-    func buttonDidPressed(sender: LocalizedButton<LocalizedButtonViewModel>) {
+    func buttonDidPressed(sender: RoutineButton<RoutineButtonViewModel>) {
         self.buttonsHandler(sender)
     }
     
@@ -355,11 +355,11 @@ extension DrugEditViewController: SingleButtonCellProtocol {
 // MARK: - TwiceComboboxCellProtocol
 extension DrugEditViewController: TwiceComboboxCellProtocol {
     
-    func expandLeft(viewModel: LocalizedComboboxViewModel) {
+    func expandLeft(viewModel: RoutineComboboxViewModel) {
         self.comboboxHandler(viewModel)
     }
     
-    func expandRight(viewModel: LocalizedComboboxViewModel) {
+    func expandRight(viewModel: RoutineComboboxViewModel) {
         self.comboboxHandler(viewModel)
     }
     
@@ -368,7 +368,7 @@ extension DrugEditViewController: TwiceComboboxCellProtocol {
 // MARK: - ComboboxCellProtocol
 extension DrugEditViewController: ComboboxCellProtocol {
     
-    func expand(viewModel: LocalizedComboboxViewModel) {
+    func expand(viewModel: RoutineComboboxViewModel) {
         self.comboboxHandler(viewModel)
     }
     
@@ -481,7 +481,7 @@ extension DrugEditViewController {
         
     }
     
-    private func buttonsHandler(_ button: LocalizedButton<LocalizedButtonViewModel>) {
+    private func buttonsHandler(_ button: RoutineButton<RoutineButtonViewModel>) {
         
         switch button.viewName {
             
@@ -494,7 +494,7 @@ extension DrugEditViewController {
         
     }
     
-    private func comboboxHandler(_ viewModel: LocalizedComboboxViewModel) {
+    private func comboboxHandler(_ viewModel: RoutineComboboxViewModel) {
         
         switch viewModel.viewName {
             
@@ -547,7 +547,7 @@ extension DrugEditViewController {
         
     }
     
-    private func textAreaHandler(_ textArea: LocalizedTextViewModel, newText: String) {
+    private func textAreaHandler(_ textArea: RoutineTextViewModel, newText: String) {
         
         switch textArea.viewName {
         case "comment_textarea":

@@ -1,6 +1,6 @@
 import UIKit
 
-final class DrugDetailsViewController: LocalizedViewController {
+final class DrugDetailsViewController: RoutineViewController {
     var output: DrugDetailsViewOutput!
     var animator: DrugDetailsAnimator!
     var moduleService: ModuleServiceInterface!

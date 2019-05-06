@@ -10,11 +10,11 @@
 		411E233D2221CE370003CEE0 /* String+DoubleFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E233C2221CE370003CEE0 /* String+DoubleFromString.swift */; };
 		411E2344222C63840003CEE0 /* Double+DoseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E2343222C63840003CEE0 /* Double+DoseString.swift */; };
 		411E234822440F150003CEE0 /* TriggerActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234722440F150003CEE0 /* TriggerActionType.swift */; };
-		411E234C224412C50003CEE0 /* LocalizedCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234A224412C40003CEE0 /* LocalizedCollectionViewModel.swift */; };
-		411E234D224412C50003CEE0 /* LocalizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234B224412C40003CEE0 /* LocalizedCollectionView.swift */; };
+		411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */; };
+		411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234B224412C40003CEE0 /* RoutineCollectionView.swift */; };
 		411E235222494DC70003CEE0 /* CellOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E235122494DC70003CEE0 /* CellOwner.swift */; };
-		41A533782206280A009A735E /* LocalizedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533772206280A009A735E /* LocalizedScrollView.swift */; };
-		41A5337A22062814009A735E /* LocalizedScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337922062814009A735E /* LocalizedScrollViewModel.swift */; };
+		41A533782206280A009A735E /* RoutineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533772206280A009A735E /* RoutineScrollView.swift */; };
+		41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337922062814009A735E /* RoutineScrollViewModel.swift */; };
 		41A5337E2206D47E009A735E /* AuthRequestFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */; };
 		41A533802206D520009A735E /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337F2206D520009A735E /* AuthRequestFactory.swift */; };
 		41A533822206D53E009A735E /* AuthRequestFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533812206D53E009A735E /* AuthRequestFactoryAssembly.swift */; };
@@ -96,7 +96,7 @@
 		866B3B0E21AFC3ED0078361A /* MedicineCourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3B0D21AFC3ED0078361A /* MedicineCourseService.swift */; };
 		866CA11021CA1E8600363BC9 /* ImageAndLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA10F21CA1E8600363BC9 /* ImageAndLabelCell.swift */; };
 		866CA11221CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA11121CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift */; };
-		866F0CE721E77E5400D9FF94 /* LocalizedTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CE621E77E5400D9FF94 /* LocalizedTextViewModel.swift */; };
+		866F0CE721E77E5400D9FF94 /* RoutineTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CE621E77E5400D9FF94 /* RoutineTextViewModel.swift */; };
 		866F0CEC21E7863600D9FF94 /* TextAreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CEB21E7863600D9FF94 /* TextAreaCell.swift */; };
 		866F0CEE21E7865D00D9FF94 /* TextAreaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CED21E7865D00D9FF94 /* TextAreaCellViewModel.swift */; };
 		866F0CF121EB576100D9FF94 /* DrugTimesEditInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CF021EB576100D9FF94 /* DrugTimesEditInterface.swift */; };
@@ -237,17 +237,15 @@
 		ED8F6A0F2179B971001DBDAA /* ModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CB2179B971001DBDAA /* ModuleService.swift */; };
 		ED8F6A102179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CD2179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift */; };
 		ED8F6A112179B971001DBDAA /* UIViewController+CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CE2179B971001DBDAA /* UIViewController+CustomNavigationBar.swift */; };
-		ED8F6A122179B971001DBDAA /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CF2179B971001DBDAA /* String+Localizable.swift */; };
 		ED8F6A132179B971001DBDAA /* Calendar+LastDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D02179B971001DBDAA /* Calendar+LastDate.swift */; };
 		ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D22179B971001DBDAA /* UIImage+ImageColor.swift */; };
 		ED8F6A162179B971001DBDAA /* UITableView+Scrolls.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D32179B971001DBDAA /* UITableView+Scrolls.swift */; };
 		ED8F6A172179B971001DBDAA /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D42179B971001DBDAA /* String+Email.swift */; };
 		ED8F6A182179B971001DBDAA /* UIFont+SizeOfString.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D52179B971001DBDAA /* UIFont+SizeOfString.swift */; };
-		ED8F6A1A2179B971001DBDAA /* Date+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D72179B971001DBDAA /* Date+Localize.swift */; };
 		ED8F6A1B2179B971001DBDAA /* UIViewController+Swipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D82179B971001DBDAA /* UIViewController+Swipes.swift */; };
-		ED8F6A1C2179B971001DBDAA /* LocalizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DB2179B971001DBDAA /* LocalizedViewController.swift */; };
-		ED8F6A1D2179B971001DBDAA /* LocalizedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DC2179B971001DBDAA /* LocalizedCollectionViewCell.swift */; };
-		ED8F6A1E2179B971001DBDAA /* LocalizedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DD2179B971001DBDAA /* LocalizedTableViewCell.swift */; };
+		ED8F6A1C2179B971001DBDAA /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */; };
+		ED8F6A1D2179B971001DBDAA /* RoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DC2179B971001DBDAA /* RoutineCollectionViewCell.swift */; };
+		ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */; };
 		ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */; };
 		ED8F6A212179B971001DBDAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */; };
 		ED8F6A222179B971001DBDAA /* BackgroundViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69E32179B971001DBDAA /* BackgroundViewController.storyboard */; };
@@ -296,19 +294,19 @@
 		ED9EF29D21C0230A00C1D1C0 /* AuthServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9EF29C21C0230A00C1D1C0 /* AuthServiceInterface.swift */; };
 		EDA9A62921E5EB1400D99B09 /* UsingTimesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A62621E5EB1400D99B09 /* UsingTimesCellViewModel.swift */; };
 		EDA9A62A21E5EB1400D99B09 /* UsingTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A62721E5EB1400D99B09 /* UsingTimesCell.swift */; };
-		EDA9A63221E61F2500D99B09 /* LocalizedTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63121E61F2500D99B09 /* LocalizedTableViewCellViewModel.swift */; };
-		EDA9A63521E6286500D99B09 /* LocalizedCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63421E6286500D99B09 /* LocalizedCollectionViewCellViewModel.swift */; };
+		EDA9A63221E61F2500D99B09 /* RoutineTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63121E61F2500D99B09 /* RoutineTableViewCellViewModel.swift */; };
+		EDA9A63521E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63421E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift */; };
 		EDA9A63C21E672D200D99B09 /* SectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63B21E672D200D99B09 /* SectionHeaderViewModel.swift */; };
 		EDA9A63E21E672DD00D99B09 /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63D21E672DD00D99B09 /* SectionViewModel.swift */; };
 		EDA9A64021E672E800D99B09 /* SectionDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63F21E672E800D99B09 /* SectionDescriptionViewModel.swift */; };
 		EDA9A64821E725D300D99B09 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A64721E725D300D99B09 /* FileService.swift */; };
-		EDA9A64E21E750CC00D99B09 /* LocalizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A64D21E750CC00D99B09 /* LocalizedView.swift */; };
-		EDA9A65021E750D600D99B09 /* LocalizedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A64F21E750D600D99B09 /* LocalizedViewModel.swift */; };
-		EDA9A65421E76B6B00D99B09 /* LocalizedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A65321E76B6B00D99B09 /* LocalizedContainer.swift */; };
+		EDA9A64E21E750CC00D99B09 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A64D21E750CC00D99B09 /* RoutineView.swift */; };
+		EDA9A65021E750D600D99B09 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A64F21E750D600D99B09 /* RoutineViewModel.swift */; };
+		EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */; };
 		EDC0DC6521EBAE2D00D5327D /* MenuModuleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6421EBAE2D00D5327D /* MenuModuleCellViewModel.swift */; };
-		EDC0DC6821ED0D5F00D5327D /* LocalizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6721ED0D5F00D5327D /* LocalizedTableView.swift */; };
-		EDC0DC6A21ED0D6800D5327D /* LocalizedTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6921ED0D6800D5327D /* LocalizedTableViewModel.swift */; };
-		EDC0DC6C21EDF17600D5327D /* LocalizableHeightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6B21EDF17600D5327D /* LocalizableHeightable.swift */; };
+		EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */; };
+		EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */; };
+		EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */; };
 		EDC891CA21CE36440002CD9E /* PinCodeInitiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891C921CE36440002CD9E /* PinCodeInitiator.swift */; };
 		EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */; };
 		EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */; };
@@ -320,7 +318,6 @@
 		EDC891DF21CE9C000002CD9E /* ModuleServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891DE21CE9C000002CD9E /* ModuleServiceInterface.swift */; };
 		EDC891E121CFC47E0002CD9E /* LanguageServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891E021CFC47E0002CD9E /* LanguageServiceInterface.swift */; };
 		EDC891E521CFC64E0002CD9E /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891E421CFC64E0002CD9E /* Language.swift */; };
-		EDCD216C21A70F18009D704B /* UIImage+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD216B21A70F18009D704B /* UIImage+Localizable.swift */; };
 		EDCD216F21A722BE009D704B /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD216E21A722BE009D704B /* LocalNotificationService.swift */; };
 		EDCD217121A9AA57009D704B /* Int8+Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD217021A9AA57009D704B /* Int8+Binary.swift */; };
 		EDDA635F21B3ED31005AE695 /* MultipartRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA635E21B3ED31005AE695 /* MultipartRequestObject.swift */; };
@@ -332,17 +329,17 @@
 		EDE945C821C02AD4009BC60A /* AuthStorageInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C721C02AD4009BC60A /* AuthStorageInterface.swift */; };
 		EDE945CA21C6644C009BC60A /* RESTStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C921C6644C009BC60A /* RESTStatus.swift */; };
 		EDE945CC21C67329009BC60A /* RESTCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945CB21C67329009BC60A /* RESTCode.swift */; };
-		EDE9894021E92F5B00870F25 /* LocalizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893221E92F5A00870F25 /* LocalizedTextField.swift */; };
-		EDE9894121E92F5B00870F25 /* LocalizedTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893321E92F5A00870F25 /* LocalizedTextFieldViewModel.swift */; };
-		EDE9894221E92F5B00870F25 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893521E92F5A00870F25 /* LocalizedButton.swift */; };
-		EDE9894321E92F5B00870F25 /* LocalizedButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893621E92F5A00870F25 /* LocalizedButtonViewModel.swift */; };
-		EDE9894421E92F5B00870F25 /* LocalizedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893821E92F5A00870F25 /* LocalizedImageViewModel.swift */; };
-		EDE9894521E92F5B00870F25 /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893921E92F5A00870F25 /* LocalizedImageView.swift */; };
-		EDE9894621E92F5B00870F25 /* LocalizedComboboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893B21E92F5A00870F25 /* LocalizedComboboxViewModel.swift */; };
-		EDE9894721E92F5B00870F25 /* LocalizedCombobox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893C21E92F5A00870F25 /* LocalizedCombobox.swift */; };
-		EDE9894821E92F5B00870F25 /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893E21E92F5A00870F25 /* LabelViewModel.swift */; };
-		EDE9894921E92F5B00870F25 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893F21E92F5A00870F25 /* LocalizedLabel.swift */; };
-		EDE9894B21E92FC600870F25 /* LocalizedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9894A21E92FC600870F25 /* LocalizedTextView.swift */; };
+		EDE9894021E92F5B00870F25 /* RoutineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893221E92F5A00870F25 /* RoutineTextField.swift */; };
+		EDE9894121E92F5B00870F25 /* RoutineTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893321E92F5A00870F25 /* RoutineTextFieldViewModel.swift */; };
+		EDE9894221E92F5B00870F25 /* RoutineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893521E92F5A00870F25 /* RoutineButton.swift */; };
+		EDE9894321E92F5B00870F25 /* RoutineButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893621E92F5A00870F25 /* RoutineButtonViewModel.swift */; };
+		EDE9894421E92F5B00870F25 /* RoutineImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893821E92F5A00870F25 /* RoutineImageViewModel.swift */; };
+		EDE9894521E92F5B00870F25 /* RoutineImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893921E92F5A00870F25 /* RoutineImageView.swift */; };
+		EDE9894621E92F5B00870F25 /* RoutineComboboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893B21E92F5A00870F25 /* RoutineComboboxViewModel.swift */; };
+		EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893C21E92F5A00870F25 /* RoutineCombobox.swift */; };
+		EDE9894821E92F5B00870F25 /* RoutineLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893E21E92F5A00870F25 /* RoutineLabelViewModel.swift */; };
+		EDE9894921E92F5B00870F25 /* RoutineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893F21E92F5A00870F25 /* RoutineLabel.swift */; };
+		EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9894A21E92FC600870F25 /* RoutineTextView.swift */; };
 		EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9894C21E9DE8E00870F25 /* UIView+Subviews.swift */; };
 		EDFA69B82187796700195622 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69B72187796700195622 /* WindowService.swift */; };
 		EDFA69D3218860E400195622 /* ProfileModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C3218860E400195622 /* ProfileModuleInterface.swift */; };
@@ -377,11 +374,11 @@
 		411E233C2221CE370003CEE0 /* String+DoubleFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DoubleFromString.swift"; sourceTree = "<group>"; };
 		411E2343222C63840003CEE0 /* Double+DoseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+DoseString.swift"; sourceTree = "<group>"; };
 		411E234722440F150003CEE0 /* TriggerActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerActionType.swift; sourceTree = "<group>"; };
-		411E234A224412C40003CEE0 /* LocalizedCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionViewModel.swift; sourceTree = "<group>"; };
-		411E234B224412C40003CEE0 /* LocalizedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionView.swift; sourceTree = "<group>"; };
+		411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewModel.swift; sourceTree = "<group>"; };
+		411E234B224412C40003CEE0 /* RoutineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionView.swift; sourceTree = "<group>"; };
 		411E235122494DC70003CEE0 /* CellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOwner.swift; sourceTree = "<group>"; };
-		41A533772206280A009A735E /* LocalizedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedScrollView.swift; sourceTree = "<group>"; };
-		41A5337922062814009A735E /* LocalizedScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedScrollViewModel.swift; sourceTree = "<group>"; };
+		41A533772206280A009A735E /* RoutineScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollView.swift; sourceTree = "<group>"; };
+		41A5337922062814009A735E /* RoutineScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollViewModel.swift; sourceTree = "<group>"; };
 		41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactoryInterface.swift; sourceTree = "<group>"; };
 		41A5337F2206D520009A735E /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
 		41A533812206D53E009A735E /* AuthRequestFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactoryAssembly.swift; sourceTree = "<group>"; };
@@ -465,7 +462,7 @@
 		866B3B0D21AFC3ED0078361A /* MedicineCourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseService.swift; sourceTree = "<group>"; };
 		866CA10F21CA1E8600363BC9 /* ImageAndLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndLabelCell.swift; sourceTree = "<group>"; };
 		866CA11121CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndLabelCellViewModel.swift; sourceTree = "<group>"; };
-		866F0CE621E77E5400D9FF94 /* LocalizedTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextViewModel.swift; sourceTree = "<group>"; };
+		866F0CE621E77E5400D9FF94 /* RoutineTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTextViewModel.swift; sourceTree = "<group>"; };
 		866F0CEB21E7863600D9FF94 /* TextAreaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaCell.swift; sourceTree = "<group>"; };
 		866F0CED21E7865D00D9FF94 /* TextAreaCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaCellViewModel.swift; sourceTree = "<group>"; };
 		866F0CF021EB576100D9FF94 /* DrugTimesEditInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugTimesEditInterface.swift; sourceTree = "<group>"; };
@@ -614,17 +611,15 @@
 		ED8F69CB2179B971001DBDAA /* ModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleService.swift; sourceTree = "<group>"; };
 		ED8F69CD2179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+CustomNavigationBar.swift"; sourceTree = "<group>"; };
 		ED8F69CE2179B971001DBDAA /* UIViewController+CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomNavigationBar.swift"; sourceTree = "<group>"; };
-		ED8F69CF2179B971001DBDAA /* String+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		ED8F69D02179B971001DBDAA /* Calendar+LastDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+LastDate.swift"; sourceTree = "<group>"; };
 		ED8F69D22179B971001DBDAA /* UIImage+ImageColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageColor.swift"; sourceTree = "<group>"; };
 		ED8F69D32179B971001DBDAA /* UITableView+Scrolls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Scrolls.swift"; sourceTree = "<group>"; };
 		ED8F69D42179B971001DBDAA /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		ED8F69D52179B971001DBDAA /* UIFont+SizeOfString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+SizeOfString.swift"; sourceTree = "<group>"; };
-		ED8F69D72179B971001DBDAA /* Date+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Localize.swift"; sourceTree = "<group>"; };
 		ED8F69D82179B971001DBDAA /* UIViewController+Swipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Swipes.swift"; sourceTree = "<group>"; };
-		ED8F69DB2179B971001DBDAA /* LocalizedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedViewController.swift; sourceTree = "<group>"; };
-		ED8F69DC2179B971001DBDAA /* LocalizedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED8F69DD2179B971001DBDAA /* LocalizedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedTableViewCell.swift; sourceTree = "<group>"; };
+		ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		ED8F69DC2179B971001DBDAA /* RoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		ED8F69E22179B971001DBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED8F69E42179B971001DBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BackgroundViewController.storyboard; sourceTree = "<group>"; };
@@ -674,19 +669,19 @@
 		ED9EF29C21C0230A00C1D1C0 /* AuthServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceInterface.swift; sourceTree = "<group>"; };
 		EDA9A62621E5EB1400D99B09 /* UsingTimesCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTimesCellViewModel.swift; sourceTree = "<group>"; };
 		EDA9A62721E5EB1400D99B09 /* UsingTimesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTimesCell.swift; sourceTree = "<group>"; };
-		EDA9A63121E61F2500D99B09 /* LocalizedTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		EDA9A63421E6286500D99B09 /* LocalizedCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EDA9A63121E61F2500D99B09 /* RoutineTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EDA9A63421E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		EDA9A63B21E672D200D99B09 /* SectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		EDA9A63D21E672DD00D99B09 /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
 		EDA9A63F21E672E800D99B09 /* SectionDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionViewModel.swift; sourceTree = "<group>"; };
 		EDA9A64721E725D300D99B09 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
-		EDA9A64D21E750CC00D99B09 /* LocalizedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedView.swift; sourceTree = "<group>"; };
-		EDA9A64F21E750D600D99B09 /* LocalizedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedViewModel.swift; sourceTree = "<group>"; };
-		EDA9A65321E76B6B00D99B09 /* LocalizedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedContainer.swift; sourceTree = "<group>"; };
+		EDA9A64D21E750CC00D99B09 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		EDA9A64F21E750D600D99B09 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineContainer.swift; sourceTree = "<group>"; };
 		EDC0DC6421EBAE2D00D5327D /* MenuModuleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleCellViewModel.swift; sourceTree = "<group>"; };
-		EDC0DC6721ED0D5F00D5327D /* LocalizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTableView.swift; sourceTree = "<group>"; };
-		EDC0DC6921ED0D6800D5327D /* LocalizedTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTableViewModel.swift; sourceTree = "<group>"; };
-		EDC0DC6B21EDF17600D5327D /* LocalizableHeightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableHeightable.swift; sourceTree = "<group>"; };
+		EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableView.swift; sourceTree = "<group>"; };
+		EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewModel.swift; sourceTree = "<group>"; };
+		EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeightable.swift; sourceTree = "<group>"; };
 		EDC891C921CE36440002CD9E /* PinCodeInitiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInitiator.swift; sourceTree = "<group>"; };
 		EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceAssembly.swift; sourceTree = "<group>"; };
 		EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceInterface.swift; sourceTree = "<group>"; };
@@ -698,7 +693,6 @@
 		EDC891DE21CE9C000002CD9E /* ModuleServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891E021CFC47E0002CD9E /* LanguageServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891E421CFC64E0002CD9E /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		EDCD216B21A70F18009D704B /* UIImage+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Localizable.swift"; sourceTree = "<group>"; };
 		EDCD216E21A722BE009D704B /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		EDCD217021A9AA57009D704B /* Int8+Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int8+Binary.swift"; sourceTree = "<group>"; };
 		EDDA635E21B3ED31005AE695 /* MultipartRequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartRequestObject.swift; sourceTree = "<group>"; };
@@ -710,17 +704,17 @@
 		EDE945C721C02AD4009BC60A /* AuthStorageInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStorageInterface.swift; sourceTree = "<group>"; };
 		EDE945C921C6644C009BC60A /* RESTStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTStatus.swift; sourceTree = "<group>"; };
 		EDE945CB21C67329009BC60A /* RESTCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTCode.swift; sourceTree = "<group>"; };
-		EDE9893221E92F5A00870F25 /* LocalizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
-		EDE9893321E92F5A00870F25 /* LocalizedTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedTextFieldViewModel.swift; sourceTree = "<group>"; };
-		EDE9893521E92F5A00870F25 /* LocalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
-		EDE9893621E92F5A00870F25 /* LocalizedButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedButtonViewModel.swift; sourceTree = "<group>"; };
-		EDE9893821E92F5A00870F25 /* LocalizedImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedImageViewModel.swift; sourceTree = "<group>"; };
-		EDE9893921E92F5A00870F25 /* LocalizedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
-		EDE9893B21E92F5A00870F25 /* LocalizedComboboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedComboboxViewModel.swift; sourceTree = "<group>"; };
-		EDE9893C21E92F5A00870F25 /* LocalizedCombobox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedCombobox.swift; sourceTree = "<group>"; };
-		EDE9893E21E92F5A00870F25 /* LabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
-		EDE9893F21E92F5A00870F25 /* LocalizedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
-		EDE9894A21E92FC600870F25 /* LocalizedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextView.swift; sourceTree = "<group>"; };
+		EDE9893221E92F5A00870F25 /* RoutineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTextField.swift; sourceTree = "<group>"; };
+		EDE9893321E92F5A00870F25 /* RoutineTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTextFieldViewModel.swift; sourceTree = "<group>"; };
+		EDE9893521E92F5A00870F25 /* RoutineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineButton.swift; sourceTree = "<group>"; };
+		EDE9893621E92F5A00870F25 /* RoutineButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineButtonViewModel.swift; sourceTree = "<group>"; };
+		EDE9893821E92F5A00870F25 /* RoutineImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineImageViewModel.swift; sourceTree = "<group>"; };
+		EDE9893921E92F5A00870F25 /* RoutineImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineImageView.swift; sourceTree = "<group>"; };
+		EDE9893B21E92F5A00870F25 /* RoutineComboboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineComboboxViewModel.swift; sourceTree = "<group>"; };
+		EDE9893C21E92F5A00870F25 /* RoutineCombobox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCombobox.swift; sourceTree = "<group>"; };
+		EDE9893E21E92F5A00870F25 /* RoutineLabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineLabelViewModel.swift; sourceTree = "<group>"; };
+		EDE9893F21E92F5A00870F25 /* RoutineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineLabel.swift; sourceTree = "<group>"; };
+		EDE9894A21E92FC600870F25 /* RoutineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTextView.swift; sourceTree = "<group>"; };
 		EDE9894C21E9DE8E00870F25 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EDFA69B72187796700195622 /* WindowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowService.swift; sourceTree = "<group>"; };
 		EDFA69C3218860E400195622 /* ProfileModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleInterface.swift; sourceTree = "<group>"; };
@@ -767,22 +761,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		411E2349224412C40003CEE0 /* LocalizedCollectionView */ = {
+		411E2349224412C40003CEE0 /* RoutineCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				411E234A224412C40003CEE0 /* LocalizedCollectionViewModel.swift */,
-				411E234B224412C40003CEE0 /* LocalizedCollectionView.swift */,
+				411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */,
+				411E234B224412C40003CEE0 /* RoutineCollectionView.swift */,
 			);
-			path = LocalizedCollectionView;
+			path = RoutineCollectionView;
 			sourceTree = "<group>";
 		};
-		41A53376220627EF009A735E /* LocalizedScrollView */ = {
+		41A53376220627EF009A735E /* RoutineScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				41A533772206280A009A735E /* LocalizedScrollView.swift */,
-				41A5337922062814009A735E /* LocalizedScrollViewModel.swift */,
+				41A533772206280A009A735E /* RoutineScrollView.swift */,
+				41A5337922062814009A735E /* RoutineScrollViewModel.swift */,
 			);
-			path = LocalizedScrollView;
+			path = RoutineScrollView;
 			sourceTree = "<group>";
 		};
 		41A5337C2206D467009A735E /* AuthRequestFactory */ = {
@@ -809,7 +803,6 @@
 			isa = PBXGroup;
 			children = (
 				86C2BEA821A7DE16001BA77B /* Date+DateMath.swift */,
-				ED8F69D72179B971001DBDAA /* Date+Localize.swift */,
 				41A5338C22071615009A735E /* Date+Timestamp.swift */,
 			);
 			path = Date;
@@ -1097,13 +1090,13 @@
 			path = ImageAndLabelCell;
 			sourceTree = "<group>";
 		};
-		866F0CE521E77DDE00D9FF94 /* LocalizedTextView */ = {
+		866F0CE521E77DDE00D9FF94 /* RoutineTextView */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9894A21E92FC600870F25 /* LocalizedTextView.swift */,
-				866F0CE621E77E5400D9FF94 /* LocalizedTextViewModel.swift */,
+				EDE9894A21E92FC600870F25 /* RoutineTextView.swift */,
+				866F0CE621E77E5400D9FF94 /* RoutineTextViewModel.swift */,
 			);
-			path = LocalizedTextView;
+			path = RoutineTextView;
 			sourceTree = "<group>";
 		};
 		866F0CEA21E785AB00D9FF94 /* TextAreaCell */ = {
@@ -1739,27 +1732,27 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		ED8F69DA2179B971001DBDAA /* Localized */ = {
+		ED8F69DA2179B971001DBDAA /* RoutineFramework */ = {
 			isa = PBXGroup;
 			children = (
-				EDA9A64C21E750B500D99B09 /* LocalizedView */,
-				411E2349224412C40003CEE0 /* LocalizedCollectionView */,
-				EDC0DC6621ED0D3900D5327D /* LocalizedTableView */,
-				41A53376220627EF009A735E /* LocalizedScrollView */,
-				EDE9893D21E92F5A00870F25 /* LocalizedLabel */,
-				EDE9893421E92F5A00870F25 /* LocalizedButton */,
-				EDE9893721E92F5A00870F25 /* LocalizedImageView */,
-				EDE9893121E92F5A00870F25 /* LocalizedTextField */,
-				EDA9A63021E5FEC900D99B09 /* LocalizedTableViewCell */,
-				EDA9A63321E627AB00D99B09 /* LocalizedCollectionViewCell */,
-				866F0CE521E77DDE00D9FF94 /* LocalizedTextView */,
-				EDE9893A21E92F5A00870F25 /* LocalizedCombobox */,
-				EDA9A65321E76B6B00D99B09 /* LocalizedContainer.swift */,
-				ED8F69DB2179B971001DBDAA /* LocalizedViewController.swift */,
-				EDC0DC6B21EDF17600D5327D /* LocalizableHeightable.swift */,
+				EDA9A64C21E750B500D99B09 /* RoutineView */,
+				411E2349224412C40003CEE0 /* RoutineCollectionView */,
+				EDC0DC6621ED0D3900D5327D /* RoutineTableView */,
+				41A53376220627EF009A735E /* RoutineScrollView */,
+				EDE9893D21E92F5A00870F25 /* RoutineLabel */,
+				EDE9893421E92F5A00870F25 /* RoutineButton */,
+				EDE9893721E92F5A00870F25 /* RoutineImageView */,
+				EDE9893121E92F5A00870F25 /* RoutineTextField */,
+				EDA9A63021E5FEC900D99B09 /* RoutineTableViewCell */,
+				EDA9A63321E627AB00D99B09 /* RoutineCollectionViewCell */,
+				866F0CE521E77DDE00D9FF94 /* RoutineTextView */,
+				EDE9893A21E92F5A00870F25 /* RoutineCombobox */,
+				EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */,
+				ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */,
+				EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */,
 				411E235122494DC70003CEE0 /* CellOwner.swift */,
 			);
-			path = Localized;
+			path = RoutineFramework;
 			sourceTree = "<group>";
 		};
 		ED8F69DE2179B971001DBDAA /* Initial */ = {
@@ -1958,40 +1951,40 @@
 			path = UsingTimesCell;
 			sourceTree = "<group>";
 		};
-		EDA9A63021E5FEC900D99B09 /* LocalizedTableViewCell */ = {
+		EDA9A63021E5FEC900D99B09 /* RoutineTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ED8F69DD2179B971001DBDAA /* LocalizedTableViewCell.swift */,
-				EDA9A63121E61F2500D99B09 /* LocalizedTableViewCellViewModel.swift */,
+				ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */,
+				EDA9A63121E61F2500D99B09 /* RoutineTableViewCellViewModel.swift */,
 			);
-			path = LocalizedTableViewCell;
+			path = RoutineTableViewCell;
 			sourceTree = "<group>";
 		};
-		EDA9A63321E627AB00D99B09 /* LocalizedCollectionViewCell */ = {
+		EDA9A63321E627AB00D99B09 /* RoutineCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ED8F69DC2179B971001DBDAA /* LocalizedCollectionViewCell.swift */,
-				EDA9A63421E6286500D99B09 /* LocalizedCollectionViewCellViewModel.swift */,
+				ED8F69DC2179B971001DBDAA /* RoutineCollectionViewCell.swift */,
+				EDA9A63421E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift */,
 			);
-			path = LocalizedCollectionViewCell;
+			path = RoutineCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		EDA9A64C21E750B500D99B09 /* LocalizedView */ = {
+		EDA9A64C21E750B500D99B09 /* RoutineView */ = {
 			isa = PBXGroup;
 			children = (
-				EDA9A64D21E750CC00D99B09 /* LocalizedView.swift */,
-				EDA9A64F21E750D600D99B09 /* LocalizedViewModel.swift */,
+				EDA9A64D21E750CC00D99B09 /* RoutineView.swift */,
+				EDA9A64F21E750D600D99B09 /* RoutineViewModel.swift */,
 			);
-			path = LocalizedView;
+			path = RoutineView;
 			sourceTree = "<group>";
 		};
-		EDC0DC6621ED0D3900D5327D /* LocalizedTableView */ = {
+		EDC0DC6621ED0D3900D5327D /* RoutineTableView */ = {
 			isa = PBXGroup;
 			children = (
-				EDC0DC6721ED0D5F00D5327D /* LocalizedTableView.swift */,
-				EDC0DC6921ED0D6800D5327D /* LocalizedTableViewModel.swift */,
+				EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */,
+				EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */,
 			);
-			path = LocalizedTableView;
+			path = RoutineTableView;
 			sourceTree = "<group>";
 		};
 		EDC891C821CE36330002CD9E /* Models */ = {
@@ -2084,7 +2077,7 @@
 			isa = PBXGroup;
 			children = (
 				41CAA230227F186F00188189 /* R.generated.swift */,
-				ED8F69DA2179B971001DBDAA /* Localized */,
+				ED8F69DA2179B971001DBDAA /* RoutineFramework */,
 				ED4C62A221E34F5B004A999C /* UniversalTableViewManager.swift */,
 				ED7874A521A1C86200FEA4DB /* UniversalCollectionViewManager.swift */,
 				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
@@ -2113,49 +2106,49 @@
 			path = AuthStorage;
 			sourceTree = "<group>";
 		};
-		EDE9893121E92F5A00870F25 /* LocalizedTextField */ = {
+		EDE9893121E92F5A00870F25 /* RoutineTextField */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9893221E92F5A00870F25 /* LocalizedTextField.swift */,
-				EDE9893321E92F5A00870F25 /* LocalizedTextFieldViewModel.swift */,
+				EDE9893221E92F5A00870F25 /* RoutineTextField.swift */,
+				EDE9893321E92F5A00870F25 /* RoutineTextFieldViewModel.swift */,
 			);
-			path = LocalizedTextField;
+			path = RoutineTextField;
 			sourceTree = "<group>";
 		};
-		EDE9893421E92F5A00870F25 /* LocalizedButton */ = {
+		EDE9893421E92F5A00870F25 /* RoutineButton */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9893521E92F5A00870F25 /* LocalizedButton.swift */,
-				EDE9893621E92F5A00870F25 /* LocalizedButtonViewModel.swift */,
+				EDE9893521E92F5A00870F25 /* RoutineButton.swift */,
+				EDE9893621E92F5A00870F25 /* RoutineButtonViewModel.swift */,
 			);
-			path = LocalizedButton;
+			path = RoutineButton;
 			sourceTree = "<group>";
 		};
-		EDE9893721E92F5A00870F25 /* LocalizedImageView */ = {
+		EDE9893721E92F5A00870F25 /* RoutineImageView */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9893921E92F5A00870F25 /* LocalizedImageView.swift */,
-				EDE9893821E92F5A00870F25 /* LocalizedImageViewModel.swift */,
+				EDE9893921E92F5A00870F25 /* RoutineImageView.swift */,
+				EDE9893821E92F5A00870F25 /* RoutineImageViewModel.swift */,
 			);
-			path = LocalizedImageView;
+			path = RoutineImageView;
 			sourceTree = "<group>";
 		};
-		EDE9893A21E92F5A00870F25 /* LocalizedCombobox */ = {
+		EDE9893A21E92F5A00870F25 /* RoutineCombobox */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9893C21E92F5A00870F25 /* LocalizedCombobox.swift */,
-				EDE9893B21E92F5A00870F25 /* LocalizedComboboxViewModel.swift */,
+				EDE9893C21E92F5A00870F25 /* RoutineCombobox.swift */,
+				EDE9893B21E92F5A00870F25 /* RoutineComboboxViewModel.swift */,
 			);
-			path = LocalizedCombobox;
+			path = RoutineCombobox;
 			sourceTree = "<group>";
 		};
-		EDE9893D21E92F5A00870F25 /* LocalizedLabel */ = {
+		EDE9893D21E92F5A00870F25 /* RoutineLabel */ = {
 			isa = PBXGroup;
 			children = (
-				EDE9893F21E92F5A00870F25 /* LocalizedLabel.swift */,
-				EDE9893E21E92F5A00870F25 /* LabelViewModel.swift */,
+				EDE9893F21E92F5A00870F25 /* RoutineLabel.swift */,
+				EDE9893E21E92F5A00870F25 /* RoutineLabelViewModel.swift */,
 			);
-			path = LocalizedLabel;
+			path = RoutineLabel;
 			sourceTree = "<group>";
 		};
 		EDE9894E21E9E0C900870F25 /* UIView */ = {
@@ -2170,7 +2163,6 @@
 		EDE9894F21E9E0E400870F25 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				ED8F69CF2179B971001DBDAA /* String+Localizable.swift */,
 				ED8F69D42179B971001DBDAA /* String+Email.swift */,
 				411E233C2221CE370003CEE0 /* String+DoubleFromString.swift */,
 			);
@@ -2181,7 +2173,6 @@
 			isa = PBXGroup;
 			children = (
 				ED8F69D22179B971001DBDAA /* UIImage+ImageColor.swift */,
-				EDCD216B21A70F18009D704B /* UIImage+Localizable.swift */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -2581,7 +2572,7 @@
 				EDE945CA21C6644C009BC60A /* RESTStatus.swift in Sources */,
 				ED7874AA21A1C90D00FEA4DB /* StandartPagePickerCellViewModel.swift in Sources */,
 				ED6669EA2190C18A00366877 /* MethodObtainingViewController.swift in Sources */,
-				EDE9894621E92F5B00870F25 /* LocalizedComboboxViewModel.swift in Sources */,
+				EDE9894621E92F5B00870F25 /* RoutineComboboxViewModel.swift in Sources */,
 				EDFA69D5218860E400195622 /* ProfileViewController.swift in Sources */,
 				ED6669EB2190C18A00366877 /* MethodObtainingRouter.swift in Sources */,
 				ED45FBE52199D08F00E81497 /* MedicineCourseCell.swift in Sources */,
@@ -2593,17 +2584,16 @@
 				ED8F6AC4217FA253001DBDAA /* PinCodeViewController.swift in Sources */,
 				860AC62521B2923A007317B2 /* DrugEditModuleInterface.swift in Sources */,
 				ED241EA821AC065F00E4E32F /* IdentifierModelInterface.swift in Sources */,
-				866F0CE721E77E5400D9FF94 /* LocalizedTextViewModel.swift in Sources */,
+				866F0CE721E77E5400D9FF94 /* RoutineTextViewModel.swift in Sources */,
 				ED312CBD218727C0006D95F7 /* RegistrationRouter.swift in Sources */,
 				ED4C62A121E34F01004A999C /* MainTableViewFactory.swift in Sources */,
-				EDCD216C21A70F18009D704B /* UIImage+Localizable.swift in Sources */,
 				ED8F6A632179F126001DBDAA /* MultipartOperationHandler.swift in Sources */,
-				ED8F6A1E2179B971001DBDAA /* LocalizedTableViewCell.swift in Sources */,
+				ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */,
 				ED8F6A292179B971001DBDAA /* MenuModuleCell.swift in Sources */,
 				EDFA69B82187796700195622 /* WindowService.swift in Sources */,
 				EDCD217121A9AA57009D704B /* Int8+Binary.swift in Sources */,
 				EDC891D121CE59360002CD9E /* DecodeResponseContainerInterface.swift in Sources */,
-				EDE9894321E92F5B00870F25 /* LocalizedButtonViewModel.swift in Sources */,
+				EDE9894321E92F5B00870F25 /* RoutineButtonViewModel.swift in Sources */,
 				ED7874D721A5D5D400FEA4DB /* MedicineDrug.swift in Sources */,
 				ED8F6A172179B971001DBDAA /* String+Email.swift in Sources */,
 				41A6B875220ED8270023CE19 /* DateService.swift in Sources */,
@@ -2616,7 +2606,7 @@
 				ED9EF29D21C0230A00C1D1C0 /* AuthServiceInterface.swift in Sources */,
 				ED8F6A9E217E2CDF001DBDAA /* StandartTextField.swift in Sources */,
 				ED749FF32194A90E00D996D4 /* RestorePasswordRouter.swift in Sources */,
-				41A533782206280A009A735E /* LocalizedScrollView.swift in Sources */,
+				41A533782206280A009A735E /* RoutineScrollView.swift in Sources */,
 				41A6B86E220ED8040023CE19 /* ImageService.swift in Sources */,
 				EDC891CA21CE36440002CD9E /* PinCodeInitiator.swift in Sources */,
 				41A5337E2206D47E009A735E /* AuthRequestFactoryInterface.swift in Sources */,
@@ -2641,7 +2631,7 @@
 				862F439F21CE940700CB127F /* SingleButtonCellViewModel.swift in Sources */,
 				ED8F6A91217DB4DC001DBDAA /* AuthAssembly.swift in Sources */,
 				ED6669E92190C18A00366877 /* MethodObtainingAssembly.swift in Sources */,
-				EDE9894521E92F5B00870F25 /* LocalizedImageView.swift in Sources */,
+				EDE9894521E92F5B00870F25 /* RoutineImageView.swift in Sources */,
 				EDFA69D7218860E400195622 /* ProfilePresenter.swift in Sources */,
 				ED8F6A362179C1A4001DBDAA /* Routine.xcdatamodeld in Sources */,
 				ED8F6A4C2179F106001DBDAA /* AsyncOperation.swift in Sources */,
@@ -2654,13 +2644,13 @@
 				866F0CEC21E7863600D9FF94 /* TextAreaCell.swift in Sources */,
 				ED45FBE82199D08F00E81497 /* MedicineCourseModuleInterface.swift in Sources */,
 				41A533802206D520009A735E /* AuthRequestFactory.swift in Sources */,
-				EDA9A63221E61F2500D99B09 /* LocalizedTableViewCellViewModel.swift in Sources */,
+				EDA9A63221E61F2500D99B09 /* RoutineTableViewCellViewModel.swift in Sources */,
 				867283A921AA949A0000495C /* ConfirmationModulePresenter.swift in Sources */,
 				866F0CF721EB697A00D9FF94 /* DrugTimesEditViewController.swift in Sources */,
 				866B3B0321AEDCC90078361A /* DrugsListRouter.swift in Sources */,
 				EDC891E521CFC64E0002CD9E /* Language.swift in Sources */,
 				411E234822440F150003CEE0 /* TriggerActionType.swift in Sources */,
-				411E234C224412C50003CEE0 /* LocalizedCollectionViewModel.swift in Sources */,
+				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
 				86385B3F21C4F4720097A544 /* TwiceComboboxCell.swift in Sources */,
 				EDC891D521CE65D30002CD9E /* MedicineCourseServiceInterface.swift in Sources */,
 				ED74A0132194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift in Sources */,
@@ -2677,9 +2667,9 @@
 				ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */,
 				86385B3E21C4F4720097A544 /* TwiceComboboxCellViewModel.swift in Sources */,
 				860AC5E421B27C78007317B2 /* EndingCourseType.swift in Sources */,
-				EDE9894221E92F5B00870F25 /* LocalizedButton.swift in Sources */,
+				EDE9894221E92F5B00870F25 /* RoutineButton.swift in Sources */,
 				ED74A0122194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift in Sources */,
-				EDE9894B21E92FC600870F25 /* LocalizedTextView.swift in Sources */,
+				EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */,
 				ED8F6A662179F126001DBDAA /* RESTOperation.swift in Sources */,
 				41A533A222074BED009A735E /* LanguageServiceAssembly.swift in Sources */,
 				867EF4F921F0B9690019253C /* LabelAndMarkCell.swift in Sources */,
@@ -2693,8 +2683,8 @@
 				41A6B871220ED8150023CE19 /* DateServiceInterface.swift in Sources */,
 				41A533902207223A009A735E /* ModuleFactoryAssembly.swift in Sources */,
 				ED78749A21A1C4D400FEA4DB /* StandartPagePicker.swift in Sources */,
-				EDA9A63521E6286500D99B09 /* LocalizedCollectionViewCellViewModel.swift in Sources */,
-				EDA9A64E21E750CC00D99B09 /* LocalizedView.swift in Sources */,
+				EDA9A63521E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift in Sources */,
+				EDA9A64E21E750CC00D99B09 /* RoutineView.swift in Sources */,
 				ED8F6A282179B971001DBDAA /* MenuModuleInterface.swift in Sources */,
 				ED45FBEA2199D08F00E81497 /* MedicineCourseViewController.swift in Sources */,
 				86F9D27821EF6E22000ABB67 /* DrugPeriodicEditViewController.swift in Sources */,
@@ -2704,10 +2694,10 @@
 				ED082FCA21CFFCFA00C892C8 /* ReachabilityService.swift in Sources */,
 				ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */,
 				41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */,
-				EDC0DC6A21ED0D6800D5327D /* LocalizedTableViewModel.swift in Sources */,
+				EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */,
 				ED8F6A272179B971001DBDAA /* MenuModulePresenter.swift in Sources */,
 				EDE945C321C028DB009BC60A /* AuthServiceAssembly.swift in Sources */,
-				41A5337A22062814009A735E /* LocalizedScrollViewModel.swift in Sources */,
+				41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */,
 				867283AC21AA9EAD0000495C /* InputTextPopup.swift in Sources */,
 				41A6B86A220ED7F20023CE19 /* ImageServiceInterface.swift in Sources */,
 				ED082FD421CFFD3F00C892C8 /* NotificationServiceInterface.swift in Sources */,
@@ -2725,7 +2715,7 @@
 				EDDA636821B41C4F005AE695 /* MedicineLocalNotification.swift in Sources */,
 				ED4C62AC21E5E0AD004A999C /* SectionHeaderView.swift in Sources */,
 				867EF4FB21F0B9750019253C /* LabelAndMarkCellViewModel.swift in Sources */,
-				EDE9894121E92F5B00870F25 /* LocalizedTextFieldViewModel.swift in Sources */,
+				EDE9894121E92F5B00870F25 /* RoutineTextFieldViewModel.swift in Sources */,
 				EDC891E121CFC47E0002CD9E /* LanguageServiceInterface.swift in Sources */,
 				ED8F6A092179B971001DBDAA /* FontProvider.swift in Sources */,
 				EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */,
@@ -2738,10 +2728,10 @@
 				8682996321C8C88500679C05 /* ComboboxCellViewModel.swift in Sources */,
 				ED8F6A752179F4F3001DBDAA /* SessionManager+Multipart.swift in Sources */,
 				ED749FF02194A90E00D996D4 /* RestorePasswordModuleInterface.swift in Sources */,
-				EDE9894021E92F5B00870F25 /* LocalizedTextField.swift in Sources */,
+				EDE9894021E92F5B00870F25 /* RoutineTextField.swift in Sources */,
 				41A6B866220ED7DA0023CE19 /* StringServiceAssembly.swift in Sources */,
-				EDC0DC6821ED0D5F00D5327D /* LocalizedTableView.swift in Sources */,
-				411E234D224412C50003CEE0 /* LocalizedCollectionView.swift in Sources */,
+				EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */,
+				411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */,
 				ED59915B21D2AE2400253599 /* StandartLoaderView.swift in Sources */,
 				41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */,
 				41A6B873220ED81E0023CE19 /* DateServiceAssembly.swift in Sources */,
@@ -2779,7 +2769,7 @@
 				41A533AC220A0A94009A735E /* NavigatorInterface.swift in Sources */,
 				ED6669E82190C18A00366877 /* MethodObtainingModuleInterface.swift in Sources */,
 				866B3B0421AEDCC90078361A /* DrugsListAssembly.swift in Sources */,
-				EDA9A65421E76B6B00D99B09 /* LocalizedContainer.swift in Sources */,
+				EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */,
 				860AC5E221B26FD8007317B2 /* MedicineType.swift in Sources */,
 				ED8F6A622179F126001DBDAA /* RequestObject.swift in Sources */,
 				ED082FC021CFDDC100C892C8 /* StorageService.swift in Sources */,
@@ -2795,7 +2785,7 @@
 				ED8F6AC3217FA253001DBDAA /* PinCodeAssembly.swift in Sources */,
 				ED8F6A9C217E2B12001DBDAA /* StandartAcceptButton.swift in Sources */,
 				86F9D27021EF01CC000ABB67 /* DrugPeriodicEditPresenter.swift in Sources */,
-				EDE9894721E92F5B00870F25 /* LocalizedCombobox.swift in Sources */,
+				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
 				ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED8F6A0C2179B971001DBDAA /* StandartOffsetLabel.swift in Sources */,
 				866F0CFB21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift in Sources */,
@@ -2810,14 +2800,14 @@
 				8675B5FF21C21A5B005F631C /* LabelCellViewModel.swift in Sources */,
 				866F0CEE21E7865D00D9FF94 /* TextAreaCellViewModel.swift in Sources */,
 				ED749FF42194A90E00D996D4 /* RestorePasswordPresenter.swift in Sources */,
-				EDE9894421E92F5B00870F25 /* LocalizedImageViewModel.swift in Sources */,
+				EDE9894421E92F5B00870F25 /* RoutineImageViewModel.swift in Sources */,
 				EDDA636421B408EE005AE695 /* DayOfWeek.swift in Sources */,
 				860AC62321B2923A007317B2 /* DrugEditPresenter.swift in Sources */,
 				ED8F6A6E2179F184001DBDAA /* BaseResponseModels.swift in Sources */,
 				ED6669C6218A1E8900366877 /* StandartPickerView.swift in Sources */,
 				ED45FBE92199D08F00E81497 /* MedicineCourseAssembly.swift in Sources */,
 				ED082FD221CFFD3700C892C8 /* NotificationService.swift in Sources */,
-				EDC0DC6C21EDF17600D5327D /* LocalizableHeightable.swift in Sources */,
+				EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */,
 				41A6B868220ED7E30023CE19 /* StringService.swift in Sources */,
 				ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */,
 				41A6B86C220ED7FD0023CE19 /* ImageServiceAssembly.swift in Sources */,
@@ -2827,7 +2817,7 @@
 				ED45FBE62199D08F00E81497 /* MedicineCourseCellViewModel.swift in Sources */,
 				86F9D27C21EF7103000ABB67 /* DrugPeriodicEditAssembly.swift in Sources */,
 				866B3B0921AEDCC90078361A /* DrugCellViewModel.swift in Sources */,
-				EDE9894821E92F5B00870F25 /* LabelViewModel.swift in Sources */,
+				EDE9894821E92F5B00870F25 /* RoutineLabelViewModel.swift in Sources */,
 				860E48E621C2B1440009E4DB /* TextFieldCellViewModel.swift in Sources */,
 				EDA9A63E21E672DD00D99B09 /* SectionViewModel.swift in Sources */,
 				860AC62721B2923A007317B2 /* DrugEditTableViewFactory.swift in Sources */,
@@ -2840,7 +2830,7 @@
 				860AC5E921B27EFD007317B2 /* MedicineUnit.swift in Sources */,
 				EDDA636121B3ED49005AE695 /* RESTRequestObject.swift in Sources */,
 				41A5339A22074B79009A735E /* ReachabilityServiceAssembly.swift in Sources */,
-				ED8F6A1D2179B971001DBDAA /* LocalizedCollectionViewCell.swift in Sources */,
+				ED8F6A1D2179B971001DBDAA /* RoutineCollectionViewCell.swift in Sources */,
 				ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */,
 				860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */,
 				41A533A022074BBC009A735E /* MagicalRecordServiceAssembly.swift in Sources */,
@@ -2851,9 +2841,9 @@
 				867283B421AAD4020000495C /* ConfirmDecisionPopup.swift in Sources */,
 				867EF4FE21F0F1B50019253C /* DrugPeriodicEditTableViewFactory.swift in Sources */,
 				ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */,
-				EDA9A65021E750D600D99B09 /* LocalizedViewModel.swift in Sources */,
+				EDA9A65021E750D600D99B09 /* RoutineViewModel.swift in Sources */,
 				ED74A0162194AA4000D996D4 /* AcceptRestorePasswordPresenter.swift in Sources */,
-				EDE9894921E92F5B00870F25 /* LocalizedLabel.swift in Sources */,
+				EDE9894921E92F5B00870F25 /* RoutineLabel.swift in Sources */,
 				86F9D26E21EEFFC2000ABB67 /* DrugPeriodicEditInterface.swift in Sources */,
 				ED8F6A5F2179F126001DBDAA /* DownloadOperationHandler.swift in Sources */,
 				EDE945C821C02AD4009BC60A /* AuthStorageInterface.swift in Sources */,
@@ -2866,16 +2856,14 @@
 				ED082FD621CFFD4C00C892C8 /* MagicalRecordService.swift in Sources */,
 				866CA11021CA1E8600363BC9 /* ImageAndLabelCell.swift in Sources */,
 				ED8F6A612179F126001DBDAA /* DownloadOperation.swift in Sources */,
-				ED8F6A1C2179B971001DBDAA /* LocalizedViewController.swift in Sources */,
+				ED8F6A1C2179B971001DBDAA /* RoutineViewController.swift in Sources */,
 				860AC5DA21B1ADF3007317B2 /* DrugDetailsAnimator.swift in Sources */,
 				860AC65D21B57A44007317B2 /* DaysPeriod.swift in Sources */,
 				EDCD216F21A722BE009D704B /* LocalNotificationService.swift in Sources */,
-				ED8F6A1A2179B971001DBDAA /* Date+Localize.swift in Sources */,
 				ED082FC221CFDDCA00C892C8 /* StorageServiceInterface.swift in Sources */,
 				41A533882206EF27009A735E /* ServiceProviderInterface.swift in Sources */,
 				EDFA69D4218860E400195622 /* ProfileAssembly.swift in Sources */,
 				866CA11221CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift in Sources */,
-				ED8F6A122179B971001DBDAA /* String+Localizable.swift in Sources */,
 				ED7874A121A1C67B00FEA4DB /* StandartPagePickerCell.swift in Sources */,
 				ED7874A821A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift in Sources */,
 				866B3AFF21AEDCC90078361A /* DrugsListTableViewFactory.swift in Sources */,

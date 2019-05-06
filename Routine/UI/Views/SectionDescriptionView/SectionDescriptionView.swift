@@ -1,14 +1,14 @@
 import UIKit
 import Stevia
 
-class SectionDescriptionView: LocalizedView<SectionDescriptionViewModel> {
+class SectionDescriptionView: RoutineView<SectionDescriptionViewModel> {
     
-    weak var descriptionLabel: LocalizedLabel<LocalizedLabelViewModel>!
+    weak var descriptionLabel: RoutineLabel<RoutineLabelViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let descriptionLabel = LocalizedLabel()
+        let descriptionLabel = RoutineLabel()
         
         self.sv(
             descriptionLabel

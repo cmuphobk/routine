@@ -1,14 +1,13 @@
-
 import UIKit
 
-class MenuModuleViewController: LocalizedViewController {
+class MenuModuleViewController: RoutineViewController {
     
     var output: MenuModuleViewOutput!
     
     weak var viewController: UIViewController?
     
-    private var tableViewModel = LocalizedTableViewModel()
-    weak private var tableView: LocalizedTableView<LocalizedTableViewModel>!
+    private var tableViewModel = RoutineTableViewModel()
+    weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     private var viewModels: [MenuModuleCellViewModel] = []
     private var currentSelectedCellIndex: Int = 0
@@ -19,7 +18,7 @@ class MenuModuleViewController: LocalizedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = LocalizedTableView()
+        let tableView = RoutineTableView()
         self.view.sv(
             tableView
         )

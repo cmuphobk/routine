@@ -1,6 +1,6 @@
 import UIKit
 
-final class DrugCellViewModel: LocalizedTableViewCellViewModel {
+final class DrugCellViewModel: RoutineTableViewCellViewModel {
     let kContentOffsets: Offsets = Offsets(top: 20.0, bottom: 16.0, left: 56.0, right: 58.0)
     
     let type: MedicineType

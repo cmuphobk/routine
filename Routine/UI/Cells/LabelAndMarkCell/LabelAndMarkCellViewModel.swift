@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 
-final class LabelAndMarkCellViewModel: LocalizedTableViewCellViewModel {
-    var label: LocalizedLabelViewModel = LocalizedLabelViewModel()
-    var image: LocalizedImageViewModel = LocalizedImageViewModel()
+final class LabelAndMarkCellViewModel: RoutineTableViewCellViewModel {
+    var label: RoutineLabelViewModel = RoutineLabelViewModel()
+    var image: RoutineImageViewModel = RoutineImageViewModel()
     var betweenSpace: CGFloat = 8.0
     
     override var reuseIdentifier: String {

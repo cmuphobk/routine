@@ -1,6 +1,6 @@
 import UIKit
 
-final class MedicineCourseCell: LocalizedTableViewCell<MedicineCourseCellViewModel> {
+final class MedicineCourseCell: RoutineTableViewCell<MedicineCourseCellViewModel> {
     
     @IBOutlet weak private var cardView: UIView!
     

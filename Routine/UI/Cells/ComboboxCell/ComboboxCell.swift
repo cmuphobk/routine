@@ -1,14 +1,14 @@
 import UIKit
 import Stevia
 
-final class ComboboxCell: LocalizedTableViewCell<ComboboxCellViewModel> {
+final class ComboboxCell: RoutineTableViewCell<ComboboxCellViewModel> {
     
-    weak var combobox: LocalizedCombobox!
+    weak var combobox: RoutineCombobox!
     
     override func setupView() {
         super.setupView()
         
-        let combobox = LocalizedCombobox()
+        let combobox = RoutineCombobox()
         
         self.paddingView.sv(
             combobox
@@ -42,9 +42,9 @@ final class ComboboxCell: LocalizedTableViewCell<ComboboxCellViewModel> {
 }
 
 // MARK: UIComboboxDelegate
-extension ComboboxCell: LocalizedComboboxDelegate {
+extension ComboboxCell: RoutineComboboxDelegate {
     
-    func comboboxDidPressed(viewModel: LocalizedComboboxViewModel) {
+    func comboboxDidPressed(viewModel: RoutineComboboxViewModel) {
         if viewModel == self.combobox.viewModel {
             self.viewModel.delegate?.expand(viewModel: viewModel)
         }

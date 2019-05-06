@@ -1,6 +1,6 @@
 import UIKit
 
-final class MenuModuleCell: LocalizedTableViewCell<MenuModuleCellViewModel> {
+final class MenuModuleCell: RoutineTableViewCell<MenuModuleCellViewModel> {
     
     @IBOutlet weak var label: UILabel!
     

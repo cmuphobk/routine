@@ -1,14 +1,14 @@
 import UIKit
 import Stevia
 
-final class SingleButtonCell: LocalizedTableViewCell<SingleButtonCellViewModel> {
+final class SingleButtonCell: RoutineTableViewCell<SingleButtonCellViewModel> {
 
-    weak var button: LocalizedButton<LocalizedButtonViewModel>!
+    weak var button: RoutineButton<RoutineButtonViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let button = LocalizedButton()
+        let button = RoutineButton()
         
         self.paddingView.sv(
             button
@@ -40,7 +40,7 @@ final class SingleButtonCell: LocalizedTableViewCell<SingleButtonCellViewModel> 
     }
     
     @IBAction private func buttonDidPressed(_ sender: UIButton) {
-        guard let button = sender as? LocalizedButton<LocalizedButtonViewModel> else {
+        guard let button = sender as? RoutineButton<RoutineButtonViewModel> else {
             return
         }
         self.viewModel.delegate?.buttonDidPressed(sender: button)

@@ -1,6 +1,6 @@
 import UIKit
 
-final class DrugCell: LocalizedTableViewCell<DrugCellViewModel> {
+final class DrugCell: RoutineTableViewCell<DrugCellViewModel> {
     
     @IBOutlet weak var drugImage: UIImageView!
     @IBOutlet weak var name: UILabel!

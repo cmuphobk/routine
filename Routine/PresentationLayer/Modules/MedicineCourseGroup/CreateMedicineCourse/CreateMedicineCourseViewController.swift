@@ -1,4 +1,3 @@
-
 import UIKit
 
 protocol CreateMedicineCourseViewControllerDelegate: class {
@@ -6,7 +5,7 @@ protocol CreateMedicineCourseViewControllerDelegate: class {
     func didTriggerCancel()
 }
 
-final class CreateMedicineCourseViewController: LocalizedViewController {
+final class CreateMedicineCourseViewController: RoutineViewController {
     var windowService: WindowServiceInterface!
     
     weak var delegate: CreateMedicineCourseViewControllerDelegate?

@@ -1,7 +1,7 @@
 import UIKit
 
-final class LabelCellViewModel: LocalizedTableViewCellViewModel {
-    var labelConfiguration: LocalizedLabelViewModel = LocalizedLabelViewModel()
+final class LabelCellViewModel: RoutineTableViewCellViewModel {
+    var labelConfiguration: RoutineLabelViewModel = RoutineLabelViewModel()
     
     override var reuseIdentifier: String {
         return "LabelCell"

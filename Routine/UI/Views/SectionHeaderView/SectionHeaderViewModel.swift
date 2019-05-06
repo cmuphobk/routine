@@ -4,11 +4,11 @@ protocol SectionHeaderViewModelDelegate: class {
     func didTriggerCloseButton(viewModel: SectionHeaderViewModel)
 }
 
-class SectionHeaderViewModel: LocalizedViewModel {
+class SectionHeaderViewModel: RoutineViewModel {
     
-    var infoIconViewModel = LocalizedImageViewModel()
-    var textLabelViewModel = LocalizedLabelViewModel()
-    var closeButtonViewModel = LocalizedButtonViewModel()
+    var infoIconViewModel = RoutineImageViewModel()
+    var textLabelViewModel = RoutineLabelViewModel()
+    var closeButtonViewModel = RoutineButtonViewModel()
     weak var delegate: SectionHeaderViewModelDelegate?
 
     override func heightForWidth(_ width: CGFloat) -> CGFloat {

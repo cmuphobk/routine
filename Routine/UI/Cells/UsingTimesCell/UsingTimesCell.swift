@@ -1,18 +1,18 @@
 import UIKit
 import Stevia
 
-final class UsingTimesCell: LocalizedTableViewCell<UsingTimesCellViewModel>, UITextFieldDelegate {
+final class UsingTimesCell: RoutineTableViewCell<UsingTimesCellViewModel>, UITextFieldDelegate {
     
-    weak var numberLabel: LocalizedLabel<LocalizedLabelViewModel>!
-    weak var timesBox: LocalizedCombobox!
-    weak var countField: LocalizedTextField<LocalizedTextFieldViewModel>!
+    weak var numberLabel: RoutineLabel<RoutineLabelViewModel>!
+    weak var timesBox: RoutineCombobox!
+    weak var countField: RoutineTextField<RoutineTextFieldViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let numberLabel = LocalizedLabel()
-        let timesBox = LocalizedCombobox()
-        let countField = LocalizedTextField()
+        let numberLabel = RoutineLabel()
+        let timesBox = RoutineCombobox()
+        let countField = RoutineTextField()
     
         self.paddingView.sv(
             numberLabel,
@@ -95,9 +95,9 @@ final class UsingTimesCell: LocalizedTableViewCell<UsingTimesCellViewModel>, UIT
     }
 }
 
-extension UsingTimesCell: LocalizedComboboxDelegate {
+extension UsingTimesCell: RoutineComboboxDelegate {
     
-    func comboboxDidPressed(viewModel: LocalizedComboboxViewModel) {
+    func comboboxDidPressed(viewModel: RoutineComboboxViewModel) {
         self.viewModel.delegate?.timeStartEdited(sender: self.viewModel)
     }
     

@@ -25,7 +25,7 @@ class StandartPagePicker: UIView {
     var selectedIndex: NSInteger = 0
     
     weak var selectedView: UIView!
-    weak var collectionView: LocalizedCollectionView<LocalizedCollectionViewModel>!
+    weak var collectionView: RoutineCollectionView<RoutineCollectionViewModel>!
     
     var collectionViewLayout = UICollectionViewFlowLayout()
     
@@ -56,7 +56,7 @@ class StandartPagePicker: UIView {
     override func layoutSubviews() {
         
         if self.collectionView == nil {
-            let collectionView = LocalizedCollectionView(frame: self.frame, collectionViewLayout: self.collectionViewLayout)
+            let collectionView = RoutineCollectionView(frame: self.frame, collectionViewLayout: self.collectionViewLayout)
             self.collectionView = collectionView
             
             if !self.collectionView.isDescendant(of: self) {

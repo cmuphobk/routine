@@ -1,12 +1,12 @@
 import UIKit
 
 protocol TextAreaCellProtocol: class {
-    func textBeginEdited(object: LocalizedTextViewModel)
-    func textChanged(object: LocalizedTextViewModel, newValue: String)
+    func textBeginEdited(object: RoutineTextViewModel)
+    func textChanged(object: RoutineTextViewModel, newValue: String)
 }
 
-final class TextAreaCellViewModel: LocalizedTableViewCellViewModel {
-    var textAreaConfiguration: LocalizedTextViewModel = LocalizedTextViewModel()
+final class TextAreaCellViewModel: RoutineTableViewCellViewModel {
+    var textAreaConfiguration: RoutineTextViewModel = RoutineTextViewModel()
     weak var delegate: TextAreaCellProtocol?
     
     init(delegate: TextAreaCellProtocol) {

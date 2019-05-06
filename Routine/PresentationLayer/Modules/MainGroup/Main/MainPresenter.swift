@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kMainModuleId = "main_name"
@@ -35,7 +34,7 @@ extension MainPresenter: MainViewOutput {
         
     }
     
-    func didTriggerCell(viewModel: LocalizedTableViewCellViewModel) {
+    func didTriggerCell(viewModel: RoutineTableViewCellViewModel) {
         switch viewModel.viewName {
         case kMedicineCourseModuleId:
             self.router.openCourseModule()

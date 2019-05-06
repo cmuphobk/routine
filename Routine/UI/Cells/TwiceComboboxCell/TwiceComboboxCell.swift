@@ -1,18 +1,18 @@
 import UIKit
 import Stevia
 
-final class TwiceComboboxCell: LocalizedTableViewCell<TwiceComboboxCellViewModel> {
+final class TwiceComboboxCell: RoutineTableViewCell<TwiceComboboxCellViewModel> {
 
-    weak var leftCombobox: LocalizedCombobox!
-    weak var rightCombobox: LocalizedCombobox!
-    weak var delimiter: LocalizedView<LocalizedViewModel>!
+    weak var leftCombobox: RoutineCombobox!
+    weak var rightCombobox: RoutineCombobox!
+    weak var delimiter: RoutineView<RoutineViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let leftCombobox = LocalizedCombobox()
-        let rightCombobox = LocalizedCombobox()
-        let delimiter = LocalizedView()
+        let leftCombobox = RoutineCombobox()
+        let rightCombobox = RoutineCombobox()
+        let delimiter = RoutineView()
         
         self.paddingView.sv(
             leftCombobox,
@@ -64,7 +64,7 @@ final class TwiceComboboxCell: LocalizedTableViewCell<TwiceComboboxCellViewModel
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let delimiterViewModel = LocalizedViewModel()
+        let delimiterViewModel = RoutineViewModel()
         delimiterViewModel.backgroundColor = UIColor.clear
         self.delimiter.configureView(config: delimiterViewModel)
         
@@ -82,9 +82,9 @@ final class TwiceComboboxCell: LocalizedTableViewCell<TwiceComboboxCellViewModel
 }
 
 // MARK: UIComboboxDelegate
-extension TwiceComboboxCell: LocalizedComboboxDelegate {
+extension TwiceComboboxCell: RoutineComboboxDelegate {
     
-    func comboboxDidPressed(viewModel: LocalizedComboboxViewModel) {
+    func comboboxDidPressed(viewModel: RoutineComboboxViewModel) {
         if viewModel == self.leftCombobox.viewModel {
             self.viewModel.delegate?.expandLeft(viewModel: viewModel)
         } else if viewModel == self.rightCombobox.viewModel {

@@ -1,21 +1,20 @@
-
 import UIKit
 import Stevia
 
-final class MainViewController: LocalizedViewController {
+final class MainViewController: RoutineViewController {
     var output: MainViewOutput!
     weak var viewController: UIViewController?
 
-    private var tableViewModel = LocalizedTableViewModel()
-    weak private var tableView: LocalizedTableView<LocalizedTableViewModel>!
+    private var tableViewModel = RoutineTableViewModel()
+    weak private var tableView: RoutineTableView<RoutineTableViewModel>!
 
     private var tableViewManager: UniversalTableViewManager!
-    private var cellViewModels: [LocalizedTableViewCellViewModel] = []
+    private var cellViewModels: [RoutineTableViewCellViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = LocalizedTableView()
+        let tableView = RoutineTableView()
         self.view.sv(
             tableView
         )

@@ -1,24 +1,24 @@
 import UIKit
 
-final class DrugsListViewController: LocalizedViewController {
+final class DrugsListViewController: RoutineViewController {
     var output: DrugsListViewOutput!
     var animator: DrugsListAnimator!
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak private var contentView: UIView!
     
-    private var tableViewModel = LocalizedTableViewModel()
-    weak private var tableView: LocalizedTableView<LocalizedTableViewModel>!
+    private var tableViewModel = RoutineTableViewModel()
+    weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     @IBOutlet weak private var placeholderLabel: UILabel!
     
-    private var cellViewModels: [LocalizedTableViewCellViewModel] = []
+    private var cellViewModels: [RoutineTableViewCellViewModel] = []
     private var tableViewManager: UniversalTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = LocalizedTableView()
+        let tableView = RoutineTableView()
         self.contentView.sv(
             tableView
         )

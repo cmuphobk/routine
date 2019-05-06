@@ -1,11 +1,11 @@
 import UIKit
 
 protocol SingleButtonCellProtocol: class {
-    func buttonDidPressed(sender: LocalizedButton<LocalizedButtonViewModel>)
+    func buttonDidPressed(sender: RoutineButton<RoutineButtonViewModel>)
 }
 
-final class SingleButtonCellViewModel: LocalizedTableViewCellViewModel {
-    var buttonConfiguration: LocalizedButtonViewModel = LocalizedButtonViewModel()
+final class SingleButtonCellViewModel: RoutineTableViewCellViewModel {
+    var buttonConfiguration: RoutineButtonViewModel = RoutineButtonViewModel()
     weak var delegate: SingleButtonCellProtocol?
     
     init(delegate: SingleButtonCellProtocol?) {

@@ -1,4 +1,3 @@
-
 import UIKit
 import DateToolsSwift
 
@@ -11,7 +10,7 @@ struct ProfileViewModel {
     
 }
 
-final class ProfileViewController: LocalizedViewController {
+final class ProfileViewController: RoutineViewController {
     var output: ProfileViewOutput!
     var windowService: WindowServiceInterface!
     var notificationService: NotificationServiceInterface!

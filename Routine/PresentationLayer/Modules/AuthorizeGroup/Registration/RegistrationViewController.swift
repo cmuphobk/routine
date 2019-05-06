@@ -1,6 +1,6 @@
 import UIKit
 
-final class RegistrationViewController: LocalizedViewController {
+final class RegistrationViewController: RoutineViewController {
     var output: RegistrationViewOutput!
     var windowService: WindowServiceInterface!
     

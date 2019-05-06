@@ -1,7 +1,6 @@
-
 import UIKit
 
-final class MethodObtainingViewController: LocalizedViewController {
+final class MethodObtainingViewController: RoutineViewController {
     var output: MethodObtainingViewOutput!
     var windowService: WindowServiceInterface!
     

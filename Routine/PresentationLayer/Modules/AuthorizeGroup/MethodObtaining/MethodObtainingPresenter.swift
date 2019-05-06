@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kMethodObtainingModuleId = "method_obtaining_name"

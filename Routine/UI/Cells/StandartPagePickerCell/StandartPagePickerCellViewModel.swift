@@ -1,6 +1,6 @@
 import UIKit
 
-final class StandartPagePickerCellViewModel: LocalizedCollectionViewCellViewModel {
+final class StandartPagePickerCellViewModel: RoutineCollectionViewCellViewModel {
     let text: String
     let font: UIFont
     let textColor: UIColor

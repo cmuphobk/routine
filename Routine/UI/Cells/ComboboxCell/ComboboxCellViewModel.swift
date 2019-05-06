@@ -1,11 +1,11 @@
 import UIKit
 
 protocol ComboboxCellProtocol: class {
-    func expand(viewModel: LocalizedComboboxViewModel)
+    func expand(viewModel: RoutineComboboxViewModel)
 }
 
-final class ComboboxCellViewModel: LocalizedTableViewCellViewModel {
-    var combobox: LocalizedComboboxViewModel = LocalizedComboboxViewModel()
+final class ComboboxCellViewModel: RoutineTableViewCellViewModel {
+    var combobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
     weak var delegate: ComboboxCellProtocol?
     
     init(delegate: ComboboxCellProtocol) {

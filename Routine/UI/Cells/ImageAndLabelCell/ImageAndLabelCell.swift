@@ -1,15 +1,15 @@
 import UIKit
 import Stevia
 
-final class ImageAndLabelCell: LocalizedTableViewCell<ImageAndLabelCellViewModel> {
-    weak var icon: LocalizedImageView<LocalizedImageViewModel>!
-    weak var label: LocalizedLabel<LocalizedLabelViewModel>!
+final class ImageAndLabelCell: RoutineTableViewCell<ImageAndLabelCellViewModel> {
+    weak var icon: RoutineImageView<RoutineImageViewModel>!
+    weak var label: RoutineLabel<RoutineLabelViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let icon = LocalizedImageView()
-        let label = LocalizedLabel()
+        let icon = RoutineImageView()
+        let label = RoutineLabel()
         
         self.paddingView.sv(
             icon,

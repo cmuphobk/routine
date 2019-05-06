@@ -1,11 +1,11 @@
 import UIKit
 
-class SectionViewModel: LocalizedViewModel {
+class SectionViewModel: RoutineViewModel {
     
-    var sectionImageViewModel = LocalizedImageViewModel()
-    var sectionHeaderLabelModel = LocalizedLabelViewModel()
-    var sectionDescriptionLabelModel = LocalizedLabelViewModel()
-    var sectionArrowImageViewModel = LocalizedImageViewModel()
+    var sectionImageViewModel = RoutineImageViewModel()
+    var sectionHeaderLabelModel = RoutineLabelViewModel()
+    var sectionDescriptionLabelModel = RoutineLabelViewModel()
+    var sectionArrowImageViewModel = RoutineImageViewModel()
     
     var betweenImageOffset: CGFloat = 16.0
     var betweenLabelOffset: CGFloat = 8.0

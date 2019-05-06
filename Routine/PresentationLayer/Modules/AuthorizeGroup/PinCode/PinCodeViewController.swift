@@ -1,9 +1,8 @@
-
 import UIKit
 
 import PinCodeTextField
 
-final class PinCodeViewController: LocalizedViewController {
+final class PinCodeViewController: RoutineViewController {
     var output: PinCodeViewOutput!
     var windowService: WindowServiceInterface!
     var notificationService: NotificationServiceInterface!

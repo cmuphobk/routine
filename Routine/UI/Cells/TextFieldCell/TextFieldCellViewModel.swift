@@ -1,14 +1,14 @@
 import UIKit
 
 protocol TextFieldCellProtocol: class {
-    func textChanged(object: LocalizedTextFieldViewModel, newValue: String)
+    func textChanged(object: RoutineTextFieldViewModel, newValue: String)
 }
 
-final class TextFieldCellViewModel: LocalizedTableViewCellViewModel {
-    let textFieldConfiguration: LocalizedTextFieldViewModel
+final class TextFieldCellViewModel: RoutineTableViewCellViewModel {
+    let textFieldConfiguration: RoutineTextFieldViewModel
     weak var delegate: TextFieldCellProtocol?
     
-    init(textFieldConfiguration: LocalizedTextFieldViewModel, delegate: TextFieldCellProtocol?) {
+    init(textFieldConfiguration: RoutineTextFieldViewModel, delegate: TextFieldCellProtocol?) {
         self.textFieldConfiguration = textFieldConfiguration
         self.delegate = delegate
     }

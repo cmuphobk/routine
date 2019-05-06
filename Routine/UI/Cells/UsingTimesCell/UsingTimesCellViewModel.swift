@@ -5,11 +5,11 @@ protocol UsingTimesCellViewModelDelegate: class {
     func textChanged(sender: UsingTimesCellViewModel)
 }
 
-final class UsingTimesCellViewModel: LocalizedTableViewCellViewModel {
+final class UsingTimesCellViewModel: RoutineTableViewCellViewModel {
     
-    var numberLabel: LocalizedLabelViewModel = LocalizedLabelViewModel()
-    var timesBox: LocalizedComboboxViewModel = LocalizedComboboxViewModel()
-    var countField: LocalizedTextFieldViewModel = LocalizedTextFieldViewModel()
+    var numberLabel: RoutineLabelViewModel = RoutineLabelViewModel()
+    var timesBox: RoutineComboboxViewModel = RoutineComboboxViewModel()
+    var countField: RoutineTextFieldViewModel = RoutineTextFieldViewModel()
     
     weak var delegate: UsingTimesCellViewModelDelegate?
     

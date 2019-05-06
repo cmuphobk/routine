@@ -5,7 +5,7 @@ protocol UniversalCollectionViewManagerDelegate: class {
 }
 
 protocol UniversalCollectionViewManagerInterface {
-    func configure(cellViewModels: [LocalizedCollectionViewCellViewModel], reloadData: Bool)
+    func configure(cellViewModels: [RoutineCollectionViewCellViewModel], reloadData: Bool)
     func updateRowAtIndex(_ index: Int)
     func deleteRowAtIndex(_ index: Int)
     func insertRowToIndex(_ index: Int)
@@ -20,7 +20,7 @@ final class UniversalCollectionViewManager: NSObject {
     private var collectionView: UICollectionView
     weak var delegate: UniversalCollectionViewManagerDelegate?
     
-    private var cellViewModels: [LocalizedCollectionViewCellViewModel] = []
+    private var cellViewModels: [RoutineCollectionViewCellViewModel] = []
     
     init(collectionView: UICollectionView, delegate: UniversalCollectionViewManagerDelegate) {
         self.collectionView = collectionView
@@ -38,7 +38,7 @@ final class UniversalCollectionViewManager: NSObject {
 // MARK: - UniversalCollectionViewManagerInterface
 extension UniversalCollectionViewManager: UniversalCollectionViewManagerInterface {
     
-    func configure(cellViewModels: [LocalizedCollectionViewCellViewModel], reloadData: Bool = true) {
+    func configure(cellViewModels: [RoutineCollectionViewCellViewModel], reloadData: Bool = true) {
         self.cellViewModels = cellViewModels
         
         for viewModel in self.cellViewModels {
@@ -126,7 +126,7 @@ extension UniversalCollectionViewManager: UICollectionViewDelegate {
             collectionView.deselectItem(at: indexPath, animated: false)
         }
 
-        if let loclaizedConfigure = cell as? LocalizedConfigure {
+        if let loclaizedConfigure = cell as? RoutineConfigure {
             loclaizedConfigure.configureView(config: cellObj)
         }
     }

@@ -1,20 +1,20 @@
 import UIKit
 import Stevia
 
-class SectionView: LocalizedView<SectionViewModel> {
+class SectionView: RoutineView<SectionViewModel> {
     
-    weak var sectionImageView: LocalizedImageView<LocalizedImageViewModel>!
-    weak var sectionHeaderLabel: LocalizedLabel<LocalizedLabelViewModel>!
-    weak var sectionDescriptionLabel: LocalizedLabel<LocalizedLabelViewModel>!
-    weak var sectionArrowImageView: LocalizedImageView<LocalizedImageViewModel>!
+    weak var sectionImageView: RoutineImageView<RoutineImageViewModel>!
+    weak var sectionHeaderLabel: RoutineLabel<RoutineLabelViewModel>!
+    weak var sectionDescriptionLabel: RoutineLabel<RoutineLabelViewModel>!
+    weak var sectionArrowImageView: RoutineImageView<RoutineImageViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let sectionImageView = LocalizedImageView()
-        let sectionHeaderLabel = LocalizedLabel()
-        let sectionDescriptionLabel = LocalizedLabel()
-        let sectionArrowImageView = LocalizedImageView()
+        let sectionImageView = RoutineImageView()
+        let sectionHeaderLabel = RoutineLabel()
+        let sectionDescriptionLabel = RoutineLabel()
+        let sectionArrowImageView = RoutineImageView()
         
         self.paddingView.sv(
             sectionImageView,

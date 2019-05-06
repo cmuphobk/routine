@@ -16,7 +16,7 @@ protocol MainViewOutput: class {
     func leftSwipeAction()
     func menuButtonClicked()
     
-    func didTriggerCell(viewModel: LocalizedTableViewCellViewModel)
+    func didTriggerCell(viewModel: RoutineTableViewCellViewModel)
 }
 
 protocol MainModuleRouting: class {    

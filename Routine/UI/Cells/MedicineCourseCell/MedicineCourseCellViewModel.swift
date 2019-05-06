@@ -5,7 +5,7 @@ protocol MedicineCourseCellProtocol: class {
     func rowDidRemoved(cellObj: MedicineCourseCellViewModel)
 }
 
-final class MedicineCourseCellViewModel: LocalizedTableViewCellViewModel {
+final class MedicineCourseCellViewModel: RoutineTableViewCellViewModel {
     //constants
     let kCardOffsets: Offsets = Offsets(top: 8.0, bottom: 8.0, left: 16.0, right: 16.0)
     let kContentOffsets: Offsets = Offsets(top: 16.0, bottom: 16.0, left: 16.0, right: 16.0)

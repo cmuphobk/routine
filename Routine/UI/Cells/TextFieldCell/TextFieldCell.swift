@@ -1,14 +1,14 @@
 import UIKit
 import Stevia
 
-final class TextFieldCell: LocalizedTableViewCell<TextFieldCellViewModel>, UITextFieldDelegate {
+final class TextFieldCell: RoutineTableViewCell<TextFieldCellViewModel>, UITextFieldDelegate {
 
-    weak var textField: LocalizedTextField<LocalizedTextFieldViewModel>!
+    weak var textField: RoutineTextField<RoutineTextFieldViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let textField = LocalizedTextField()
+        let textField = RoutineTextField()
         
         self.paddingView.sv(
             textField

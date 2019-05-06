@@ -5,7 +5,7 @@ protocol UniversalTableViewManagerDelegate: class {
 }
 
 protocol UniversalTableViewManagerInterface {
-    func configure(cellViewModels: [LocalizedTableViewCellViewModel], reloadData: Bool)
+    func configure(cellViewModels: [RoutineTableViewCellViewModel], reloadData: Bool)
     func updateRowAtIndex(_ index: Int)
     func deleteRowAtIndex(_ index: Int)
     func insertRowToIndex(_ index: Int)
@@ -20,7 +20,7 @@ final class UniversalTableViewManager: NSObject {
     
     private var tableView: UITableView
     
-    private var cellViewModels: [LocalizedTableViewCellViewModel] = []
+    private var cellViewModels: [RoutineTableViewCellViewModel] = []
     
     var count: Int {
         return self.cellViewModels.count
@@ -43,7 +43,7 @@ final class UniversalTableViewManager: NSObject {
 // MARK: - UniversalTableViewManagerInterface
 extension UniversalTableViewManager: UniversalTableViewManagerInterface {
     
-    func configure(cellViewModels: [LocalizedTableViewCellViewModel], reloadData: Bool = true) {
+    func configure(cellViewModels: [RoutineTableViewCellViewModel], reloadData: Bool = true) {
         self.cellViewModels = cellViewModels
         
         for viewModel in self.cellViewModels {
@@ -128,7 +128,7 @@ extension UniversalTableViewManager: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: false)
         }
         
-        if let loclaizedConfigure = cell as? LocalizedConfigure {
+        if let loclaizedConfigure = cell as? RoutineConfigure {
             loclaizedConfigure.configureView(config: cellObj)
         }
     }

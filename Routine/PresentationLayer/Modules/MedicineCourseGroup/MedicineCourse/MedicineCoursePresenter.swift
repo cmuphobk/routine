@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kMedicineCourseModuleId = "medicine_course_name"

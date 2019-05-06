@@ -1,6 +1,6 @@
 import UIKit
 
-final class StandartPagePickerCell: LocalizedCollectionViewCell<StandartPagePickerCellViewModel> {
+final class StandartPagePickerCell: RoutineCollectionViewCell<StandartPagePickerCellViewModel> {
     
     @IBOutlet weak private var nameLabel: UILabel!
     

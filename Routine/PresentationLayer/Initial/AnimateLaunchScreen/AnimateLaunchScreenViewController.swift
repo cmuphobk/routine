@@ -1,7 +1,6 @@
-
 import UIKit
 
-final class AnimateLaunchScreenViewController: LocalizedViewController {
+final class AnimateLaunchScreenViewController: RoutineViewController {
     
     @IBOutlet weak private var logoImageView: UIImageView!
     @IBOutlet weak private var progressView: StandartProgressBar!

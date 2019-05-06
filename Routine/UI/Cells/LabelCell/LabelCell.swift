@@ -1,13 +1,13 @@
 import UIKit
 import Stevia
 
-final class LabelCell: LocalizedTableViewCell<LabelCellViewModel> {
-    weak private var label: LocalizedLabel<LocalizedLabelViewModel>!
+final class LabelCell: RoutineTableViewCell<LabelCellViewModel> {
+    weak private var label: RoutineLabel<RoutineLabelViewModel>!
     
     override func setupView() {
         super.setupView()
         
-        let label = LocalizedLabel()
+        let label = RoutineLabel()
         
         self.paddingView.sv(
             label

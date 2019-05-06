@@ -1,6 +1,6 @@
 import UIKit
 
-final class RestorePasswordViewController: LocalizedViewController {
+final class RestorePasswordViewController: RoutineViewController {
     var output: RestorePasswordViewOutput!
     var windowService: WindowServiceInterface!
     var notificationService: NotificationServiceInterface!

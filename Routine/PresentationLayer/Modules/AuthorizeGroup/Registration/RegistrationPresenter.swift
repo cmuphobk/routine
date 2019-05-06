@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kRegistrationModuleId = "registration_name"

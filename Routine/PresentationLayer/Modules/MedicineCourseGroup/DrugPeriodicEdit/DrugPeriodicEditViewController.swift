@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-final class DrugPeriodicEditViewController: LocalizedViewController {
+final class DrugPeriodicEditViewController: RoutineViewController {
     var output: DrugPeriodicEditViewOutput!
     var animator: DrugPeriodicEditModuleAnimating!
     var moduleService: ModuleServiceInterface!
@@ -10,7 +10,7 @@ final class DrugPeriodicEditViewController: LocalizedViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var tableViewManager: UniversalTableViewManager!
-    private var cellViewModels: [LocalizedTableViewCellViewModel]!
+    private var cellViewModels: [RoutineTableViewCellViewModel]!
     
     private var currentType: PeriodCourseType!
     

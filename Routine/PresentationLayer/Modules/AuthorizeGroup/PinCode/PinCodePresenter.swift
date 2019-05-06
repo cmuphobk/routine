@@ -1,4 +1,3 @@
-
 import UIKit
 
 let kPinCodeModuleId = "pin_code_name"

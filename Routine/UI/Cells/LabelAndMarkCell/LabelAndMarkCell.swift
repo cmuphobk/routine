@@ -2,9 +2,9 @@ import Foundation
 import UIKit
 import Stevia
 
-final class LabelAndMarkCell: LocalizedTableViewCell<LabelAndMarkCellViewModel> {
-    let label = LocalizedLabel()
-    let icon = LocalizedImageView()
+final class LabelAndMarkCell: RoutineTableViewCell<LabelAndMarkCellViewModel> {
+    let label = RoutineLabel()
+    let icon = RoutineImageView()
     
     override func setupView() {
         super.setupView()

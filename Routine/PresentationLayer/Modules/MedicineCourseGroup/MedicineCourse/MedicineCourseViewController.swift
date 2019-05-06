@@ -1,4 +1,3 @@
-
 import UIKit
 
 enum MedicineCourseGroupType: String {
@@ -27,22 +26,22 @@ enum MedicineCourseGroupType: String {
     }
 }
 
-final class MedicineCourseViewController: LocalizedViewController {
+final class MedicineCourseViewController: RoutineViewController {
     
     var output: MedicineCourseViewOutput!
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak var contentView: UIView!
     
-    private var tableViewModel = LocalizedTableViewModel()
-    weak private var tableView: LocalizedTableView<LocalizedTableViewModel>!
+    private var tableViewModel = RoutineTableViewModel()
+    weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     @IBOutlet weak private var pagesView: StandartPagePicker!
     @IBOutlet weak private var placeholderLabel: UILabel!
     
     weak private var modalView: StandartModalView!
     
-    private var cellViewModels: [LocalizedTableViewCellViewModel] = []
+    private var cellViewModels: [RoutineTableViewCellViewModel] = []
     private var tableViewManager: UniversalTableViewManager!
     
     private var selectedMedicineCourseType: MedicineCourseGroupType  = .medicineCourseNow
@@ -50,7 +49,7 @@ final class MedicineCourseViewController: LocalizedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = LocalizedTableView()
+        let tableView = RoutineTableView()
         self.contentView.sv(
             tableView
         )

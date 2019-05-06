@@ -1,4 +1,3 @@
-
 import UIKit
 
 protocol ErrorCodeViewControllerDelegate: class {
@@ -6,7 +5,7 @@ protocol ErrorCodeViewControllerDelegate: class {
     func didTriggerErrorCodeCancelButton()
 }
 
-final class ErrorCodeViewController: LocalizedViewController {
+final class ErrorCodeViewController: RoutineViewController {
     
     var windowService: WindowServiceInterface!
     
