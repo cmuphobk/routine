@@ -5,7 +5,12 @@ final class MainViewController: RoutineViewController {
     var output: MainViewOutput!
     weak var viewController: UIViewController?
 
-    private var tableViewModel = RoutineTableViewModel()
+    private var tableViewModel = { () -> RoutineTableViewModel in
+        let model = RoutineTableViewModel()
+        model.backgroundColor = ColorProvider.mainModuleColors.blueColor
+        model.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 20.0, right: 0.0)
+        return model
+    }()
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
 
     private var tableViewManager: UniversalTableViewManager!
@@ -19,9 +24,6 @@ final class MainViewController: RoutineViewController {
             tableView
         )
         self.tableView = tableView
-        
-        self.tableViewModel.backgroundColor = ColorProvider.mainModuleColors.blueColor
-        self.tableViewModel.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 20.0, right: 0.0)
         
         self.tableView.configureView(config: self.tableViewModel)
         

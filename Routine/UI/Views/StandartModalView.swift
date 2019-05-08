@@ -81,7 +81,7 @@ class StandartModalView: UIView {
             let blurView = UIVisualEffectView(effect: self.blurEffect)
             blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blurView.alpha = 1.0
-            blurView.backgroundColor = ColorProvider.default.clearColor
+            blurView.backgroundColor = UIColor.clear
             
             self.blurView = blurView
             
@@ -95,7 +95,7 @@ class StandartModalView: UIView {
         
             let modalContainer = UIView()
             
-            modalContainer.backgroundColor = ColorProvider.default.whiteColor
+            modalContainer.backgroundColor = UIColor.white
             
             self.modalContainer = modalContainer
             

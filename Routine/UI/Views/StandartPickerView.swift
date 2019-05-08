@@ -12,6 +12,7 @@ protocol StandartPickerDelegate: class {
     
 }
 
+// FIXME: - remove provider dependencies
 class StandartPickerView: UIView {
     
     weak var delegate: StandartPickerDelegate?
@@ -107,7 +108,7 @@ class StandartPickerView: UIView {
             blurView.frame = self.bounds
             blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blurView.alpha = 1.0
-            blurView.backgroundColor = ColorProvider.default.clearColor
+            blurView.backgroundColor = UIColor.clear
             
             self.blurView = blurView
             
@@ -118,7 +119,7 @@ class StandartPickerView: UIView {
         
         if self.pickerView == nil {
             let pickerView = UIPickerView()
-            pickerView.backgroundColor = ColorProvider.default.whiteColor
+            pickerView.backgroundColor = UIColor.white
             pickerView.layer.masksToBounds = false
             pickerView.dataSource = self
             pickerView.delegate = self
@@ -141,8 +142,8 @@ class StandartPickerView: UIView {
         if self.leftButton == nil {
             
             let leftButton = UIButton()
-            leftButton.backgroundColor = ColorProvider.default.whiteColor
-            leftButton.setTitleColor(ColorProvider.default.blackColor, for: .normal)
+            leftButton.backgroundColor = UIColor.white
+            leftButton.setTitleColor(UIColor.black, for: .normal)
             leftButton.addTarget(self, action: #selector(leftButtonAction), for: .touchDown)
             
             self.leftButton = leftButton
@@ -158,8 +159,8 @@ class StandartPickerView: UIView {
         if self.rightButton == nil {
         
             let rightButton = UIButton()
-            rightButton.backgroundColor = ColorProvider.default.whiteColor
-            rightButton.setTitleColor(ColorProvider.default.blackColor, for: .normal)
+            rightButton.backgroundColor = UIColor.white
+            rightButton.setTitleColor(UIColor.black, for: .normal)
             rightButton.addTarget(self, action: #selector(rightButtonAction), for: .touchDown)
 
             self.rightButton = rightButton
@@ -291,7 +292,7 @@ extension StandartPickerView: UIPickerViewDelegate {
         pickerView.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.models[row].title)
         pickerView.font = FontProvider.default.standart
         pickerView.textAlignment = .center
-        pickerView.textColor = ColorProvider.default.blackColor
+        pickerView.textColor = UIColor.black
         pickerView.tag = row
         
         return pickerView

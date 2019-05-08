@@ -36,7 +36,7 @@ class MedicineDrugService: MedicineDrugServiceInterface {
     func createOrUpdate(_ model: MedicineDrug, complition: @escaping (MedicineDrug?) -> Void) {
         guard let entity = self.repository.createOrUpdateEntityWithModel(model: model) else { return }
         
-        self.repository.context.mr_saveToPersistentStore { [unowned entity] (_, _) in
+        self.repository.context.mr_saveToPersistentStore { (_, _) in
             let model = MedicineDrug(entity: entity)
             DispatchQueue.main.async(execute: {
                 complition( model )

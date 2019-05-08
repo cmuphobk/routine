@@ -1,6 +1,7 @@
 import UIKit
 
 // FIXME: - send to navigation?
+// FIXME: - remove provider dependencies
 extension UIWindow {
     
     func showLoaderView() {
@@ -69,7 +70,7 @@ class StandartLoaderView: UIView {
         self.blurView.frame = self.bounds
         self.blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.blurView.alpha = 1.0
-        self.blurView.backgroundColor = ColorProvider.default.clearColor
+        self.blurView.backgroundColor = UIColor.clear
         self.blurView.effect = self.blurEffect
     
         self.animator?.fractionComplete = self.blurRadius

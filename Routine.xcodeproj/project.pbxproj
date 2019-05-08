@@ -50,6 +50,7 @@
 		41CAA231227F186F00188189 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CAA230227F186F00188189 /* R.generated.swift */; };
 		41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CAA232227F1C6700188189 /* GoogleService-Info.plist */; };
 		41F06B40228030BF00D28682 /* RoutineModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B3E228030BF00D28682 /* RoutineModel.xcdatamodeld */; };
+		41F06B412282C26900D28682 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2221A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataProperties.swift */; };
 		860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */; };
 		860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C721B1ADF3007317B2 /* DrugDetailsAssembly.swift */; };
 		860AC5D921B1ADF3007317B2 /* DrugDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */; };
@@ -148,7 +149,6 @@
 		ED279C1F21A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C1D21A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataClass.swift */; };
 		ED279C2021A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C1E21A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataProperties.swift */; };
 		ED279C2321A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2121A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataClass.swift */; };
-		ED279C2421A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2221A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataProperties.swift */; };
 		ED279C2721A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2521A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift */; };
 		ED279C2821A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2621A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift */; };
 		ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */; };
@@ -2598,7 +2598,6 @@
 				ED8F6A172179B971001DBDAA /* String+Email.swift in Sources */,
 				41A6B875220ED8270023CE19 /* DateService.swift in Sources */,
 				ED8F6A642179F126001DBDAA /* MultipartOperation.swift in Sources */,
-				ED279C2421A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */,
 				ED8F6A162179B971001DBDAA /* UITableView+Scrolls.swift in Sources */,
 				ED8F6A3F2179CA6E001DBDAA /* AuthService.swift in Sources */,
 				ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */,
@@ -2711,6 +2710,7 @@
 				ED8F6A672179F126001DBDAA /* RequestOperationHandler.swift in Sources */,
 				86C2BE5D21A682F4001BA77B /* Offsets.swift in Sources */,
 				ED312CBC218727C0006D95F7 /* RegistrationModuleInterface.swift in Sources */,
+				41F06B412282C26900D28682 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */,
 				EDA9A64021E672E800D99B09 /* SectionDescriptionViewModel.swift in Sources */,
 				EDDA636821B41C4F005AE695 /* MedicineLocalNotification.swift in Sources */,
 				ED4C62AC21E5E0AD004A999C /* SectionHeaderView.swift in Sources */,

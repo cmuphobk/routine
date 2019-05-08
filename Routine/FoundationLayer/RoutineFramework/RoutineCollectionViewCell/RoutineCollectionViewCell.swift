@@ -5,7 +5,7 @@ protocol RoutineCollnctiobViewCellDelegate: class {
     func didSelectCellViewModel(viewModel: RoutineCollectionViewCellViewModel)
 }
 
-class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollectionViewCell, RoutineContainer, RoutineConfigure {
+class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollectionViewCell, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
     
     var viewName: String?
     var viewModel: T!
@@ -73,6 +73,7 @@ class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollec
         super.layoutSubviews()
         
         //always redraw
+        self.setNeedsUpdateConstraints()
         self.setNeedsDisplay()
     }
     
@@ -85,24 +86,8 @@ class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollec
         
     }
     
-    func configureView(config: T) {
-        
-        self.viewModel = config
-        self.viewName = config.viewName
-        
-        self.configure()
-        self.setNeedsUpdateConstraints()
-        
-    }
-    
-    func configureView(config: AnyObject) {
-        if config.isKind(of: T.self) {
-            guard let config = config as? T else { return }
-            self.configureView(config: config)
-        }
-    }
-    
-    private func configure() {
+    func configure() {
+        if self.viewModel == nil { return }
         
         self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = UIColor.clear

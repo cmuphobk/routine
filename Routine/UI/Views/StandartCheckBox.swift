@@ -2,6 +2,7 @@ import UIKit
 
 class StandartCheckBox: UIButton {
     // Images
+    // FIXME: - configure inject images
     private let checkedImage = ImageProvider.default.checkboxPressedIcon
     private let uncheckedImage = ImageProvider.default.checkboxIcon
     
@@ -20,7 +21,7 @@ class StandartCheckBox: UIButton {
         self.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchDown)
         
         self.setTitle(nil, for: .normal)
-        self.tintColor = ColorProvider.default.clearColor
+        self.tintColor = UIColor.clear
         self.contentMode = .scaleAspectFit
         
         self.isChecked = false

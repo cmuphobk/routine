@@ -3,7 +3,10 @@ import UIKit
 final class DrugEditViewController: RoutineViewController {
     var output: DrugEditViewOutput!
     
-    private var tableViewModel = RoutineTableViewModel()
+    private var tableViewModel = { () -> RoutineTableViewModel in
+        return RoutineTableViewModel()
+    }()
+    
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     private var cellViewModels: [RoutineTableViewCellViewModel] {

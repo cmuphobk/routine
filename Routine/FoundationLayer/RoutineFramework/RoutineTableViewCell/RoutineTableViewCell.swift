@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, RoutineContainer, RoutineConfigure {
+class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
     
     typealias ViewModel = T
     
@@ -74,6 +74,7 @@ class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, R
         super.layoutSubviews()
         
         //always redraw
+        self.setNeedsUpdateConstraints()
         self.setNeedsDisplay()
     }
     
@@ -85,25 +86,9 @@ class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, R
     func localizationSetup() {
         
     }
-    
-    func configureView(config: T) {
-        
-        self.viewModel = config
-        self.viewName = config.viewName
-        
-        self.configure()
-        self.setNeedsUpdateConstraints()
-        
-    }
-    
-    func configureView(config: AnyObject) {
-        if config.isKind(of: T.self) {
-            guard let config = config as? T else { return }
-            self.configureView(config: config)
-        }
-    }
 
-    private func configure() {
+    func configure() {
+        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.contentViewColor
         self.contentView.backgroundColor = self.viewModel.contentViewColor

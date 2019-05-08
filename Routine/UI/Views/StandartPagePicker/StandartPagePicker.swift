@@ -96,7 +96,7 @@ class StandartPagePicker: UIView {
         self.collectionViewLayout.scrollDirection = .horizontal
         
         self.collectionView.allowsMultipleSelection = false
-        self.collectionView.backgroundColor = ColorProvider.default.clearColor
+        self.collectionView.backgroundColor = UIColor.clear
         
         self.selectedView.backgroundColor = self.textColor
         

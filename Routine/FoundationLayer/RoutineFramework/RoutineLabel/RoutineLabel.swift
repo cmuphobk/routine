@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineLabel<T: RoutineLabelViewModel>: UILabel, RoutineContainer, RoutineConfigure {
+class RoutineLabel<T: RoutineLabelViewModel>: UILabel, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
     
     typealias ViewModel = T
     
@@ -52,6 +52,7 @@ class RoutineLabel<T: RoutineLabelViewModel>: UILabel, RoutineContainer, Routine
         super.layoutSubviews()
         
         //always redraw
+        self.setNeedsUpdateConstraints()
         self.setNeedsDisplay()
     }
     
@@ -64,24 +65,8 @@ class RoutineLabel<T: RoutineLabelViewModel>: UILabel, RoutineContainer, Routine
         
     }
     
-    func configureView(config: T) {
-        
-        self.viewModel = config
-        self.viewName = config.viewName
-        
-        self.configure()
-        self.setNeedsUpdateConstraints()
-        
-    }
-    
-    func configureView(config: AnyObject) {
-        if config.isKind(of: T.self) {
-            guard let config = config as? T else { return }
-            self.configureView(config: config)
-        }
-    }
-    
-    private func configure() {
+    func configure() {
+        if self.viewModel == nil { return }
     
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

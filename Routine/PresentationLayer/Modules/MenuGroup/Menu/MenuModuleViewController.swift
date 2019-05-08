@@ -6,7 +6,12 @@ class MenuModuleViewController: RoutineViewController {
     
     weak var viewController: UIViewController?
     
-    private var tableViewModel = RoutineTableViewModel()
+    private var tableViewModel = { () -> RoutineTableViewModel in 
+        let model = RoutineTableViewModel()
+        model.backgroundColor = ColorProvider.default.clearColor
+        return model
+    }()
+    
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     private var viewModels: [MenuModuleCellViewModel] = []

@@ -8,6 +8,7 @@ protocol StandartDatePickerViewDelegate: class {
     
 }
 
+// FIXME: - remove provider dependencies
 class StandartDatePickerView: UIView {
     
     var languageService: LanguageServiceInterface!
@@ -108,7 +109,7 @@ class StandartDatePickerView: UIView {
             blurView.frame = self.bounds
             blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blurView.alpha = 1.0
-            blurView.backgroundColor = ColorProvider.default.clearColor
+            blurView.backgroundColor = UIColor.clear
             
             self.blurView = blurView
             
@@ -144,7 +145,7 @@ class StandartDatePickerView: UIView {
         
         if self.leftButton == nil {
             let leftButton = UIButton()
-            leftButton.backgroundColor = ColorProvider.default.whiteColor
+            leftButton.backgroundColor = UIColor.white
             leftButton.setTitleColor(ColorProvider.default.blackColor, for: .normal)
             leftButton.setTitle(self.leftTitle, for: .normal)
             leftButton.addTarget(self, action: #selector(leftButtonAction), for: .touchDown)
@@ -159,8 +160,8 @@ class StandartDatePickerView: UIView {
         
         if self.rightButton == nil {
             let rightButton = UIButton()
-            rightButton.backgroundColor = ColorProvider.default.whiteColor
-            rightButton.setTitleColor(ColorProvider.default.blackColor, for: .normal)
+            rightButton.backgroundColor = UIColor.white
+            rightButton.setTitleColor(UIColor.black, for: .normal)
             rightButton.setTitle(self.rightTitle, for: .normal)
             rightButton.addTarget(self, action: #selector(rightButtonAction), for: .touchDown)
             rightButton.frame = CGRect(x: self.frame.width / 2, y: self.frame.height - 240.0, width: self.frame.width / 2, height: 40.0)
@@ -176,12 +177,12 @@ class StandartDatePickerView: UIView {
             let datePickerView = UIDatePicker()
             datePickerView.datePickerMode = self.datePickerMode
             datePickerView.locale = Locale(identifier: self.languageService.currentLanguage().code)
-            datePickerView.backgroundColor = ColorProvider.default.whiteColor
+            datePickerView.backgroundColor = UIColor.white
             datePickerView.layer.masksToBounds = false
-            datePickerView.setValue(ColorProvider.default.blackColor, forKeyPath: "textColor")
+            datePickerView.setValue(UIColor.black, forKeyPath: "textColor")
             datePickerView.setValue(false, forKey: "highlightsToday")
-            datePickerView.subviews[0].subviews[1].backgroundColor = ColorProvider.default.whiteColor
-            datePickerView.subviews[0].subviews[2].backgroundColor = ColorProvider.default.whiteColor
+            datePickerView.subviews[0].subviews[1].backgroundColor = UIColor.white
+            datePickerView.subviews[0].subviews[2].backgroundColor = UIColor.white
             datePickerView.frame = CGRect(x: 0.0, y: self.frame.height - 200.0, width: self.frame.width, height: 200.0)
             
             self.datePickerView = datePickerView

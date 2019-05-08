@@ -7,7 +7,10 @@ final class DrugsListViewController: RoutineViewController {
     
     @IBOutlet weak private var contentView: UIView!
     
-    private var tableViewModel = RoutineTableViewModel()
+    private var tableViewModel = { () -> RoutineTableViewModel in
+        return RoutineTableViewModel()
+    }()
+    
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
     @IBOutlet weak private var placeholderLabel: UILabel!

@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, RoutineConfigure {
+class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
     
     typealias ViewModel = T
     
@@ -52,7 +52,9 @@ class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, Ro
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        
         //always redraw
+        self.setNeedsUpdateConstraints()
         self.setNeedsDisplay()
     }
     
@@ -65,24 +67,9 @@ class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, Ro
         
     }
     
-    func configureView(config: T) {
+    func configure() {
         
-        self.viewModel = config
-        self.viewName = config.viewName
-        
-        self.configure()
-        self.setNeedsUpdateConstraints()
-        
-    }
-    
-    func configureView(config: AnyObject) {
-        if config.isKind(of: T.self) {
-            guard let config = config as? T else { return }
-            self.configureView(config: config)
-        }
-    }
-    
-    private func configure() {
+        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius
