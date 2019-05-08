@@ -66,7 +66,6 @@ class RoutineButton<T: RoutineButtonViewModel>: UIButton, RoutineContainer, Rout
     }
     
     func configure() {
-        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

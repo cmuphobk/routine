@@ -61,7 +61,6 @@ class RoutineScrollView<T: RoutineScrollViewModel>: UIScrollView, RoutineContain
     }
     
     func configure() {
-        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

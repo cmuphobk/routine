@@ -39,6 +39,8 @@ extension RoutineContainer where Self: UIView {
     
     func updateLayout() { }
     
+    func localizationSetup() { }
+    
     func configureView(config: AnyObject) {
         if config.isKind(of: ViewModel.self) {
             guard let config = config as? ViewModel else { return }

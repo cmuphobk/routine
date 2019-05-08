@@ -66,7 +66,6 @@ class RoutineTextField<T: RoutineTextFieldViewModel>: UITextField, RoutineContai
     }
     
     func configure() {
-        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

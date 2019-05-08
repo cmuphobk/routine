@@ -87,7 +87,6 @@ class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollec
     }
     
     func configure() {
-        if self.viewModel == nil { return }
         
         self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = UIColor.clear

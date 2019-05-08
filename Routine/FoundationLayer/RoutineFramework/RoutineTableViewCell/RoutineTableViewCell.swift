@@ -88,7 +88,6 @@ class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, R
     }
 
     func configure() {
-        if self.viewModel == nil { return }
         
         self.backgroundColor = self.viewModel.contentViewColor
         self.contentView.backgroundColor = self.viewModel.contentViewColor
