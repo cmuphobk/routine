@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineImageView<T: RoutineImageViewModel>: UIImageView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineImageView<T: RoutineImageViewModel>: UIImageView, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -65,7 +65,7 @@ class RoutineImageView<T: RoutineImageViewModel>: UIImageView, RoutineContainer,
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

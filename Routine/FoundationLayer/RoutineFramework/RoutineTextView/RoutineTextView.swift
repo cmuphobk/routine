@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -67,7 +67,7 @@ class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer, Ro
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

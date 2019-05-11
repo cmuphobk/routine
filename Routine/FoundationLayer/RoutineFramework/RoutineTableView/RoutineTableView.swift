@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineTableView<T: RoutineTableViewModel>: UITableView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineTableView<T: RoutineTableViewModel>: UITableView, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -60,7 +60,7 @@ class RoutineTableView<T: RoutineTableViewModel>: UITableView, RoutineContainer,
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

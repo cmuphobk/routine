@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineButton<T: RoutineButtonViewModel>: UIButton, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineButton<T: RoutineButtonViewModel>: UIButton, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -65,7 +65,7 @@ class RoutineButton<T: RoutineButtonViewModel>: UIButton, RoutineContainer, Rout
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

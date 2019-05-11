@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -87,7 +87,7 @@ class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, R
         
     }
 
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.contentViewColor
         self.contentView.backgroundColor = self.viewModel.contentViewColor

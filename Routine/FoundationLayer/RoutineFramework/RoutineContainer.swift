@@ -1,15 +1,10 @@
 import UIKit
 
-protocol RoutinePrivateConfigure: class {
-    func configure()
-}
-
 protocol RoutineConfigure: class {
     func configureView(config: AnyObject)
 }
 
-
-protocol RoutineContainer: class {
+protocol RoutineContainer: RoutineConfigure {
     
     associatedtype ViewModel: RoutineViewModel
     
@@ -19,13 +14,13 @@ protocol RoutineContainer: class {
     var didSetupConstraints: Bool { get }
     
     func configureView(config: ViewModel)
-    func configureView(config: AnyObject)
     
     func localizationSetup()
     
     func setupView()
     func setupLayout()
     func updateLayout()
+    func setupViewModel()
     
 }
 
@@ -48,15 +43,11 @@ extension RoutineContainer where Self: UIView {
         }
     }
     
-}
-
-extension RoutineContainer where Self: UIView, Self: RoutinePrivateConfigure {
     func configureView(config: ViewModel) {
         self.viewModel = config
         self.viewName = config.viewName
-        
-        self.configure()
-        
+        self.setupViewModel()
         self.setNeedsLayout()
     }
+    
 }

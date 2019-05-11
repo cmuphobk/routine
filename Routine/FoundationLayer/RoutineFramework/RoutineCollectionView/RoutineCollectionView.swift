@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineCollectionView<T: RoutineCollectionViewModel>: UICollectionView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineCollectionView<T: RoutineCollectionViewModel>: UICollectionView, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -61,7 +61,7 @@ class RoutineCollectionView<T: RoutineCollectionViewModel>: UICollectionView, Ro
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius

@@ -5,7 +5,14 @@ protocol RoutineCollnctiobViewCellDelegate: class {
     func didSelectCellViewModel(viewModel: RoutineCollectionViewCellViewModel)
 }
 
-class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollectionViewCell, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+
+
+//class NewCell: UIView, RoutineContainer {
+//    
+//}
+
+
+class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollectionViewCell, RoutineContainer {
     
     var viewName: String?
     var viewModel: T!
@@ -86,7 +93,7 @@ class RoutineCollectionViewCell<T: RoutineCollectionViewCellViewModel>: UICollec
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = UIColor.clear

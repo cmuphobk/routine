@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-class RoutineScrollView<T: RoutineScrollViewModel>: UIScrollView, RoutineContainer, RoutineConfigure, RoutinePrivateConfigure {
+class RoutineScrollView<T: RoutineScrollViewModel>: UIScrollView, RoutineContainer {
     
     typealias ViewModel = T
     
@@ -60,7 +60,7 @@ class RoutineScrollView<T: RoutineScrollViewModel>: UIScrollView, RoutineContain
         
     }
     
-    func configure() {
+    func setupViewModel() {
         
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius
