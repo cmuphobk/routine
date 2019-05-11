@@ -18,9 +18,6 @@ final class ServiceProvider: ServiceProviderInterface {
     var magicalRecordService: MagicalRecordServiceInterface!
     var hockeyService: HockeyServiceInterface!
     
-    //stored instance services
-    var authService: AuthServiceInterface!
-    
     static var shared = ServiceProvider()
     
     //build all service-dependencies in project
@@ -75,10 +72,6 @@ final class ServiceProvider: ServiceProviderInterface {
         return self.hockeyService
     }
     
-    func makeAuthService() -> AuthServiceInterface {
-        return self.authService
-    }
-    
     func makeMedicineCourseService() -> MedicineCourseServiceInterface {
         return MedicineCourseServiceAssembly.build()
     }
@@ -86,7 +79,5 @@ final class ServiceProvider: ServiceProviderInterface {
     func makeMedicineDrugService() -> MedicineDrugServiceInterface {
         return MedicineDrugServiceAssembly.build()
     }
-    
-    
     
 }

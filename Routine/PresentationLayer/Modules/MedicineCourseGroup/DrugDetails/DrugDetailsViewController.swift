@@ -3,6 +3,7 @@ import UIKit
 final class DrugDetailsViewController: RoutineViewController {
     var output: DrugDetailsViewOutput!
     var animator: DrugDetailsAnimator!
+    //FIXME: 
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak private var webView: UIWebView!
@@ -16,8 +17,8 @@ final class DrugDetailsViewController: RoutineViewController {
         super.viewWillAppear(animated)
         self.output.didTriggerViewWillAppear()
         
-        self.navigationController?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
     }
     
     override func localizationSetup() {
@@ -44,7 +45,7 @@ extension DrugDetailsViewController: DrugDetailsViewInput {
     }
     
     func enableEditButton() {
-        self.customBarRightButtonAction(icon: ImageProvider.drugsDetailsImages.editIcon, action: #selector(editDrugAction))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugsDetailsImages.editIcon, action: #selector(editDrugAction))
     }
     
     func updateDetailsInfo(htmlCode: String) {

@@ -15,9 +15,6 @@
 		411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E235122494DC70003CEE0 /* RoutineCellOwner.swift */; };
 		41A533782206280A009A735E /* RoutineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533772206280A009A735E /* RoutineScrollView.swift */; };
 		41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337922062814009A735E /* RoutineScrollViewModel.swift */; };
-		41A5337E2206D47E009A735E /* AuthRequestFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */; };
-		41A533802206D520009A735E /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337F2206D520009A735E /* AuthRequestFactory.swift */; };
-		41A533822206D53E009A735E /* AuthRequestFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533812206D53E009A735E /* AuthRequestFactoryAssembly.swift */; };
 		41A533852206EED5009A735E /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533842206EED5009A735E /* ServiceProvider.swift */; };
 		41A533882206EF27009A735E /* ServiceProviderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533872206EF27009A735E /* ServiceProviderInterface.swift */; };
 		41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533892206F4A9009A735E /* NetworkRequest.swift */; };
@@ -152,12 +149,6 @@
 		ED279C2721A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2521A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift */; };
 		ED279C2821A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2621A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift */; };
 		ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */; };
-		ED312CBC218727C0006D95F7 /* RegistrationModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CB6218727C0006D95F7 /* RegistrationModuleInterface.swift */; };
-		ED312CBD218727C0006D95F7 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CB7218727C0006D95F7 /* RegistrationRouter.swift */; };
-		ED312CBE218727C0006D95F7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED312CB8218727C0006D95F7 /* Registration.storyboard */; };
-		ED312CBF218727C0006D95F7 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CB9218727C0006D95F7 /* RegistrationAssembly.swift */; };
-		ED312CC0218727C0006D95F7 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CBA218727C0006D95F7 /* RegistrationPresenter.swift */; };
-		ED312CC1218727C0006D95F7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CBB218727C0006D95F7 /* RegistrationViewController.swift */; };
 		ED312CC321872AB3006D95F7 /* StandartCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */; };
 		ED45FBCB219764FF00E81497 /* AnimateLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45FBCA219764FF00E81497 /* AnimateLaunchScreenViewController.swift */; };
 		ED45FBCD2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED45FBCC2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard */; };
@@ -178,36 +169,14 @@
 		ED4C62AC21E5E0AD004A999C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */; };
 		ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AD21E5E0CB004A999C /* SectionView.swift */; };
 		ED4C62B021E5E0D7004A999C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AF21E5E0D7004A999C /* SectionDescriptionView.swift */; };
-		ED59915721D2AAE500253599 /* CitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59915621D2AAE500253599 /* CitiesModel.swift */; };
-		ED59915921D2AB0900253599 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59915821D2AB0900253599 /* BaseModel.swift */; };
 		ED59915B21D2AE2400253599 /* StandartLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59915A21D2AE2400253599 /* StandartLoaderView.swift */; };
 		ED6669C42188D85E00366877 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669C32188D85E00366877 /* Gender.swift */; };
 		ED6669C6218A1E8900366877 /* StandartPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669C5218A1E8900366877 /* StandartPickerView.swift */; };
 		ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669C7218B397F00366877 /* StandartDatePickerView.swift */; };
 		ED6669CD218C5DAC00366877 /* StandartHtmlTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669CC218C5DAC00366877 /* StandartHtmlTextView.swift */; };
-		ED6669E82190C18A00366877 /* MethodObtainingModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669D82190C18A00366877 /* MethodObtainingModuleInterface.swift */; };
-		ED6669E92190C18A00366877 /* MethodObtainingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669D92190C18A00366877 /* MethodObtainingAssembly.swift */; };
-		ED6669EA2190C18A00366877 /* MethodObtainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669DA2190C18A00366877 /* MethodObtainingViewController.swift */; };
-		ED6669EB2190C18A00366877 /* MethodObtainingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669DB2190C18A00366877 /* MethodObtainingRouter.swift */; };
-		ED6669EC2190C18A00366877 /* MethodObtainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669DC2190C18A00366877 /* MethodObtainingPresenter.swift */; };
-		ED6669ED2190C18A00366877 /* MethodObtaining.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6669DD2190C18A00366877 /* MethodObtaining.storyboard */; };
 		ED749FD52190C6DA00D996D4 /* StandartCheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FD42190C6DA00D996D4 /* StandartCheckBoxButton.swift */; };
-		ED749FF02194A90E00D996D4 /* RestorePasswordModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FE02194A90E00D996D4 /* RestorePasswordModuleInterface.swift */; };
-		ED749FF12194A90E00D996D4 /* RestorePasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FE12194A90E00D996D4 /* RestorePasswordAssembly.swift */; };
-		ED749FF22194A90E00D996D4 /* RestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FE22194A90E00D996D4 /* RestorePasswordViewController.swift */; };
-		ED749FF32194A90E00D996D4 /* RestorePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FE32194A90E00D996D4 /* RestorePasswordRouter.swift */; };
-		ED749FF42194A90E00D996D4 /* RestorePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FE42194A90E00D996D4 /* RestorePasswordPresenter.swift */; };
-		ED749FF52194A90E00D996D4 /* RestorePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED749FE52194A90E00D996D4 /* RestorePassword.storyboard */; };
-		ED74A0122194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74A0022194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift */; };
-		ED74A0132194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74A0032194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift */; };
-		ED74A0142194AA3F00D996D4 /* AcceptRestorePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74A0042194AA3F00D996D4 /* AcceptRestorePasswordViewController.swift */; };
-		ED74A0152194AA4000D996D4 /* AcceptRestorePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74A0052194AA3F00D996D4 /* AcceptRestorePasswordRouter.swift */; };
-		ED74A0162194AA4000D996D4 /* AcceptRestorePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74A0062194AA3F00D996D4 /* AcceptRestorePasswordPresenter.swift */; };
-		ED74A0172194AA4000D996D4 /* AcceptRestorePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED74A0072194AA3F00D996D4 /* AcceptRestorePassword.storyboard */; };
 		ED78745A219C8F9B00FEA4DB /* StandartPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */; };
 		ED787475219E038500FEA4DB /* StandartModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED787474219E038500FEA4DB /* StandartModalView.swift */; };
-		ED78749421A1946F00FEA4DB /* ErrorCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78749321A1946F00FEA4DB /* ErrorCodeViewController.swift */; };
-		ED78749621A1947800FEA4DB /* ErrorCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED78749521A1947800FEA4DB /* ErrorCode.storyboard */; };
 		ED78749A21A1C4D400FEA4DB /* StandartPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78749921A1C4D400FEA4DB /* StandartPagePicker.swift */; };
 		ED78749D21A1C5EC00FEA4DB /* StandartPagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED78749C21A1C5EC00FEA4DB /* StandartPagePicker.xib */; };
 		ED7874A121A1C67B00FEA4DB /* StandartPagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */; };
@@ -237,7 +206,6 @@
 		ED8F6A0E2179B971001DBDAA /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CA2179B971001DBDAA /* LanguageService.swift */; };
 		ED8F6A0F2179B971001DBDAA /* ModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CB2179B971001DBDAA /* ModuleService.swift */; };
 		ED8F6A102179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CD2179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift */; };
-		ED8F6A112179B971001DBDAA /* UIViewController+CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69CE2179B971001DBDAA /* UIViewController+CustomNavigationBar.swift */; };
 		ED8F6A132179B971001DBDAA /* Calendar+LastDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D02179B971001DBDAA /* Calendar+LastDate.swift */; };
 		ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D22179B971001DBDAA /* UIImage+ImageColor.swift */; };
 		ED8F6A162179B971001DBDAA /* UITableView+Scrolls.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69D32179B971001DBDAA /* UITableView+Scrolls.swift */; };
@@ -258,9 +226,6 @@
 		ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F22179B971001DBDAA /* MenuModuleAssembly.swift */; };
 		ED8F6A2D2179B971001DBDAA /* MenuModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F32179B971001DBDAA /* MenuModuleViewController.swift */; };
 		ED8F6A3A2179C548001DBDAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6A3C2179C548001DBDAA /* Localizable.strings */; };
-		ED8F6A3F2179CA6E001DBDAA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A3E2179CA6E001DBDAA /* AuthService.swift */; };
-		ED8F6A432179CC66001DBDAA /* AuthStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A422179CC66001DBDAA /* AuthStorage.swift */; };
-		ED8F6A452179CE05001DBDAA /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A442179CE05001DBDAA /* AuthModel.swift */; };
 		ED8F6A4C2179F106001DBDAA /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A4B2179F106001DBDAA /* AsyncOperation.swift */; };
 		ED8F6A5F2179F126001DBDAA /* DownloadOperationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A542179F125001DBDAA /* DownloadOperationHandler.swift */; };
 		ED8F6A602179F126001DBDAA /* DownloadRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A552179F125001DBDAA /* DownloadRequestObject.swift */; };
@@ -274,24 +239,11 @@
 		ED8F6A6E2179F184001DBDAA /* BaseResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A6B2179F184001DBDAA /* BaseResponseModels.swift */; };
 		ED8F6A732179F451001DBDAA /* OperationHandlerContainerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A722179F451001DBDAA /* OperationHandlerContainerInterface.swift */; };
 		ED8F6A752179F4F3001DBDAA /* SessionManager+Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A742179F4F3001DBDAA /* SessionManager+Multipart.swift */; };
-		ED8F6A90217DB4DC001DBDAA /* AuthModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A80217DB4DC001DBDAA /* AuthModuleInterface.swift */; };
-		ED8F6A91217DB4DC001DBDAA /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A81217DB4DC001DBDAA /* AuthAssembly.swift */; };
-		ED8F6A92217DB4DC001DBDAA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A82217DB4DC001DBDAA /* AuthViewController.swift */; };
-		ED8F6A93217DB4DC001DBDAA /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A83217DB4DC001DBDAA /* AuthRouter.swift */; };
-		ED8F6A94217DB4DC001DBDAA /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A84217DB4DC001DBDAA /* AuthPresenter.swift */; };
-		ED8F6A95217DB4DC001DBDAA /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6A85217DB4DC001DBDAA /* Auth.storyboard */; };
 		ED8F6A9C217E2B12001DBDAA /* StandartAcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A9B217E2B12001DBDAA /* StandartAcceptButton.swift */; };
 		ED8F6A9E217E2CDF001DBDAA /* StandartTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A9D217E2CDF001DBDAA /* StandartTextField.swift */; };
 		ED8F6AA5217F7B61001DBDAA /* Foros-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6AA2217F7B61001DBDAA /* Foros-Regular.otf */; };
 		ED8F6AA6217F7B61001DBDAA /* Foros-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6AA3217F7B61001DBDAA /* Foros-Medium.otf */; };
 		ED8F6AA7217F7B61001DBDAA /* Foros-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6AA4217F7B61001DBDAA /* Foros-Bold.otf */; };
-		ED8F6AC2217FA253001DBDAA /* PinCodeModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6AB2217FA253001DBDAA /* PinCodeModuleInterface.swift */; };
-		ED8F6AC3217FA253001DBDAA /* PinCodeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6AB3217FA253001DBDAA /* PinCodeAssembly.swift */; };
-		ED8F6AC4217FA253001DBDAA /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6AB4217FA253001DBDAA /* PinCodeViewController.swift */; };
-		ED8F6AC5217FA253001DBDAA /* PinCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6AB5217FA253001DBDAA /* PinCodeRouter.swift */; };
-		ED8F6AC6217FA253001DBDAA /* PinCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6AB6217FA253001DBDAA /* PinCodePresenter.swift */; };
-		ED8F6AC7217FA253001DBDAA /* PinCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6AB7217FA253001DBDAA /* PinCode.storyboard */; };
-		ED9EF29D21C0230A00C1D1C0 /* AuthServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9EF29C21C0230A00C1D1C0 /* AuthServiceInterface.swift */; };
 		EDA9A62921E5EB1400D99B09 /* UsingTimesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A62621E5EB1400D99B09 /* UsingTimesCellViewModel.swift */; };
 		EDA9A62A21E5EB1400D99B09 /* UsingTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A62721E5EB1400D99B09 /* UsingTimesCell.swift */; };
 		EDA9A63221E61F2500D99B09 /* RoutineTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A63121E61F2500D99B09 /* RoutineTableViewCellViewModel.swift */; };
@@ -307,13 +259,11 @@
 		EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */; };
 		EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */; };
 		EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */; };
-		EDC891CA21CE36440002CD9E /* PinCodeInitiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891C921CE36440002CD9E /* PinCodeInitiator.swift */; };
 		EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */; };
 		EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */; };
 		EDC891D121CE59360002CD9E /* DecodeResponseContainerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891D021CE59360002CD9E /* DecodeResponseContainerInterface.swift */; };
 		EDC891D321CE64C90002CD9E /* MedicineCourseServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891D221CE64C90002CD9E /* MedicineCourseServiceAssembly.swift */; };
 		EDC891D521CE65D30002CD9E /* MedicineCourseServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891D421CE65D30002CD9E /* MedicineCourseServiceInterface.swift */; };
-		EDC891DA21CE7AF80002CD9E /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891D921CE7AF80002CD9E /* CityModel.swift */; };
 		EDC891DD21CE97150002CD9E /* WindowServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891DC21CE97150002CD9E /* WindowServiceInterface.swift */; };
 		EDC891DF21CE9C000002CD9E /* ModuleServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891DE21CE9C000002CD9E /* ModuleServiceInterface.swift */; };
 		EDC891E121CFC47E0002CD9E /* LanguageServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891E021CFC47E0002CD9E /* LanguageServiceInterface.swift */; };
@@ -324,9 +274,6 @@
 		EDDA636121B3ED49005AE695 /* RESTRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA636021B3ED49005AE695 /* RESTRequestObject.swift */; };
 		EDDA636421B408EE005AE695 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA636321B408EE005AE695 /* DayOfWeek.swift */; };
 		EDDA636821B41C4F005AE695 /* MedicineLocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA636721B41C4F005AE695 /* MedicineLocalNotification.swift */; };
-		EDE945C321C028DB009BC60A /* AuthServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C221C028DB009BC60A /* AuthServiceAssembly.swift */; };
-		EDE945C621C0293D009BC60A /* AuthStorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C521C0293D009BC60A /* AuthStorageAssembly.swift */; };
-		EDE945C821C02AD4009BC60A /* AuthStorageInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C721C02AD4009BC60A /* AuthStorageInterface.swift */; };
 		EDE945CA21C6644C009BC60A /* RESTStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945C921C6644C009BC60A /* RESTStatus.swift */; };
 		EDE945CC21C67329009BC60A /* RESTCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE945CB21C67329009BC60A /* RESTCode.swift */; };
 		EDE9894021E92F5B00870F25 /* RoutineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9893221E92F5A00870F25 /* RoutineTextField.swift */; };
@@ -342,12 +289,6 @@
 		EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9894A21E92FC600870F25 /* RoutineTextView.swift */; };
 		EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9894C21E9DE8E00870F25 /* UIView+Subviews.swift */; };
 		EDFA69B82187796700195622 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69B72187796700195622 /* WindowService.swift */; };
-		EDFA69D3218860E400195622 /* ProfileModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C3218860E400195622 /* ProfileModuleInterface.swift */; };
-		EDFA69D4218860E400195622 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C4218860E400195622 /* ProfileAssembly.swift */; };
-		EDFA69D5218860E400195622 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C5218860E400195622 /* ProfileViewController.swift */; };
-		EDFA69D6218860E400195622 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C6218860E400195622 /* ProfileRouter.swift */; };
-		EDFA69D7218860E400195622 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA69C7218860E400195622 /* ProfilePresenter.swift */; };
-		EDFA69D8218860E400195622 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFA69C8218860E400195622 /* Profile.storyboard */; };
 		F23980D90CD0A29295F5951A /* Pods_RoutineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F6105CB5EA56D2CEA09BE /* Pods_RoutineTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -379,9 +320,6 @@
 		411E235122494DC70003CEE0 /* RoutineCellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellOwner.swift; sourceTree = "<group>"; };
 		41A533772206280A009A735E /* RoutineScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollView.swift; sourceTree = "<group>"; };
 		41A5337922062814009A735E /* RoutineScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollViewModel.swift; sourceTree = "<group>"; };
-		41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactoryInterface.swift; sourceTree = "<group>"; };
-		41A5337F2206D520009A735E /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
-		41A533812206D53E009A735E /* AuthRequestFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactoryAssembly.swift; sourceTree = "<group>"; };
 		41A533842206EED5009A735E /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		41A533872206EF27009A735E /* ServiceProviderInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderInterface.swift; sourceTree = "<group>"; };
 		41A533892206F4A9009A735E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -520,12 +458,6 @@
 		ED279C2521A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MedicineCourseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED279C2621A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MedicineCourseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationInterface.swift; sourceTree = "<group>"; };
-		ED312CB6218727C0006D95F7 /* RegistrationModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInterface.swift; sourceTree = "<group>"; };
-		ED312CB7218727C0006D95F7 /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
-		ED312CB8218727C0006D95F7 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		ED312CB9218727C0006D95F7 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
-		ED312CBA218727C0006D95F7 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
-		ED312CBB218727C0006D95F7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartCheckBox.swift; sourceTree = "<group>"; };
 		ED45FBCA219764FF00E81497 /* AnimateLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		ED45FBCC2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimateLaunchScreenViewController.storyboard; sourceTree = "<group>"; };
@@ -546,36 +478,14 @@
 		ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		ED4C62AD21E5E0CB004A999C /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		ED4C62AF21E5E0D7004A999C /* SectionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionView.swift; sourceTree = "<group>"; };
-		ED59915621D2AAE500253599 /* CitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesModel.swift; sourceTree = "<group>"; };
-		ED59915821D2AB0900253599 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		ED59915A21D2AE2400253599 /* StandartLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartLoaderView.swift; sourceTree = "<group>"; };
 		ED6669C32188D85E00366877 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		ED6669C5218A1E8900366877 /* StandartPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPickerView.swift; sourceTree = "<group>"; };
 		ED6669C7218B397F00366877 /* StandartDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartDatePickerView.swift; sourceTree = "<group>"; };
 		ED6669CC218C5DAC00366877 /* StandartHtmlTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartHtmlTextView.swift; sourceTree = "<group>"; };
-		ED6669D82190C18A00366877 /* MethodObtainingModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodObtainingModuleInterface.swift; sourceTree = "<group>"; };
-		ED6669D92190C18A00366877 /* MethodObtainingAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodObtainingAssembly.swift; sourceTree = "<group>"; };
-		ED6669DA2190C18A00366877 /* MethodObtainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodObtainingViewController.swift; sourceTree = "<group>"; };
-		ED6669DB2190C18A00366877 /* MethodObtainingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodObtainingRouter.swift; sourceTree = "<group>"; };
-		ED6669DC2190C18A00366877 /* MethodObtainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodObtainingPresenter.swift; sourceTree = "<group>"; };
-		ED6669DD2190C18A00366877 /* MethodObtaining.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MethodObtaining.storyboard; sourceTree = "<group>"; };
 		ED749FD42190C6DA00D996D4 /* StandartCheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartCheckBoxButton.swift; sourceTree = "<group>"; };
-		ED749FE02194A90E00D996D4 /* RestorePasswordModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordModuleInterface.swift; sourceTree = "<group>"; };
-		ED749FE12194A90E00D996D4 /* RestorePasswordAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordAssembly.swift; sourceTree = "<group>"; };
-		ED749FE22194A90E00D996D4 /* RestorePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordViewController.swift; sourceTree = "<group>"; };
-		ED749FE32194A90E00D996D4 /* RestorePasswordRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordRouter.swift; sourceTree = "<group>"; };
-		ED749FE42194A90E00D996D4 /* RestorePasswordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordPresenter.swift; sourceTree = "<group>"; };
-		ED749FE52194A90E00D996D4 /* RestorePassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestorePassword.storyboard; sourceTree = "<group>"; };
-		ED74A0022194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRestorePasswordModuleInterface.swift; sourceTree = "<group>"; };
-		ED74A0032194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRestorePasswordAssembly.swift; sourceTree = "<group>"; };
-		ED74A0042194AA3F00D996D4 /* AcceptRestorePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRestorePasswordViewController.swift; sourceTree = "<group>"; };
-		ED74A0052194AA3F00D996D4 /* AcceptRestorePasswordRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRestorePasswordRouter.swift; sourceTree = "<group>"; };
-		ED74A0062194AA3F00D996D4 /* AcceptRestorePasswordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRestorePasswordPresenter.swift; sourceTree = "<group>"; };
-		ED74A0072194AA3F00D996D4 /* AcceptRestorePassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AcceptRestorePassword.storyboard; sourceTree = "<group>"; };
 		ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPasswordTextField.swift; sourceTree = "<group>"; };
 		ED787474219E038500FEA4DB /* StandartModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartModalView.swift; sourceTree = "<group>"; };
-		ED78749321A1946F00FEA4DB /* ErrorCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCodeViewController.swift; sourceTree = "<group>"; };
-		ED78749521A1947800FEA4DB /* ErrorCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorCode.storyboard; sourceTree = "<group>"; };
 		ED78749921A1C4D400FEA4DB /* StandartPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePicker.swift; sourceTree = "<group>"; };
 		ED78749C21A1C5EC00FEA4DB /* StandartPagePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartPagePicker.xib; sourceTree = "<group>"; };
 		ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCell.swift; sourceTree = "<group>"; };
@@ -611,7 +521,6 @@
 		ED8F69CA2179B971001DBDAA /* LanguageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		ED8F69CB2179B971001DBDAA /* ModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleService.swift; sourceTree = "<group>"; };
 		ED8F69CD2179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+CustomNavigationBar.swift"; sourceTree = "<group>"; };
-		ED8F69CE2179B971001DBDAA /* UIViewController+CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomNavigationBar.swift"; sourceTree = "<group>"; };
 		ED8F69D02179B971001DBDAA /* Calendar+LastDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+LastDate.swift"; sourceTree = "<group>"; };
 		ED8F69D22179B971001DBDAA /* UIImage+ImageColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageColor.swift"; sourceTree = "<group>"; };
 		ED8F69D32179B971001DBDAA /* UITableView+Scrolls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Scrolls.swift"; sourceTree = "<group>"; };
@@ -633,9 +542,6 @@
 		ED8F69F32179B971001DBDAA /* MenuModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleViewController.swift; sourceTree = "<group>"; };
 		ED8F6A3B2179C548001DBDAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED8F6A3D2179C54A001DBDAA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ED8F6A3E2179CA6E001DBDAA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		ED8F6A422179CC66001DBDAA /* AuthStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStorage.swift; sourceTree = "<group>"; };
-		ED8F6A442179CE05001DBDAA /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		ED8F6A4B2179F106001DBDAA /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		ED8F6A542179F125001DBDAA /* DownloadOperationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperationHandler.swift; sourceTree = "<group>"; };
 		ED8F6A552179F125001DBDAA /* DownloadRequestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequestObject.swift; sourceTree = "<group>"; };
@@ -649,24 +555,11 @@
 		ED8F6A6B2179F184001DBDAA /* BaseResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseModels.swift; sourceTree = "<group>"; };
 		ED8F6A722179F451001DBDAA /* OperationHandlerContainerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationHandlerContainerInterface.swift; sourceTree = "<group>"; };
 		ED8F6A742179F4F3001DBDAA /* SessionManager+Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionManager+Multipart.swift"; sourceTree = "<group>"; };
-		ED8F6A80217DB4DC001DBDAA /* AuthModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModuleInterface.swift; sourceTree = "<group>"; };
-		ED8F6A81217DB4DC001DBDAA /* AuthAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
-		ED8F6A82217DB4DC001DBDAA /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		ED8F6A83217DB4DC001DBDAA /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		ED8F6A84217DB4DC001DBDAA /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
-		ED8F6A85217DB4DC001DBDAA /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		ED8F6A9B217E2B12001DBDAA /* StandartAcceptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartAcceptButton.swift; sourceTree = "<group>"; };
 		ED8F6A9D217E2CDF001DBDAA /* StandartTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartTextField.swift; sourceTree = "<group>"; };
 		ED8F6AA2217F7B61001DBDAA /* Foros-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Foros-Regular.otf"; sourceTree = "<group>"; };
 		ED8F6AA3217F7B61001DBDAA /* Foros-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Foros-Medium.otf"; sourceTree = "<group>"; };
 		ED8F6AA4217F7B61001DBDAA /* Foros-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Foros-Bold.otf"; sourceTree = "<group>"; };
-		ED8F6AB2217FA253001DBDAA /* PinCodeModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeModuleInterface.swift; sourceTree = "<group>"; };
-		ED8F6AB3217FA253001DBDAA /* PinCodeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeAssembly.swift; sourceTree = "<group>"; };
-		ED8F6AB4217FA253001DBDAA /* PinCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
-		ED8F6AB5217FA253001DBDAA /* PinCodeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeRouter.swift; sourceTree = "<group>"; };
-		ED8F6AB6217FA253001DBDAA /* PinCodePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodePresenter.swift; sourceTree = "<group>"; };
-		ED8F6AB7217FA253001DBDAA /* PinCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PinCode.storyboard; sourceTree = "<group>"; };
-		ED9EF29C21C0230A00C1D1C0 /* AuthServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceInterface.swift; sourceTree = "<group>"; };
 		EDA9A62621E5EB1400D99B09 /* UsingTimesCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTimesCellViewModel.swift; sourceTree = "<group>"; };
 		EDA9A62721E5EB1400D99B09 /* UsingTimesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTimesCell.swift; sourceTree = "<group>"; };
 		EDA9A63121E61F2500D99B09 /* RoutineTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -682,13 +575,11 @@
 		EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableView.swift; sourceTree = "<group>"; };
 		EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewModel.swift; sourceTree = "<group>"; };
 		EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeightable.swift; sourceTree = "<group>"; };
-		EDC891C921CE36440002CD9E /* PinCodeInitiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInitiator.swift; sourceTree = "<group>"; };
 		EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceAssembly.swift; sourceTree = "<group>"; };
 		EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891D021CE59360002CD9E /* DecodeResponseContainerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeResponseContainerInterface.swift; sourceTree = "<group>"; };
 		EDC891D221CE64C90002CD9E /* MedicineCourseServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseServiceAssembly.swift; sourceTree = "<group>"; };
 		EDC891D421CE65D30002CD9E /* MedicineCourseServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseServiceInterface.swift; sourceTree = "<group>"; };
-		EDC891D921CE7AF80002CD9E /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		EDC891DC21CE97150002CD9E /* WindowServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891DE21CE9C000002CD9E /* ModuleServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891E021CFC47E0002CD9E /* LanguageServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageServiceInterface.swift; sourceTree = "<group>"; };
@@ -699,9 +590,6 @@
 		EDDA636021B3ED49005AE695 /* RESTRequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTRequestObject.swift; sourceTree = "<group>"; };
 		EDDA636321B408EE005AE695 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		EDDA636721B41C4F005AE695 /* MedicineLocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineLocalNotification.swift; sourceTree = "<group>"; };
-		EDE945C221C028DB009BC60A /* AuthServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceAssembly.swift; sourceTree = "<group>"; };
-		EDE945C521C0293D009BC60A /* AuthStorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStorageAssembly.swift; sourceTree = "<group>"; };
-		EDE945C721C02AD4009BC60A /* AuthStorageInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStorageInterface.swift; sourceTree = "<group>"; };
 		EDE945C921C6644C009BC60A /* RESTStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTStatus.swift; sourceTree = "<group>"; };
 		EDE945CB21C67329009BC60A /* RESTCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTCode.swift; sourceTree = "<group>"; };
 		EDE9893221E92F5A00870F25 /* RoutineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTextField.swift; sourceTree = "<group>"; };
@@ -717,12 +605,6 @@
 		EDE9894A21E92FC600870F25 /* RoutineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTextView.swift; sourceTree = "<group>"; };
 		EDE9894C21E9DE8E00870F25 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EDFA69B72187796700195622 /* WindowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowService.swift; sourceTree = "<group>"; };
-		EDFA69C3218860E400195622 /* ProfileModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleInterface.swift; sourceTree = "<group>"; };
-		EDFA69C4218860E400195622 /* ProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
-		EDFA69C5218860E400195622 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		EDFA69C6218860E400195622 /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
-		EDFA69C7218860E400195622 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		EDFA69C8218860E400195622 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -777,16 +659,6 @@
 				41A5337922062814009A735E /* RoutineScrollViewModel.swift */,
 			);
 			path = RoutineScrollView;
-			sourceTree = "<group>";
-		};
-		41A5337C2206D467009A735E /* AuthRequestFactory */ = {
-			isa = PBXGroup;
-			children = (
-				41A533812206D53E009A735E /* AuthRequestFactoryAssembly.swift */,
-				41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */,
-				41A5337F2206D520009A735E /* AuthRequestFactory.swift */,
-			);
-			path = AuthRequestFactory;
 			sourceTree = "<group>";
 		};
 		41A533862206EF13009A735E /* ServiceProvider */ = {
@@ -883,7 +755,6 @@
 			children = (
 				41A6B856220EC44A0023CE19 /* MenuGroup */,
 				41A6B855220EC43E0023CE19 /* MainGroup */,
-				ED7874B721A338C100FEA4DB /* AuthorizeGroup */,
 				ED7874B821A338F800FEA4DB /* MedicineCourseGroup */,
 			);
 			path = Modules;
@@ -1275,7 +1146,6 @@
 				EDC891CB21CE55940002CD9E /* FileService */,
 				ED2CEFF721BD536F00D9EFAF /* MedicineCourseService */,
 				862E300C21D09B2C0097991D /* MedicineDrugService */,
-				ED8F6A402179CC44001DBDAA /* AuthService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1288,19 +1158,6 @@
 				866B3B0D21AFC3ED0078361A /* MedicineCourseService.swift */,
 			);
 			path = MedicineCourseService;
-			sourceTree = "<group>";
-		};
-		ED312CB521872783006D95F7 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				ED312CB6218727C0006D95F7 /* RegistrationModuleInterface.swift */,
-				ED312CB9218727C0006D95F7 /* RegistrationAssembly.swift */,
-				ED312CBA218727C0006D95F7 /* RegistrationPresenter.swift */,
-				ED312CB8218727C0006D95F7 /* Registration.storyboard */,
-				ED312CBB218727C0006D95F7 /* RegistrationViewController.swift */,
-				ED312CB7218727C0006D95F7 /* RegistrationRouter.swift */,
-			);
-			path = Registration;
 			sourceTree = "<group>";
 		};
 		ED45FBC9219764D500E81497 /* AnimateLaunchScreen */ = {
@@ -1440,19 +1297,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		ED6669CE2190C18A00366877 /* MethodObtaining */ = {
-			isa = PBXGroup;
-			children = (
-				ED6669D82190C18A00366877 /* MethodObtainingModuleInterface.swift */,
-				ED6669D92190C18A00366877 /* MethodObtainingAssembly.swift */,
-				ED6669DC2190C18A00366877 /* MethodObtainingPresenter.swift */,
-				ED6669DD2190C18A00366877 /* MethodObtaining.storyboard */,
-				ED6669DA2190C18A00366877 /* MethodObtainingViewController.swift */,
-				ED6669DB2190C18A00366877 /* MethodObtainingRouter.swift */,
-			);
-			path = MethodObtaining;
-			sourceTree = "<group>";
-		};
 		ED73F6942199D67000219DFD /* Operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1475,41 +1319,6 @@
 				ED7874CE21A5D16800FEA4DB /* MedicineCourseTimeEntity */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		ED749FD62194A90E00D996D4 /* RestorePassword */ = {
-			isa = PBXGroup;
-			children = (
-				ED749FE02194A90E00D996D4 /* RestorePasswordModuleInterface.swift */,
-				ED749FE12194A90E00D996D4 /* RestorePasswordAssembly.swift */,
-				ED749FE42194A90E00D996D4 /* RestorePasswordPresenter.swift */,
-				ED749FE52194A90E00D996D4 /* RestorePassword.storyboard */,
-				ED749FE22194A90E00D996D4 /* RestorePasswordViewController.swift */,
-				ED749FE32194A90E00D996D4 /* RestorePasswordRouter.swift */,
-			);
-			path = RestorePassword;
-			sourceTree = "<group>";
-		};
-		ED749FF82194AA3F00D996D4 /* AcceptRestorePassword */ = {
-			isa = PBXGroup;
-			children = (
-				ED74A0022194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift */,
-				ED74A0032194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift */,
-				ED74A0062194AA3F00D996D4 /* AcceptRestorePasswordPresenter.swift */,
-				ED74A0072194AA3F00D996D4 /* AcceptRestorePassword.storyboard */,
-				ED74A0042194AA3F00D996D4 /* AcceptRestorePasswordViewController.swift */,
-				ED74A0052194AA3F00D996D4 /* AcceptRestorePasswordRouter.swift */,
-			);
-			path = AcceptRestorePassword;
-			sourceTree = "<group>";
-		};
-		ED78749221A1943400FEA4DB /* ErrorCode */ = {
-			isa = PBXGroup;
-			children = (
-				ED78749321A1946F00FEA4DB /* ErrorCodeViewController.swift */,
-				ED78749521A1947800FEA4DB /* ErrorCode.storyboard */,
-			);
-			path = ErrorCode;
 			sourceTree = "<group>";
 		};
 		ED78749B21A1C5D500FEA4DB /* StandartPagePicker */ = {
@@ -1546,21 +1355,6 @@
 				ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */,
 			);
 			path = StandartPagePickerCollectionView;
-			sourceTree = "<group>";
-		};
-		ED7874B721A338C100FEA4DB /* AuthorizeGroup */ = {
-			isa = PBXGroup;
-			children = (
-				ED8F6A76217DB4DC001DBDAA /* Auth */,
-				ED312CB521872783006D95F7 /* Registration */,
-				ED8F6AA8217FA253001DBDAA /* PinCode */,
-				EDFA69B9218860E400195622 /* Profile */,
-				ED6669CE2190C18A00366877 /* MethodObtaining */,
-				ED749FD62194A90E00D996D4 /* RestorePassword */,
-				ED749FF82194AA3F00D996D4 /* AcceptRestorePassword */,
-				ED78749221A1943400FEA4DB /* ErrorCode */,
-			);
-			path = AuthorizeGroup;
 			sourceTree = "<group>";
 		};
 		ED7874B821A338F800FEA4DB /* MedicineCourseGroup */ = {
@@ -1622,7 +1416,6 @@
 				ED7874D621A5D5D400FEA4DB /* MedicineDrug.swift */,
 				ED7874D821A5D5F600FEA4DB /* MedicineCourseTime.swift */,
 				EDDA636721B41C4F005AE695 /* MedicineLocalNotification.swift */,
-				EDC891D921CE7AF80002CD9E /* CityModel.swift */,
 				EDC891E421CFC64E0002CD9E /* Language.swift */,
 				860AC66021B65B58007317B2 /* Time.swift */,
 			);
@@ -1716,8 +1509,6 @@
 			isa = PBXGroup;
 			children = (
 				ED2CEFF421BD529700D9EFAF /* Services */,
-				EDE945BD21C02631009BC60A /* Storages */,
-				EDE945BF21C026AB009BC60A /* NetworkModels */,
 				ED7874D321A5D4E500FEA4DB /* Models */,
 			);
 			path = BuisnessLayer;
@@ -1850,17 +1641,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		ED8F6A402179CC44001DBDAA /* AuthService */ = {
-			isa = PBXGroup;
-			children = (
-				41A5337C2206D467009A735E /* AuthRequestFactory */,
-				EDE945C221C028DB009BC60A /* AuthServiceAssembly.swift */,
-				ED9EF29C21C0230A00C1D1C0 /* AuthServiceInterface.swift */,
-				ED8F6A3E2179CA6E001DBDAA /* AuthService.swift */,
-			);
-			path = AuthService;
-			sourceTree = "<group>";
-		};
 		ED8F6A4A2179F106001DBDAA /* AsyncOperation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1909,19 +1689,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		ED8F6A76217DB4DC001DBDAA /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				ED8F6A80217DB4DC001DBDAA /* AuthModuleInterface.swift */,
-				ED8F6A81217DB4DC001DBDAA /* AuthAssembly.swift */,
-				ED8F6A84217DB4DC001DBDAA /* AuthPresenter.swift */,
-				ED8F6A85217DB4DC001DBDAA /* Auth.storyboard */,
-				ED8F6A82217DB4DC001DBDAA /* AuthViewController.swift */,
-				ED8F6A83217DB4DC001DBDAA /* AuthRouter.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		ED8F6A9A217E2AF2001DBDAA /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1939,20 +1706,6 @@
 				ED8F6AA2217F7B61001DBDAA /* Foros-Regular.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		ED8F6AA8217FA253001DBDAA /* PinCode */ = {
-			isa = PBXGroup;
-			children = (
-				EDC891C821CE36330002CD9E /* Models */,
-				ED8F6AB2217FA253001DBDAA /* PinCodeModuleInterface.swift */,
-				ED8F6AB3217FA253001DBDAA /* PinCodeAssembly.swift */,
-				ED8F6AB6217FA253001DBDAA /* PinCodePresenter.swift */,
-				ED8F6AB7217FA253001DBDAA /* PinCode.storyboard */,
-				ED8F6AB4217FA253001DBDAA /* PinCodeViewController.swift */,
-				ED8F6AB5217FA253001DBDAA /* PinCodeRouter.swift */,
-			);
-			path = PinCode;
 			sourceTree = "<group>";
 		};
 		EDA9A62421E5EB1400D99B09 /* UsingTimesCell */ = {
@@ -1998,14 +1751,6 @@
 				EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */,
 			);
 			path = RoutineTableView;
-			sourceTree = "<group>";
-		};
-		EDC891C821CE36330002CD9E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EDC891C921CE36440002CD9E /* PinCodeInitiator.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		EDC891CB21CE55940002CD9E /* FileService */ = {
@@ -2076,34 +1821,6 @@
 				EDCD216E21A722BE009D704B /* LocalNotificationService.swift */,
 			);
 			path = LocalNotificationService;
-			sourceTree = "<group>";
-		};
-		EDE945BD21C02631009BC60A /* Storages */ = {
-			isa = PBXGroup;
-			children = (
-				EDE945C421C0292E009BC60A /* AuthStorage */,
-			);
-			path = Storages;
-			sourceTree = "<group>";
-		};
-		EDE945BF21C026AB009BC60A /* NetworkModels */ = {
-			isa = PBXGroup;
-			children = (
-				ED59915821D2AB0900253599 /* BaseModel.swift */,
-				ED8F6A442179CE05001DBDAA /* AuthModel.swift */,
-				ED59915621D2AAE500253599 /* CitiesModel.swift */,
-			);
-			path = NetworkModels;
-			sourceTree = "<group>";
-		};
-		EDE945C421C0292E009BC60A /* AuthStorage */ = {
-			isa = PBXGroup;
-			children = (
-				EDE945C521C0293D009BC60A /* AuthStorageAssembly.swift */,
-				EDE945C721C02AD4009BC60A /* AuthStorageInterface.swift */,
-				ED8F6A422179CC66001DBDAA /* AuthStorage.swift */,
-			);
-			path = AuthStorage;
 			sourceTree = "<group>";
 		};
 		EDE9893121E92F5A00870F25 /* RoutineTextField */ = {
@@ -2181,22 +1898,8 @@
 			isa = PBXGroup;
 			children = (
 				ED8F69D82179B971001DBDAA /* UIViewController+Swipes.swift */,
-				ED8F69CE2179B971001DBDAA /* UIViewController+CustomNavigationBar.swift */,
 			);
 			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		EDFA69B9218860E400195622 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				EDFA69C3218860E400195622 /* ProfileModuleInterface.swift */,
-				EDFA69C4218860E400195622 /* ProfileAssembly.swift */,
-				EDFA69C7218860E400195622 /* ProfilePresenter.swift */,
-				EDFA69C8218860E400195622 /* Profile.storyboard */,
-				EDFA69C5218860E400195622 /* ProfileViewController.swift */,
-				EDFA69C6218860E400195622 /* ProfileRouter.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2317,15 +2020,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED312CBE218727C0006D95F7 /* Registration.storyboard in Resources */,
 				867283AE21AA9EFA0000495C /* InputTextPopup.storyboard in Resources */,
-				ED8F6A95217DB4DC001DBDAA /* Auth.storyboard in Resources */,
 				86F9D27E21EF71DE000ABB67 /* DrugPeriodicEdit.storyboard in Resources */,
 				ED8F6AA6217F7B61001DBDAA /* Foros-Medium.otf in Resources */,
 				860AC5DD21B1ADF3007317B2 /* DrugDetails.storyboard in Resources */,
 				ED45FBCD2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard in Resources */,
-				ED6669ED2190C18A00366877 /* MethodObtaining.storyboard in Resources */,
-				ED749FF52194A90E00D996D4 /* RestorePassword.storyboard in Resources */,
 				ED8F6AA5217F7B61001DBDAA /* Foros-Regular.otf in Resources */,
 				ED8F6AA7217F7B61001DBDAA /* Foros-Bold.otf in Resources */,
 				866B3B0121AEDCC90078361A /* DrugsList.storyboard in Resources */,
@@ -2337,15 +2036,11 @@
 				ED8F6A062179B971001DBDAA /* Main.storyboard in Resources */,
 				866F0CF321EB616C00D9FF94 /* DrugTimesEdit.storyboard in Resources */,
 				ED8F697D2179B83A001DBDAA /* Assets.xcassets in Resources */,
-				ED78749621A1947800FEA4DB /* ErrorCode.storyboard in Resources */,
 				866B3B0A21AEDCC90078361A /* DrugCell.xib in Resources */,
 				860AC63421B2B32C007317B2 /* CalculatorPopup.storyboard in Resources */,
 				ED45FBED2199D08F00E81497 /* MedicineCourse.storyboard in Resources */,
-				ED74A0172194AA4000D996D4 /* AcceptRestorePassword.storyboard in Resources */,
 				ED7874BD21A3395D00FEA4DB /* CreateMedicineCourse.storyboard in Resources */,
 				ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */,
-				ED8F6AC7217FA253001DBDAA /* PinCode.storyboard in Resources */,
-				EDFA69D8218860E400195622 /* Profile.storyboard in Resources */,
 				41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */,
 				ED8F6A222179B971001DBDAA /* BackgroundViewController.storyboard in Resources */,
 				860AC62921B2923A007317B2 /* DrugEdit.storyboard in Resources */,
@@ -2565,27 +2260,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8F6A732179F451001DBDAA /* OperationHandlerContainerInterface.swift in Sources */,
-				EDC891DA21CE7AF80002CD9E /* CityModel.swift in Sources */,
 				EDC891D321CE64C90002CD9E /* MedicineCourseServiceAssembly.swift in Sources */,
 				EDC891DF21CE9C000002CD9E /* ModuleServiceInterface.swift in Sources */,
 				41A6B864220ED7D00023CE19 /* StringServiceInterface.swift in Sources */,
 				EDE945CA21C6644C009BC60A /* RESTStatus.swift in Sources */,
 				ED7874AA21A1C90D00FEA4DB /* StandartPagePickerCellViewModel.swift in Sources */,
-				ED6669EA2190C18A00366877 /* MethodObtainingViewController.swift in Sources */,
 				EDE9894621E92F5B00870F25 /* RoutineComboboxViewModel.swift in Sources */,
-				EDFA69D5218860E400195622 /* ProfileViewController.swift in Sources */,
-				ED6669EB2190C18A00366877 /* MethodObtainingRouter.swift in Sources */,
 				ED45FBE52199D08F00E81497 /* MedicineCourseCell.swift in Sources */,
 				8682996221C8C88500679C05 /* ComboboxCell.swift in Sources */,
 				ED45FBCB219764FF00E81497 /* AnimateLaunchScreenViewController.swift in Sources */,
 				860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */,
 				EDA9A64821E725D300D99B09 /* FileService.swift in Sources */,
 				ED241EA521AC014D00E4E32F /* Repository.swift in Sources */,
-				ED8F6AC4217FA253001DBDAA /* PinCodeViewController.swift in Sources */,
 				860AC62521B2923A007317B2 /* DrugEditModuleInterface.swift in Sources */,
 				ED241EA821AC065F00E4E32F /* IdentifierModelInterface.swift in Sources */,
 				866F0CE721E77E5400D9FF94 /* RoutineTextViewModel.swift in Sources */,
-				ED312CBD218727C0006D95F7 /* RegistrationRouter.swift in Sources */,
 				ED4C62A121E34F01004A999C /* MainTableViewFactory.swift in Sources */,
 				ED8F6A632179F126001DBDAA /* MultipartOperationHandler.swift in Sources */,
 				ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */,
@@ -2599,23 +2288,14 @@
 				41A6B875220ED8270023CE19 /* DateService.swift in Sources */,
 				ED8F6A642179F126001DBDAA /* MultipartOperation.swift in Sources */,
 				ED8F6A162179B971001DBDAA /* UITableView+Scrolls.swift in Sources */,
-				ED8F6A3F2179CA6E001DBDAA /* AuthService.swift in Sources */,
 				ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */,
-				EDE945C621C0293D009BC60A /* AuthStorageAssembly.swift in Sources */,
-				ED9EF29D21C0230A00C1D1C0 /* AuthServiceInterface.swift in Sources */,
 				ED8F6A9E217E2CDF001DBDAA /* StandartTextField.swift in Sources */,
-				ED749FF32194A90E00D996D4 /* RestorePasswordRouter.swift in Sources */,
 				41A533782206280A009A735E /* RoutineScrollView.swift in Sources */,
 				41A6B86E220ED8040023CE19 /* ImageService.swift in Sources */,
-				EDC891CA21CE36440002CD9E /* PinCodeInitiator.swift in Sources */,
-				41A5337E2206D47E009A735E /* AuthRequestFactoryInterface.swift in Sources */,
 				ED4C62A721E4A056004A999C /* SectionCell.swift in Sources */,
 				866F0CF521EB626C00D9FF94 /* DrugTimesEditPresenter.swift in Sources */,
 				862E300E21D09B930097991D /* MedicineDrugService.swift in Sources */,
 				ED8F6A072179B971001DBDAA /* MainRouter.swift in Sources */,
-				ED8F6AC6217FA253001DBDAA /* PinCodePresenter.swift in Sources */,
-				ED312CC0218727C0006D95F7 /* RegistrationPresenter.swift in Sources */,
-				ED8F6A92217DB4DC001DBDAA /* AuthViewController.swift in Sources */,
 				866B3B0221AEDCC90078361A /* DrugsListViewController.swift in Sources */,
 				41A533922207225B009A735E /* ModuleFactoryInterface.swift in Sources */,
 				ED082FCC21CFFD0400C892C8 /* ReachabilityServiceInterface.swift in Sources */,
@@ -2625,13 +2305,9 @@
 				ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */,
 				860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */,
 				ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */,
-				ED8F6A93217DB4DC001DBDAA /* AuthRouter.swift in Sources */,
 				ED8F6A132179B971001DBDAA /* Calendar+LastDate.swift in Sources */,
 				862F439F21CE940700CB127F /* SingleButtonCellViewModel.swift in Sources */,
-				ED8F6A91217DB4DC001DBDAA /* AuthAssembly.swift in Sources */,
-				ED6669E92190C18A00366877 /* MethodObtainingAssembly.swift in Sources */,
 				EDE9894521E92F5B00870F25 /* RoutineImageView.swift in Sources */,
-				EDFA69D7218860E400195622 /* ProfilePresenter.swift in Sources */,
 				41F06B40228030BF00D28682 /* RoutineModel.xcdatamodeld in Sources */,
 				ED8F6A4C2179F106001DBDAA /* AsyncOperation.swift in Sources */,
 				860AC62421B2923A007317B2 /* DrugEditViewController.swift in Sources */,
@@ -2642,7 +2318,6 @@
 				860AC5D921B1ADF3007317B2 /* DrugDetailsViewController.swift in Sources */,
 				866F0CEC21E7863600D9FF94 /* TextAreaCell.swift in Sources */,
 				ED45FBE82199D08F00E81497 /* MedicineCourseModuleInterface.swift in Sources */,
-				41A533802206D520009A735E /* AuthRequestFactory.swift in Sources */,
 				EDA9A63221E61F2500D99B09 /* RoutineTableViewCellViewModel.swift in Sources */,
 				867283A921AA949A0000495C /* ConfirmationModulePresenter.swift in Sources */,
 				866F0CF721EB697A00D9FF94 /* DrugTimesEditViewController.swift in Sources */,
@@ -2652,29 +2327,23 @@
 				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
 				86385B3F21C4F4720097A544 /* TwiceComboboxCell.swift in Sources */,
 				EDC891D521CE65D30002CD9E /* MedicineCourseServiceInterface.swift in Sources */,
-				ED74A0132194AA3F00D996D4 /* AcceptRestorePasswordAssembly.swift in Sources */,
-				ED8F6A432179CC66001DBDAA /* AuthStorage.swift in Sources */,
 				ED8F6A102179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift in Sources */,
-				ED312CC1218727C0006D95F7 /* RegistrationViewController.swift in Sources */,
 				41A5339E22074BA9009A735E /* NotificationServiceAssembly.swift in Sources */,
 				ED7874D521A5D5C000FEA4DB /* MedicineCourse.swift in Sources */,
 				867283B221AAB0E90000495C /* ConfirmationModuleAssembly.swift in Sources */,
 				ED279C2021A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataProperties.swift in Sources */,
 				ED8F6A2D2179B971001DBDAA /* MenuModuleViewController.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,
-				ED8F6A90217DB4DC001DBDAA /* AuthModuleInterface.swift in Sources */,
 				ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */,
 				86385B3E21C4F4720097A544 /* TwiceComboboxCellViewModel.swift in Sources */,
 				860AC5E421B27C78007317B2 /* EndingCourseType.swift in Sources */,
 				EDE9894221E92F5B00870F25 /* RoutineButton.swift in Sources */,
-				ED74A0122194AA3F00D996D4 /* AcceptRestorePasswordModuleInterface.swift in Sources */,
 				EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */,
 				ED8F6A662179F126001DBDAA /* RESTOperation.swift in Sources */,
 				41A533A222074BED009A735E /* LanguageServiceAssembly.swift in Sources */,
 				867EF4F921F0B9690019253C /* LabelAndMarkCell.swift in Sources */,
 				ED4C62A921E4A09B004A999C /* SectionCellViewModel.swift in Sources */,
 				ED787475219E038500FEA4DB /* StandartModalView.swift in Sources */,
-				ED59915721D2AAE500253599 /* CitiesModel.swift in Sources */,
 				41A5339C22074B92009A735E /* HockeyServiceAssembly.swift in Sources */,
 				ED7874D921A5D5F600FEA4DB /* MedicineCourseTime.swift in Sources */,
 				EDE945CC21C67329009BC60A /* RESTCode.swift in Sources */,
@@ -2695,7 +2364,6 @@
 				41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */,
 				EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */,
 				ED8F6A272179B971001DBDAA /* MenuModulePresenter.swift in Sources */,
-				EDE945C321C028DB009BC60A /* AuthServiceAssembly.swift in Sources */,
 				41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */,
 				867283AC21AA9EAD0000495C /* InputTextPopup.swift in Sources */,
 				41A6B86A220ED7F20023CE19 /* ImageServiceInterface.swift in Sources */,
@@ -2704,12 +2372,9 @@
 				41A5339822074B5D009A735E /* StorageServiceAssembly.swift in Sources */,
 				86F9D27A21EF70B4000ABB67 /* DrugPeriodicEditRouter.swift in Sources */,
 				ED6669CD218C5DAC00366877 /* StandartHtmlTextView.swift in Sources */,
-				ED6669EC2190C18A00366877 /* MethodObtainingPresenter.swift in Sources */,
-				ED74A0152194AA4000D996D4 /* AcceptRestorePasswordRouter.swift in Sources */,
 				ED4C62B021E5E0D7004A999C /* SectionDescriptionView.swift in Sources */,
 				ED8F6A672179F126001DBDAA /* RequestOperationHandler.swift in Sources */,
 				86C2BE5D21A682F4001BA77B /* Offsets.swift in Sources */,
-				ED312CBC218727C0006D95F7 /* RegistrationModuleInterface.swift in Sources */,
 				41F06B412282C26900D28682 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */,
 				EDA9A64021E672E800D99B09 /* SectionDescriptionViewModel.swift in Sources */,
 				EDDA636821B41C4F005AE695 /* MedicineLocalNotification.swift in Sources */,
@@ -2720,14 +2385,11 @@
 				ED8F6A092179B971001DBDAA /* FontProvider.swift in Sources */,
 				EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */,
 				EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */,
-				41A533822206D53E009A735E /* AuthRequestFactoryAssembly.swift in Sources */,
 				866B3B0B21AEDCC90078361A /* DrugsListModuleInterface.swift in Sources */,
-				ED8F6A94217DB4DC001DBDAA /* AuthPresenter.swift in Sources */,
 				860AC63221B2B31B007317B2 /* CalculatorPopup.swift in Sources */,
 				866F0CF121EB576100D9FF94 /* DrugTimesEditInterface.swift in Sources */,
 				8682996321C8C88500679C05 /* ComboboxCellViewModel.swift in Sources */,
 				ED8F6A752179F4F3001DBDAA /* SessionManager+Multipart.swift in Sources */,
-				ED749FF02194A90E00D996D4 /* RestorePasswordModuleInterface.swift in Sources */,
 				EDE9894021E92F5B00870F25 /* RoutineTextField.swift in Sources */,
 				41A6B866220ED7DA0023CE19 /* StringServiceAssembly.swift in Sources */,
 				EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */,
@@ -2735,7 +2397,6 @@
 				ED59915B21D2AE2400253599 /* StandartLoaderView.swift in Sources */,
 				41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */,
 				41A6B873220ED81E0023CE19 /* DateServiceAssembly.swift in Sources */,
-				ED8F6A452179CE05001DBDAA /* AuthModel.swift in Sources */,
 				EDA9A62A21E5EB1400D99B09 /* UsingTimesCell.swift in Sources */,
 				ED8F6A0A2179B971001DBDAA /* ImageProvider.swift in Sources */,
 				41CAA231227F186F00188189 /* R.generated.swift in Sources */,
@@ -2755,10 +2416,7 @@
 				86C2BEA921A7DE16001BA77B /* Date+DateMath.swift in Sources */,
 				ED279C1F21A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataClass.swift in Sources */,
 				860AC5DC21B1ADF3007317B2 /* DrugDetailsPresenter.swift in Sources */,
-				EDFA69D6218860E400195622 /* ProfileRouter.swift in Sources */,
 				ED8F6A0E2179B971001DBDAA /* LanguageService.swift in Sources */,
-				ED8F6AC2217FA253001DBDAA /* PinCodeModuleInterface.swift in Sources */,
-				ED312CBF218727C0006D95F7 /* RegistrationAssembly.swift in Sources */,
 				41A533852206EED5009A735E /* ServiceProvider.swift in Sources */,
 				866F0CF921EB742900D9FF94 /* DrugTimesEditRouter.swift in Sources */,
 				EDA9A63C21E672D200D99B09 /* SectionHeaderViewModel.swift in Sources */,
@@ -2767,22 +2425,16 @@
 				41A5339622072438009A735E /* ModuleServiceAssembly.swift in Sources */,
 				EDC891DD21CE97150002CD9E /* WindowServiceInterface.swift in Sources */,
 				41A533AC220A0A94009A735E /* NavigatorInterface.swift in Sources */,
-				ED6669E82190C18A00366877 /* MethodObtainingModuleInterface.swift in Sources */,
 				866B3B0421AEDCC90078361A /* DrugsListAssembly.swift in Sources */,
 				EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */,
 				860AC5E221B26FD8007317B2 /* MedicineType.swift in Sources */,
 				ED8F6A622179F126001DBDAA /* RequestObject.swift in Sources */,
 				ED082FC021CFDDC100C892C8 /* StorageService.swift in Sources */,
-				ED8F6A112179B971001DBDAA /* UIViewController+CustomNavigationBar.swift in Sources */,
-				ED8F6AC5217FA253001DBDAA /* PinCodeRouter.swift in Sources */,
 				866B3B0E21AFC3ED0078361A /* MedicineCourseService.swift in Sources */,
 				862F439D21CE93EF00CB127F /* SingleButtonCell.swift in Sources */,
 				411E233D2221CE370003CEE0 /* String+DoubleFromString.swift in Sources */,
 				41A6B853220D92750023CE19 /* ModalContainer.swift in Sources */,
-				ED749FF22194A90E00D996D4 /* RestorePasswordViewController.swift in Sources */,
 				ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */,
-				EDFA69D3218860E400195622 /* ProfileModuleInterface.swift in Sources */,
-				ED8F6AC3217FA253001DBDAA /* PinCodeAssembly.swift in Sources */,
 				ED8F6A9C217E2B12001DBDAA /* StandartAcceptButton.swift in Sources */,
 				86F9D27021EF01CC000ABB67 /* DrugPeriodicEditPresenter.swift in Sources */,
 				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
@@ -2791,15 +2443,12 @@
 				866F0CFB21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift in Sources */,
 				41A5338D22071615009A735E /* Date+Timestamp.swift in Sources */,
 				ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */,
-				ED749FF12194A90E00D996D4 /* RestorePasswordAssembly.swift in Sources */,
 				860AC66121B65B58007317B2 /* Time.swift in Sources */,
 				411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */,
 				860AC5DB21B1ADF3007317B2 /* DrugDetailsRouter.swift in Sources */,
-				ED78749421A1946F00FEA4DB /* ErrorCodeViewController.swift in Sources */,
 				ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */,
 				8675B5FF21C21A5B005F631C /* LabelCellViewModel.swift in Sources */,
 				866F0CEE21E7865D00D9FF94 /* TextAreaCellViewModel.swift in Sources */,
-				ED749FF42194A90E00D996D4 /* RestorePasswordPresenter.swift in Sources */,
 				EDE9894421E92F5B00870F25 /* RoutineImageViewModel.swift in Sources */,
 				EDDA636421B408EE005AE695 /* DayOfWeek.swift in Sources */,
 				860AC62321B2923A007317B2 /* DrugEditPresenter.swift in Sources */,
@@ -2842,13 +2491,10 @@
 				867EF4FE21F0F1B50019253C /* DrugPeriodicEditTableViewFactory.swift in Sources */,
 				ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */,
 				EDA9A65021E750D600D99B09 /* RoutineViewModel.swift in Sources */,
-				ED74A0162194AA4000D996D4 /* AcceptRestorePasswordPresenter.swift in Sources */,
 				EDE9894921E92F5B00870F25 /* RoutineLabel.swift in Sources */,
 				86F9D26E21EEFFC2000ABB67 /* DrugPeriodicEditInterface.swift in Sources */,
 				ED8F6A5F2179F126001DBDAA /* DownloadOperationHandler.swift in Sources */,
-				EDE945C821C02AD4009BC60A /* AuthStorageInterface.swift in Sources */,
 				ED082FCE21CFFD1100C892C8 /* HockeyService.swift in Sources */,
-				ED74A0142194AA3F00D996D4 /* AcceptRestorePasswordViewController.swift in Sources */,
 				ED279C2721A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift in Sources */,
 				860AC63021B2923A007317B2 /* DrugEditRouter.swift in Sources */,
 				86C2BEAB21A7E32B001BA77B /* StandartProgressBar.swift in Sources */,
@@ -2862,12 +2508,10 @@
 				EDCD216F21A722BE009D704B /* LocalNotificationService.swift in Sources */,
 				ED082FC221CFDDCA00C892C8 /* StorageServiceInterface.swift in Sources */,
 				41A533882206EF27009A735E /* ServiceProviderInterface.swift in Sources */,
-				EDFA69D4218860E400195622 /* ProfileAssembly.swift in Sources */,
 				866CA11221CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift in Sources */,
 				ED7874A121A1C67B00FEA4DB /* StandartPagePickerCell.swift in Sources */,
 				ED7874A821A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift in Sources */,
 				866B3AFF21AEDCC90078361A /* DrugsListTableViewFactory.swift in Sources */,
-				ED59915921D2AB0900253599 /* BaseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,11 +36,11 @@ final class DrugPeriodicEditViewController: RoutineViewController {
 extension DrugPeriodicEditViewController: DrugPeriodicEditViewInput {
     
     func setupInitialState() {
-        self.navigationController?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         self.navigationItem.title = AppDelegate.serviceProvider.makeStringService().localizeById("drug_periodic_edit_title")
         
-        self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
-        self.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(rightAcceptButton))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(rightAcceptButton))
         
         self.typeSelector.configureWithPagesNames([PeriodCourseType.weekDays.toString(),
                                                    PeriodCourseType.countDays.toString() ],

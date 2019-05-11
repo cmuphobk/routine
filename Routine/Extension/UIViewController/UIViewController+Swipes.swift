@@ -1,6 +1,7 @@
 import UIKit
 
 extension UIViewController {
+    
     // MARK: - Extension stored properties
     
     fileprivate struct CustomProperties {

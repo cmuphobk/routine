@@ -10,8 +10,7 @@ enum ServiceProviderAssembly {
         serviceProvider.languageService = LanguageServiceAssembly.build(storageService: serviceProvider.storageService)
         
         serviceProvider.localNotificationService = LocalNotificationServiceAssembly.build(storageService: serviceProvider.storageService)
-        serviceProvider.authService = AuthServiceAssembly.build(storageService: serviceProvider.storageService)
-        serviceProvider.moduleService = ModuleServiceAssembly.build(serviceProvider.authService)
+        serviceProvider.moduleService = ModuleServiceAssembly.build()
         serviceProvider.windowService = WindowServiceAssembly.build()
         serviceProvider.notificationService = NotificationServiceAssembly.build()
         serviceProvider.reachabilityService = ReachabilityServiceAssembly.build(notificationService: serviceProvider.notificationService)

@@ -14,7 +14,6 @@ protocol ServiceProviderInterface {
     func makeMagicalRecordService() -> MagicalRecordServiceInterface
     func makeNotificationService() -> NotificationServiceInterface
     func makeHockeyService() -> HockeyServiceInterface
-    func makeAuthService() -> AuthServiceInterface
     func makeMedicineCourseService() -> MedicineCourseServiceInterface
     func makeMedicineDrugService() -> MedicineDrugServiceInterface
     

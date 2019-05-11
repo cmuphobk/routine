@@ -75,9 +75,9 @@ final class MedicineCourseViewController: RoutineViewController {
         super.viewWillAppear(animated)
         output.didTriggerViewWillAppear()
         
-        self.navigationController?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
-        self.customBarRightButtonAction(icon: ImageProvider.medicineCourseImages.plusIcon, action: #selector(createCourseButtonAction))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.medicineCourseImages.plusIcon, action: #selector(createCourseButtonAction))
     }
     
     override func localizationSetup() {

@@ -10,35 +10,8 @@ final class ModuleFactory: ModuleFactoryInterface {
         MainAssembly.buildMainScreenModule(completion)
     }
     
-    func makeAuthModule(_ completion: (UIViewController?, AuthModuleInput?) -> Void) {
-        AuthAssembly.buildAuthScreenModule(completion)
-    }
-    
     func makeMedicineCourseModule(_ completion: (UIViewController?, MedicineCourseModuleInput?) -> Void) {
         MedicineCourseAssembly.buildMedicineCourseScreenModule(completion)
-    }
-    
-    func makePinCodeModule(_ completion: (UIViewController?, PinCodeModuleInput?) -> Void) {
-        PinCodeAssembly.buildPinCodeScreenModule(completion) 
-    }
-    func makeMethodObtainingModule(_ completion: (UIViewController?, MethodObtainingModuleInput?) -> Void) {
-        MethodObtainingAssembly.buildMethodObtainingScreenModule(completion)
-    }
-    
-    func makeProfileModule(_ completion: (UIViewController?, ProfileModuleInput?) -> Void) {
-        ProfileAssembly.buildProfileScreenModule(completion)
-    }
-    
-    func makeRegistrationModule(_ completion: (UIViewController?, RegistrationModuleInput?) -> Void) {
-        RegistrationAssembly.buildRegistrationScreenModule(completion)
-    }
-    
-    func makeRestorePasswordModule(_ completion: (UIViewController?, RestorePasswordModuleInput?) -> Void) {
-        RestorePasswordAssembly.buildRestorePasswordScreenModule(completion)
-    }
-    
-    func makeAcceptRestorePasswordModule(_ completion: (UIViewController?, AcceptRestorePasswordModuleInput?) -> Void) {
-        AcceptRestorePasswordAssembly.buildAcceptRestorePasswordScreenModule(completion)
     }
     
     func makeCreatePopUpModule(confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup? {

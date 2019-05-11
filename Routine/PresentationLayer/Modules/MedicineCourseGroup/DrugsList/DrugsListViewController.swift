@@ -39,8 +39,8 @@ final class DrugsListViewController: RoutineViewController {
         super.viewWillAppear(animated)
         self.output.didTriggerViewWillAppear()
         
-        self.navigationController?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
     }
     
     override func localizationSetup() {
@@ -77,7 +77,7 @@ extension DrugsListViewController: DrugsListViewInput {
     }
     
     func enableCreateButton() {
-        self.customBarRightButtonAction(icon: ImageProvider.drugsListImages.createDrugIcon, action: #selector(createDrugButtonAction))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugsListImages.createDrugIcon, action: #selector(createDrugButtonAction))
     }
     
     func updateTableViewWithMedicineCourse(_ medicineCourse: MedicineCourse) {

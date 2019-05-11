@@ -458,14 +458,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
-    /// Storyboard `AcceptRestorePassword`.
-    static let acceptRestorePassword = _R.storyboard.acceptRestorePassword()
     /// Storyboard `AnimateLaunchScreenViewController`.
     static let animateLaunchScreenViewController = _R.storyboard.animateLaunchScreenViewController()
-    /// Storyboard `Auth`.
-    static let auth = _R.storyboard.auth()
     /// Storyboard `BackgroundViewController`.
     static let backgroundViewController = _R.storyboard.backgroundViewController()
     /// Storyboard `CalculatorPopup`.
@@ -484,8 +480,6 @@ struct R: Rswift.Validatable {
     static let drugTimesEdit = _R.storyboard.drugTimesEdit()
     /// Storyboard `DrugsList`.
     static let drugsList = _R.storyboard.drugsList()
-    /// Storyboard `ErrorCode`.
-    static let errorCode = _R.storyboard.errorCode()
     /// Storyboard `InputTextPopup`.
     static let inputTextPopup = _R.storyboard.inputTextPopup()
     /// Storyboard `LaunchScreen`.
@@ -496,30 +490,10 @@ struct R: Rswift.Validatable {
     static let medicineCourse = _R.storyboard.medicineCourse()
     /// Storyboard `MenuModuleViewController`.
     static let menuModuleViewController = _R.storyboard.menuModuleViewController()
-    /// Storyboard `MethodObtaining`.
-    static let methodObtaining = _R.storyboard.methodObtaining()
-    /// Storyboard `PinCode`.
-    static let pinCode = _R.storyboard.pinCode()
-    /// Storyboard `Profile`.
-    static let profile = _R.storyboard.profile()
-    /// Storyboard `Registration`.
-    static let registration = _R.storyboard.registration()
-    /// Storyboard `RestorePassword`.
-    static let restorePassword = _R.storyboard.restorePassword()
-    
-    /// `UIStoryboard(name: "AcceptRestorePassword", bundle: ...)`
-    static func acceptRestorePassword(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.acceptRestorePassword)
-    }
     
     /// `UIStoryboard(name: "AnimateLaunchScreenViewController", bundle: ...)`
     static func animateLaunchScreenViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.animateLaunchScreenViewController)
-    }
-    
-    /// `UIStoryboard(name: "Auth", bundle: ...)`
-    static func auth(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.auth)
     }
     
     /// `UIStoryboard(name: "BackgroundViewController", bundle: ...)`
@@ -567,11 +541,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.drugsList)
     }
     
-    /// `UIStoryboard(name: "ErrorCode", bundle: ...)`
-    static func errorCode(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.errorCode)
-    }
-    
     /// `UIStoryboard(name: "InputTextPopup", bundle: ...)`
     static func inputTextPopup(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.inputTextPopup)
@@ -595,31 +564,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MenuModuleViewController", bundle: ...)`
     static func menuModuleViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.menuModuleViewController)
-    }
-    
-    /// `UIStoryboard(name: "MethodObtaining", bundle: ...)`
-    static func methodObtaining(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.methodObtaining)
-    }
-    
-    /// `UIStoryboard(name: "PinCode", bundle: ...)`
-    static func pinCode(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.pinCode)
-    }
-    
-    /// `UIStoryboard(name: "Profile", bundle: ...)`
-    static func profile(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.profile)
-    }
-    
-    /// `UIStoryboard(name: "Registration", bundle: ...)`
-    static func registration(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.registration)
-    }
-    
-    /// `UIStoryboard(name: "RestorePassword", bundle: ...)`
-    static func restorePassword(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.restorePassword)
     }
     
     fileprivate init() {}
@@ -4344,9 +4288,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try acceptRestorePassword.validate()
       try animateLaunchScreenViewController.validate()
-      try auth.validate()
       try backgroundViewController.validate()
       try calculatorPopup.validate()
       try confirmDecisionPopup.validate()
@@ -4356,35 +4298,11 @@ struct _R: Rswift.Validatable {
       try drugPeriodicEdit.validate()
       try drugTimesEdit.validate()
       try drugsList.validate()
-      try errorCode.validate()
       try inputTextPopup.validate()
       try launchScreen.validate()
       try main.validate()
       try medicineCourse.validate()
       try menuModuleViewController.validate()
-      try methodObtaining.validate()
-      try pinCode.validate()
-      try profile.validate()
-      try registration.validate()
-      try restorePassword.validate()
-    }
-    
-    struct acceptRestorePassword: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let acceptRestorePasswordViewController = StoryboardViewControllerResource<AcceptRestorePasswordViewController>(identifier: "AcceptRestorePasswordViewController")
-      let bundle = R.hostingBundle
-      let name = "AcceptRestorePassword"
-      
-      func acceptRestorePasswordViewController(_: Void = ()) -> AcceptRestorePasswordViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: acceptRestorePasswordViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.acceptRestorePassword().acceptRestorePasswordViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'acceptRestorePasswordViewController' could not be loaded from storyboard 'AcceptRestorePassword' as 'AcceptRestorePasswordViewController'.") }
-      }
-      
-      fileprivate init() {}
     }
     
     struct animateLaunchScreenViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -4400,24 +4318,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.animateLaunchScreenViewController().animateLaunchScreenViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'animateLaunchScreenViewController' could not be loaded from storyboard 'AnimateLaunchScreenViewController' as 'AnimateLaunchScreenViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct auth: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let authViewController = StoryboardViewControllerResource<AuthViewController>(identifier: "AuthViewController")
-      let bundle = R.hostingBundle
-      let name = "Auth"
-      
-      func authViewController(_: Void = ()) -> AuthViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: authViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.auth().authViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'authViewController' could not be loaded from storyboard 'Auth' as 'AuthViewController'.") }
       }
       
       fileprivate init() {}
@@ -4587,24 +4487,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct errorCode: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let errorCodeViewController = StoryboardViewControllerResource<ErrorCodeViewController>(identifier: "ErrorCodeViewController")
-      let name = "ErrorCode"
-      
-      func errorCodeViewController(_: Void = ()) -> ErrorCodeViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: errorCodeViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.errorCode().errorCodeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'errorCodeViewController' could not be loaded from storyboard 'ErrorCode' as 'ErrorCodeViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct inputTextPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let inputTextPopup = StoryboardViewControllerResource<InputTextPopup>(identifier: "InputTextPopup")
@@ -4687,96 +4569,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.menuModuleViewController().menuModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuModuleViewController' could not be loaded from storyboard 'MenuModuleViewController' as 'MenuModuleViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct methodObtaining: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let methodObtainingViewController = StoryboardViewControllerResource<MethodObtainingViewController>(identifier: "MethodObtainingViewController")
-      let name = "MethodObtaining"
-      
-      func methodObtainingViewController(_: Void = ()) -> MethodObtainingViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: methodObtainingViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.methodObtaining().methodObtainingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'methodObtainingViewController' could not be loaded from storyboard 'MethodObtaining' as 'MethodObtainingViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct pinCode: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "PinCode"
-      let pinCodeViewController = StoryboardViewControllerResource<PinCodeViewController>(identifier: "PinCodeViewController")
-      
-      func pinCodeViewController(_: Void = ()) -> PinCodeViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinCodeViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.pinCode().pinCodeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinCodeViewController' could not be loaded from storyboard 'PinCode' as 'PinCodeViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct profile: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "Profile"
-      let profileViewController = StoryboardViewControllerResource<ProfileViewController>(identifier: "ProfileViewController")
-      
-      func profileViewController(_: Void = ()) -> ProfileViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: profileViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.profile().profileViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileViewController' could not be loaded from storyboard 'Profile' as 'ProfileViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct registration: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "Registration"
-      let registrationViewController = StoryboardViewControllerResource<RegistrationViewController>(identifier: "RegistrationViewController")
-      
-      func registrationViewController(_: Void = ()) -> RegistrationViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registrationViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.registration().registrationViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewController' could not be loaded from storyboard 'Registration' as 'RegistrationViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct restorePassword: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "RestorePassword"
-      let restorePasswordViewController = StoryboardViewControllerResource<RestorePasswordViewController>(identifier: "RestorePasswordViewController")
-      
-      func restorePasswordViewController(_: Void = ()) -> RestorePasswordViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: restorePasswordViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.restorePassword().restorePasswordViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'restorePasswordViewController' could not be loaded from storyboard 'RestorePassword' as 'RestorePasswordViewController'.") }
       }
       
       fileprivate init() {}

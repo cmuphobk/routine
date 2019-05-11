@@ -15,14 +15,6 @@ final class MenuModuleRouter: MenuModuleRouting {
                 self.moduleService.navigation?.hideMenu()
             }
             
-        case kAuthModuleId:
-            
-            self.moduleService.moduleFactory.makeAuthModule { [unowned self] (_, authModuleInput) in
-                guard let module = authModuleInput as? Module else { return }
-                self.moduleService.navigation?.openModuleFromLeft(module)
-                self.moduleService.navigation?.hideMenu()
-            }
-            
         case kMedicineCourseModuleId:
             
             self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in

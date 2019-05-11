@@ -24,25 +24,19 @@ final class ModuleService: ModuleServiceInterface {
     
     static let shared = ModuleService()
     
-    var authService: AuthServiceInterface!
-    
     var moduleFactory: ModuleFactoryInterface!
-    
-    
     
     private init() {}
     
     func obtainAvailableModulesAndActionsIds() -> [ModuleDescription] {
         return [
             (name: kMainModuleId, alias: kMainModuleAlias),
-            (name: kMedicineCourseModuleId, alias: kMedicineCourseModuleAlias),
-            (name: kAuthModuleId, alias: kAuthModuleAlias)
+            (name: kMedicineCourseModuleId, alias: kMedicineCourseModuleAlias)
         ]
     }
     
     func obtainModuleIdBeforeLaunch () -> String {
         
-//        return self.authService.isAuth ? kMainModuleId : kAuthModuleId
         return kMainModuleId
     }
 

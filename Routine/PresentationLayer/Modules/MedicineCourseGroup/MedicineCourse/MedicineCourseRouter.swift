@@ -84,4 +84,8 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
     func containerForModal() -> ModalContainer? {
         return self.moduleService.navigation?.containerForModal()
     }
+    
+    func setupBarButtons() {
+        
+    }
 }

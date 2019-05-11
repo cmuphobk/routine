@@ -2,11 +2,10 @@ import Foundation
 
 enum ModuleServiceAssembly {
     
-    static func build(_ authService: AuthServiceInterface) -> ModuleServiceInterface {
+    static func build() -> ModuleServiceInterface {
         
         let moduleService = ModuleService.shared
         
-        moduleService.authService = authService
         moduleService.moduleFactory = ModuleFactoryAssembly.build()
         
         return moduleService

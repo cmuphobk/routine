@@ -40,11 +40,11 @@ final class DrugTimesEditViewController: RoutineViewController {
 extension DrugTimesEditViewController: DrugTimesEditViewInput {
     
     func setupInitialState() {
-        self.navigationController?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         self.navigationItem.title = AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_edit_title")
         
-        self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
-        self.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(rightAcceptButton))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(rightAcceptButton))
         
         self.typeSelector.configureWithPagesNames([EndingCourseType.endUsageDate.toString(),
                                                    EndingCourseType.countUsageDays.toString(),
