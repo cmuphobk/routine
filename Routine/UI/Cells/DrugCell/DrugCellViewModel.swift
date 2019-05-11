@@ -21,7 +21,7 @@ final class DrugCellViewModel: RoutineTableViewCellViewModel {
         return "DrugCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .nib(value: UINib(nibName: self.reuseIdentifier, bundle: nil))
     }
     

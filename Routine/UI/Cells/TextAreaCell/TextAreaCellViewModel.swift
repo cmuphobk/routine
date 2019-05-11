@@ -17,7 +17,7 @@ final class TextAreaCellViewModel: RoutineTableViewCellViewModel {
         return "TextAreaCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: TextAreaCell.self)
     }
     

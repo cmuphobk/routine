@@ -13,7 +13,7 @@ final class MainViewController: RoutineViewController {
     }()
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
 
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     private var cellViewModels: [RoutineTableViewCellViewModel] = []
     
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ final class MainViewController: RoutineViewController {
 // MARK: - MainViewInput
 extension MainViewController: MainViewInput {
     func setupInitialState() {
-        self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+        self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
         self.cellViewModels = MainTableViewFactory.mainCellViewModels(delegate: self)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels)
@@ -69,10 +69,10 @@ extension MainViewController: MainViewInput {
     }
 }
 
-// MARK: - UniversalTableViewManagerDelegate
-extension MainViewController: UniversalTableViewManagerDelegate {
+// MARK: - RoutineTableViewManagerDelegate
+extension MainViewController: RoutineTableViewManagerDelegate {
     
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         if actionType != .select {
             return
         }

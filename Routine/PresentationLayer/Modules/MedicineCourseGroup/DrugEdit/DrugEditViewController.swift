@@ -17,7 +17,7 @@ final class DrugEditViewController: RoutineViewController {
     private var cellViewModelsAfterTimes: [RoutineTableViewCellViewModel] = []
     private var cellViewModelsTimes: [RoutineTableViewCellViewModel] = []
     
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     
     weak private var modalView: StandartModalView!
     weak private var drugtypePickerView: StandartPickerView!
@@ -101,7 +101,7 @@ extension DrugEditViewController: DrugEditViewInput {
         self.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
         self.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(createDrug))
         
-        self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+        self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
     }
     
@@ -235,9 +235,9 @@ extension DrugEditViewController: DrugEditViewInput {
     }
 }
 
-// MARK: - UniversalTableViewManager
-extension DrugEditViewController: UniversalTableViewManagerDelegate {
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+// MARK: - RoutineTableViewManager
+extension DrugEditViewController: RoutineTableViewManagerDelegate {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         
         if actionType != .select {
             return

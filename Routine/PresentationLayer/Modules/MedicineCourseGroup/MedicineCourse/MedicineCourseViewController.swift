@@ -45,7 +45,7 @@ final class MedicineCourseViewController: RoutineViewController {
     weak private var modalView: StandartModalView!
     
     private var cellViewModels: [RoutineTableViewCellViewModel] = []
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     
     private var selectedMedicineCourseType: MedicineCourseGroupType  = .medicineCourseNow
     
@@ -99,7 +99,7 @@ final class MedicineCourseViewController: RoutineViewController {
 extension MedicineCourseViewController: MedicineCourseViewInput {
     
     func setupInitialState() {
-        self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+        self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
         self.pagesView.configureWithPagesNames([MedicineCourseGroupType.medicineCourseNow.rawValue, MedicineCourseGroupType.medicineCourseArchive.rawValue], height: self.pagesView.frame.height, font: FontProvider.default.standartPages, textColor: ColorProvider.default.whiteColor, cellsBackgroundColor: ColorProvider.default.blueColor)
         self.pagesView.delegate = self
@@ -173,9 +173,9 @@ extension MedicineCourseViewController: StandartModalViewDelegate {
     
 }
 
-// MARK: - UniversalTableViewManager
-extension MedicineCourseViewController: UniversalTableViewManagerDelegate {
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+// MARK: - RoutineTableViewManager
+extension MedicineCourseViewController: RoutineTableViewManagerDelegate {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         if actionType != .select {
             return
         }

@@ -1,6 +1,6 @@
 import Foundation
 
-enum TriggerActionType: Int {
+enum RoutineActionType: Int {
     case select
     case deselect
 }

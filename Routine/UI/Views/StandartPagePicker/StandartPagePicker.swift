@@ -29,7 +29,7 @@ class StandartPagePicker: UIView {
     
     var collectionViewLayout = UICollectionViewFlowLayout()
     
-    var collectionViewManager: UniversalCollectionViewManager!
+    var collectionViewManager: RoutineCollectionViewManager!
     
     func configureWithPagesNames(_ names: [String], height: CGFloat, font: UIFont, textColor: UIColor, cellsBackgroundColor: UIColor) {
         
@@ -62,7 +62,7 @@ class StandartPagePicker: UIView {
             if !self.collectionView.isDescendant(of: self) {
                 self.addSubview(self.collectionView)
                 
-                self.collectionViewManager = UniversalCollectionViewManager(collectionView: self.collectionView, delegate: self)
+                self.collectionViewManager = RoutineCollectionViewManager(collectionView: self.collectionView, delegate: self)
                 
                 let size = CGSize(width: self.frame.width / CGFloat(self.pagesArray.count), height: self.height)
                 let viewModels = StandartPagePickerCollectionViewFactory.standartPagePickerCellViewModels(models: self.pagesArray,
@@ -105,9 +105,9 @@ class StandartPagePicker: UIView {
     
 }
 
-extension StandartPagePicker: UniversalCollectionViewManagerDelegate {
+extension StandartPagePicker: RoutineCollectionViewManagerDelegate {
     
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         self.delegate?.columnDidPressed(index: index)
         self.selectedIndex = index
         

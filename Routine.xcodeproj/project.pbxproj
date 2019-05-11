@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		411E233D2221CE370003CEE0 /* String+DoubleFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E233C2221CE370003CEE0 /* String+DoubleFromString.swift */; };
 		411E2344222C63840003CEE0 /* Double+DoseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E2343222C63840003CEE0 /* Double+DoseString.swift */; };
-		411E234822440F150003CEE0 /* TriggerActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234722440F150003CEE0 /* TriggerActionType.swift */; };
+		411E234822440F150003CEE0 /* RoutineActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234722440F150003CEE0 /* RoutineActionType.swift */; };
 		411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */; };
 		411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234B224412C40003CEE0 /* RoutineCollectionView.swift */; };
-		411E235222494DC70003CEE0 /* CellOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E235122494DC70003CEE0 /* CellOwner.swift */; };
+		411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E235122494DC70003CEE0 /* RoutineCellOwner.swift */; };
 		41A533782206280A009A735E /* RoutineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533772206280A009A735E /* RoutineScrollView.swift */; };
 		41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337922062814009A735E /* RoutineScrollViewModel.swift */; };
 		41A5337E2206D47E009A735E /* AuthRequestFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */; };
@@ -172,7 +172,7 @@
 		ED45FBED2199D08F00E81497 /* MedicineCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED45FBDD2199D08F00E81497 /* MedicineCourse.storyboard */; };
 		ED45FBEF2199D08F00E81497 /* MedicineCourseTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45FBE12199D08F00E81497 /* MedicineCourseTableViewFactory.swift */; };
 		ED4C62A121E34F01004A999C /* MainTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */; };
-		ED4C62A321E34F5B004A999C /* UniversalTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A221E34F5B004A999C /* UniversalTableViewManager.swift */; };
+		ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A221E34F5B004A999C /* RoutineTableViewManager.swift */; };
 		ED4C62A721E4A056004A999C /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A621E4A056004A999C /* SectionCell.swift */; };
 		ED4C62A921E4A09B004A999C /* SectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A821E4A09B004A999C /* SectionCellViewModel.swift */; };
 		ED4C62AC21E5E0AD004A999C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */; };
@@ -212,7 +212,7 @@
 		ED78749D21A1C5EC00FEA4DB /* StandartPagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED78749C21A1C5EC00FEA4DB /* StandartPagePicker.xib */; };
 		ED7874A121A1C67B00FEA4DB /* StandartPagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */; };
 		ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7874A021A1C67B00FEA4DB /* StandartPagePickerCell.xib */; };
-		ED7874A721A1C86200FEA4DB /* UniversalCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A521A1C86200FEA4DB /* UniversalCollectionViewManager.swift */; };
+		ED7874A721A1C86200FEA4DB /* RoutineCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A521A1C86200FEA4DB /* RoutineCollectionViewManager.swift */; };
 		ED7874A821A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */; };
 		ED7874AA21A1C90D00FEA4DB /* StandartPagePickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A921A1C90C00FEA4DB /* StandartPagePickerCellViewModel.swift */; };
 		ED7874BB21A3395400FEA4DB /* CreateMedicineCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874BA21A3395400FEA4DB /* CreateMedicineCourseViewController.swift */; };
@@ -373,10 +373,10 @@
 		102F7499330F32ADE0AB26C9 /* Pods-RoutineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoutineTests/Pods-RoutineTests.release.xcconfig"; sourceTree = "<group>"; };
 		411E233C2221CE370003CEE0 /* String+DoubleFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DoubleFromString.swift"; sourceTree = "<group>"; };
 		411E2343222C63840003CEE0 /* Double+DoseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+DoseString.swift"; sourceTree = "<group>"; };
-		411E234722440F150003CEE0 /* TriggerActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerActionType.swift; sourceTree = "<group>"; };
+		411E234722440F150003CEE0 /* RoutineActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineActionType.swift; sourceTree = "<group>"; };
 		411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewModel.swift; sourceTree = "<group>"; };
 		411E234B224412C40003CEE0 /* RoutineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionView.swift; sourceTree = "<group>"; };
-		411E235122494DC70003CEE0 /* CellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOwner.swift; sourceTree = "<group>"; };
+		411E235122494DC70003CEE0 /* RoutineCellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellOwner.swift; sourceTree = "<group>"; };
 		41A533772206280A009A735E /* RoutineScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollView.swift; sourceTree = "<group>"; };
 		41A5337922062814009A735E /* RoutineScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineScrollViewModel.swift; sourceTree = "<group>"; };
 		41A5337D2206D47E009A735E /* AuthRequestFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactoryInterface.swift; sourceTree = "<group>"; };
@@ -540,7 +540,7 @@
 		ED45FBDD2199D08F00E81497 /* MedicineCourse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MedicineCourse.storyboard; sourceTree = "<group>"; };
 		ED45FBE12199D08F00E81497 /* MedicineCourseTableViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineCourseTableViewFactory.swift; sourceTree = "<group>"; };
 		ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactory.swift; sourceTree = "<group>"; };
-		ED4C62A221E34F5B004A999C /* UniversalTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTableViewManager.swift; sourceTree = "<group>"; };
+		ED4C62A221E34F5B004A999C /* RoutineTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewManager.swift; sourceTree = "<group>"; };
 		ED4C62A621E4A056004A999C /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		ED4C62A821E4A09B004A999C /* SectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCellViewModel.swift; sourceTree = "<group>"; };
 		ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -580,7 +580,7 @@
 		ED78749C21A1C5EC00FEA4DB /* StandartPagePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartPagePicker.xib; sourceTree = "<group>"; };
 		ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCell.swift; sourceTree = "<group>"; };
 		ED7874A021A1C67B00FEA4DB /* StandartPagePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartPagePickerCell.xib; sourceTree = "<group>"; };
-		ED7874A521A1C86200FEA4DB /* UniversalCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalCollectionViewManager.swift; sourceTree = "<group>"; };
+		ED7874A521A1C86200FEA4DB /* RoutineCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewManager.swift; sourceTree = "<group>"; };
 		ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCollectionViewFactory.swift; sourceTree = "<group>"; };
 		ED7874A921A1C90C00FEA4DB /* StandartPagePickerCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCellViewModel.swift; sourceTree = "<group>"; };
 		ED7874BA21A3395400FEA4DB /* CreateMedicineCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMedicineCourseViewController.swift; sourceTree = "<group>"; };
@@ -941,6 +941,16 @@
 				ED8F69C32179B971001DBDAA /* ImageProvider.swift */,
 			);
 			path = ImageProvider;
+			sourceTree = "<group>";
+		};
+		41F06B422286F79700D28682 /* RoutineManager */ = {
+			isa = PBXGroup;
+			children = (
+				ED4C62A221E34F5B004A999C /* RoutineTableViewManager.swift */,
+				ED7874A521A1C86200FEA4DB /* RoutineCollectionViewManager.swift */,
+				411E234722440F150003CEE0 /* RoutineActionType.swift */,
+			);
+			path = RoutineManager;
 			sourceTree = "<group>";
 		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
@@ -1646,7 +1656,9 @@
 			isa = PBXGroup;
 			children = (
 				ED1F8EE521F48EFB00D467CB /* Routine.entitlements */,
-				EDE945BE21C02650009BC60A /* FoundationLayer */,
+				ED8F69DA2179B971001DBDAA /* RoutineFramework */,
+				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
+				41CAA230227F186F00188189 /* R.generated.swift */,
 				ED8F6A312179C08A001DBDAA /* CoreLayer */,
 				ED8F69C02179B971001DBDAA /* BuisnessLayer */,
 				ED8F69A32179B971001DBDAA /* PresentationLayer */,
@@ -1735,6 +1747,7 @@
 		ED8F69DA2179B971001DBDAA /* RoutineFramework */ = {
 			isa = PBXGroup;
 			children = (
+				41F06B422286F79700D28682 /* RoutineManager */,
 				EDA9A64C21E750B500D99B09 /* RoutineView */,
 				411E2349224412C40003CEE0 /* RoutineCollectionView */,
 				EDC0DC6621ED0D3900D5327D /* RoutineTableView */,
@@ -1750,7 +1763,7 @@
 				EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */,
 				ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */,
 				EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */,
-				411E235122494DC70003CEE0 /* CellOwner.swift */,
+				411E235122494DC70003CEE0 /* RoutineCellOwner.swift */,
 			);
 			path = RoutineFramework;
 			sourceTree = "<group>";
@@ -2071,19 +2084,6 @@
 				EDE945C421C0292E009BC60A /* AuthStorage */,
 			);
 			path = Storages;
-			sourceTree = "<group>";
-		};
-		EDE945BE21C02650009BC60A /* FoundationLayer */ = {
-			isa = PBXGroup;
-			children = (
-				41CAA230227F186F00188189 /* R.generated.swift */,
-				ED8F69DA2179B971001DBDAA /* RoutineFramework */,
-				ED4C62A221E34F5B004A999C /* UniversalTableViewManager.swift */,
-				ED7874A521A1C86200FEA4DB /* UniversalCollectionViewManager.swift */,
-				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
-				411E234722440F150003CEE0 /* TriggerActionType.swift */,
-			);
-			path = FoundationLayer;
 			sourceTree = "<group>";
 		};
 		EDE945BF21C026AB009BC60A /* NetworkModels */ = {
@@ -2551,11 +2551,11 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				$SRCROOT/$PROJECT_NAME/FoundationLayer/R.generated.swift,
+				$SRCROOT/$PROJECT_NAME/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/FoundationLayer/R.generated.swift\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2624,7 +2624,7 @@
 				ED8F6A0B2179B971001DBDAA /* ColorProvider.swift in Sources */,
 				ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */,
 				860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */,
-				ED4C62A321E34F5B004A999C /* UniversalTableViewManager.swift in Sources */,
+				ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */,
 				ED8F6A93217DB4DC001DBDAA /* AuthRouter.swift in Sources */,
 				ED8F6A132179B971001DBDAA /* Calendar+LastDate.swift in Sources */,
 				862F439F21CE940700CB127F /* SingleButtonCellViewModel.swift in Sources */,
@@ -2648,7 +2648,7 @@
 				866F0CF721EB697A00D9FF94 /* DrugTimesEditViewController.swift in Sources */,
 				866B3B0321AEDCC90078361A /* DrugsListRouter.swift in Sources */,
 				EDC891E521CFC64E0002CD9E /* Language.swift in Sources */,
-				411E234822440F150003CEE0 /* TriggerActionType.swift in Sources */,
+				411E234822440F150003CEE0 /* RoutineActionType.swift in Sources */,
 				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
 				86385B3F21C4F4720097A544 /* TwiceComboboxCell.swift in Sources */,
 				EDC891D521CE65D30002CD9E /* MedicineCourseServiceInterface.swift in Sources */,
@@ -2743,7 +2743,7 @@
 				ED279C2321A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataClass.swift in Sources */,
 				EDA9A62921E5EB1400D99B09 /* UsingTimesCellViewModel.swift in Sources */,
 				ED749FD52190C6DA00D996D4 /* StandartCheckBoxButton.swift in Sources */,
-				ED7874A721A1C86200FEA4DB /* UniversalCollectionViewManager.swift in Sources */,
+				ED7874A721A1C86200FEA4DB /* RoutineCollectionViewManager.swift in Sources */,
 				ED241EB921AD2AD200E4E32F /* Codable+Dicitionary.swift in Sources */,
 				ED45FBEB2199D08F00E81497 /* MedicineCourseRouter.swift in Sources */,
 				ED279C2821A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift in Sources */,
@@ -2793,7 +2793,7 @@
 				ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */,
 				ED749FF12194A90E00D996D4 /* RestorePasswordAssembly.swift in Sources */,
 				860AC66121B65B58007317B2 /* Time.swift in Sources */,
-				411E235222494DC70003CEE0 /* CellOwner.swift in Sources */,
+				411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */,
 				860AC5DB21B1ADF3007317B2 /* DrugDetailsRouter.swift in Sources */,
 				ED78749421A1946F00FEA4DB /* ErrorCodeViewController.swift in Sources */,
 				ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */,

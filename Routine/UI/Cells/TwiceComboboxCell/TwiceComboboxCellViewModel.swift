@@ -22,7 +22,7 @@ final class TwiceComboboxCellViewModel: RoutineTableViewCellViewModel {
         return "TwiceComboboxCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: TwiceComboboxCell.self)
     }
     

@@ -6,7 +6,7 @@ class RoutineCollectionViewCellViewModel: RoutineViewModel {
         return nil
     }
     
-    var cellOwner: CellOwner? {
+    var cellOwner: RoutineCellOwner? {
         return nil
     }
     var isSelected: Bool = false

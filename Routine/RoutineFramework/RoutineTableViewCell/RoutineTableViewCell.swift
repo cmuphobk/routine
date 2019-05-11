@@ -61,7 +61,7 @@ class RoutineTableViewCell<T: RoutineTableViewCellViewModel>: UITableViewCell, R
             self.didSetupConstraints = true
             
             if let viewModel = self.viewModel, let owner = viewModel.cellOwner {
-                if case CellOwner.nib(_) = owner {} else {
+                if case RoutineCellOwner.nib(_) = owner {} else {
                     self.setupLayout()
                 }
             }

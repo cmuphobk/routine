@@ -10,7 +10,7 @@ final class LabelAndMarkCellViewModel: RoutineTableViewCellViewModel {
         return "LabelAndMarkCellViewModel"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: LabelAndMarkCell.self) 
     }
     

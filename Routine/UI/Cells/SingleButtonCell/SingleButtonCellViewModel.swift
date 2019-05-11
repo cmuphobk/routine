@@ -16,7 +16,7 @@ final class SingleButtonCellViewModel: RoutineTableViewCellViewModel {
         return "SingleButtonCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: SingleButtonCell.self)
     }
     

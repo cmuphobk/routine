@@ -1,10 +1,10 @@
 import UIKit
 
-protocol UniversalCollectionViewManagerDelegate: class {
-    func didTriggerCell(index: Int, actionType: TriggerActionType)
+protocol RoutineCollectionViewManagerDelegate: class {
+    func didTriggerCell(index: Int, actionType: RoutineActionType)
 }
 
-protocol UniversalCollectionViewManagerInterface {
+protocol RoutineCollectionViewManagerInterface {
     func configure(cellViewModels: [RoutineCollectionViewCellViewModel], reloadData: Bool)
     func updateRowAtIndex(_ index: Int)
     func deleteRowAtIndex(_ index: Int)
@@ -16,13 +16,13 @@ protocol UniversalCollectionViewManagerInterface {
     func deselectRow(_ index: Int)
 }
 
-final class UniversalCollectionViewManager: NSObject {
+final class RoutineCollectionViewManager: NSObject {
     private var collectionView: UICollectionView
-    weak var delegate: UniversalCollectionViewManagerDelegate?
+    weak var delegate: RoutineCollectionViewManagerDelegate?
     
     private var cellViewModels: [RoutineCollectionViewCellViewModel] = []
     
-    init(collectionView: UICollectionView, delegate: UniversalCollectionViewManagerDelegate) {
+    init(collectionView: UICollectionView, delegate: RoutineCollectionViewManagerDelegate) {
         self.collectionView = collectionView
         self.delegate = delegate
         super.init()
@@ -35,8 +35,8 @@ final class UniversalCollectionViewManager: NSObject {
     
 }
 
-// MARK: - UniversalCollectionViewManagerInterface
-extension UniversalCollectionViewManager: UniversalCollectionViewManagerInterface {
+// MARK: - RoutineCollectionViewManagerInterface
+extension RoutineCollectionViewManager: RoutineCollectionViewManagerInterface {
     
     func configure(cellViewModels: [RoutineCollectionViewCellViewModel], reloadData: Bool = true) {
         self.cellViewModels = cellViewModels
@@ -99,7 +99,7 @@ extension UniversalCollectionViewManager: UniversalCollectionViewManagerInterfac
 }
 
 // MARK: - UICollectionViewDataSource
-extension UniversalCollectionViewManager: UICollectionViewDataSource {
+extension RoutineCollectionViewManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.cellViewModels.count
@@ -115,7 +115,7 @@ extension UniversalCollectionViewManager: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension UniversalCollectionViewManager: UICollectionViewDelegate {
+extension RoutineCollectionViewManager: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cellObj = self.cellViewModels[indexPath.row]
@@ -153,7 +153,7 @@ extension UniversalCollectionViewManager: UICollectionViewDelegate {
 
 
 // MARK: - UICollectionViewFlowLayout
-extension UniversalCollectionViewManager: UICollectionViewDelegateFlowLayout {
+extension RoutineCollectionViewManager: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

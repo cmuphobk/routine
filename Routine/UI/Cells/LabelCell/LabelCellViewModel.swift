@@ -7,7 +7,7 @@ final class LabelCellViewModel: RoutineTableViewCellViewModel {
         return "LabelCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: LabelCell.self)
     }
     

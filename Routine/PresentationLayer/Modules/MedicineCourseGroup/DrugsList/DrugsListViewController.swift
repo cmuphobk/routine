@@ -16,7 +16,7 @@ final class DrugsListViewController: RoutineViewController {
     @IBOutlet weak private var placeholderLabel: UILabel!
     
     private var cellViewModels: [RoutineTableViewCellViewModel] = []
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ final class DrugsListViewController: RoutineViewController {
 // MARK: - DrugsListViewInput
 extension DrugsListViewController: DrugsListViewInput {
     func setupInitialState() {
-        self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+        self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
         self.contentView.backgroundColor = ColorProvider.medicineCourseColors.screenBackgroundColor
         
@@ -107,9 +107,9 @@ extension DrugsListViewController: DrugsListViewInput {
     }
 }
 
-// MARK: - UniversalTableViewManager
-extension DrugsListViewController: UniversalTableViewManagerDelegate {
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+// MARK: - RoutineTableViewManager
+extension DrugsListViewController: RoutineTableViewManagerDelegate {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         if actionType != .select {
             return
         }

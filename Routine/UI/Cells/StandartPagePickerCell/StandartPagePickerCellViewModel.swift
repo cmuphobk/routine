@@ -23,7 +23,7 @@ final class StandartPagePickerCellViewModel: RoutineCollectionViewCellViewModel 
         return "StandartPagePickerCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .nib(value: UINib(nibName: self.reuseIdentifier, bundle: nil))
     }
     

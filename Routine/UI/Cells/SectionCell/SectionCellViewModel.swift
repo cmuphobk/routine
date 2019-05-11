@@ -18,7 +18,7 @@ final class SectionCellViewModel: RoutineTableViewCellViewModel {
         return "SectionCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: SectionCell.self)
     }
     

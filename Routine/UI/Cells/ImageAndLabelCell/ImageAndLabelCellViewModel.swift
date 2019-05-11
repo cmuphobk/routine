@@ -10,7 +10,7 @@ final class ImageAndLabelCellViewModel: RoutineTableViewCellViewModel {
         return "ImageAndLabelCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: ImageAndLabelCell.self)
     }
     

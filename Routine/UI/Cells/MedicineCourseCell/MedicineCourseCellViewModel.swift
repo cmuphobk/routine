@@ -34,7 +34,7 @@ final class MedicineCourseCellViewModel: RoutineTableViewCellViewModel {
     override var reuseIdentifier: String {
         return "MedicineCourseCell"
     }
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .nib(value: UINib(nibName: self.reuseIdentifier, bundle: nil))
     }
     

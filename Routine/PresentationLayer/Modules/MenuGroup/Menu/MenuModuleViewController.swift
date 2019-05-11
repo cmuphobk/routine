@@ -18,7 +18,7 @@ class MenuModuleViewController: RoutineViewController {
     private var currentSelectedCellIndex: Int = 0
     private let tableViewOffset: CGFloat = 60.0
     
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ extension MenuModuleViewController: MenuModuleViewInput {
     
     func setupInitialState() {
         
-        self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+        self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
         self.tableView.contentInset = UIEdgeInsets(top: self.tableViewOffset, left: 0, bottom: 0, right: 0)
         self.view.backgroundColor = ColorProvider.default.blueColor
@@ -88,10 +88,10 @@ extension MenuModuleViewController: MenuModuleViewInput {
     
 }
 
-// MARK: - UniversalTableViewManager
-extension MenuModuleViewController: UniversalTableViewManagerDelegate {
+// MARK: - RoutineTableViewManager
+extension MenuModuleViewController: RoutineTableViewManagerDelegate {
     
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         if actionType != .select {
             return
         }

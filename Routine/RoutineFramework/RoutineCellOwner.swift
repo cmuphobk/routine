@@ -1,6 +1,6 @@
 import UIKit
 
-enum CellOwner {
+enum RoutineCellOwner {
     case nib(value: UINib)
     case type(value: AnyClass)
 }

@@ -17,7 +17,7 @@ final class UsingTimesCellViewModel: RoutineTableViewCellViewModel {
         return "UsingTimesCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: UsingTimesCell.self)
     }
     

@@ -10,5 +10,5 @@ disabled_rules: # rule identifiers to exclude from running
 excluded: # paths to ignore during linting. Takes precedence over `included`.
  - Carthage
  - Pods
- - Routine/FoundationLayer/R.generated.swift
+ - Routine/R.generated.swift
  

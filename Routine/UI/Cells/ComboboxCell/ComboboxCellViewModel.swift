@@ -16,7 +16,7 @@ final class ComboboxCellViewModel: RoutineTableViewCellViewModel {
         return "ComboboxCell"
     }
     
-    override var cellOwner: CellOwner {
+    override var cellOwner: RoutineCellOwner {
         return .type(value: ComboboxCell.self)
     }
     

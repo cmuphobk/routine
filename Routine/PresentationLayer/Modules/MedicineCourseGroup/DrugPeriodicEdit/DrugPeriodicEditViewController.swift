@@ -9,7 +9,7 @@ final class DrugPeriodicEditViewController: RoutineViewController {
     @IBOutlet var typeSelector: StandartPagePicker!
     @IBOutlet weak var tableView: UITableView!
     
-    private var tableViewManager: UniversalTableViewManager!
+    private var tableViewManager: RoutineTableViewManager!
     private var cellViewModels: [RoutineTableViewCellViewModel]!
     
     private var currentType: PeriodCourseType!
@@ -63,13 +63,13 @@ extension DrugPeriodicEditViewController: DrugPeriodicEditViewInput {
             self.typeSelector.selectColumnAtIndex(0)
             self.tableView.allowsMultipleSelection = true
             self.cellViewModels = DrugPeriodicEditTableViewFactory.makeDays(withValue: value)
-            self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+            self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
             self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         case .countDays:
             self.typeSelector.selectColumnAtIndex(1)
             self.tableView.allowsMultipleSelection = false
             self.cellViewModels = DrugPeriodicEditTableViewFactory.makeCountDays(withValue: value)
-            self.tableViewManager = UniversalTableViewManager(tableView: self.tableView, delegate: self)
+            self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
             self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         }
     }
@@ -86,10 +86,10 @@ extension DrugPeriodicEditViewController: StandartPagePickerDelegate {
     
 }
 
-// MARK: - UniversalTableViewManager
-extension DrugPeriodicEditViewController: UniversalTableViewManagerDelegate {
+// MARK: - RoutineTableViewManager
+extension DrugPeriodicEditViewController: RoutineTableViewManagerDelegate {
     
-    func didTriggerCell(index: Int, actionType: TriggerActionType) {
+    func didTriggerCell(index: Int, actionType: RoutineActionType) {
         guard let currentType = self.currentType else {
             return
         }

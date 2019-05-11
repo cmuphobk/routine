@@ -1,10 +1,10 @@
 import UIKit
 
-protocol UniversalTableViewManagerDelegate: class {
-    func didTriggerCell(index: Int, actionType: TriggerActionType)
+protocol RoutineTableViewManagerDelegate: class {
+    func didTriggerCell(index: Int, actionType: RoutineActionType)
 }
 
-protocol UniversalTableViewManagerInterface {
+protocol RoutineTableViewManagerInterface {
     func configure(cellViewModels: [RoutineTableViewCellViewModel], reloadData: Bool)
     func updateRowAtIndex(_ index: Int)
     func deleteRowAtIndex(_ index: Int)
@@ -16,7 +16,7 @@ protocol UniversalTableViewManagerInterface {
     func deselectRow(_ index: Int)
 }
 
-final class UniversalTableViewManager: NSObject {
+final class RoutineTableViewManager: NSObject {
     
     private var tableView: UITableView
     
@@ -26,9 +26,9 @@ final class UniversalTableViewManager: NSObject {
         return self.cellViewModels.count
     }
     
-    weak var delegate: UniversalTableViewManagerDelegate?
+    weak var delegate: RoutineTableViewManagerDelegate?
     
-    init(tableView: UITableView, delegate: UniversalTableViewManagerDelegate?) {
+    init(tableView: UITableView, delegate: RoutineTableViewManagerDelegate?) {
         self.tableView = tableView
         self.delegate = delegate
         super.init()
@@ -40,8 +40,8 @@ final class UniversalTableViewManager: NSObject {
     
 }
 
-// MARK: - UniversalTableViewManagerInterface
-extension UniversalTableViewManager: UniversalTableViewManagerInterface {
+// MARK: - RoutineTableViewManagerInterface
+extension RoutineTableViewManager: RoutineTableViewManagerInterface {
     
     func configure(cellViewModels: [RoutineTableViewCellViewModel], reloadData: Bool = true) {
         self.cellViewModels = cellViewModels
@@ -103,7 +103,7 @@ extension UniversalTableViewManager: UniversalTableViewManagerInterface {
 }
 
 // MARK: - UITableViewDataSource
-extension UniversalTableViewManager: UITableViewDataSource {
+extension RoutineTableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cellViewModels.count
     }
@@ -117,7 +117,7 @@ extension UniversalTableViewManager: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension UniversalTableViewManager: UITableViewDelegate {
+extension RoutineTableViewManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cellViewModel = self.cellViewModels[indexPath.row]
