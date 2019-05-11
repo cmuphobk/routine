@@ -98,15 +98,23 @@ final class DrugEditViewController: RoutineViewController {
 extension DrugEditViewController: DrugEditViewInput {
     func setupInitialState(editMode: DrugEditMode) {
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugEditImages.agreeIcon, action: #selector(createDrug))
+        
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+            target: self,
+            action: #selector(backButtonPressed))
+        
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+            icon: ImageProvider.drugEditImages.agreeIcon,
+            target: self,
+            action: #selector(createDrug))
         
         self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
     }
     
     func updateNavTitle(_ text: String) {
-        self.navigationItem.title = text
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(text)
     }
     
     func updateTableView(model: MedicineDrug?, editMode: DrugEditMode) {

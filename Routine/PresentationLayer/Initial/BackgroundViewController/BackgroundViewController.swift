@@ -75,16 +75,17 @@ extension BackgroundViewController: NavigatorInterface {
     func openMenu() {
         UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: {
             guard let menuModuleViewController = self.menuModuleViewController else { return }
-            //self.view.bringSubviewToFront(menuModuleViewController.view)
             
             menuModuleViewController.view.frame = CGRect(x: 0, y: 0, width: self.kMenuViewWidth, height: self.view.frame.height)
             
             var initialNavigationControllerWidth = self.view.frame.width
-            if UIDevice.current.userInterfaceIdiom == .pad {
+            if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
                 initialNavigationControllerWidth -= self.kMenuViewWidth
             }
             
             self.initialNavigationController.view.frame = CGRect(x: self.kMenuViewWidth, y: 0, width: initialNavigationControllerWidth, height: self.view.frame.height)
+            
+            // FIXME: - wtf
             menuModuleViewController.viewWillAppear(false)
             
             self.view.setNeedsLayout()
@@ -106,7 +107,7 @@ extension BackgroundViewController: NavigatorInterface {
     func openModule(_ module: Module) {
         guard let innerViewController = module.viewController else { return }
         
-        self.menuModuleInput.selectMenuItemWithName(module.name)
+        self.menuModuleInput?.selectMenuItemWithName(module.name)
         
         if let navigationController = self.initialNavigationController {
             self.modulesStack = [innerViewController]
@@ -264,58 +265,60 @@ extension BackgroundViewController: NavigatorInterface {
     }
     
     func emptyCustomBarLeftButtonAction() {
-        AppDelegate.serviceProvider.makeModuleService().navigation?.hideMenu()
+        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom != .pad {
+            AppDelegate.serviceProvider.makeModuleService().navigation?.hideMenu()
+        }
         let emptyLeftBarButtonCustom = UIButton(type: .custom)
         emptyLeftBarButtonCustom.isUserInteractionEnabled = false
         emptyLeftBarButtonCustom.alpha = 0.0
         emptyLeftBarButtonCustom.isHidden = true
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: emptyLeftBarButtonCustom)
+        self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: emptyLeftBarButtonCustom)
     }
     
-    func customBarLeftButtonAction(icon: UIImage, action: Selector) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
+    func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector) {
+        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
+            AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
             leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
             leftBarButtonCustom.setImage(icon, for: .normal)
-            leftBarButtonCustom.addTarget(self, action: action, for: .touchDown)
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+            leftBarButtonCustom.addTarget(target, action: action, for: .touchDown)
+            self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
         }
-        AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
     }
     
-    func customBarRightButtonAction(icon: UIImage, action: Selector) {
+    func customBarRightButtonAction(icon: UIImage, target: Any, action: Selector) {
         let rightBarButtonCustom = UIButton(type: .custom)
         rightBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
         rightBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
         rightBarButtonCustom.setImage(icon, for: .normal)
-        rightBarButtonCustom.addTarget(self, action: action, for: .touchDown)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
+        rightBarButtonCustom.addTarget(target, action: action, for: .touchDown)
+        self.currentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
     }
     
-    func customBarLeftTextButtonAction(text: String, action: Selector) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
+    func customBarLeftTextButtonAction(text: String, target: Any, action: Selector) {
+        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
+            AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.setTitle(text, for: .normal)
             leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
             leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: leftBarButtonCustom.intrinsicContentSize.width, height: 32.0)
-            leftBarButtonCustom.addTarget(self, action: action, for: .touchUpInside)
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+            leftBarButtonCustom.addTarget(target, action: action, for: .touchUpInside)
+            self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
         }
-        AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
     }
     
-    func customBarRightTextButtonAction(text: String, action: Selector) {
+    func customBarRightTextButtonAction(text: String, target: Any, action: Selector) {
         let rightBarButtonCustom = UIButton(type: .custom)
         rightBarButtonCustom.setTitle(text, for: .normal)
         rightBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
         rightBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: rightBarButtonCustom.intrinsicContentSize.width, height: 32.0)
-        rightBarButtonCustom.addTarget(self, action: action, for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
+        rightBarButtonCustom.addTarget(target, action: action, for: .touchUpInside)
+        self.currentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
     }
     
     func configureTransparentNavigationBar() {
@@ -332,6 +335,10 @@ extension BackgroundViewController: NavigatorInterface {
         self.initialNavigationController.navigationBar.barTintColor = color
         self.initialNavigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
+    
+    func configureNavigationTitle(_ title: String) {
+        self.currentViewController?.navigationItem.title = title
+    }
 }
 
 // MARK: - Private
@@ -340,9 +347,8 @@ extension BackgroundViewController {
     private func configureNavigationController() -> String {
         
         guard let moduleBeforeLaunch = self.obtainModuleBeforeLaunch() else { abort() }
-        guard let viewControllerBeforeLaunch = moduleBeforeLaunch.viewController else { abort() }
         
-        self.initialNavigationController = UINavigationController(rootViewController: viewControllerBeforeLaunch)
+        self.initialNavigationController = UINavigationController()
         self.initialNavigationController.view.frame = self.view.bounds
         self.view.addSubview(self.initialNavigationController.view)
         self.addChild(self.initialNavigationController)
@@ -353,7 +359,7 @@ extension BackgroundViewController {
         self.navHeight = self.initialNavigationController.navigationBar.frame.height
         self.statusNavHeight = self.statusHeight + self.navHeight
         
-        self.modulesStack = [viewControllerBeforeLaunch]
+        self.openModule(moduleBeforeLaunch)
         
         return moduleBeforeLaunch.name
         

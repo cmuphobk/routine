@@ -23,12 +23,14 @@ protocol NavigatorInterface {
     func removeFromParent()
     
     func emptyCustomBarLeftButtonAction()
-    func customBarLeftButtonAction(icon: UIImage, action: Selector)
-    func customBarRightButtonAction(icon: UIImage, action: Selector)
-    func customBarLeftTextButtonAction(text: String, action: Selector)
-    func customBarRightTextButtonAction(text: String, action: Selector)
+    func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector)
+    func customBarRightButtonAction(icon: UIImage, target: Any, action: Selector)
+    func customBarLeftTextButtonAction(text: String, target: Any, action: Selector)
+    func customBarRightTextButtonAction(text: String, target: Any, action: Selector) 
     
     func configureTransparentNavigationBar()
-    func configureNavigationBarWithColor(_ color: UIColor) 
+    func configureNavigationBarWithColor(_ color: UIColor)
+    
+    func configureNavigationTitle(_ title: String)
     
 }

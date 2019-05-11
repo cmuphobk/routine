@@ -18,7 +18,10 @@ final class DrugDetailsViewController: RoutineViewController {
         self.output.didTriggerViewWillAppear()
         
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+            target: self,
+            action: #selector(backButtonPressed))
     }
     
     override func localizationSetup() {
@@ -41,11 +44,14 @@ extension DrugDetailsViewController: DrugDetailsViewInput {
     }
     
     func updateNavTitle(_ text: String) {
-        self.navigationItem.title = text
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(text)
     }
     
     func enableEditButton() {
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.drugsDetailsImages.editIcon, action: #selector(editDrugAction))
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+            icon: ImageProvider.drugsDetailsImages.editIcon,
+            target: self,
+            action: #selector(editDrugAction))
     }
     
     func updateDetailsInfo(htmlCode: String) {

@@ -76,13 +76,22 @@ final class MedicineCourseViewController: RoutineViewController {
         output.didTriggerViewWillAppear()
         
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(backButtonPressed))
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(icon: ImageProvider.medicineCourseImages.plusIcon, action: #selector(createCourseButtonAction))
+        
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+            target: self,
+            action: #selector(backButtonPressed))
+        
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+            icon: ImageProvider.medicineCourseImages.plusIcon,
+            target: self,
+            action: #selector(createCourseButtonAction))
     }
     
     override func localizationSetup() {
         super.localizationSetup()
-        self.navigationItem.title = AppDelegate.serviceProvider.makeStringService().localizeById(kMedicineCourseModuleId)
+        let title = AppDelegate.serviceProvider.makeStringService().localizeById(kMedicineCourseModuleId)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
         self.placeholderLabel.font = FontProvider.default.forosRegular18
         self.placeholderLabel.textColor = ColorProvider.default.lightGrayColor

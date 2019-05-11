@@ -46,12 +46,18 @@ final class MainViewController: RoutineViewController {
         output.didTriggerViewWillAppear()
         
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(icon: ImageProvider.default.menuIcon.imageWithMask(color: ColorProvider.default.whiteColor), action: #selector(menuButtonClicked))
+        
+        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+            icon: ImageProvider.default.menuIcon.imageWithMask(color: ColorProvider.default.whiteColor),
+            target: self,
+            action: #selector(menuButtonClicked))
     }
     
     override func localizationSetup() {
         super.localizationSetup()
-        self.navigationItem.title = AppDelegate.serviceProvider.makeStringService().localizeById(kMainModuleId)
+        
+        let title = AppDelegate.serviceProvider.makeStringService().localizeById(kMainModuleId)
+        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
     }
     
 }
