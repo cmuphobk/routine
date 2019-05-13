@@ -1,8 +1,8 @@
 import UIKit
 
-final class MainTableViewFactory {
+final class MainTableViewFactory: MainTableViewFactoryInterface {
     
-    static func mainCellViewModels(delegate: SectionCellViewModelDelegate) -> [SectionCellViewModel] {
+    func mainCellViewModels(delegate: SectionCellViewModelDelegate) -> [SectionCellViewModel] {
         var cellObjs: [SectionCellViewModel] = []
         
         if true {

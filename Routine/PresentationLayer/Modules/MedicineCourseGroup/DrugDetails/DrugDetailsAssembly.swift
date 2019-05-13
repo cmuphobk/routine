@@ -16,6 +16,7 @@ enum DrugDetailsAssembly {
         moduleViewController.output = presenter
         moduleViewController.moduleService = moduleService
         presenter.view = moduleViewController
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.router = router
         presenter.moduleOutput = moduleOutput
         router.viewController = moduleViewController

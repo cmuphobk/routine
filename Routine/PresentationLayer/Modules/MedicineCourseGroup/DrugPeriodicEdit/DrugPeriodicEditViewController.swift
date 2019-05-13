@@ -71,13 +71,13 @@ extension DrugPeriodicEditViewController: DrugPeriodicEditViewInput {
         case .weekDays:
             self.typeSelector.selectColumnAtIndex(0)
             self.tableView.allowsMultipleSelection = true
-            self.cellViewModels = DrugPeriodicEditTableViewFactory.makeDays(withValue: value)
+            self.cellViewModels = self.output.drugPeriodicEditTableViewFactory.makeDays(withValue: value)
             self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
             self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         case .countDays:
             self.typeSelector.selectColumnAtIndex(1)
             self.tableView.allowsMultipleSelection = false
-            self.cellViewModels = DrugPeriodicEditTableViewFactory.makeCountDays(withValue: value)
+            self.cellViewModels = self.output.drugPeriodicEditTableViewFactory.makeCountDays(withValue: value)
             self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
             self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         }

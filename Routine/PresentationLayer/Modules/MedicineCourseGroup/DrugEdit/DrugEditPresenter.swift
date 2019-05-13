@@ -39,6 +39,10 @@ class DrugEditPresenter: Module {
     var drugCourseObjectId: String?
     
     var localizeService: StringServiceInterface!
+    var languageService: LanguageServiceInterface!
+    
+    var drugEditTableViewFactory: DrugEditTableViewFactoryInterface!
+    
 }
 
 // MARK: - DrugEditModuleInput

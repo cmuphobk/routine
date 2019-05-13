@@ -17,6 +17,7 @@ enum ConfirmationModuleAssembly {
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.moduleOutput = confirmationDelegate
         
         return viewController
@@ -36,6 +37,7 @@ enum ConfirmationModuleAssembly {
                                                    localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
         
@@ -56,6 +58,7 @@ enum ConfirmationModuleAssembly {
                                                    localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
         
@@ -81,6 +84,7 @@ enum ConfirmationModuleAssembly {
                                                     localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
         
@@ -102,6 +106,7 @@ enum ConfirmationModuleAssembly {
         
         // Inject properties
         viewController.presenter = presenter
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
         

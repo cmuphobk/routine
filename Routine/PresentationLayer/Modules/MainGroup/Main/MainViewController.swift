@@ -67,7 +67,7 @@ extension MainViewController: MainViewInput {
     func setupInitialState() {
         self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
-        self.cellViewModels = MainTableViewFactory.mainCellViewModels(delegate: self)
+        self.cellViewModels = self.output.mainTableViewFactory.mainCellViewModels(delegate: self)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         
         self.tableView.separatorStyle = .none

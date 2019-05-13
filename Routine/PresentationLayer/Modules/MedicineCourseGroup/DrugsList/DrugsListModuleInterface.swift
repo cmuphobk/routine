@@ -21,6 +21,7 @@ protocol DrugsListViewInput: class {
 
 protocol DrugsListViewOutput: class {
     var localizeService: StringServiceInterface! { get }
+    var drugsListTableViewFactory: DrugsListTableViewFactoryInterface! { get }
     
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()

@@ -50,6 +50,20 @@
 		41F06B412282C26900D28682 /* MedicineCourseTimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2221A5E82A004BB7D2 /* MedicineCourseTimeEntity+CoreDataProperties.swift */; };
 		41F06B4422872BFF00D28682 /* RoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4322872BFF00D28682 /* RoutineDelegate.swift */; };
 		41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */; };
+		41F06B492289A68E00D28682 /* MenuTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B482289A68E00D28682 /* MenuTableViewFactoryInterface.swift */; };
+		41F06B4B2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */; };
+		41F06B4D2289A7E700D28682 /* StandartPagePickerFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4C2289A7E700D28682 /* StandartPagePickerFactoryAssembly.swift */; };
+		41F06B4F2289A7F200D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4E2289A7F100D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift */; };
+		41F06B522289A81400D28682 /* MainTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B512289A81400D28682 /* MainTableViewFactoryAssembly.swift */; };
+		41F06B542289A81F00D28682 /* MainTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B532289A81F00D28682 /* MainTableViewFactoryInterface.swift */; };
+		41F06B572289A86400D28682 /* MedicineCourseTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B562289A86400D28682 /* MedicineCourseTableViewFactoryAssembly.swift */; };
+		41F06B592289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B582289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift */; };
+		41F06B5C2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B5B2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift */; };
+		41F06B5E2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B5D2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift */; };
+		41F06B612289A8C900D28682 /* DrugEditTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B602289A8C900D28682 /* DrugEditTableViewFactoryAssembly.swift */; };
+		41F06B632289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B622289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift */; };
+		41F06B662289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B652289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift */; };
+		41F06B682289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B672289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift */; };
 		860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */; };
 		860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C721B1ADF3007317B2 /* DrugDetailsAssembly.swift */; };
 		860AC5D921B1ADF3007317B2 /* DrugDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */; };
@@ -356,6 +370,20 @@
 		41F06B3F228030BF00D28682 /* RoutineModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoutineModel.xcdatamodel; sourceTree = "<group>"; };
 		41F06B4322872BFF00D28682 /* RoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDelegate.swift; sourceTree = "<group>"; };
 		41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactory.swift; sourceTree = "<group>"; };
+		41F06B482289A68E00D28682 /* MenuTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B4C2289A7E700D28682 /* StandartPagePickerFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePickerFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B4E2289A7F100D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCollectionViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B512289A81400D28682 /* MainTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B532289A81F00D28682 /* MainTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B562289A86400D28682 /* MedicineCourseTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B582289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B5B2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugsListTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B5D2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugsListTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B602289A8C900D28682 /* DrugEditTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugEditTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B622289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugEditTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B652289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPeriodicEditTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
+		41F06B672289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPeriodicEditTableViewFactoryInterface.swift; sourceTree = "<group>"; };
 		462C35C180BC5B7647C384B2 /* Pods-Routine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routine/Pods-Routine.release.xcconfig"; sourceTree = "<group>"; };
 		700F6105CB5EA56D2CEA09BE /* Pods_RoutineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsModuleInterface.swift; sourceTree = "<group>"; };
@@ -828,6 +856,66 @@
 			path = RoutineManager;
 			sourceTree = "<group>";
 		};
+		41F06B472289A67300D28682 /* MenuTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */,
+				41F06B482289A68E00D28682 /* MenuTableViewFactoryInterface.swift */,
+				41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */,
+			);
+			path = MenuTableViewFactory;
+			sourceTree = "<group>";
+		};
+		41F06B502289A80400D28682 /* MainTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B512289A81400D28682 /* MainTableViewFactoryAssembly.swift */,
+				41F06B532289A81F00D28682 /* MainTableViewFactoryInterface.swift */,
+				ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */,
+			);
+			path = MainTableViewFactory;
+			sourceTree = "<group>";
+		};
+		41F06B552289A85600D28682 /* MedicineCourseTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B562289A86400D28682 /* MedicineCourseTableViewFactoryAssembly.swift */,
+				41F06B582289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift */,
+				ED45FBE12199D08F00E81497 /* MedicineCourseTableViewFactory.swift */,
+			);
+			path = MedicineCourseTableViewFactory;
+			sourceTree = "<group>";
+		};
+		41F06B5A2289A88900D28682 /* DrugsListTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B5B2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift */,
+				41F06B5D2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift */,
+				866B3AED21AEDCC80078361A /* DrugsListTableViewFactory.swift */,
+			);
+			path = DrugsListTableViewFactory;
+			sourceTree = "<group>";
+		};
+		41F06B5F2289A8BC00D28682 /* DrugEditTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B602289A8C900D28682 /* DrugEditTableViewFactoryAssembly.swift */,
+				41F06B622289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift */,
+				860AC61521B2923A007317B2 /* DrugEditTableViewFactory.swift */,
+			);
+			path = DrugEditTableViewFactory;
+			sourceTree = "<group>";
+		};
+		41F06B642289A8EC00D28682 /* DrugPeriodicEditTableViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				41F06B652289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift */,
+				41F06B672289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift */,
+				867EF4FD21F0F1B50019253C /* DrugPeriodicEditTableViewFactory.swift */,
+			);
+			path = DrugPeriodicEditTableViewFactory;
+			sourceTree = "<group>";
+		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -869,7 +957,7 @@
 		860AC5EA21B29193007317B2 /* DrugEdit */ = {
 			isa = PBXGroup;
 			children = (
-				860AC61521B2923A007317B2 /* DrugEditTableViewFactory.swift */,
+				41F06B5F2289A8BC00D28682 /* DrugEditTableViewFactory */,
 				860AC61121B2923A007317B2 /* DrugEditModuleInterface.swift */,
 				860AC60E21B29239007317B2 /* DrugEditAssembly.swift */,
 				860AC60F21B29239007317B2 /* DrugEditPresenter.swift */,
@@ -928,7 +1016,7 @@
 		866B3AE821AEDCAE0078361A /* DrugsList */ = {
 			isa = PBXGroup;
 			children = (
-				866B3AED21AEDCC80078361A /* DrugsListTableViewFactory.swift */,
+				41F06B5A2289A88900D28682 /* DrugsListTableViewFactory */,
 				866B3AFC21AEDCC90078361A /* DrugsListModuleInterface.swift */,
 				866B3AF221AEDCC80078361A /* DrugsListAssembly.swift */,
 				866B3AE921AEDCC80078361A /* DrugsListPresenter.swift */,
@@ -1004,6 +1092,7 @@
 		867283AA21AA9E7E0000495C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED7874B921A3392D00FEA4DB /* CreateMedicineCourse */,
 				41A6B85A220EC4CD0023CE19 /* CalculatorPopup */,
 				41A6B859220EC4C20023CE19 /* ConfirmDecisionPopup */,
 				41A6B857220EC4B10023CE19 /* InputTextPopup */,
@@ -1041,7 +1130,7 @@
 		86F9D26C21EEFECE000ABB67 /* DrugPeriodicEdit */ = {
 			isa = PBXGroup;
 			children = (
-				867EF4FD21F0F1B50019253C /* DrugPeriodicEditTableViewFactory.swift */,
+				41F06B642289A8EC00D28682 /* DrugPeriodicEditTableViewFactory */,
 				86F9D26D21EEFFC2000ABB67 /* DrugPeriodicEditInterface.swift */,
 				86F9D27B21EF7103000ABB67 /* DrugPeriodicEditAssembly.swift */,
 				86F9D26F21EF01CC000ABB67 /* DrugPeriodicEditPresenter.swift */,
@@ -1152,7 +1241,7 @@
 		ED45FBCE2199D08F00E81497 /* MedicineCourse */ = {
 			isa = PBXGroup;
 			children = (
-				ED45FBE12199D08F00E81497 /* MedicineCourseTableViewFactory.swift */,
+				41F06B552289A85600D28682 /* MedicineCourseTableViewFactory */,
 				ED45FBD82199D08F00E81497 /* MedicineCourseModuleInterface.swift */,
 				ED45FBD92199D08F00E81497 /* MedicineCourseAssembly.swift */,
 				ED45FBDC2199D08F00E81497 /* MedicineCoursePresenter.swift */,
@@ -1280,8 +1369,7 @@
 		ED78749B21A1C5D500FEA4DB /* StandartPagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				ED7874A321A1C86200FEA4DB /* CollectionViews */,
-				ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */,
+				ED7874A321A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory */,
 				ED78749921A1C4D400FEA4DB /* StandartPagePicker.swift */,
 				ED78749C21A1C5EC00FEA4DB /* StandartPagePicker.xib */,
 			);
@@ -1298,11 +1386,14 @@
 			path = StandartPagePickerCell;
 			sourceTree = "<group>";
 		};
-		ED7874A321A1C86200FEA4DB /* CollectionViews */ = {
+		ED7874A321A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory */ = {
 			isa = PBXGroup;
 			children = (
+				41F06B4C2289A7E700D28682 /* StandartPagePickerFactoryAssembly.swift */,
+				41F06B4E2289A7F100D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift */,
+				ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */,
 			);
-			path = CollectionViews;
+			path = StandartPagePickerCollectionViewFactory;
 			sourceTree = "<group>";
 		};
 		ED7874B821A338F800FEA4DB /* MedicineCourseGroup */ = {
@@ -1314,7 +1405,6 @@
 				860AC5EA21B29193007317B2 /* DrugEdit */,
 				866F0CEF21EB54D900D9FF94 /* DrugTimesEdit */,
 				86F9D26C21EEFECE000ABB67 /* DrugPeriodicEdit */,
-				ED7874B921A3392D00FEA4DB /* CreateMedicineCourse */,
 			);
 			path = MedicineCourseGroup;
 			sourceTree = "<group>";
@@ -1442,7 +1532,7 @@
 		ED8F69B92179B971001DBDAA /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */,
+				41F06B502289A80400D28682 /* MainTableViewFactory */,
 				ED8F69BA2179B971001DBDAA /* MainInterface.swift */,
 				ED8F69BF2179B971001DBDAA /* MainAssembly.swift */,
 				ED8F69BC2179B971001DBDAA /* MainPresenter.swift */,
@@ -1523,7 +1613,7 @@
 		ED8F69EB2179B971001DBDAA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */,
+				41F06B472289A67300D28682 /* MenuTableViewFactory */,
 				ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */,
 				ED8F69F22179B971001DBDAA /* MenuModuleAssembly.swift */,
 				ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */,
@@ -2215,15 +2305,19 @@
 				41A6B864220ED7D00023CE19 /* StringServiceInterface.swift in Sources */,
 				EDE945CA21C6644C009BC60A /* RESTStatus.swift in Sources */,
 				ED7874AA21A1C90D00FEA4DB /* StandartPagePickerCellViewModel.swift in Sources */,
+				41F06B632289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift in Sources */,
 				EDE9894621E92F5B00870F25 /* RoutineComboboxViewModel.swift in Sources */,
 				ED45FBE52199D08F00E81497 /* MedicineCourseCell.swift in Sources */,
 				8682996221C8C88500679C05 /* ComboboxCell.swift in Sources */,
+				41F06B5E2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift in Sources */,
+				41F06B4F2289A7F200D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift in Sources */,
 				ED45FBCB219764FF00E81497 /* AnimateLaunchScreenViewController.swift in Sources */,
 				860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */,
 				EDA9A64821E725D300D99B09 /* FileService.swift in Sources */,
 				ED241EA521AC014D00E4E32F /* Repository.swift in Sources */,
 				860AC62521B2923A007317B2 /* DrugEditModuleInterface.swift in Sources */,
 				ED241EA821AC065F00E4E32F /* IdentifierModelInterface.swift in Sources */,
+				41F06B682289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift in Sources */,
 				866F0CE721E77E5400D9FF94 /* RoutineTextViewModel.swift in Sources */,
 				ED4C62A121E34F01004A999C /* MainTableViewFactory.swift in Sources */,
 				ED8F6A632179F126001DBDAA /* MultipartOperationHandler.swift in Sources */,
@@ -2254,6 +2348,7 @@
 				ED8F6A0B2179B971001DBDAA /* ColorProvider.swift in Sources */,
 				ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */,
 				860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */,
+				41F06B5C2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift in Sources */,
 				ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */,
 				ED8F6A132179B971001DBDAA /* Calendar+LastDate.swift in Sources */,
 				862F439F21CE940700CB127F /* SingleButtonCellViewModel.swift in Sources */,
@@ -2273,6 +2368,7 @@
 				866F0CF721EB697A00D9FF94 /* DrugTimesEditViewController.swift in Sources */,
 				866B3B0321AEDCC90078361A /* DrugsListRouter.swift in Sources */,
 				EDC891E521CFC64E0002CD9E /* Language.swift in Sources */,
+				41F06B522289A81400D28682 /* MainTableViewFactoryAssembly.swift in Sources */,
 				411E234822440F150003CEE0 /* RoutineActionType.swift in Sources */,
 				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
 				86385B3F21C4F4720097A544 /* TwiceComboboxCell.swift in Sources */,
@@ -2280,6 +2376,7 @@
 				ED8F6A102179B971001DBDAA /* UINavigationController+CustomNavigationBar.swift in Sources */,
 				41A5339E22074BA9009A735E /* NotificationServiceAssembly.swift in Sources */,
 				ED7874D521A5D5C000FEA4DB /* MedicineCourse.swift in Sources */,
+				41F06B542289A81F00D28682 /* MainTableViewFactoryInterface.swift in Sources */,
 				41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */,
 				867283B221AAB0E90000495C /* ConfirmationModuleAssembly.swift in Sources */,
 				ED279C2021A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataProperties.swift in Sources */,
@@ -2309,6 +2406,7 @@
 				ED45FBEA2199D08F00E81497 /* MedicineCourseViewController.swift in Sources */,
 				86F9D27821EF6E22000ABB67 /* DrugPeriodicEditViewController.swift in Sources */,
 				EDC0DC6521EBAE2D00D5327D /* MenuModuleCellViewModel.swift in Sources */,
+				41F06B572289A86400D28682 /* MedicineCourseTableViewFactoryAssembly.swift in Sources */,
 				ED8F6A0F2179B971001DBDAA /* ModuleService.swift in Sources */,
 				866B3B0821AEDCC90078361A /* DrugCell.swift in Sources */,
 				ED082FCA21CFFCFA00C892C8 /* ReachabilityService.swift in Sources */,
@@ -2389,10 +2487,13 @@
 				ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */,
 				ED8F6A9C217E2B12001DBDAA /* StandartAcceptButton.swift in Sources */,
 				86F9D27021EF01CC000ABB67 /* DrugPeriodicEditPresenter.swift in Sources */,
+				41F06B4B2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift in Sources */,
 				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
 				ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED8F6A0C2179B971001DBDAA /* StandartOffsetLabel.swift in Sources */,
+				41F06B662289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift in Sources */,
 				866F0CFB21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift in Sources */,
+				41F06B592289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift in Sources */,
 				41A5338D22071615009A735E /* Date+Timestamp.swift in Sources */,
 				ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */,
 				860AC66121B65B58007317B2 /* Time.swift in Sources */,
@@ -2405,6 +2506,7 @@
 				EDDA636421B408EE005AE695 /* DayOfWeek.swift in Sources */,
 				860AC62321B2923A007317B2 /* DrugEditPresenter.swift in Sources */,
 				ED8F6A6E2179F184001DBDAA /* BaseResponseModels.swift in Sources */,
+				41F06B612289A8C900D28682 /* DrugEditTableViewFactoryAssembly.swift in Sources */,
 				ED6669C6218A1E8900366877 /* StandartPickerView.swift in Sources */,
 				ED45FBE92199D08F00E81497 /* MedicineCourseAssembly.swift in Sources */,
 				ED082FD221CFFD3700C892C8 /* NotificationService.swift in Sources */,
@@ -2429,6 +2531,7 @@
 				ED8F69762179B839001DBDAA /* AppDelegate.swift in Sources */,
 				862E301221D09BC00097991D /* MedicineDrugServiceInterface.swift in Sources */,
 				860AC5E921B27EFD007317B2 /* MedicineUnit.swift in Sources */,
+				41F06B4D2289A7E700D28682 /* StandartPagePickerFactoryAssembly.swift in Sources */,
 				EDDA636121B3ED49005AE695 /* RESTRequestObject.swift in Sources */,
 				41A5339A22074B79009A735E /* ReachabilityServiceAssembly.swift in Sources */,
 				ED8F6A1D2179B971001DBDAA /* RoutineCollectionViewCell.swift in Sources */,
@@ -2456,6 +2559,7 @@
 				ED8F6A612179F126001DBDAA /* DownloadOperation.swift in Sources */,
 				ED8F6A1C2179B971001DBDAA /* RoutineViewController.swift in Sources */,
 				860AC5DA21B1ADF3007317B2 /* DrugDetailsAnimator.swift in Sources */,
+				41F06B492289A68E00D28682 /* MenuTableViewFactoryInterface.swift in Sources */,
 				860AC65D21B57A44007317B2 /* DaysPeriod.swift in Sources */,
 				EDCD216F21A722BE009D704B /* LocalNotificationService.swift in Sources */,
 				ED082FC221CFDDCA00C892C8 /* StorageServiceInterface.swift in Sources */,

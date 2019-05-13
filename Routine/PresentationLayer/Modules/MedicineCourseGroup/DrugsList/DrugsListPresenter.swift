@@ -17,6 +17,7 @@ final class DrugsListPresenter: Module {
     private var medicineCourse: MedicineCourse?
     
     var localizeService: StringServiceInterface!
+    var drugsListTableViewFactory: DrugsListTableViewFactoryInterface! 
 }
 
 // MARK: - DrugsListModuleInput

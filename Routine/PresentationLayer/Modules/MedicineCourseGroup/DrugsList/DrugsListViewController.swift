@@ -88,18 +88,18 @@ extension DrugsListViewController: DrugsListViewInput {
     }
     
     func updateTableViewWithMedicineCourse(_ medicineCourse: MedicineCourse) {
-        self.cellViewModels = DrugsListTableViewFactory.drugsListCellViewModels(model: medicineCourse)
+        self.cellViewModels = self.output.drugsListTableViewFactory.drugsListCellViewModels(model: medicineCourse)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         self.placeholderLabel.isHidden = (self.cellViewModels.count > 0)
     }
     
     func updateDrug(_ drug: MedicineDrug, forIndex: Int) {
         if self.cellViewModels.indices.contains(forIndex) {
-            self.cellViewModels[forIndex] = DrugsListTableViewFactory.drugsListCellViewModel(model: drug)
+            self.cellViewModels[forIndex] = self.output.drugsListTableViewFactory.drugsListCellViewModel(model: drug)
             self.tableViewManager.configure(cellViewModels: self.cellViewModels, reloadData: false)
             self.tableViewManager.updateRowAtIndex(forIndex)
         } else {
-            self.cellViewModels.append(DrugsListTableViewFactory.drugsListCellViewModel(model: drug))
+            self.cellViewModels.append(self.output.drugsListTableViewFactory.drugsListCellViewModel(model: drug))
             self.tableViewManager.configure(cellViewModels: self.cellViewModels, reloadData: false)
             self.tableViewManager.insertRowToIndex(forIndex)
         }

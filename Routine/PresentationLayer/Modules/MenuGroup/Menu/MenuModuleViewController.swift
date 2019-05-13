@@ -67,7 +67,7 @@ extension MenuModuleViewController: MenuModuleViewInput {
     func configureViewWithItemTitles(_ itemTitles: [String]) {
         self.currentSelectedCellIndex = 0
         
-        self.viewModels = MenuTableViewFactory.menuCellViewModels(itemTitles: itemTitles)
+        self.viewModels = self.output.menuTableViewFactory.menuCellViewModels(itemTitles: itemTitles)
         self.tableViewManager.configure(cellViewModels: self.viewModels)
     
         self.tableViewManager.selectRow(self.currentSelectedCellIndex)

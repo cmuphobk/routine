@@ -9,6 +9,8 @@ class MenuModulePresenter {
     var menuItems: [ModuleDescription] = []
     
     var localizeService: StringServiceInterface!
+    
+    var menuTableViewFactory: MenuTableViewFactoryInterface!
 }
 
 // MARK: - MenuModuleInput

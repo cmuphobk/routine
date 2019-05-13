@@ -31,7 +31,13 @@ class StandartPagePicker: UIView {
     
     var collectionViewManager: RoutineCollectionViewManager!
     
-    func configureWithPagesNames(_ names: [String], height: CGFloat, font: UIFont, textColor: UIColor, cellsBackgroundColor: UIColor) {
+    var standartPagePickerFactory: StandartPagePickerCollectionViewFactoryInterface = StandartPagePickerFactoryAssembly.build()
+    
+    func configureWithPagesNames(_ names: [String],
+                                 height: CGFloat,
+                                 font: UIFont,
+                                 textColor: UIColor,
+                                 cellsBackgroundColor: UIColor) {
         
         self.pagesArray = names
         self.pages = names.count
@@ -65,11 +71,11 @@ class StandartPagePicker: UIView {
                 self.collectionViewManager = RoutineCollectionViewManager(collectionView: self.collectionView, delegate: self)
                 
                 let size = CGSize(width: self.frame.width / CGFloat(self.pagesArray.count), height: self.height)
-                let viewModels = StandartPagePickerCollectionViewFactory.standartPagePickerCellViewModels(models: self.pagesArray,
-                                                                                                          size: size,
-                                                                                                          font: self.font,
-                                                                                                          textColor: self.textColor,
-                                                                                                          backgroundColor: self.cellsBackgroundColor)
+                let viewModels = self.standartPagePickerFactory.standartPagePickerCellViewModels(models: self.pagesArray,
+                                                                                                 size: size,
+                                                                                                 font: self.font,
+                                                                                                 textColor: self.textColor,
+                                                                                                 backgroundColor: self.cellsBackgroundColor)
                 
                 self.collectionViewManager.configure(cellViewModels: viewModels)
                 

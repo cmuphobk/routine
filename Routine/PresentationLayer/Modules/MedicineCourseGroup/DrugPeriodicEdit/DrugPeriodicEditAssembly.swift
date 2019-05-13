@@ -21,6 +21,8 @@ enum DrugPeriodicEditAssembly {
         presenter.view = moduleViewController
         presenter.router = router
         presenter.moduleOutput = moduleOutput
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
+        presenter.drugPeriodicEditTableViewFactory = DrugPeriodicEditTableViewFactoryAssembly.build()
         
         router.viewController = moduleViewController
         router.viewController = moduleViewController

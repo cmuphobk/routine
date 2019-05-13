@@ -1,8 +1,8 @@
 import UIKit
 
-final class DrugEditTableViewFactory {
+final class DrugEditTableViewFactory: DrugEditTableViewFactoryInterface {
     
-    static func makeCellViewModelsBeforeTimes(model: MedicineDrug?, delegate: TextFieldCellProtocol & TwiceComboboxCellProtocol & SingleButtonCellProtocol & TextAreaCellProtocol & ComboboxCellProtocol) -> [RoutineTableViewCellViewModel] {
+    func makeCellViewModelsBeforeTimes(model: MedicineDrug?, delegate: TextFieldCellProtocol & TwiceComboboxCellProtocol & SingleButtonCellProtocol & TextAreaCellProtocol & ComboboxCellProtocol) -> [RoutineTableViewCellViewModel] {
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
         // Общие данные
@@ -174,7 +174,7 @@ final class DrugEditTableViewFactory {
         return cellViewModels
     }
 
-    static func makeCellObjectsAfterTimes(model: MedicineDrug?, delegate: TextFieldCellProtocol & TwiceComboboxCellProtocol & SingleButtonCellProtocol & TextAreaCellProtocol, editMode: DrugEditMode) -> [RoutineTableViewCellViewModel] {
+    func makeCellObjectsAfterTimes(model: MedicineDrug?, delegate: TextFieldCellProtocol & TwiceComboboxCellProtocol & SingleButtonCellProtocol & TextAreaCellProtocol, editMode: DrugEditMode) -> [RoutineTableViewCellViewModel] {
         
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
@@ -253,7 +253,7 @@ final class DrugEditTableViewFactory {
         return cellViewModels
     }
     
-    static func makeTimeCellViewModel(model: MedicineDrug?, delegate: UsingTimesCellViewModelDelegate) -> [UsingTimesCellViewModel] {
+    func makeTimeCellViewModel(model: MedicineDrug?, delegate: UsingTimesCellViewModelDelegate) -> [UsingTimesCellViewModel] {
         
         var array: [UsingTimesCellViewModel] = []
         
@@ -300,7 +300,7 @@ final class DrugEditTableViewFactory {
         return array
     }
 
-    static func makeTimeCellViewModel(index: Int, delegate: UsingTimesCellViewModelDelegate) -> UsingTimesCellViewModel {
+    func makeTimeCellViewModel(index: Int, delegate: UsingTimesCellViewModelDelegate) -> UsingTimesCellViewModel {
         
         let timesNumberLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         timesNumberLabelCfg.text = String(format: "%02d.", index)

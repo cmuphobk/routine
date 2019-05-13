@@ -24,6 +24,7 @@ class DrugPeriodicEditPresenter: Module {
     }
     
     var localizeService: StringServiceInterface!
+    var drugPeriodicEditTableViewFactory: DrugPeriodicEditTableViewFactoryInterface!
 }
 
 // MARK: - DrugTimesEditModuleInput

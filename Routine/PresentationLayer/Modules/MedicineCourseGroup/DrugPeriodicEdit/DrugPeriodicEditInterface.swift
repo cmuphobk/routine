@@ -18,6 +18,8 @@ protocol DrugPeriodicEditViewInput: class {
 protocol DrugPeriodicEditViewOutput: class {
     var localizeService: StringServiceInterface! { get }
     
+    var drugPeriodicEditTableViewFactory: DrugPeriodicEditTableViewFactoryInterface! { get}
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()

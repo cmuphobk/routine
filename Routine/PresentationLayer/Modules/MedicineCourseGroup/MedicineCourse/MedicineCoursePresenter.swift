@@ -26,6 +26,8 @@ final class MedicineCoursePresenter: Module {
     private var currentSelectIndex: Int = 0
     
     var localizeService: StringServiceInterface!
+    
+    var medicineCourseTableViewFactory: MedicineCourseTableViewFactoryInterface!
 }
 
 // MARK: - MedicineCourseModuleInput

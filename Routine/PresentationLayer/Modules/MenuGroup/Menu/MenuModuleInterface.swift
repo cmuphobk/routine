@@ -17,6 +17,7 @@ protocol MenuModuleViewInput: class {
 
 protocol MenuModuleViewOutput: class {
     var localizeService: StringServiceInterface! { get }
+    var menuTableViewFactory: MenuTableViewFactoryInterface! { get }
     
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()

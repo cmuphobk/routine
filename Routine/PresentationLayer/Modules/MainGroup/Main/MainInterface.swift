@@ -10,6 +10,7 @@ protocol MainViewInput: class {
 
 protocol MainViewOutput: class {
     var localizeService: StringServiceInterface! { get }
+    var mainTableViewFactory: MainTableViewFactoryInterface! { get }
     
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()

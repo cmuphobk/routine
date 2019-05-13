@@ -25,6 +25,8 @@ protocol DrugEditViewInput: class {
 
 protocol DrugEditViewOutput: class {
     var localizeService: StringServiceInterface! { get }
+    var languageService: LanguageServiceInterface! { get }
+    var drugEditTableViewFactory: DrugEditTableViewFactoryInterface! { get }
     
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()

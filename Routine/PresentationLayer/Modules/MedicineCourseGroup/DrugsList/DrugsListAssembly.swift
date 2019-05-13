@@ -18,6 +18,8 @@ enum DrugsListAssembly {
         presenter.view = moduleViewController
         presenter.router = router
         presenter.moduleOutput = moduleOutput
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
+        presenter.drugsListTableViewFactory = DrugsListTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
         router.moduleService = moduleService
         

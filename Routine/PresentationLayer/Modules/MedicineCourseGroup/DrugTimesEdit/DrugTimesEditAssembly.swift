@@ -22,6 +22,7 @@ enum DrugTimesEditAssembly {
         presenter.view = moduleViewController
         presenter.router = router
         presenter.moduleOutput = moduleOutput
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
 
         router.viewController = moduleViewController
         router.viewController = moduleViewController

@@ -10,7 +10,6 @@ typealias ModuleDescription = (name: String, alias: String)
 
 final class ModuleService: ModuleServiceInterface {
     
-    
     private var backgroundViewController: BackgroundViewController?
     var navigation: NavigatorInterface? {
         get {

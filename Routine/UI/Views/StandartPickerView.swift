@@ -24,63 +24,111 @@ class StandartPickerView: RoutineView<RoutineViewModel>, UIPickerViewDataSource,
     private var leftTitle: String
     private var rightTitle: String
     
-    weak var pickerView: UIPickerView!
-    
-    weak var leftButton: UIButton!
-    weak var rightButton: UIButton!
-    
-    weak var topBorderView: UIView!
-    weak var bottomBorderView: UIView!
-    
-    private var privateBlurEffect: UIBlurEffect?
-    var blurEffect: UIBlurEffect {
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.backgroundColor = UIColor.white
+        pickerView.layer.masksToBounds = false
+        pickerView.dataSource = self
+        pickerView.delegate = self
         
-        get {
-            if self.privateBlurEffect == nil {
-                self.privateBlurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
-            }
-            return self.privateBlurEffect!
+        if !pickerView.isDescendant(of: self) {
+            self.addSubview(pickerView)
         }
-        set {
-            self.privateBlurEffect = newValue
+        
+        pickerView.frame = CGRect(x: 0.0, y: self.frame.height - 200.0, width: self.frame.width, height: 200.0)
+        
+        for (index, item) in self.models.enumerated() where item.toString(localizeService: self.localizedService) == self.currentValue {
+            pickerView.selectRow(index, inComponent: 0, animated: false)
+            break
         }
+        
+        return pickerView
+    } ()
+    
+    lazy var blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffect.Style.prominent))
+        blurView.frame = self.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurView.alpha = 1.0
+        blurView.backgroundColor = UIColor.clear
+        
+        if !blurView.isDescendant(of: self) {
+            self.addSubview(blurView)
+        }
+        return blurView
+    }()
+    
+    lazy var leftButton: UIButton = {
+        let leftButton = UIButton()
+        leftButton.backgroundColor = UIColor.white
+        leftButton.setTitleColor(ColorProvider.default.blackColor, for: .normal)
+        leftButton.setTitle(self.leftTitle, for: .normal)
+        leftButton.addTarget(self, action: #selector(leftButtonAction), for: .touchDown)
+        leftButton.frame = CGRect(x: 0.0, y: self.frame.height - 240.0, width: self.frame.width / 2, height: 40.0)
+        
+        if !leftButton.isDescendant(of: self) {
+            self.addSubview(leftButton)
+        }
+        
+        return leftButton
+    }()
+    
+    lazy var rightButton: UIButton = {
+        let rightButton = UIButton()
+        rightButton.backgroundColor = UIColor.white
+        rightButton.setTitleColor(UIColor.black, for: .normal)
+        rightButton.setTitle(self.rightTitle, for: .normal)
+        rightButton.addTarget(self, action: #selector(rightButtonAction), for: .touchDown)
+        rightButton.frame = CGRect(x: self.frame.width / 2, y: self.frame.height - 240.0, width: self.frame.width / 2, height: 40.0)
+        
+        if !rightButton.isDescendant(of: self) {
+            self.addSubview(rightButton)
+        }
+        
+        return rightButton
+    }()
+    
+    lazy var topBorderView: UIView = {
+        let topBorderView = UIView()
+        topBorderView.backgroundColor = ColorProvider.default.lightGrayColor
+        topBorderView.frame = CGRect(x: 0, y: self.frame.height - 240.0, width: self.frame.width, height: 1)
+        
+        if !topBorderView.isDescendant(of: self) {
+            self.addSubview(topBorderView)
+        }
+        
+        return topBorderView
+    }()
+    
+    lazy var bottomBorderView: UIView = {
+        let bottomBorderView = UIView()
+        bottomBorderView.backgroundColor = ColorProvider.default.lightGrayColor
+        bottomBorderView.frame = CGRect(x: 0, y: self.frame.height - 200.0, width: self.frame.width, height: 1)
+        
+        if !bottomBorderView.isDescendant(of: self) {
+            self.addSubview(bottomBorderView)
+        }
+        return bottomBorderView
+    }()
+    
+    //Анимационный сборс blur effect остановленный на позиции blurRadius (https://habr.com/company/redmadrobot/blog/305596/)
+    private lazy var animator = UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
+        self.blurView.effect = nil
     }
     
-    weak var blurView: UIVisualEffectView!
+    var blurRadius: CGFloat = 0.8
     
-    private var animator: UIViewPropertyAnimator?
-    
-    private var privateBlurRadius: CGFloat?
-    var blurRadius: CGFloat {
-        get {
-            
-            if self.privateBlurRadius == nil {
-                self.privateBlurRadius = 0.8
-            }
-            
-            return self.privateBlurRadius!
-            
-        }
-        set {
-            
-            self.privateBlurRadius = newValue
-            
-        }
-    }
-    
-    private var privateGestureRecognizer: UIGestureRecognizer?
-    private var gestureRecognizer: UIGestureRecognizer {
+    private lazy var gestureRecognizer = { () -> UITapGestureRecognizer in
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: nil)
+        gestureRecognizer.delegate = self
         
-        if self.privateGestureRecognizer == nil {
-            
-            self.privateGestureRecognizer = UITapGestureRecognizer(target: self, action: nil)
-            self.privateGestureRecognizer?.delegate = self
-            
+        let contains = self.gestureRecognizers?.contains(gestureRecognizer)
+        if contains != true {
+            self.addGestureRecognizer(gestureRecognizer)
         }
         
-        return self.privateGestureRecognizer!
-        
-    }
+        return gestureRecognizer
+    }()
     
     init(models: [StandartPickerTitleModel],
          currentValue: String,
@@ -107,124 +155,16 @@ class StandartPickerView: RoutineView<RoutineViewModel>, UIPickerViewDataSource,
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let contains = self.gestureRecognizers?.contains(self.gestureRecognizer)
-        if contains != true {
-            self.addGestureRecognizer(self.gestureRecognizer)
-        }
+        print(self.gestureRecognizer.description)
+        print(self.blurView.description)
+        print(self.pickerView.description)
         
-        if self.blurView == blurView {
-            let blurView = UIVisualEffectView(effect: self.blurEffect)
-            blurView.frame = self.bounds
-            blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            blurView.alpha = 1.0
-            blurView.backgroundColor = UIColor.clear
-            
-            self.blurView = blurView
-            
-            if !self.blurView.isDescendant(of: self) {
-                self.addSubview(self.blurView)
-            }
-        }
+        print(self.leftButton.description)
+        print(self.rightButton.description)
+        print(self.topBorderView.description)
+        print(self.bottomBorderView.description)
         
-        if self.pickerView == nil {
-            let pickerView = UIPickerView()
-            pickerView.backgroundColor = UIColor.white
-            pickerView.layer.masksToBounds = false
-            pickerView.dataSource = self
-            pickerView.delegate = self
-            
-            self.pickerView = pickerView
-            
-            if !self.pickerView.isDescendant(of: self) {
-                self.addSubview(self.pickerView)
-            }
-            
-        }
-        
-        self.pickerView.frame = CGRect(x: 0.0, y: self.frame.height - 200.0, width: self.frame.width, height: 200.0)
-        
-        for (index, item) in models.enumerated() where item.toString(localizeService: self.localizedService) == self.currentValue {
-            self.pickerView.selectRow(index, inComponent: 0, animated: false)
-            break
-        }
-        
-        if self.leftButton == nil {
-            
-            let leftButton = UIButton()
-            leftButton.backgroundColor = UIColor.white
-            leftButton.setTitleColor(UIColor.black, for: .normal)
-            leftButton.addTarget(self, action: #selector(leftButtonAction), for: .touchDown)
-            
-            self.leftButton = leftButton
-            
-            if !self.leftButton.isDescendant(of: self) {
-                self.addSubview(self.leftButton)
-            }
-        }
-        
-        self.leftButton.setTitle(self.leftTitle, for: .normal)
-        self.leftButton.frame = CGRect(x: 0.0, y: self.frame.height - 240.0, width: self.frame.width / 2, height: 40.0)
-        
-        if self.rightButton == nil {
-        
-            let rightButton = UIButton()
-            rightButton.backgroundColor = UIColor.white
-            rightButton.setTitleColor(UIColor.black, for: .normal)
-            rightButton.addTarget(self, action: #selector(rightButtonAction), for: .touchDown)
-
-            self.rightButton = rightButton
-            
-            if !self.rightButton.isDescendant(of: self) {
-                self.addSubview(self.rightButton)
-            }
-        
-        }
-        
-        self.rightButton.setTitle(self.rightTitle, for: .normal)
-        self.rightButton.frame = CGRect(x: self.frame.width / 2, y: self.frame.height - 240.0, width: self.frame.width / 2, height: 40.0)
-        
-        
-        if self.topBorderView == nil {
-        
-            let topBorderView = UIView()
-            topBorderView.backgroundColor = ColorProvider.default.lightGrayColor
-        
-            self.topBorderView = topBorderView
-            
-            if !self.topBorderView.isDescendant(of: self) {
-                self.addSubview(self.topBorderView)
-            }
-            
-        }
-        
-        self.topBorderView.frame = CGRect(x: 0, y: self.frame.height - 240.0, width: self.frame.width, height: 1)
-        
-        if self.bottomBorderView == nil {
-        
-            let bottomBorderView = UIView()
-            bottomBorderView.backgroundColor = ColorProvider.default.lightGrayColor
-            
-            self.bottomBorderView = bottomBorderView
-            
-            if !self.bottomBorderView.isDescendant(of: self) {
-                self.addSubview(self.bottomBorderView)
-            }
-            
-        }
-        
-        self.bottomBorderView.frame = CGRect(x: 0, y: self.frame.height - 200.0, width: self.frame.width, height: 1)
-        
-        
-        if self.animator == nil {
-            //Анимационный сборс blur effect остановленный на позиции 0.5 (https://habr.com/company/redmadrobot/blog/305596/)
-            self.animator = UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
-                self.blurView.effect = nil
-            }
-        }
-        
-        self.blurView.effect = self.blurEffect
-        
-        self.animator?.fractionComplete = self.blurRadius
+        self.animator.fractionComplete = self.blurRadius
         
     }
     
@@ -233,8 +173,8 @@ class StandartPickerView: RoutineView<RoutineViewModel>, UIPickerViewDataSource,
     }
     
     deinit {
-        self.animator?.stopAnimation(true)
-        self.animator?.finishAnimation(at: .start)
+        self.animator.stopAnimation(true)
+        self.animator.finishAnimation(at: .start)
         
         print("StandartPickerView remove from memory")
     }
@@ -249,8 +189,8 @@ class StandartPickerView: RoutineView<RoutineViewModel>, UIPickerViewDataSource,
     
     override func removeFromSuperview() {
         
-        self.animator?.stopAnimation(true)
-        self.animator?.finishAnimation(at: .start)
+        self.animator.stopAnimation(true)
+        self.animator.finishAnimation(at: .start)
         
         super.removeFromSuperview()
     }

@@ -14,6 +14,7 @@ final class MainPresenter: Module {
     }
     
     var localizeService: StringServiceInterface!
+    var mainTableViewFactory: MainTableViewFactoryInterface!
 }
 
 // MARK: - MainScreenModuleInput

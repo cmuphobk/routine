@@ -1,8 +1,8 @@
 import UIKit
 
-final class DrugsListTableViewFactory {
+final class DrugsListTableViewFactory: DrugsListTableViewFactoryInterface {
     
-    static func drugsListCellViewModels(model: MedicineCourse) -> [RoutineTableViewCellViewModel] {
+    func drugsListCellViewModels(model: MedicineCourse) -> [RoutineTableViewCellViewModel] {
         var cellObjs: [DrugCellViewModel] = []
         
         for item in model.drugs ?? [] {
@@ -13,7 +13,7 @@ final class DrugsListTableViewFactory {
         return cellObjs
     }
     
-    static func drugsListCellViewModel(model: MedicineDrug) -> DrugCellViewModel {
+    func drugsListCellViewModel(model: MedicineDrug) -> DrugCellViewModel {
         var times: [String] = []
         
         let medTimes = model.times

@@ -120,13 +120,13 @@ extension MedicineCourseViewController: MedicineCourseViewInput {
     }
     
     func updateTableView(models: [MedicineCourse], isArchive: Bool) {
-        self.cellViewModels = MedicineCourseTableViewFactory.medicineCourseCellViewModels(models: models, isArchive: isArchive, delegate: self)
+        self.cellViewModels = self.output.medicineCourseTableViewFactory.medicineCourseCellViewModels(models: models, isArchive: isArchive, delegate: self)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels)
         self.placeholderLabel.isHidden = (self.cellViewModels.count > 0)
     }
     
     func reloadRowAtIndex(_ index: Int, medCourse: MedicineCourse) {
-        self.cellViewModels[index] = MedicineCourseTableViewFactory.medicineCourseCellViewModel(medicineCourse: medCourse, isArchive: false, delegate: self)
+        self.cellViewModels[index] = self.output.medicineCourseTableViewFactory.medicineCourseCellViewModel(medicineCourse: medCourse, isArchive: false, delegate: self)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels, reloadData: false)
         self.tableViewManager.updateRowAtIndex(index)
         self.placeholderLabel.isHidden = (self.cellViewModels.count > 0)

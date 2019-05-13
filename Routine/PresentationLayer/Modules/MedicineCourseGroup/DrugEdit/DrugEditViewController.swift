@@ -118,9 +118,9 @@ extension DrugEditViewController: DrugEditViewInput {
     }
     
     func updateTableView(model: MedicineDrug?, editMode: DrugEditMode) {
-        self.cellViewModelsBeforeTimes = DrugEditTableViewFactory.makeCellViewModelsBeforeTimes(model: model, delegate: self)
-        self.cellViewModelsTimes = DrugEditTableViewFactory.makeTimeCellViewModel(model: model, delegate: self)
-        self.cellViewModelsAfterTimes = DrugEditTableViewFactory.makeCellObjectsAfterTimes(model: model, delegate: self, editMode: editMode)
+        self.cellViewModelsBeforeTimes = self.output.drugEditTableViewFactory.makeCellViewModelsBeforeTimes(model: model, delegate: self)
+        self.cellViewModelsTimes = self.output.drugEditTableViewFactory.makeTimeCellViewModel(model: model, delegate: self)
+        self.cellViewModelsAfterTimes = self.output.drugEditTableViewFactory.makeCellObjectsAfterTimes(model: model, delegate: self, editMode: editMode)
         self.tableViewManager.configure(cellViewModels: self.cellViewModels)
     }
     
@@ -270,7 +270,7 @@ extension DrugEditViewController: RoutineTableViewManagerDelegate {
                 }
             }
             
-            self.cellViewModelsTimes += [DrugEditTableViewFactory.makeTimeCellViewModel(index: self.cellViewModelsTimes.count + 1, delegate: self)]
+            self.cellViewModelsTimes += [self.output.drugEditTableViewFactory.makeTimeCellViewModel(index: self.cellViewModelsTimes.count + 1, delegate: self)]
             self.tableViewManager.configure(cellViewModels: self.cellViewModels, reloadData: false)
             self.tableViewManager.insertRowToIndex(self.cellViewModelsBeforeTimes.count - 1 + self.cellViewModelsTimes.count)
             
@@ -293,7 +293,14 @@ extension DrugEditViewController: UsingTimesCellViewModelDelegate {
                                                              delegate: self,
                                                              leftTitle: self.output.localizeService.localizeId("back_string"),
                                                              rightTitle: self.output.localizeService.localizeId("ok_string"),
-                                                             datePickerMode: .time)
+                                                             datePickerMode: .time,
+                                                             languageService: self.output.languageService)
+            
+            let config = RoutineViewModel(routineDelegate: self.output.localizeService)
+            config.backgroundColor = ColorProvider.default.clearColor
+            
+            usageTimePickerView.configureView(config: config)
+            
             self.view.addSubview(usageTimePickerView)
             self.usageTimePickerView = usageTimePickerView
             self.hideKeyboard()
@@ -523,6 +530,12 @@ extension DrugEditViewController {
                                                             leftTitle: self.output.localizeService.localizeId("back_string"),
                                                             rightTitle: self.output.localizeService.localizeId("ok_string"),
                                                             localizedService: self.output.localizeService)
+                
+                let config = RoutineViewModel(routineDelegate: self.output.localizeService)
+                config.backgroundColor = ColorProvider.default.clearColor
+
+                drugtypePickerView.configureView(config: config)
+                
                 self.view.addSubview(drugtypePickerView)
                 self.drugtypePickerView = drugtypePickerView
                 self.hideKeyboard()
@@ -541,6 +554,12 @@ extension DrugEditViewController {
                                                             leftTitle: self.output.localizeService.localizeId("back_string"),
                                                             rightTitle: self.output.localizeService.localizeId("ok_string"),
                                                             localizedService: self.output.localizeService)
+                
+                let config = RoutineViewModel(routineDelegate: self.output.localizeService)
+                config.backgroundColor = ColorProvider.default.clearColor
+                
+                drugunitPickerView.configureView(config: config)
+                
                 self.view.addSubview(drugunitPickerView)
                 self.drugunitPickerView = drugunitPickerView
                 self.hideKeyboard()
@@ -554,7 +573,14 @@ extension DrugEditViewController {
                 let startDatePickerView = StandartDatePickerView(frame: self.view.bounds,
                                                                  delegate: self,
                                                                  leftTitle: self.output.localizeService.localizeId("back_string"),
-                                                                 rightTitle: self.output.localizeService.localizeId("ok_string"))
+                                                                 rightTitle: self.output.localizeService.localizeId("ok_string"),
+                                                                 languageService: self.output.languageService)
+                
+                let config = RoutineViewModel(routineDelegate: self.output.localizeService)
+                config.backgroundColor = ColorProvider.default.clearColor
+                
+                startDatePickerView.configureView(config: config)
+                
                 self.view.addSubview(startDatePickerView)
                 self.startDatePickerView = startDatePickerView
                 self.hideKeyboard()

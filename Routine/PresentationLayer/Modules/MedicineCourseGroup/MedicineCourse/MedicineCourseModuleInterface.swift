@@ -18,6 +18,8 @@ protocol MedicineCourseViewInput: class {
 protocol MedicineCourseViewOutput: class {
     var localizeService: StringServiceInterface! { get }
     
+    var medicineCourseTableViewFactory: MedicineCourseTableViewFactoryInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()

@@ -30,6 +30,9 @@ enum DrugEditAssembly {
         presenter.drugsService = AppDelegate.serviceProvider.makeMedicineDrugService()
         presenter.medicineCourseService = AppDelegate.serviceProvider.makeMedicineCourseService()
         presenter.localNotificationService = AppDelegate.serviceProvider.makeLocalNotificationService()
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
+        presenter.languageService = AppDelegate.serviceProvider.makeLanguageService()
+        presenter.drugEditTableViewFactory = DrugEditTableViewFactoryAssembly.build()
         
         router.viewController = moduleViewController
         router.viewController = moduleViewController

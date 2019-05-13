@@ -18,6 +18,8 @@ enum MenuModuleAssembly {
         presenter.moduleOutput = moduleOutput
         presenter.view = moduleViewController
         presenter.router = router
+        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
+        presenter.menuTableViewFactory = MenuTableViewFactoryAssembly.build()
         router.moduleService = moduleService
         
         completion(moduleViewController, presenter)

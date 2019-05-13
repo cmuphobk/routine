@@ -1,8 +1,8 @@
 import UIKit
 
-final class MedicineCourseTableViewFactory {
+final class MedicineCourseTableViewFactory: MedicineCourseTableViewFactoryInterface {
     
-    static func medicineCourseCellViewModel(medicineCourse: MedicineCourse, isArchive: Bool, delegate: MedicineCourseCellProtocol) -> RoutineTableViewCellViewModel {
+    func medicineCourseCellViewModel(medicineCourse: MedicineCourse, isArchive: Bool, delegate: MedicineCourseCellProtocol) -> RoutineTableViewCellViewModel {
         let cellViewModel = MedicineCourseCellViewModel(name: medicineCourse.name,
                                                         drugs: medicineCourse.drugs ?? [],
                                                         isArchive: isArchive,
@@ -11,7 +11,7 @@ final class MedicineCourseTableViewFactory {
         return cellViewModel
     }
     
-    static func medicineCourseCellViewModels(models: [MedicineCourse], isArchive: Bool, delegate: MedicineCourseCellProtocol) -> [RoutineTableViewCellViewModel] {
+    func medicineCourseCellViewModels(models: [MedicineCourse], isArchive: Bool, delegate: MedicineCourseCellProtocol) -> [RoutineTableViewCellViewModel] {
         return models.map({ [unowned delegate] (item) -> RoutineTableViewCellViewModel in
             let cellViewModel = self.medicineCourseCellViewModel(medicineCourse: item, isArchive: isArchive, delegate: delegate)
             return cellViewModel

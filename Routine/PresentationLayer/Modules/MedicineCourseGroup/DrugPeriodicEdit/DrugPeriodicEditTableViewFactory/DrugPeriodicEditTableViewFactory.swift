@@ -1,10 +1,9 @@
 import Foundation
 import UIKit
 
-// FIXME: - all factory to instance and protocol
-final class DrugPeriodicEditTableViewFactory {
+final class DrugPeriodicEditTableViewFactory: DrugPeriodicEditTableViewFactoryInterface {
     
-    static func makeDays(withValue: Int) -> [RoutineTableViewCellViewModel] {
+    func makeDays(withValue: Int) -> [RoutineTableViewCellViewModel] {
         
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
@@ -24,7 +23,7 @@ final class DrugPeriodicEditTableViewFactory {
         return cellViewModels
     }
     
-    static func makeDay(text: String, isSelected: Bool) -> RoutineTableViewCellViewModel {
+    func makeDay(text: String, isSelected: Bool) -> RoutineTableViewCellViewModel {
         
         let labelAndMarkCellViewModel = LabelAndMarkCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         labelAndMarkCellViewModel.isSelected = isSelected
@@ -50,7 +49,7 @@ final class DrugPeriodicEditTableViewFactory {
         
     }
     
-    static func makeCountDays(withValue: Int) -> [RoutineTableViewCellViewModel] {
+    func makeCountDays(withValue: Int) -> [RoutineTableViewCellViewModel] {
         
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
