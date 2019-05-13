@@ -15,6 +15,8 @@ final class DrugsListPresenter: Module {
     
     // Properties
     private var medicineCourse: MedicineCourse?
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - DrugsListModuleInput

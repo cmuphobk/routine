@@ -3,8 +3,8 @@ import UIKit
 import Stevia
 
 final class LabelAndMarkCell: RoutineTableViewCell<LabelAndMarkCellViewModel> {
-    let label = RoutineLabel()
-    let icon = RoutineImageView()
+    lazy var label = RoutineLabel()
+    lazy var icon = RoutineImageView()
     
     override func setupView() {
         super.setupView()
@@ -44,6 +44,6 @@ final class LabelAndMarkCell: RoutineTableViewCell<LabelAndMarkCellViewModel> {
     }
     
     override func localizationSetup() {
-        self.label.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.label.text)
+        self.label.text = self.viewModel.routineDelegate?.localize(self.viewModel.label.text) ?? ""
     }
 }

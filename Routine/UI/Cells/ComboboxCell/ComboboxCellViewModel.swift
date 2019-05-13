@@ -5,11 +5,13 @@ protocol ComboboxCellProtocol: class {
 }
 
 final class ComboboxCellViewModel: RoutineTableViewCellViewModel {
-    var combobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
+    lazy var combobox: RoutineComboboxViewModel = RoutineComboboxViewModel(routineDelegate: self.routineDelegate)
     weak var delegate: ComboboxCellProtocol?
     
-    init(delegate: ComboboxCellProtocol) {
+    init(delegate: ComboboxCellProtocol, routineDelegate: RoutineDelegate?) {
         self.delegate = delegate
+        
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {

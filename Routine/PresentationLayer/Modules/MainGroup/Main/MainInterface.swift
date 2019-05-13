@@ -9,6 +9,8 @@ protocol MainViewInput: class {
 }
 
 protocol MainViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     

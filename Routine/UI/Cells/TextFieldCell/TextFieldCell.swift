@@ -37,7 +37,7 @@ final class TextFieldCell: RoutineTableViewCell<TextFieldCellViewModel>, UITextF
     }
     
     override func localizationSetup() {
-        self.textField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.textFieldConfiguration.placeholderText )
+        self.textField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.textFieldConfiguration.placeholderText) ?? ""
     }
     
     @objc private func textFieldChangedAction(_ sender: UITextField) {

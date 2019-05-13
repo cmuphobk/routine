@@ -1,13 +1,16 @@
 import UIKit
 
 struct SimpleComboboxUnit: StandartPickerTitleModel {
-    var title: String = ""
+    func toString(localizeService: StringServiceInterface) -> String {
+        return localizeService.localizeId(self.value)
+    }
+    
     var value: String = ""
 }
 
 class RoutineComboboxViewModel: RoutineViewModel {
     
-    var textFieldViewModel = RoutineTextFieldViewModel()
-    var markViewModel = RoutineImageViewModel() 
+    lazy var textFieldViewModel = RoutineTextFieldViewModel(routineDelegate: self.routineDelegate)
+    lazy var markViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
     
 }

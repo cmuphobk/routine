@@ -8,5 +8,8 @@ class RoutineTextViewModel: RoutineViewModel {
     var placeholderText: String              = ""
     var returnKeyType: UIReturnKeyType       = .done
     var height: CGFloat                      = 42.0
-    
+ 
+    override func heightForWidth(_ width: CGFloat) -> CGFloat {
+        return self.height
+    }
 }

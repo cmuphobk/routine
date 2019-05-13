@@ -14,9 +14,5 @@ class RoutineCollectionViewCellViewModel: RoutineViewModel {
     var isExpand: Bool = false
     
     var width: CGFloat = 0.0
-        
-    override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        return super.heightForWidth(width)
-    }
     
 }

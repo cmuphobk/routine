@@ -73,7 +73,9 @@ class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer {
         self.layer.cornerRadius = self.viewModel.cornerRadius
         
         self.returnKeyType = self.viewModel.returnKeyType
-        self.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.text)
+        
+        let text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        self.text = text
         self.textColor = self.viewModel.textColor
         self.font = self.viewModel.font
         

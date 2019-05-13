@@ -1,7 +1,7 @@
 import UIKit
 
 class InputTextPopup: UIViewController {
-    var presenter: ConfirmationModuleOutput?
+    var presenter: ConfirmationViewOutput?
     var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
@@ -49,7 +49,7 @@ class InputTextPopup: UIViewController {
 }
 
 // MARK: - ConfirmationModuleInput
-extension InputTextPopup: ConfirmationModuleInput {
+extension InputTextPopup: ConfirmationViewInput {
     func setupInitialState() {
         
         self.windowService = AppDelegate.serviceProvider.makeWindowService()

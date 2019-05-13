@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ConfirmationModuleInput: class {
+protocol ConfirmationViewInput: class {
     func setupInitialState()
     
     func updateCaptionText(_ text: String)
@@ -12,7 +12,9 @@ protocol ConfirmationModuleInput: class {
     func updateAcceptButtonAvilable(_ avilable: Bool)
 }
 
-protocol ConfirmationModuleOutput: class {
+protocol ConfirmationViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     
@@ -23,7 +25,7 @@ protocol ConfirmationModuleOutput: class {
     func cancelButtonDidPressed()
 }
 
-protocol ConfirmationModuleModuleOutput: class {
+protocol ConfirmationModuleOutput: class {
     func confirmWithMessage(_ msg: String)
     func cancelWithoutMessage()
 }

@@ -92,8 +92,7 @@ class SectionCell: RoutineTableViewCell<SectionCellViewModel> {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let viewModel = RoutineViewModel()
-        self.shadowView.configureView(config: viewModel)
+        self.shadowView.configureView(config: self.viewModel.shadowViewModel)
         
         self.sectionHeaderView.configureView(config: self.viewModel.sectionHeaderViewModel)
         self.sectionView.configureView(config: self.viewModel.sectionViewModel)

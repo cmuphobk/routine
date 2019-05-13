@@ -1,8 +1,10 @@
 import UIKit
 
 class ConfirmationModulePresenter {
-    weak var view: ConfirmationModuleInput?
-    weak var moduleOutput: ConfirmationModuleModuleOutput?
+    weak var view: ConfirmationViewInput?
+    weak var moduleOutput: ConfirmationModuleOutput?
+    
+    var localizeService: StringServiceInterface!
     
     var caption: String
     var text: String
@@ -11,29 +13,39 @@ class ConfirmationModulePresenter {
     var acceptButtonText: String
     var cancelButtonText: String
     
-    init (caption: String, text: String, textFieldValue: String, textFieldPlaceholder: String, acceptButtonText: String, cancelButtonText: String) {
+    init(caption: String,
+         text: String,
+         textFieldValue: String,
+         textFieldPlaceholder: String,
+         acceptButtonText: String,
+         cancelButtonText: String,
+         localizeService: StringServiceInterface) {
+        
         self.caption = caption
         self.text = text
         self.textFieldValue = textFieldValue
         self.textFieldPlaceholder = textFieldPlaceholder
         self.acceptButtonText = acceptButtonText
         self.cancelButtonText = cancelButtonText
+        self.localizeService = localizeService
+
     }
 }
 
 // MARK: - ConfirmationModuleOutput
-extension ConfirmationModulePresenter: ConfirmationModuleOutput {
+extension ConfirmationModulePresenter: ConfirmationViewOutput {
     func didTriggerViewReadyEvent() {
         self.view?.setupInitialState()
     }
     
     func didTriggerViewWillAppear() {
         // Цепляем локализацию, если что вдруг
-        self.view?.updateCaptionText( AppDelegate.serviceProvider.makeStringService().localizeById(self.caption) )
-        self.view?.updateText( AppDelegate.serviceProvider.makeStringService().localizeById(self.text) )
-        self.view?.updateTextFieldValue( AppDelegate.serviceProvider.makeStringService().localizeById(self.textFieldValue), placeholder: AppDelegate.serviceProvider.makeStringService().localizeById(self.textFieldPlaceholder) )
-        self.view?.updateAcceptButtonText( AppDelegate.serviceProvider.makeStringService().localizeById(self.acceptButtonText) )
-        self.view?.updateCancelButtonText( AppDelegate.serviceProvider.makeStringService().localizeById(self.cancelButtonText) )
+        self.view?.updateCaptionText(self.localizeService.localizeId(self.caption))
+        self.view?.updateText(self.localizeService.localizeId(self.text))
+        self.view?.updateTextFieldValue(self.localizeService.localizeId(self.textFieldValue),
+                                        placeholder: self.localizeService.localizeId(self.textFieldPlaceholder))
+        self.view?.updateAcceptButtonText(self.localizeService.localizeId(self.acceptButtonText))
+        self.view?.updateCancelButtonText(self.localizeService.localizeId(self.cancelButtonText))
         
         self.textFieldValueChanged(newValue: self.textFieldValue)
     }
@@ -45,13 +57,15 @@ extension ConfirmationModulePresenter: ConfirmationModuleOutput {
     
     func addToText(_ text: String) {
         self.textFieldValue.append(text)
-        self.view?.updateTextFieldValue(self.textFieldValue, placeholder: AppDelegate.serviceProvider.makeStringService().localizeById(self.textFieldPlaceholder))
+        self.view?.updateTextFieldValue(self.textFieldValue,
+                                        placeholder: self.localizeService.localizeId(self.textFieldPlaceholder))
         self.textFieldValueChanged(newValue: self.textFieldValue)
     }
     
     func removeAtEnd() {
         self.textFieldValue = String( self.textFieldValue.dropLast() )
-        self.view?.updateTextFieldValue(self.textFieldValue, placeholder: AppDelegate.serviceProvider.makeStringService().localizeById(self.textFieldPlaceholder))
+        self.view?.updateTextFieldValue(self.textFieldValue,
+                                        placeholder: self.localizeService.localizeId(self.textFieldPlaceholder))
         self.textFieldValueChanged(newValue: self.textFieldValue)
     }
     

@@ -20,6 +20,8 @@ protocol DrugsListViewInput: class {
 }
 
 protocol DrugsListViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func createDrugButtonDidPressed()

@@ -15,6 +15,8 @@ protocol DrugTimesEditViewInput: class {
 }
 
 protocol DrugTimesEditViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()

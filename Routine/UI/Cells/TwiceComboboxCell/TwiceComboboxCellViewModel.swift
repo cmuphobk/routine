@@ -7,15 +7,17 @@ protocol TwiceComboboxCellProtocol: class {
 
 final class TwiceComboboxCellViewModel: RoutineTableViewCellViewModel {
     
-    var leftCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
-    var rightCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
+    lazy var leftCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel(routineDelegate: self.routineDelegate)
+    lazy var rightCombobox: RoutineComboboxViewModel = RoutineComboboxViewModel(routineDelegate: self.routineDelegate)
     var betweenSpace: CGFloat = 8.0
     var betweenPosition = 0.5  // в процентах
     
     weak var delegate: TwiceComboboxCellProtocol?
     
-    init(delegate: TwiceComboboxCellProtocol?) {
+    init(delegate: TwiceComboboxCellProtocol?, routineDelegate: RoutineDelegate?) {
         self.delegate = delegate
+        
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {

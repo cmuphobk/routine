@@ -3,7 +3,11 @@ import UIKit
 final class MedicineCourseTableViewFactory {
     
     static func medicineCourseCellViewModel(medicineCourse: MedicineCourse, isArchive: Bool, delegate: MedicineCourseCellProtocol) -> RoutineTableViewCellViewModel {
-        let cellViewModel = MedicineCourseCellViewModel(name: medicineCourse.name, drugs: medicineCourse.drugs ?? [], isArchive: isArchive, delegate: delegate)
+        let cellViewModel = MedicineCourseCellViewModel(name: medicineCourse.name,
+                                                        drugs: medicineCourse.drugs ?? [],
+                                                        isArchive: isArchive,
+                                                        delegate: delegate,
+                                                        routineDelegate: AppDelegate.serviceProvider.makeStringService())
         return cellViewModel
     }
     

@@ -7,7 +7,7 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
     weak private var createMedicineCourseViewController: InputTextPopup?
     weak private var deleteMedicineCourseViewController: ConfirmDecisionPopup?
     
-    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup? {
+    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup? {
         
         self.createMedicineCourseViewController = self.moduleService.moduleFactory.makeCreatePopUpModule(confirmationDelegate: confirmationDelegate)
         guard let createMedicineCourseViewController = self.createMedicineCourseViewController else { return nil }
@@ -20,7 +20,7 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
         return createMedicineCourseViewController
     }
     
-    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
+    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
         
         self.createMedicineCourseViewController = self.moduleService.moduleFactory.makeRenamePopupModule(confirmationDelegate: confirmationDelegate, medCourse: medCourse)
         guard let createMedicineCourseViewController = self.createMedicineCourseViewController else { return nil }
@@ -33,7 +33,7 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
         return createMedicineCourseViewController
     }
     
-    func openDeleteCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup? {
+    func openDeleteCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup? {
         
         self.deleteMedicineCourseViewController = self.moduleService.moduleFactory.makeDeletePopupModule(confirmationDelegate: confirmationDelegate)
         guard let deleteMedicineCourseViewController = self.deleteMedicineCourseViewController else { return nil }

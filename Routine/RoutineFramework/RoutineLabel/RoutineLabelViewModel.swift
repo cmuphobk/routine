@@ -8,7 +8,8 @@ class RoutineLabelViewModel: RoutineViewModel {
     var numberOfLines = 1
     
     override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let height = self.font.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById(self.text), constrainedToWidth: Double(width)).height
+        let text = self.routineDelegate?.localize(self.text) ?? self.text
+        let height = self.font.sizeOfString(string: text, constrainedToWidth: Double(width)).height
         return height
     }
 }

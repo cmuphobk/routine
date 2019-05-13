@@ -27,10 +27,6 @@ enum MedicineUnit: Int, StandartPickerTitleModel, CaseIterable {
     case jar //банка
     case dose //доза
     case suppository //суппозитории
-    
-    var title: String {
-        return self.toString()
-    }
 
     var value: Int {
         switch self {
@@ -45,8 +41,7 @@ enum MedicineUnit: Int, StandartPickerTitleModel, CaseIterable {
         case .tablespoon: return 9
         case .teaspoon: return 10
         case .item: return 11
-        case .unitOfAction
-: return 12
+        case .unitOfAction : return 12
         case .proc: return 13
         case .mkgMl: return 14
         case .mgMl: return 15
@@ -96,115 +91,112 @@ enum MedicineUnit: Int, StandartPickerTitleModel, CaseIterable {
         }
     }
     
-    func toString() -> String {
+    func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .drop:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("drop")
+            return localizeService.localizeId("drop")
         case .gramm:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("gramm")
+            return localizeService.localizeId("gramm")
         case .shot:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("shot")
+            return localizeService.localizeId("shot")
         case .mgr:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("mg")
+            return localizeService.localizeId("mg")
         case .mkg:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("mkg")
+            return localizeService.localizeId("mkg")
         case .mll:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("ml")
+            return localizeService.localizeId("ml")
         case .pill:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("pill")
+            return localizeService.localizeId("pill")
         case .inject:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("inject")
+            return localizeService.localizeId("inject")
         case .tablespoon:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("tablespoon")
+            return localizeService.localizeId("tablespoon")
         case .teaspoon:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("teaspoon")
+            return localizeService.localizeId("teaspoon")
         case .item:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("item")
-        case .unitOfAction
-:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("me")
+            return localizeService.localizeId("item")
+        case .unitOfAction: return localizeService.localizeId("me")
         case .proc:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("proc")
+            return localizeService.localizeId("proc")
         case .mkgMl:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("mkgMl")
+            return localizeService.localizeId("mkgMl")
         case .mgMl:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("mgMl")
+            return localizeService.localizeId("mgMl")
         case .capsule:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("capsule")
+            return localizeService.localizeId("capsule")
         case .measuringSpoon:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("measuringSpoon")
+            return localizeService.localizeId("measuringSpoon")
         case .dessertSpoon:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("dessertSpoon")
+            return localizeService.localizeId("dessertSpoon")
         case .smCubic:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("smCubic")
+            return localizeService.localizeId("smCubic")
         case .powder:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("powder")
+            return localizeService.localizeId("powder")
         case .hitch:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("hitch")
+            return localizeService.localizeId("hitch")
         case .tube:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("tube")
+            return localizeService.localizeId("tube")
         case .jar:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("jar")
+            return localizeService.localizeId("jar")
         case .dose:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("dose")
+            return localizeService.localizeId("dose")
         case .suppository:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("suppository")
+            return localizeService.localizeId("suppository")
         }
     }
     
-    func pluralsStringFor(count: Int) -> String {
+    func pluralsStringFor(count: Int, localizeService: StringServiceInterface) -> String {
         switch self {
         case .drop:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "drop_1", str24: "drop_2_4", str5: "drop_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "drop_1", str24: "drop_2_4", str5: "drop_5", count: count)
         case .gramm:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "gramm_1", str24: "gramm_2_4", str5: "gramm_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "gramm_1", str24: "gramm_2_4", str5: "gramm_5", count: count)
         case .shot:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "shot_1", str24: "shot_2_4", str5: "shot_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "shot_1", str24: "shot_2_4", str5: "shot_5", count: count)
         case .mgr:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "mg_1", str24: "mg_2_4", str5: "mg_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "mg_1", str24: "mg_2_4", str5: "mg_5", count: count)
         case .mkg:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "mkg_1", str24: "mkg_2_4", str5: "mkg_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "mkg_1", str24: "mkg_2_4", str5: "mkg_5", count: count)
         case .mll:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "ml_1", str24: "mlс", str5: "ml_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "ml_1", str24: "mlс", str5: "ml_5", count: count)
         case .pill:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "pill_1", str24: "pill_2_4", str5: "pill_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "pill_1", str24: "pill_2_4", str5: "pill_5", count: count)
         case .inject:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "inject_1", str24: "inject_2_4", str5: "inject_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "inject_1", str24: "inject_2_4", str5: "inject_5", count: count)
         case .tablespoon:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "tablespoon_1", str24: "tablespoon_2_4", str5: "tablespoon_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "tablespoon_1", str24: "tablespoon_2_4", str5: "tablespoon_5", count: count)
         case .teaspoon:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "teaspoon_1", str24: "teaspoon_2_4", str5: "teaspoon_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "teaspoon_1", str24: "teaspoon_2_4", str5: "teaspoon_5", count: count)
         case .item:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "item_1", str24: "item_2_4", str5: "item_5", count: count)
-        case .unitOfAction
-:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "me_1", str24: "me_2_4", str5: "me_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "item_1", str24: "item_2_4", str5: "item_5", count: count)
+        case .unitOfAction:
+            return localizeService.pluralsLocalizeId(str1: "me_1", str24: "me_2_4", str5: "me_5", count: count)
         case .proc:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "proc_1", str24: "proc_2_4", str5: "proc_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "proc_1", str24: "proc_2_4", str5: "proc_5", count: count)
         case .mkgMl:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "mkgMl_1", str24: "mkgMl_2_4", str5: "mkgMl_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "mkgMl_1", str24: "mkgMl_2_4", str5: "mkgMl_5", count: count)
         case .mgMl:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "mgMl_1", str24: "mgMl_2_4", str5: "mgMl_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "mgMl_1", str24: "mgMl_2_4", str5: "mgMl_5", count: count)
         case .capsule:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "capsule_1", str24: "capsule_2_4", str5: "capsule_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "capsule_1", str24: "capsule_2_4", str5: "capsule_5", count: count)
         case .measuringSpoon:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "measuringSpoon_1", str24: "measuringSpoon_2_4", str5: "measuringSpoon_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "measuringSpoon_1", str24: "measuringSpoon_2_4", str5: "measuringSpoon_5", count: count)
         case .dessertSpoon:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "dessertSpoon_1", str24: "dessertSpoon_2_4", str5: "dessertSpoon_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "dessertSpoon_1", str24: "dessertSpoon_2_4", str5: "dessertSpoon_5", count: count)
         case .smCubic:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "smCubic_1", str24: "smCubic_2_4", str5: "smCubic_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "smCubic_1", str24: "smCubic_2_4", str5: "smCubic_5", count: count)
         case .powder:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "powder_1", str24: "powder_2_4", str5: "powder_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "powder_1", str24: "powder_2_4", str5: "powder_5", count: count)
         case .hitch:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "hitch_1", str24: "hitch_2_4", str5: "hitch_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "hitch_1", str24: "hitch_2_4", str5: "hitch_5", count: count)
         case .tube:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "tube_1", str24: "tube_2_4", str5: "tube_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "tube_1", str24: "tube_2_4", str5: "tube_5", count: count)
         case .jar:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "jar_1", str24: "jar_2_4", str5: "jar_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "jar_1", str24: "jar_2_4", str5: "jar_5", count: count)
         case .dose:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "dose_1", str24: "dose_2_4", str5: "dose_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "dose_1", str24: "dose_2_4", str5: "dose_5", count: count)
         case .suppository:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "suppository_1", str24: "suppository_2_4", str5: "suppository_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "suppository_1", str24: "suppository_2_4", str5: "suppository_5", count: count)
         }
     }
 }
@@ -212,11 +204,11 @@ enum MedicineUnit: Int, StandartPickerTitleModel, CaseIterable {
 // Utils
 extension MedicineUnit {
     
-    static func convertToSimpleComboboxUnits() -> [SimpleComboboxUnit] {
+    static func convertToSimpleComboboxUnits(localizeService: StringServiceInterface) -> [SimpleComboboxUnit] {
         
-        return MedicineUnit.allCases.map({ (item) -> SimpleComboboxUnit in
-            return SimpleComboboxUnit(title: item.title, value: item.title)
-        })
+        return MedicineUnit.allCases.map { (item) -> SimpleComboboxUnit in
+            return SimpleComboboxUnit(value: item.toString(localizeService: localizeService))
+        }
         
     }
     

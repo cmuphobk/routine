@@ -6,7 +6,7 @@ final class MainTableViewFactory {
         var cellObjs: [SectionCellViewModel] = []
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -58,7 +58,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -110,7 +110,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -162,7 +162,7 @@ final class MainTableViewFactory {
         }
 
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -215,7 +215,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -268,7 +268,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             cellObj.viewName = kMedicineCourseModuleId
             
             cellObj.delegate = delegate
@@ -318,7 +318,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             
@@ -371,7 +371,7 @@ final class MainTableViewFactory {
         }
         
         if true {
-            let cellObj = SectionCellViewModel()
+            let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             cellObj.delegate = delegate
             

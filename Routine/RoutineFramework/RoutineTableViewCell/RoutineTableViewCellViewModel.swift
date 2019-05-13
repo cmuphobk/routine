@@ -14,9 +14,5 @@ class RoutineTableViewCellViewModel: RoutineViewModel {
     var backgroundViewColor: UIColor = UIColor.white
     var contentViewColor: UIColor = UIColor.clear
     var isExpand: Bool = false
-
-    override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        return super.heightForWidth(width)
-    }
         
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol StandartPickerTitleModel {
-    var title: String { get }
+    func toString(localizeService: StringServiceInterface) -> String 
 }
 
 protocol StandartPickerDelegate: class {
@@ -12,10 +12,11 @@ protocol StandartPickerDelegate: class {
     
 }
 
-// FIXME: - remove provider dependencies
-class StandartPickerView: UIView {
+class StandartPickerView: RoutineView<RoutineViewModel>, UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate {
     
     weak var delegate: StandartPickerDelegate?
+    
+    var localizedService: StringServiceInterface
     
     private var models: [StandartPickerTitleModel]
     
@@ -81,7 +82,13 @@ class StandartPickerView: UIView {
         
     }
     
-    init(models: [StandartPickerTitleModel], currentValue: String, frame: CGRect, delegate: StandartPickerDelegate, leftTitle: String, rightTitle: String) {
+    init(models: [StandartPickerTitleModel],
+         currentValue: String,
+         frame: CGRect,
+         delegate: StandartPickerDelegate,
+         leftTitle: String,
+         rightTitle: String,
+         localizedService: StringServiceInterface) {
         
         self.delegate = delegate
         
@@ -90,6 +97,8 @@ class StandartPickerView: UIView {
         self.currentValue = currentValue
         self.leftTitle = leftTitle
         self.rightTitle = rightTitle
+        
+        self.localizedService = localizedService
         
         super.init(frame: frame)
         
@@ -134,7 +143,7 @@ class StandartPickerView: UIView {
         
         self.pickerView.frame = CGRect(x: 0.0, y: self.frame.height - 200.0, width: self.frame.width, height: 200.0)
         
-        for (index, item) in models.enumerated() where item.title == self.currentValue {
+        for (index, item) in models.enumerated() where item.toString(localizeService: self.localizedService) == self.currentValue {
             self.pickerView.selectRow(index, inComponent: 0, animated: false)
             break
         }
@@ -246,11 +255,8 @@ class StandartPickerView: UIView {
         super.removeFromSuperview()
     }
     
-}
+    // MARK: - UIPickerViewDataSource
 
-// MARK: - UIPickerViewDataSource
-
-extension StandartPickerView: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
@@ -263,12 +269,8 @@ extension StandartPickerView: UIPickerViewDataSource {
         return self.models.count
         
     }
-    
-}
 
-// MARK: - UIPickerViewDelegate
-
-extension StandartPickerView: UIPickerViewDelegate {
+    // MARK: - UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         
@@ -289,7 +291,7 @@ extension StandartPickerView: UIPickerViewDelegate {
             pickerView = UILabel()
         }
         
-        pickerView.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.models[row].title)
+        pickerView.text = self.viewModel.routineDelegate?.localize(self.models[row].toString(localizeService: self.localizedService))
         pickerView.font = FontProvider.default.standart
         pickerView.textAlignment = .center
         pickerView.textColor = UIColor.black
@@ -301,15 +303,12 @@ extension StandartPickerView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return AppDelegate.serviceProvider.makeStringService().localizeById(self.models[row].title)
+        return self.viewModel.routineDelegate?.localize(self.models[row].toString(localizeService: self.localizedService))
         
     }
     
-}
-
-// MARK: - UIGestureRecognizerDelegate
-
-extension StandartPickerView: UIGestureRecognizerDelegate {
+    // MARK: - UIGestureRecognizerDelegate
+    
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
@@ -323,12 +322,9 @@ extension StandartPickerView: UIGestureRecognizerDelegate {
         
         return true
     }
-    
-}
 
-// MARK: - Private
+    // MARK: - Private
 
-extension StandartPickerView {
 
     @objc func leftButtonAction() {
         self.delegate?.leftButtonAction(self)

@@ -2,18 +2,15 @@ import UIKit
 import Stevia
 
 final class LabelCell: RoutineTableViewCell<LabelCellViewModel> {
-    weak private var label: RoutineLabel<RoutineLabelViewModel>!
+    lazy private var label = RoutineLabel()
     
     override func setupView() {
         super.setupView()
         
-        let label = RoutineLabel()
-        
         self.paddingView.sv(
-            label
+            self.label
         )
         
-        self.label = label
     }
     
     override func setupLayout() {
@@ -34,7 +31,7 @@ final class LabelCell: RoutineTableViewCell<LabelCellViewModel> {
     }
     
     override func localizationSetup() {
-        self.label.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.labelConfiguration.text)
+        self.label.text = self.viewModel.routineDelegate?.localize(self.viewModel.labelConfiguration.text)
     }
 
 }

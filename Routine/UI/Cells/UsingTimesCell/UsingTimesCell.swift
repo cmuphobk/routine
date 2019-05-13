@@ -65,11 +65,11 @@ final class UsingTimesCell: RoutineTableViewCell<UsingTimesCellViewModel>, UITex
     }
     
     override func localizationSetup() {
-        self.numberLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.numberLabel.text )
-        self.timesBox.textField.text = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.timesBox.textFieldViewModel.text )
-        self.timesBox.textField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.timesBox.textFieldViewModel.placeholderText )
-        self.countField.text = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.countField.text )
-        self.countField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.countField.placeholderText )
+        self.numberLabel.text = self.viewModel.routineDelegate?.localize(self.viewModel.numberLabel.text) ?? ""
+        self.timesBox.textField.text = self.viewModel.routineDelegate?.localize(self.viewModel.timesBox.textFieldViewModel.text) ?? ""
+        self.timesBox.textField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.timesBox.textFieldViewModel.placeholderText) ?? ""
+        self.countField.text = self.viewModel.routineDelegate?.localize(self.viewModel.countField.text) ?? ""
+        self.countField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.countField.placeholderText) ?? ""
     }
     
     @objc private func textFieldChangedAction(_ sender: UITextField) {

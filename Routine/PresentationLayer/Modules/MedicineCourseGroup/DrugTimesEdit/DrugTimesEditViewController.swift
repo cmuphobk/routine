@@ -42,7 +42,7 @@ extension DrugTimesEditViewController: DrugTimesEditViewInput {
     func setupInitialState() {
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         
-        let title = AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_edit_title")
+        let title = self.output.localizeService.localizeId("drug_times_edit_title")
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
         AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
@@ -55,9 +55,9 @@ extension DrugTimesEditViewController: DrugTimesEditViewInput {
             target: self,
             action: #selector(rightAcceptButton))
         
-        self.typeSelector.configureWithPagesNames([EndingCourseType.endUsageDate.toString(),
-                                                   EndingCourseType.countUsageDays.toString(),
-                                                   EndingCourseType.countUsageNumber.toString()],
+        self.typeSelector.configureWithPagesNames([EndingCourseType.endUsageDate.toString(localizeService: self.output.localizeService),
+                                                   EndingCourseType.countUsageDays.toString(localizeService: self.output.localizeService),
+                                                   EndingCourseType.countUsageNumber.toString(localizeService: self.output.localizeService)],
                                                   
                                                   height: self.typeSelector.frame.height,
                                                   font: FontProvider.default.standartPages,
@@ -86,7 +86,7 @@ extension DrugTimesEditViewController: DrugTimesEditViewInput {
             for value in (1...100) {
                 self.pickerDareSourceLeft += [value]
             }
-            self.pickerDareSourceRight = [AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "usage_1", str24: "usage_2_4", str5: "usage_5", count: value)]
+            self.pickerDareSourceRight = [self.output.localizeService.pluralsLocalizeId(str1: "usage_1", str24: "usage_2_4", str5: "usage_5", count: value)]
             
             self.pickerView.reloadAllComponents()
             self.pickerView.selectRow(value-1, inComponent: 0, animated: false)
@@ -100,7 +100,7 @@ extension DrugTimesEditViewController: DrugTimesEditViewInput {
             for value in (1...100) {
                 self.pickerDareSourceLeft += [value]
             }
-            self.pickerDareSourceRight = [AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "days1", str24: "days2_4", str5: "days5", count: value)]
+            self.pickerDareSourceRight = [self.output.localizeService.pluralsLocalizeId(str1: "days1", str24: "days2_4", str5: "days5", count: value)]
             
             self.pickerView.reloadAllComponents()
             self.pickerView.selectRow(value-1, inComponent: 0, animated: false)

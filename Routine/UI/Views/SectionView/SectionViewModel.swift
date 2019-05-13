@@ -2,10 +2,10 @@ import UIKit
 
 class SectionViewModel: RoutineViewModel {
     
-    var sectionImageViewModel = RoutineImageViewModel()
-    var sectionHeaderLabelModel = RoutineLabelViewModel()
-    var sectionDescriptionLabelModel = RoutineLabelViewModel()
-    var sectionArrowImageViewModel = RoutineImageViewModel()
+    lazy var sectionImageViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
+    lazy var sectionHeaderLabelModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var sectionDescriptionLabelModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var sectionArrowImageViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
     
     var betweenImageOffset: CGFloat = 16.0
     var betweenLabelOffset: CGFloat = 8.0

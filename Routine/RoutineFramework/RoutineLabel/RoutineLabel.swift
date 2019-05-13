@@ -70,7 +70,7 @@ class RoutineLabel<T: RoutineLabelViewModel>: UILabel, RoutineContainer {
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius
     
-        self.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.text)
+        self.text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
         self.textColor = self.viewModel.textColor
         self.font = self.viewModel.font
         self.numberOfLines = self.viewModel.numberOfLines

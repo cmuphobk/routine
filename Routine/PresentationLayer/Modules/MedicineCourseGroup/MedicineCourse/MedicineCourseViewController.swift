@@ -33,8 +33,8 @@ final class MedicineCourseViewController: RoutineViewController {
     
     @IBOutlet weak var contentView: UIView!
     
-    private var tableViewModel = { () -> RoutineTableViewModel in
-        return RoutineTableViewModel()
+    private lazy var tableViewModel = { () -> RoutineTableViewModel in
+        return RoutineTableViewModel(routineDelegate: self.output.localizeService)
     }()
     
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
@@ -90,12 +90,12 @@ final class MedicineCourseViewController: RoutineViewController {
     
     override func localizationSetup() {
         super.localizationSetup()
-        let title = AppDelegate.serviceProvider.makeStringService().localizeById(kMedicineCourseModuleId)
+        let title = self.output.localizeService.localizeId(kMedicineCourseModuleId)
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
         self.placeholderLabel.font = FontProvider.default.forosRegular18
         self.placeholderLabel.textColor = ColorProvider.default.lightGrayColor
-        self.placeholderLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("med_cource_empty_placeholder")
+        self.placeholderLabel.text = self.output.localizeService.localizeId("med_cource_empty_placeholder")
         self.contentView.bringSubviewToFront(self.placeholderLabel)
     }
     

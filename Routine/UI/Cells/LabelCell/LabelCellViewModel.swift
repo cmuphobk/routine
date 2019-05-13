@@ -1,7 +1,7 @@
 import UIKit
 
 final class LabelCellViewModel: RoutineTableViewCellViewModel {
-    var labelConfiguration: RoutineLabelViewModel = RoutineLabelViewModel()
+    lazy var labelConfiguration: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
     
     override var reuseIdentifier: String {
         return "LabelCell"
@@ -12,7 +12,8 @@ final class LabelCellViewModel: RoutineTableViewCellViewModel {
     }
     
     override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let labelSize = self.labelConfiguration.font.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById(self.labelConfiguration.text), constrainedToWidth: Double(width - self.labelConfiguration.leftAndRightPadding) )
+        let labelSize = self.labelConfiguration.font.sizeOfString(string: self.routineDelegate?.localize(self.labelConfiguration.text) ?? "",
+                                                                  constrainedToWidth: Double(width - self.labelConfiguration.leftAndRightPadding))
         return self.topAndBottomPadding + labelSize.height
     }
     

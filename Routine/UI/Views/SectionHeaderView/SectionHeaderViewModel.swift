@@ -6,9 +6,9 @@ protocol SectionHeaderViewModelDelegate: class {
 
 class SectionHeaderViewModel: RoutineViewModel {
     
-    var infoIconViewModel = RoutineImageViewModel()
-    var textLabelViewModel = RoutineLabelViewModel()
-    var closeButtonViewModel = RoutineButtonViewModel()
+    lazy var infoIconViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
+    lazy var textLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var closeButtonViewModel = RoutineButtonViewModel(routineDelegate: self.routineDelegate)
     weak var delegate: SectionHeaderViewModelDelegate?
 
     override func heightForWidth(_ width: CGFloat) -> CGFloat {

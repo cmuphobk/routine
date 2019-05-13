@@ -36,7 +36,7 @@ final class SingleButtonCell: RoutineTableViewCell<SingleButtonCellViewModel> {
     }
     
     override func localizationSetup() {
-        self.button.setTitle(AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.buttonConfiguration.text), for: .normal)
+        self.button.setTitle(self.viewModel.routineDelegate?.localize(self.viewModel.buttonConfiguration.text) ?? "", for: .normal)
     }
     
     @IBAction private func buttonDidPressed(_ sender: UIButton) {

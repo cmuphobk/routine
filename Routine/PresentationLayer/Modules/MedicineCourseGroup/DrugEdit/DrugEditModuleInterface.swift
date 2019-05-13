@@ -24,6 +24,8 @@ protocol DrugEditViewInput: class {
 }
 
 protocol DrugEditViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()
@@ -55,7 +57,7 @@ protocol DrugEditModuleRouting: class {
     func openEndUsageEditScreen(moduleOutput: DrugTimesEditModuleOutput)
     func openPeriodicEditScreen(moduleOutput: DrugPeriodicEditModuleOutput, periodType: PeriodCourseType, periodValue: Int)
     
-    func deleteQuestionPopup(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup?
+    func deleteQuestionPopup(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup?
     func closeStandartModal()
     
     func showMessageWithText(_ text: String)

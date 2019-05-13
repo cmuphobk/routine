@@ -22,6 +22,8 @@ class DrugPeriodicEditPresenter: Module {
         self.periodType = PeriodCourseType.countDays
         self.periodValue = 0
     }
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - DrugTimesEditModuleInput

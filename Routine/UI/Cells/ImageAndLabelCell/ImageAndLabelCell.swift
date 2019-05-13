@@ -48,6 +48,6 @@ final class ImageAndLabelCell: RoutineTableViewCell<ImageAndLabelCellViewModel> 
     }
     
     override func localizationSetup() {
-        self.label.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.label.text)
+        self.label.text = self.viewModel.routineDelegate?.localize(self.viewModel.label.text) ?? ""
     }
 }

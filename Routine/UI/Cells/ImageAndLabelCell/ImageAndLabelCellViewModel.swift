@@ -2,10 +2,10 @@ import UIKit
 
 final class ImageAndLabelCellViewModel: RoutineTableViewCellViewModel {
     
-    var image: RoutineImageViewModel = RoutineImageViewModel()
-    var label: RoutineLabelViewModel = RoutineLabelViewModel()
+    lazy var image: RoutineImageViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
+    lazy var label: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
     var betweenSpace: CGFloat = 8.0
-    
+        
     override var reuseIdentifier: String {
         return "ImageAndLabelCell"
     }
@@ -15,7 +15,9 @@ final class ImageAndLabelCellViewModel: RoutineTableViewCellViewModel {
     }
     
     override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let viewHeight = max(self.image.height, self.label.font.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById(self.label.text), constrainedToWidth: Double(width - self.leftAndRightPadding - self.image.width - self.betweenSpace)).height)
+        let viewHeight = max(self.image.height,
+                             self.label.font.sizeOfString(string: self.routineDelegate?.localize(self.label.text) ?? "",
+                                                                             constrainedToWidth: Double(width - self.leftAndRightPadding - self.image.width - self.betweenSpace)).height)
         return viewHeight + self.topAndBottomPadding
     }
     

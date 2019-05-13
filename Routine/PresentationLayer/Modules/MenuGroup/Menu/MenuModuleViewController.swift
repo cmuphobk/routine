@@ -6,8 +6,8 @@ class MenuModuleViewController: RoutineViewController {
     
     weak var viewController: UIViewController?
     
-    private var tableViewModel = { () -> RoutineTableViewModel in 
-        let model = RoutineTableViewModel()
+    private lazy var tableViewModel = { () -> RoutineTableViewModel in 
+        let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)
         model.backgroundColor = ColorProvider.default.clearColor
         return model
     }()
@@ -57,7 +57,6 @@ class MenuModuleViewController: RoutineViewController {
 extension MenuModuleViewController: MenuModuleViewInput {
     
     func setupInitialState() {
-        
         self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
         
         self.tableView.contentInset = UIEdgeInsets(top: self.tableViewOffset, left: 0, bottom: 0, right: 0)
@@ -67,12 +66,8 @@ extension MenuModuleViewController: MenuModuleViewInput {
     
     func configureViewWithItemTitles(_ itemTitles: [String]) {
         self.currentSelectedCellIndex = 0
-        self.viewModels = itemTitles.enumerated().map { (name) -> MenuModuleCellViewModel in
-            let model = MenuModuleCellViewModel()
-            model.text = name.element
-            model.backgroundColor = ColorProvider.menuColors.menuCellBackgroundColor
-            return model
-        }
+        
+        self.viewModels = MenuTableViewFactory.menuCellViewModels(itemTitles: itemTitles)
         self.tableViewManager.configure(cellViewModels: self.viewModels)
     
         self.tableViewManager.selectRow(self.currentSelectedCellIndex)

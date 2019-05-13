@@ -6,11 +6,13 @@ protocol TextAreaCellProtocol: class {
 }
 
 final class TextAreaCellViewModel: RoutineTableViewCellViewModel {
-    var textAreaConfiguration: RoutineTextViewModel = RoutineTextViewModel()
+    lazy var textAreaConfiguration: RoutineTextViewModel = RoutineTextViewModel(routineDelegate: self.routineDelegate)
     weak var delegate: TextAreaCellProtocol?
     
-    init(delegate: TextAreaCellProtocol) {
+    init(delegate: TextAreaCellProtocol, routineDelegate: RoutineDelegate?) {
         self.delegate = delegate
+        
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {

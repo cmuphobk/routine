@@ -5,8 +5,8 @@ final class MainViewController: RoutineViewController {
     var output: MainViewOutput!
     weak var viewController: UIViewController?
 
-    private var tableViewModel = { () -> RoutineTableViewModel in
-        let model = RoutineTableViewModel()
+    private lazy var tableViewModel = { () -> RoutineTableViewModel in
+        let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)
         model.backgroundColor = ColorProvider.mainModuleColors.blueColor
         model.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 20.0, right: 0.0)
         return model
@@ -56,7 +56,7 @@ final class MainViewController: RoutineViewController {
     override func localizationSetup() {
         super.localizationSetup()
         
-        let title = AppDelegate.serviceProvider.makeStringService().localizeById(kMainModuleId)
+        let title = self.output.localizeService.localizeId(kMainModuleId)
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
     }
     

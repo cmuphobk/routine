@@ -16,6 +16,8 @@ protocol DrugDetailsViewInput: class {
 }
 
 protocol DrugDetailsViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     

@@ -1,7 +1,7 @@
 import UIKit
 
 class CalculatorPopup: UIViewController {
-    var presenter: ConfirmationModuleOutput?
+    var presenter: ConfirmationViewOutput?
     var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
@@ -20,7 +20,6 @@ class CalculatorPopup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapEvent)))
-        //self.textField.clearButtonMode = .whileEditing
         
         self.presenter?.didTriggerViewReadyEvent()
     }
@@ -57,7 +56,7 @@ class CalculatorPopup: UIViewController {
 }
 
 // MARK: - ConfirmationModuleInput
-extension CalculatorPopup: ConfirmationModuleInput {
+extension CalculatorPopup: ConfirmationViewInput {
     func setupInitialState() {
         
         self.windowService = AppDelegate.serviceProvider.makeWindowService()

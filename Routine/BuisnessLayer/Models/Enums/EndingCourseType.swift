@@ -5,8 +5,28 @@ enum EndingCourseType: Int {
     case countUsageDays
     case countUsageNumber
     
-    func toString() -> String {
-        return EndingCourseType.stringBy(self)
+    func toString(localizeService: StringServiceInterface) -> String {
+        switch self {
+        case .endUsageDate: return localizeService.localizeId("drug_times_todate")
+        case .countUsageDays: return localizeService.localizeId("drug_times_days")
+        case .countUsageNumber: return localizeService.localizeId("drug_times_usages")
+        }
+    }
+    
+    func toPluralsString(count: Int, localizeService: StringServiceInterface) -> String {
+        var typeString: String
+        
+        switch self {
+        case .endUsageDate:
+            let date = Date(timeIntervalSince1970: Double(count) / 1000.0)
+            return "\(localizeService.localizeId("drug_times_to")) \(date.format(with: "dd.MM.yyyy"))"
+        case .countUsageDays:
+            typeString = localizeService.pluralsLocalizeId(str1: "days1", str24: "days2_4", str5: "days5", count: count)
+            return "\(count) \(typeString.lowercased())"
+        case .countUsageNumber:
+            typeString = localizeService.pluralsLocalizeId(str1: "usage_1", str24: "usage_2_4", str5: "usage_5", count: count)
+            return "\(count) \(typeString.lowercased())"
+        }
     }
     
     var value: Int {
@@ -27,27 +47,5 @@ enum EndingCourseType: Int {
         }
     }
     
-    static func stringBy(_ value: EndingCourseType) -> String {
-        switch value {
-        case .endUsageDate: return AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_todate")
-        case .countUsageDays: return AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_days")
-        case .countUsageNumber: return AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_usages")
-        }
-    }
     
-    static func pluralsStringBy(_ type: EndingCourseType, count: Int) -> String {
-        var typeString: String
-        
-        switch type {
-        case .endUsageDate:
-            let date = Date(timeIntervalSince1970: Double(count) / 1000.0)
-            return "\(AppDelegate.serviceProvider.makeStringService().localizeById("drug_times_to")) \(date.format(with: "dd.MM.yyyy"))"
-        case .countUsageDays:
-            typeString = AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "days1", str24: "days2_4", str5: "days5", count: count)
-            return "\(count) \(typeString.lowercased())"
-        case .countUsageNumber:
-            typeString = AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "usage_1", str24: "usage_2_4", str5: "usage_5", count: count)
-                return "\(count) \(typeString.lowercased())"
-        }
-    }
 }

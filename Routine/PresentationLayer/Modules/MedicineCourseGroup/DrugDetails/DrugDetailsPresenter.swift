@@ -17,6 +17,8 @@ class DrugDetailsPresenter: Module {
     private var medicineCourse: MedicineCourse!
     private var drug: MedicineDrug!
     private var drugsListModuleInput: DrugsListModuleInput!
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - DrugDetailsModuleInput
@@ -65,7 +67,7 @@ extension DrugDetailsPresenter: DrugDetailsViewOutput {
 extension DrugDetailsPresenter {
     
     func makeDetailInfoAsHtmlFrom(drug: MedicineDrug) -> String {
-        let htmlTemplate = AppDelegate.serviceProvider.makeStringService().localizeHtmlById("drug_details_template")
+        let htmlTemplate = self.localizeService.localizeHtmlById("drug_details_template")
         var html: String = ""
         
         html.append("<div style='padding: 2pt 16pt 2pt 16pt'>")
@@ -84,8 +86,8 @@ extension DrugDetailsPresenter {
             html.append("""
                         <table width=108% border = 0>
                             <tr valign='middle'>
-                            <td class='lightGray_header' align='left' style='width:50%'>\(AppDelegate.serviceProvider.makeStringService().localizeById("beginning_of_the_reception")):</td>
-                                <td class='lightGray_header' align='right' style='width:50%'>\(AppDelegate.serviceProvider.makeStringService().localizeById("end_of_the_reception")):</td>
+                            <td class='lightGray_header' align='left' style='width:50%'>\(self.localizeService.localizeId("beginning_of_the_reception")):</td>
+                                <td class='lightGray_header' align='right' style='width:50%'>\(self.localizeService.localizeId("end_of_the_reception")):</td>
                             </tr>
                             <tr valign='middle'>
                                 <td class='black_regular_text' align='left' style='width:50%'>\(Date(timeIntervalSince1970: TimeInterval(startDate / 1000)).format(with: "dd.MM.yyyy"))</td>
@@ -96,14 +98,14 @@ extension DrugDetailsPresenter {
         }
         
         // Период приема
-        html.append("<label class='lightGray_header'> \(AppDelegate.serviceProvider.makeStringService().localizeById("periodic")) </label>")
+        html.append("<label class='lightGray_header'> \(self.localizeService.localizeId("periodic")) </label>")
         switch drug.periodCourseType {
         case .weekDays:
-            html.append("<label class='black_regular_text'> \(DayOfWeek.stringFromBitset(UInt8(drug.periodCourseValue))) </label>")
+            html.append("<label class='black_regular_text'> \(DayOfWeek.stringFromBitset(UInt8(drug.periodCourseValue), localizeService: self.localizeService)) </label>")
         
         case .countDays:
             if let periodValue = DaysPeriod.fromValue(drug.periodCourseValue) {
-                html.append("<label class='black_regular_text'> \(periodValue.toString()) </label>")
+                html.append("<label class='black_regular_text'> \(periodValue.toString(localizeService: self.localizeService)) </label>")
             }
         }
         
@@ -111,7 +113,7 @@ extension DrugDetailsPresenter {
         let medTimes = drug.times
         if medTimes.count != 0 {
             
-            html.append("<label class='lightGray_header'> \(AppDelegate.serviceProvider.makeStringService().localizeById("time_of_reception")): </label>")
+            html.append("<label class='lightGray_header'> \(self.localizeService.localizeId("time_of_reception")): </label>")
             
             html.append("""
                         <table class='black_regular_text' width=100% border=0 cellpadding=0>
@@ -123,8 +125,8 @@ extension DrugDetailsPresenter {
                 html.append("""
                     <tr align='left' valign='middle'>
                         <td align='left' class='lightGray_regular_text'>\(String(format: "%02d", index+1)).</td>
-                        <td align='left' class='black_regular_text'>\(medTime.usageTime.toString())</td>
-                        <td align='left' class='black_regular_text'>\(medTime.dose.makeDoseString()) \(self.drug.unit.pluralsStringFor(count: Int(medTime.dose)))</td>
+                    <td align='left' class='black_regular_text'>\(medTime.usageTime.toString(localizeService: self.localizeService))</td>
+                    <td align='left' class='black_regular_text'>\(medTime.dose.makeDoseString()) \(self.drug.unit.pluralsStringFor(count: Int(medTime.dose), localizeService: self.localizeService))</td>
                     </tr>
                     """)
             }

@@ -74,53 +74,53 @@ enum DayOfWeek: UInt8, CaseIterable {
         
     }
     
-    static func stringBy(_ value: DayOfWeek) -> String {
+    static func stringBy(_ value: DayOfWeek, localizeService: StringServiceInterface) -> String {
         switch value {
-        case .monday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_monday")
-        case .tuesday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_tuesday")
-        case .wednesday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_wednesday")
-        case .thursday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_thursday")
-        case .friday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_friday")
-        case .saturday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_saturday")
-        case .sunday: return AppDelegate.serviceProvider.makeStringService().localizeById("short_sunday")
+        case .monday: return localizeService.localizeId("short_monday")
+        case .tuesday: return localizeService.localizeId("short_tuesday")
+        case .wednesday: return localizeService.localizeId("short_wednesday")
+        case .thursday: return localizeService.localizeId("short_thursday")
+        case .friday: return localizeService.localizeId("short_friday")
+        case .saturday: return localizeService.localizeId("short_saturday")
+        case .sunday: return localizeService.localizeId("short_sunday")
         }
     }
     
-    func toFullString() -> String {
+    func toFullString(localizeService: StringServiceInterface) -> String {
         switch self {
-        case .monday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_monday")
-        case .tuesday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_tuesday")
-        case .wednesday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_wednesday")
-        case .thursday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_thursday")
-        case .friday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_friday")
-        case .saturday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_saturday")
-        case .sunday: return AppDelegate.serviceProvider.makeStringService().localizeById("full_sunday")
+        case .monday: return localizeService.localizeId("full_monday")
+        case .tuesday: return localizeService.localizeId("full_tuesday")
+        case .wednesday: return localizeService.localizeId("full_wednesday")
+        case .thursday: return localizeService.localizeId("full_thursday")
+        case .friday: return localizeService.localizeId("full_friday")
+        case .saturday: return localizeService.localizeId("full_saturday")
+        case .sunday: return localizeService.localizeId("full_sunday")
         }
     }
     
-    static func stringFromBitset(_ bitset: UInt8) -> String {
+    static func stringFromBitset(_ bitset: UInt8, localizeService: StringServiceInterface) -> String {
         var result: String = ""
         
         if DayOfWeek.monday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_monday")). " )
+            result.append( "\(localizeService.localizeId("short_monday")). " )
         }
         if DayOfWeek.tuesday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_tuesday")). " )
+            result.append( "\(localizeService.localizeId("short_tuesday")). " )
         }
         if DayOfWeek.wednesday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_wednesday")). " )
+            result.append( "\(localizeService.localizeId("short_wednesday")). " )
         }
         if DayOfWeek.thursday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_thursday")). " )
+            result.append( "\(localizeService.localizeId("short_thursday")). " )
         }
         if DayOfWeek.friday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_friday")). " )
+            result.append( "\(localizeService.localizeId("short_friday")). " )
         }
         if DayOfWeek.saturday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_saturday")). " )
+            result.append( "\(localizeService.localizeId("short_saturday")). " )
         }
         if DayOfWeek.sunday.checkIfExist(bitset) {
-            result.append( "\(AppDelegate.serviceProvider.makeStringService().localizeById("short_sunday")). " )
+            result.append( "\(localizeService.localizeId("short_sunday")). " )
         }
         
         return result

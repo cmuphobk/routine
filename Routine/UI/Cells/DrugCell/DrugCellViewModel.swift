@@ -8,13 +8,13 @@ final class DrugCellViewModel: RoutineTableViewCellViewModel {
     let times: String
     let isOver: Bool
     
-    init(type: MedicineType, name: String, times: String, isOver: Bool) {
+    init(type: MedicineType, name: String, times: String, isOver: Bool, routineDelegate: RoutineDelegate?) {
         self.type = type
         self.name = name
         self.times = times
         self.isOver = isOver
         
-        super.init()
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {

@@ -5,8 +5,8 @@ enum Gender: String, StandartPickerTitleModel {
     case male = "gender_male"
     case female = "gender_female"
     
-    var title: String {
-        return AppDelegate.serviceProvider.makeStringService().localizeById(self.rawValue)
+    func toString(localizeService: StringServiceInterface) -> String {
+        return localizeService.localizeId(self.rawValue)
     }
     
     var genderCode: String? {

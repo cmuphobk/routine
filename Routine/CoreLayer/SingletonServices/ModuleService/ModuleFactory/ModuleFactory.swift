@@ -14,19 +14,19 @@ final class ModuleFactory: ModuleFactoryInterface {
         MedicineCourseAssembly.buildMedicineCourseScreenModule(completion)
     }
     
-    func makeCreatePopUpModule(confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup? {
+    func makeCreatePopUpModule(confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup? {
         return ConfirmationModuleAssembly.buildCourseCreatePopup(confirmationDelegate: confirmationDelegate)
     }
     
-    func makeRenamePopupModule(confirmationDelegate: ConfirmationModuleModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
+    func makeRenamePopupModule(confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
         return ConfirmationModuleAssembly.buildCourseRenamePopup(confirmationDelegate: confirmationDelegate, medCourse: medCourse)
     }
     
-    func makeDeletePopupModule(confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup? {
+    func makeDeletePopupModule(confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup? {
         return ConfirmationModuleAssembly.buildCourseDeletePopup(confirmationDelegate: confirmationDelegate)
     }
     
-    func makeYesNoPopupModule(confirmationDelegate: ConfirmationModuleModuleOutput, caption: String, text: String, acceptButtonText: String, cancelButtonText: String) -> ConfirmDecisionPopup? {
+    func makeYesNoPopupModule(confirmationDelegate: ConfirmationModuleOutput, caption: String, text: String, acceptButtonText: String, cancelButtonText: String) -> ConfirmDecisionPopup? {
         return ConfirmationModuleAssembly.buildYesNoPopup(confirmationDelegate: confirmationDelegate, caption: caption, text: text, acceptButtonText: acceptButtonText, cancelButtonText: cancelButtonText)
     }
     

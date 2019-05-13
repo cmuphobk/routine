@@ -11,4 +11,7 @@ class RoutineTextFieldViewModel: RoutineViewModel {
     var borderStyle: UITextField.BorderStyle = .none
     var height: CGFloat                      = 42.0
     
+    override func heightForWidth(_ width: CGFloat) -> CGFloat {
+        return self.height
+    }
 }

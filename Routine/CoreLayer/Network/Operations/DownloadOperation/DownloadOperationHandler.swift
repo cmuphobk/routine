@@ -37,7 +37,7 @@ final class DownloadOperationHandler: RequestOperationHandler {
         guard self.status == .unknown else {
             return nil
         }
-        return AppDelegate.serviceProvider.makeStringService().localizeById("error_network")
+        return AppDelegate.serviceProvider.makeStringService().localizeId("error_network")
     }
     
     init(withRequestObject requestObject: DownloadRequestObject) {

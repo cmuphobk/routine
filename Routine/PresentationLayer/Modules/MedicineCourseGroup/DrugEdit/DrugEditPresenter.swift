@@ -37,6 +37,8 @@ class DrugEditPresenter: Module {
     var drugPeriodCourseType: PeriodCourseType?
     var drugPeriodCourseValue: Int?
     var drugCourseObjectId: String?
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - DrugEditModuleInput
@@ -69,17 +71,17 @@ extension DrugEditPresenter: DrugEditModuleInput {
 extension DrugEditPresenter: DrugEditViewOutput {
     
     func obtainTypeList() -> [SimpleComboboxUnit] {
-        return MedicineType.convertToSimpleComboboxUnits()
+        return MedicineType.convertToSimpleComboboxUnits(localizeService: self.localizeService)
     }
     
     func obtainUnitList() -> [SimpleComboboxUnit] {
-        return self.drugType?.obtainUnitComboboxesForType() ?? []
+        return self.drugType?.obtainUnitComboboxesForType(localizeService: self.localizeService) ?? []
     }
     
     func didTriggerViewReadyEvent() {
         self.view?.setupInitialState(editMode: self.editMode)
         
-        self.view?.updateNavTitle(self.drug?.name ?? AppDelegate.serviceProvider.makeStringService().localizeById("create_drug_title"))
+        self.view?.updateNavTitle(self.drug?.name ?? self.localizeService.localizeId("create_drug_title"))
         self.view?.updateTableView(model: self.drug, editMode: self.editMode)
     }
     
@@ -244,7 +246,7 @@ extension DrugEditPresenter: DrugEditViewOutput {
             
             self.router.closeModuleWithEditMode(self.editMode)
         } else {
-            self.router.showMessageWithText(AppDelegate.serviceProvider.makeStringService().localizeById("drug_edit_fillerror"))
+            self.router.showMessageWithText(self.localizeService.localizeId("drug_edit_fillerror"))
         }
     }
     
@@ -262,7 +264,7 @@ extension DrugEditPresenter: DrugEditViewOutput {
 }
 
 // MARK: - ConfirmationModuleModuleOutput
-extension DrugEditPresenter: ConfirmationModuleModuleOutput {
+extension DrugEditPresenter: ConfirmationModuleOutput {
     
     func confirmWithMessage(_ msg: String) {
         guard let editMode = self.editMode else { return }
@@ -308,7 +310,7 @@ extension DrugEditPresenter: DrugTimesEditModuleOutput {
         self.drugEndingCourseType = newDrugEndingCourseType
         self.drugEndingCourseValue = newDrugEndingCourseValue
         
-        self.view?.updateEndingTime( EndingCourseType.pluralsStringBy(newDrugEndingCourseType, count: newDrugEndingCourseValue) )
+        self.view?.updateEndingTime( newDrugEndingCourseType.toPluralsString(count: newDrugEndingCourseValue, localizeService: self.localizeService))
     }
     
 }
@@ -324,9 +326,9 @@ extension DrugEditPresenter: DrugPeriodicEditModuleOutput {
         
         switch newDrugPeriodCourseType {
         case .weekDays:
-            valueString = DayOfWeek.stringFromBitset(UInt8(newDrugPeriodCourseValue))
+            valueString = DayOfWeek.stringFromBitset(UInt8(newDrugPeriodCourseValue), localizeService: self.localizeService)
         case .countDays:
-            valueString = DaysPeriod.fromValue(newDrugPeriodCourseValue)?.toString() ?? ""
+            valueString = DaysPeriod.fromValue(newDrugPeriodCourseValue)?.toString(localizeService: self.localizeService) ?? ""
         }
         
         self.view?.updatePeriodTime(valueString)

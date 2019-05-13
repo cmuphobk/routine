@@ -44,7 +44,7 @@ final class DrugEditRouter: DrugEditModuleRouting {
         }
     }
     
-    func deleteQuestionPopup(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup? {
+    func deleteQuestionPopup(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup? {
         
         self.deleteQuestionPopupViewController = self.moduleService.moduleFactory.makeYesNoPopupModule(confirmationDelegate: confirmationDelegate, caption: "drug_edit_delete_title", text: "drug_edit_delete_message", acceptButtonText: "drug_edit_delete_confirm", cancelButtonText: "drug_edit_delete_cancel")
         

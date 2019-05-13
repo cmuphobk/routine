@@ -12,10 +12,6 @@ enum MedicineType: Int, StandartPickerTitleModel, CaseIterable {
     case candles
     case syrup
     
-    var title: String {
-        return self.toString()
-    }
-    
     var value: Int {
         switch self {
         case .ampoules: return 1
@@ -65,53 +61,53 @@ enum MedicineType: Int, StandartPickerTitleModel, CaseIterable {
         
     }
     
-    func toString() -> String {
+    func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .ampoules:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("ampoules")
+            return localizeService.localizeId("ampoules")
         case .capsules:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("capsules")
+            return localizeService.localizeId("capsules")
         case .drops:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("drops")
+            return localizeService.localizeId("drops")
         case .injections:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("injections")
+            return localizeService.localizeId("injections")
         case .pills:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("pills")
+            return localizeService.localizeId("pills")
         case .powder:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("powder")
+            return localizeService.localizeId("powder")
         case .ointment:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("ointment")
+            return localizeService.localizeId("ointment")
         case .sprays:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("sprays")
+            return localizeService.localizeId("sprays")
         case .candles:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("candles")
+            return localizeService.localizeId("candles")
         case .syrup:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("syrup")
+            return localizeService.localizeId("syrup")
         }
     }
     
-    func pluralsStringFor(count: Int) -> String {
+    func pluralsStringFor(count: Int, localizeService: StringServiceInterface) -> String {
         switch self {
         case .ampoules:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "ampoules_1", str24: "ampoules_2_4", str5: "ampoules_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "ampoules_1", str24: "ampoules_2_4", str5: "ampoules_5", count: count)
         case .capsules:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "capsules_1", str24: "capsules_2_4", str5: "capsules_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "capsules_1", str24: "capsules_2_4", str5: "capsules_5", count: count)
         case .drops:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "drops_1", str24: "drops_2_4", str5: "drops_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "drops_1", str24: "drops_2_4", str5: "drops_5", count: count)
         case .injections:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "injections_1", str24: "injections_2_4", str5: "injections_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "injections_1", str24: "injections_2_4", str5: "injections_5", count: count)
         case .pills:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "pills_1", str24: "pills_2_4", str5: "pills_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "pills_1", str24: "pills_2_4", str5: "pills_5", count: count)
         case .powder:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "powder_1", str24: "powder_2_4", str5: "powder_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "powder_1", str24: "powder_2_4", str5: "powder_5", count: count)
         case .ointment:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "ointment_1", str24: "ointment_2_4", str5: "ointment_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "ointment_1", str24: "ointment_2_4", str5: "ointment_5", count: count)
         case .sprays:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "sprays_1", str24: "sprays_2_4", str5: "sprays_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "sprays_1", str24: "sprays_2_4", str5: "sprays_5", count: count)
         case .candles:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "candles_1", str24: "candles_2_4", str5: "candles_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "candles_1", str24: "candles_2_4", str5: "candles_5", count: count)
         case .syrup:
-            return AppDelegate.serviceProvider.makeStringService().pluralsLocalizeByIds(str1: "syrup_1", str24: "syrup_2_4", str5: "syrup_5", count: count)
+            return localizeService.pluralsLocalizeId(str1: "syrup_1", str24: "syrup_2_4", str5: "syrup_5", count: count)
         }
     }
     
@@ -133,11 +129,11 @@ enum MedicineType: Int, StandartPickerTitleModel, CaseIterable {
         return array
     }
     
-    func obtainUnitComboboxesForType() -> [SimpleComboboxUnit] {
+    func obtainUnitComboboxesForType(localizeService: StringServiceInterface) -> [SimpleComboboxUnit] {
         
-        return self.obtainUnitsForType().map({ (item) -> SimpleComboboxUnit in
-            return SimpleComboboxUnit(title: item.title, value: item.title)
-        })
+        return self.obtainUnitsForType().map { (item) -> SimpleComboboxUnit in
+            return SimpleComboboxUnit(value: item.toString(localizeService: localizeService))
+        }
         
     }
 }
@@ -145,11 +141,11 @@ enum MedicineType: Int, StandartPickerTitleModel, CaseIterable {
 // Utils
 extension MedicineType {
     
-    static func convertToSimpleComboboxUnits() -> [SimpleComboboxUnit] {
+    static func convertToSimpleComboboxUnits(localizeService: StringServiceInterface) -> [SimpleComboboxUnit] {
         
-        return MedicineType.allCases.map({ (item) -> SimpleComboboxUnit in
-                return SimpleComboboxUnit(title: item.title, value: item.title)
-        })
+        return MedicineType.allCases.map { (item) -> SimpleComboboxUnit in
+            return SimpleComboboxUnit(value: item.toString(localizeService: localizeService))
+        }
         
     }
     

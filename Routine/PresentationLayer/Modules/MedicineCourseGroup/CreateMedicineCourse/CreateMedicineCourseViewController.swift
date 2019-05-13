@@ -10,6 +10,8 @@ final class CreateMedicineCourseViewController: RoutineViewController {
     
     weak var delegate: CreateMedicineCourseViewControllerDelegate?
     
+    var localizeService: StringServiceInterface!
+    
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
     @IBOutlet weak private var nameTextField: StandartTextField!
@@ -22,6 +24,8 @@ final class CreateMedicineCourseViewController: RoutineViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.localizeService = AppDelegate.serviceProvider.makeStringService()
         
         self.windowService = AppDelegate.serviceProvider.makeWindowService()
         
@@ -61,11 +65,11 @@ final class CreateMedicineCourseViewController: RoutineViewController {
     
     override func localizationSetup() {
         
-        self.titleLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("create_med_course_top_string")
-        self.descriptionLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("create_med_course_desc_string")
-        self.acceptButton.setTitle(AppDelegate.serviceProvider.makeStringService().localizeById("create_med_course_accept_string"), for: .normal)
-        self.cancelButton.setTitle(AppDelegate.serviceProvider.makeStringService().localizeById("create_med_course_cancel_string"), for: .normal)
-        self.nameTextField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById("create_med_course_name_string")
+        self.titleLabel.text = self.localizeService.localizeId("create_med_course_top_string")
+        self.descriptionLabel.text = self.localizeService.localizeId("create_med_course_desc_string")
+        self.acceptButton.setTitle(self.localizeService.localizeId("create_med_course_accept_string"), for: .normal)
+        self.cancelButton.setTitle(self.localizeService.localizeId("create_med_course_cancel_string"), for: .normal)
+        self.nameTextField.placeholder = self.localizeService.localizeId("create_med_course_name_string")
         
     }
     

@@ -3,26 +3,24 @@ import Stevia
 
 final class TwiceComboboxCell: RoutineTableViewCell<TwiceComboboxCellViewModel> {
 
-    weak var leftCombobox: RoutineCombobox!
-    weak var rightCombobox: RoutineCombobox!
-    weak var delimiter: RoutineView<RoutineViewModel>!
+    lazy var leftCombobox = RoutineCombobox()
+    lazy var rightCombobox = RoutineCombobox()
+    lazy var delimiter = RoutineView()
+    
+    lazy var delimiterViewModel = { () -> (RoutineViewModel) in
+        let delimiterViewModel = RoutineViewModel(routineDelegate: self.viewModel.routineDelegate)
+        delimiterViewModel.backgroundColor = UIColor.clear
+        return delimiterViewModel
+    }()
     
     override func setupView() {
         super.setupView()
         
-        let leftCombobox = RoutineCombobox()
-        let rightCombobox = RoutineCombobox()
-        let delimiter = RoutineView()
-        
         self.paddingView.sv(
-            leftCombobox,
-            delimiter,
-            rightCombobox
+            self.leftCombobox,
+            self.delimiter,
+            self.rightCombobox
         )
-        
-        self.leftCombobox = leftCombobox
-        self.rightCombobox = rightCombobox
-        self.delimiter = delimiter
     }
     
     override func setupLayout() {
@@ -64,8 +62,6 @@ final class TwiceComboboxCell: RoutineTableViewCell<TwiceComboboxCellViewModel> 
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let delimiterViewModel = RoutineViewModel()
-        delimiterViewModel.backgroundColor = UIColor.clear
         self.delimiter.configureView(config: delimiterViewModel)
         
         self.leftCombobox.configureView(config: self.viewModel.leftCombobox)
@@ -76,8 +72,8 @@ final class TwiceComboboxCell: RoutineTableViewCell<TwiceComboboxCellViewModel> 
     }
     
     override func localizationSetup() {
-        self.leftCombobox.textField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.leftCombobox.textFieldViewModel.placeholderText )
-        self.rightCombobox.textField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.rightCombobox.textFieldViewModel.placeholderText )
+        self.leftCombobox.textField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.leftCombobox.textFieldViewModel.placeholderText) ?? ""
+        self.rightCombobox.textField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.rightCombobox.textFieldViewModel.placeholderText) ?? ""
     }
 }
 

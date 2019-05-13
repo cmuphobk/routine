@@ -8,9 +8,11 @@ final class TextFieldCellViewModel: RoutineTableViewCellViewModel {
     let textFieldConfiguration: RoutineTextFieldViewModel
     weak var delegate: TextFieldCellProtocol?
     
-    init(textFieldConfiguration: RoutineTextFieldViewModel, delegate: TextFieldCellProtocol?) {
+    init(textFieldConfiguration: RoutineTextFieldViewModel, delegate: TextFieldCellProtocol?, routineDelegate: RoutineDelegate?) {
         self.textFieldConfiguration = textFieldConfiguration
         self.delegate = delegate
+        
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {

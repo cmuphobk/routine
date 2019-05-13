@@ -3,8 +3,8 @@ import UIKit
 final class DrugEditViewController: RoutineViewController {
     var output: DrugEditViewOutput!
     
-    private var tableViewModel = { () -> RoutineTableViewModel in
-        return RoutineTableViewModel()
+    private lazy var tableViewModel = { () -> RoutineTableViewModel in
+        return RoutineTableViewModel(routineDelegate: self.output.localizeService)
     }()
     
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
@@ -128,7 +128,7 @@ extension DrugEditViewController: DrugEditViewInput {
         
         var newText: String = ""
         if let type = type {
-            newText = type.toString()
+            newText = type.toString(localizeService: self.output.localizeService)
         }
 
         for (index, cellViewModel) in self.cellViewModels.enumerated() {
@@ -146,7 +146,7 @@ extension DrugEditViewController: DrugEditViewInput {
         
         var newText: String = ""
         if let type = type {
-            newText = type.toString()
+            newText = type.toString(localizeService: self.output.localizeService)
         }
         
         for (index, cellViewModel) in self.cellViewModels.enumerated() {
@@ -289,7 +289,11 @@ extension DrugEditViewController: UsingTimesCellViewModelDelegate {
         self.timeIndex = self.cellViewModelsTimes.indexOf(sender)
         
         guard let usageTimePickerView = self.usageTimePickerView else {
-            let usageTimePickerView = StandartDatePickerView(frame: self.view.bounds, delegate: self, leftTitle: AppDelegate.serviceProvider.makeStringService().localizeById("back_string"), rightTitle: AppDelegate.serviceProvider.makeStringService().localizeById("ok_string"), datePickerMode: .time)
+            let usageTimePickerView = StandartDatePickerView(frame: self.view.bounds,
+                                                             delegate: self,
+                                                             leftTitle: self.output.localizeService.localizeId("back_string"),
+                                                             rightTitle: self.output.localizeService.localizeId("ok_string"),
+                                                             datePickerMode: .time)
             self.view.addSubview(usageTimePickerView)
             self.usageTimePickerView = usageTimePickerView
             self.hideKeyboard()
@@ -433,7 +437,7 @@ extension DrugEditViewController: StandartDatePickerViewDelegate {
             var time = Time()
             time.setTime(milisec: Int(date.timeIntervalFromStartDay))
             
-            cellViewModel.timesBox.textFieldViewModel.text = time.toString()
+            cellViewModel.timesBox.textFieldViewModel.text = time.toString(localizeService: self.output.localizeService)
             self.tableViewManager.updateRowAtIndex(self.cellViewModelsBeforeTimes.count + self.timeIndex)
         }
     }
@@ -512,7 +516,13 @@ extension DrugEditViewController {
         case "drug_type":
             guard let drugtypePickerView = self.drugtypePickerView else {
                 let list = self.output.obtainTypeList()
-                let drugtypePickerView = StandartPickerView(models: list, currentValue: viewModel.textFieldViewModel.text, frame: self.view.bounds, delegate: self, leftTitle: AppDelegate.serviceProvider.makeStringService().localizeById("back_string"), rightTitle: AppDelegate.serviceProvider.makeStringService().localizeById("ok_string"))
+                let drugtypePickerView = StandartPickerView(models: list,
+                                                            currentValue: viewModel.textFieldViewModel.text,
+                                                            frame: self.view.bounds,
+                                                            delegate: self,
+                                                            leftTitle: self.output.localizeService.localizeId("back_string"),
+                                                            rightTitle: self.output.localizeService.localizeId("ok_string"),
+                                                            localizedService: self.output.localizeService)
                 self.view.addSubview(drugtypePickerView)
                 self.drugtypePickerView = drugtypePickerView
                 self.hideKeyboard()
@@ -524,7 +534,13 @@ extension DrugEditViewController {
         case "drug_unit":
             guard let drugunitPickerView = self.drugunitPickerView else {
                 let list = self.output.obtainUnitList()
-                let drugunitPickerView = StandartPickerView(models: list, currentValue: viewModel.textFieldViewModel.text, frame: self.view.bounds, delegate: self, leftTitle: AppDelegate.serviceProvider.makeStringService().localizeById("back_string"), rightTitle: AppDelegate.serviceProvider.makeStringService().localizeById("ok_string"))
+                let drugunitPickerView = StandartPickerView(models: list,
+                                                            currentValue: viewModel.textFieldViewModel.text,
+                                                            frame: self.view.bounds,
+                                                            delegate: self,
+                                                            leftTitle: self.output.localizeService.localizeId("back_string"),
+                                                            rightTitle: self.output.localizeService.localizeId("ok_string"),
+                                                            localizedService: self.output.localizeService)
                 self.view.addSubview(drugunitPickerView)
                 self.drugunitPickerView = drugunitPickerView
                 self.hideKeyboard()
@@ -535,7 +551,10 @@ extension DrugEditViewController {
             
         case "start_using":
             guard let startDatePickerView = self.startDatePickerView else {
-                let startDatePickerView = StandartDatePickerView(frame: self.view.bounds, delegate: self, leftTitle: AppDelegate.serviceProvider.makeStringService().localizeById("back_string"), rightTitle: AppDelegate.serviceProvider.makeStringService().localizeById("ok_string"))
+                let startDatePickerView = StandartDatePickerView(frame: self.view.bounds,
+                                                                 delegate: self,
+                                                                 leftTitle: self.output.localizeService.localizeId("back_string"),
+                                                                 rightTitle: self.output.localizeService.localizeId("ok_string"))
                 self.view.addSubview(startDatePickerView)
                 self.startDatePickerView = startDatePickerView
                 self.hideKeyboard()

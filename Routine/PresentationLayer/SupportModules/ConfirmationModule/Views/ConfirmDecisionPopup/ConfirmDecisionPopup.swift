@@ -1,7 +1,7 @@
 import UIKit
 
 class ConfirmDecisionPopup: UIViewController {
-    var presenter: ConfirmationModuleOutput?
+    var presenter: ConfirmationViewOutput?
     var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
@@ -35,7 +35,7 @@ class ConfirmDecisionPopup: UIViewController {
 }
 
 // MARK: - ConfirmationModuleInput
-extension ConfirmDecisionPopup: ConfirmationModuleInput {
+extension ConfirmDecisionPopup: ConfirmationViewInput {
     func setupInitialState() {
         
         self.windowService = AppDelegate.serviceProvider.makeWindowService()

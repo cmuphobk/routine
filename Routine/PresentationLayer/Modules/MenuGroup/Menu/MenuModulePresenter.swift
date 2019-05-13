@@ -7,6 +7,8 @@ class MenuModulePresenter {
     var router: MenuModuleRouting!
     
     var menuItems: [ModuleDescription] = []
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - MenuModuleInput
@@ -16,12 +18,13 @@ extension MenuModulePresenter: MenuModuleInput {
     }
     
     func selectMenuItemWithName(_ moduleName: String) {
-        self.view?.selectMenuItemWithName(AppDelegate.serviceProvider.makeStringService().localizeById(moduleName))
+        self.view?.selectMenuItemWithName(self.localizeService.localizeId(moduleName))
     }
 }
 
 // MARK: - MenuModuleViewOutput
 extension MenuModulePresenter: MenuModuleViewOutput {
+    
     func didTriggerShowMenu() {
         self.router.didTriggerShowMenu()
     }
@@ -34,7 +37,7 @@ extension MenuModulePresenter: MenuModuleViewOutput {
         self.view?.setupInitialState()
         
         let itemTitles = self.menuItems.map { (moduleDescription) -> String? in
-            return AppDelegate.serviceProvider.makeStringService().localizeById(moduleDescription.alias)
+            return self.localizeService.localizeId(moduleDescription.alias)
         }
         
         let filterItems = itemTitles.filter { $0 != nil ? true : false }

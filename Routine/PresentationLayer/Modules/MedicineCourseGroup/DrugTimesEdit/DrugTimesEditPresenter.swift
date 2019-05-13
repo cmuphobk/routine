@@ -22,6 +22,8 @@ class DrugTimesEditPresenter: Module {
         self.endingType = .countUsageDays
         self.endingValue = 1
     }
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - DrugTimesEditModuleInput

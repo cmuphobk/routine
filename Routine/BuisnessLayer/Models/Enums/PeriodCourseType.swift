@@ -20,12 +20,12 @@ enum PeriodCourseType: Int, CaseIterable {
         }
     }
     
-    func toString() -> String {
+    func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .weekDays:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("periodic_days")
+            return localizeService.localizeId("periodic_days")
         case .countDays:
-            return AppDelegate.serviceProvider.makeStringService().localizeById("periodic_interval")
+            return localizeService.localizeId("periodic_interval")
         }
     }
 }

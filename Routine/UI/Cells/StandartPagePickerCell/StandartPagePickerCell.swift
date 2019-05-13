@@ -25,7 +25,7 @@ final class StandartPagePickerCell: RoutineCollectionViewCell<StandartPagePicker
     }
     
     override func localizationSetup() {
-        self.nameLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.text)
+        self.nameLabel.text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? ""
     }
     
 }

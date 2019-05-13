@@ -36,8 +36,8 @@ final class ComboboxCell: RoutineTableViewCell<ComboboxCellViewModel> {
     }
     
     override func localizationSetup() {
-        self.combobox.textField.text = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.combobox.textFieldViewModel.text )
-        self.combobox.textField.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById( self.viewModel.combobox.textFieldViewModel.placeholderText )
+        self.combobox.textField.text = self.viewModel.routineDelegate?.localize(self.viewModel.combobox.textFieldViewModel.text) ?? ""
+        self.combobox.textField.placeholder = self.viewModel.routineDelegate?.localize(self.viewModel.combobox.textFieldViewModel.placeholderText) ?? ""
     }
 }
 

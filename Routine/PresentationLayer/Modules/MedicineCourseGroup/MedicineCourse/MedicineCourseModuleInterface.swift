@@ -16,6 +16,8 @@ protocol MedicineCourseViewInput: class {
 }
 
 protocol MedicineCourseViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()
@@ -30,9 +32,9 @@ protocol MedicineCourseViewOutput: class {
 }
 
 protocol MedicineCourseModuleRouting: class {
-    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup?
-    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput, medCourse: MedicineCourse) -> InputTextPopup?
-    func openDeleteCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup?
+    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup?
+    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup?
+    func openDeleteCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup?
     func closeEditStandartModal()
     func closeModule()
     func openDrugsList(medCourse: MedicineCourse)

@@ -7,9 +7,9 @@ protocol UsingTimesCellViewModelDelegate: class {
 
 final class UsingTimesCellViewModel: RoutineTableViewCellViewModel {
     
-    var numberLabel: RoutineLabelViewModel = RoutineLabelViewModel()
-    var timesBox: RoutineComboboxViewModel = RoutineComboboxViewModel()
-    var countField: RoutineTextFieldViewModel = RoutineTextFieldViewModel()
+    lazy var numberLabel: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var timesBox: RoutineComboboxViewModel = RoutineComboboxViewModel(routineDelegate: self.routineDelegate)
+    lazy var countField: RoutineTextFieldViewModel = RoutineTextFieldViewModel(routineDelegate: self.routineDelegate)
     
     weak var delegate: UsingTimesCellViewModelDelegate?
     
@@ -22,7 +22,8 @@ final class UsingTimesCellViewModel: RoutineTableViewCellViewModel {
     }
     
     override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let viewHeight = max(self.numberLabel.font.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById(self.numberLabel.text), constrainedToWidth: Double(width - self.leftAndRightPadding)).height,
+        let viewHeight = max(self.numberLabel.font.sizeOfString(string: self.routineDelegate?.localize(self.numberLabel.text) ?? "",
+                                                                constrainedToWidth: Double(width - self.leftAndRightPadding)).height,
                              self.timesBox.textFieldViewModel.height,
                              self.countField.height)
         

@@ -8,13 +8,13 @@ protocol ModuleFactoryInterface {
         
     func makeMedicineCourseModule(_ completion: (UIViewController?, MedicineCourseModuleInput?) -> Void)
     
-    func makeCreatePopUpModule(confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup?
+    func makeCreatePopUpModule(confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup?
     
-    func makeRenamePopupModule(confirmationDelegate: ConfirmationModuleModuleOutput, medCourse: MedicineCourse) -> InputTextPopup?
+    func makeRenamePopupModule(confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup?
     
-    func makeDeletePopupModule(confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup?
+    func makeDeletePopupModule(confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup?
     
-    func makeYesNoPopupModule(confirmationDelegate: ConfirmationModuleModuleOutput, caption: String, text: String, acceptButtonText: String, cancelButtonText: String) -> ConfirmDecisionPopup?
+    func makeYesNoPopupModule(confirmationDelegate: ConfirmationModuleOutput, caption: String, text: String, acceptButtonText: String, cancelButtonText: String) -> ConfirmDecisionPopup?
     
     func makeDrugsListModule(_ moduleOutput: DrugsListModuleOutput?, completion: (UIViewController?, DrugsListModuleInput?) -> Void)
     

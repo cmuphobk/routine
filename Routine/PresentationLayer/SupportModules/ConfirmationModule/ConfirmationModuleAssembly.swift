@@ -2,7 +2,7 @@ import UIKit
 
 enum ConfirmationModuleAssembly {
     
-    static func buildCourseCreatePopup(confirmationDelegate: ConfirmationModuleModuleOutput) -> InputTextPopup? {
+    static func buildCourseCreatePopup(confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup? {
         guard let viewController = R.storyboard.inputTextPopup.inputTextPopup() else {
             return nil
         }
@@ -12,7 +12,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldValue: "",
                                                    textFieldPlaceholder: "create_med_course_nameplaceholder_string",
                                                    acceptButtonText: "create_med_course_accept_string",
-                                                   cancelButtonText: "create_med_course_cancel_string")
+                                                   cancelButtonText: "create_med_course_cancel_string",
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
@@ -21,7 +22,7 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildCourseRenamePopup(confirmationDelegate: ConfirmationModuleModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
+    static func buildCourseRenamePopup(confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
         guard let viewController = R.storyboard.inputTextPopup.inputTextPopup() else {
             return nil
         }
@@ -31,7 +32,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldValue: medCourse.name,
                                                    textFieldPlaceholder: "rename_med_course_nameplaceholder_string",
                                                    acceptButtonText: "rename_med_course_accept_string",
-                                                   cancelButtonText: "rename_med_course_cancel_string")
+                                                   cancelButtonText: "rename_med_course_cancel_string",
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
@@ -40,7 +42,7 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildCourseDeletePopup(confirmationDelegate: ConfirmationModuleModuleOutput) -> ConfirmDecisionPopup? {
+    static func buildCourseDeletePopup(confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup? {
         guard let viewController = R.storyboard.confirmDecisionPopup.confirmDecisionPopup() else {
             return nil
         }
@@ -50,7 +52,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldValue: " ",
                                                    textFieldPlaceholder: " ",
                                                    acceptButtonText: "delete_med_course_accept_string",
-                                                   cancelButtonText: "delete_med_course_cancel_string")
+                                                   cancelButtonText: "delete_med_course_cancel_string",
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
@@ -59,7 +62,7 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildYesNoPopup(confirmationDelegate: ConfirmationModuleModuleOutput,
+    static func buildYesNoPopup(confirmationDelegate: ConfirmationModuleOutput,
                                 caption: String,
                                 text: String,
                                 acceptButtonText: String,
@@ -74,7 +77,8 @@ enum ConfirmationModuleAssembly {
                                                     textFieldValue: " ",
                                                     textFieldPlaceholder: " ",
                                                     acceptButtonText: acceptButtonText,
-                                                    cancelButtonText: cancelButtonText)
+                                                    cancelButtonText: cancelButtonText,
+                                                    localizeService: AppDelegate.serviceProvider.makeStringService())
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
@@ -83,7 +87,7 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildCalculatorPopup(confirmationDelegate: ConfirmationModuleModuleOutput) -> CalculatorPopup? {
+    static func buildCalculatorPopup(confirmationDelegate: ConfirmationModuleOutput) -> CalculatorPopup? {
         guard let viewController = R.storyboard.calculatorPopup.calculatorPopup() else {
             return nil
         }
@@ -93,7 +97,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldValue: "",
                                                    textFieldPlaceholder: "Введите количество",
                                                    acceptButtonText: "Применить",
-                                                   cancelButtonText: "Отмена")
+                                                   cancelButtonText: "Отмена",
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
         
         // Inject properties
         viewController.presenter = presenter

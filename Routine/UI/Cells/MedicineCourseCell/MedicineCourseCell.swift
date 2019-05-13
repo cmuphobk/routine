@@ -67,8 +67,11 @@ final class MedicineCourseCell: RoutineTableViewCell<MedicineCourseCellViewModel
         let drugsListAttributes = [ NSAttributedString.Key.foregroundColor: ColorProvider.medicineCourseColors.text,
                                     NSAttributedString.Key.font: FontProvider.medicineCourseFonts.drugsList ]
 
-        drugsListAttrString.append( NSAttributedString(string: "\(AppDelegate.serviceProvider.makeStringService().localizeById("drugs")): ", attributes: drugsNoteAttributes) )
-        drugsListAttrString.append( NSAttributedString(string: self.viewModel.drugNames, attributes: drugsListAttributes) )
+        drugsListAttrString.append(NSAttributedString(string: "\(self.viewModel.routineDelegate?.localize("drugs") ?? ""): ",
+            attributes: drugsNoteAttributes))
+        
+        drugsListAttrString.append(NSAttributedString(string: self.viewModel.drugNames,
+                               attributes: drugsListAttributes))
         self.drugsListText.attributedText = drugsListAttrString
         
         // Определяем минимальную и максимальную дату из лекарств
@@ -78,9 +81,9 @@ final class MedicineCourseCell: RoutineTableViewCell<MedicineCourseCellViewModel
         let startDate = Date(timeIntervalSince1970: Double(startDate1970 ?? 0) / 1000.0)
         let endDate = Date(timeIntervalSince1970: Double(endDate1970 ?? 0) / 1000.0)
         
-        self.startDateLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("course_start")
+        self.startDateLabel.text = self.viewModel.routineDelegate?.localize("course_start") ?? ""
         self.startDateValue.text = AppDelegate.serviceProvider.makeDateService().localizeDateString(date: startDate, format: "dd.MM.yyyy")
-        self.endDateLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("course_end")
+        self.endDateLabel.text = self.viewModel.routineDelegate?.localize("course_end") ?? ""
         self.endDateValue.text = AppDelegate.serviceProvider.makeDateService().localizeDateString(date: endDate, format: "dd.MM.yyyy")
         
         self.prograssBar.progress = Float( Date.calcPercentPartByToday(fromDate: startDate, toDate: endDate) )

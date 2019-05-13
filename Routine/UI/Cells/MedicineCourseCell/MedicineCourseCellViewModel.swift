@@ -22,13 +22,13 @@ final class MedicineCourseCellViewModel: RoutineTableViewCellViewModel {
         return self.drugs.map { (item) -> String in return item.name }.joined(separator: ", ")
     }
     
-    init(name: String, drugs: [MedicineDrug], isArchive: Bool, delegate: MedicineCourseCellProtocol) {
+    init(name: String, drugs: [MedicineDrug], isArchive: Bool, delegate: MedicineCourseCellProtocol, routineDelegate: RoutineDelegate?) {
         self.name = name
         self.drugs = drugs
         self.isArchive = isArchive
         self.delegate = delegate
         
-        super.init()
+        super.init(routineDelegate: routineDelegate)
     }
     
     override var reuseIdentifier: String {
@@ -51,14 +51,21 @@ extension MedicineCourseCellViewModel {
         let leftAndRightOffset: CGFloat = self.kCardOffsets.left + self.kContentOffsets.left + self.kCardOffsets.left + self.kContentOffsets.left
         let actionIconsWidthWithConstraint: CGFloat = (24.0 + 12.0 + 24.0 + 12.0)
         
-        let titleSize = FontProvider.medicineCourseFonts.titleLabel.sizeOfString(string: self.name,
-                                                                                      constrainedToWidth: Double(self.cellWidth - leftAndRightOffset - actionIconsWidthWithConstraint))
-        let drugsSize = FontProvider.medicineCourseFonts.drugsList.sizeOfString(string: "\(AppDelegate.serviceProvider.makeStringService().localizeById("drugs")): \(self.drugNames)",
-                                                                                     constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
-        let beginDateLineSize = FontProvider.medicineCourseFonts.dateLabel.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById("course_start"),
-                                                                                        constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
-        let endDateLineSize = FontProvider.medicineCourseFonts.dateLabel.sizeOfString(string: AppDelegate.serviceProvider.makeStringService().localizeById("course_end"),
-                                                                                constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
+        let titleSize = FontProvider.medicineCourseFonts.titleLabel.sizeOfString(
+            string: self.name,
+            constrainedToWidth: Double(self.cellWidth - leftAndRightOffset - actionIconsWidthWithConstraint))
+        
+        let drugsSize = FontProvider.medicineCourseFonts.drugsList.sizeOfString(
+            string: "\(self.routineDelegate?.localize("drugs") ?? ""): \(self.drugNames)",
+            constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
+        
+        let beginDateLineSize = FontProvider.medicineCourseFonts.dateLabel.sizeOfString(
+            string: self.routineDelegate?.localize("course_start") ?? "",
+            constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
+        
+        let endDateLineSize = FontProvider.medicineCourseFonts.dateLabel.sizeOfString(
+            string: self.routineDelegate?.localize("course_end") ?? "",
+            constrainedToWidth: Double(self.cellWidth - leftAndRightOffset))
         
         return self.kContentOffsets.top + titleSize.height + 16.0 + drugsSize.height + 24.0 + beginDateLineSize.height + 2.0 + endDateLineSize.height + self.progressBarHeight + self.kCardOffsets.bottom
     }

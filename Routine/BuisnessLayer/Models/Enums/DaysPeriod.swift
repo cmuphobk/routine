@@ -38,24 +38,24 @@ enum DaysPeriod: Int, CaseIterable {
         }
     }
     
-    func toString() -> String {
+    func toString(localizeService: StringServiceInterface) -> String {
         switch self {
-        case .days1: return AppDelegate.serviceProvider.makeStringService().localizeById("per_1_day")
-        case .days2: return AppDelegate.serviceProvider.makeStringService().localizeById("per_2_day")
-        case .days3: return AppDelegate.serviceProvider.makeStringService().localizeById("per_3_day")
-        case .days4: return AppDelegate.serviceProvider.makeStringService().localizeById("per_4_day")
-        case .days5: return AppDelegate.serviceProvider.makeStringService().localizeById("per_5_day")
-        case .days6: return AppDelegate.serviceProvider.makeStringService().localizeById("per_6_day")
-        case .days7: return AppDelegate.serviceProvider.makeStringService().localizeById("per_7_day")
-        case .days8: return AppDelegate.serviceProvider.makeStringService().localizeById("per_8_day")
+        case .days1: return localizeService.localizeId("per_1_day")
+        case .days2: return localizeService.localizeId("per_2_day")
+        case .days3: return localizeService.localizeId("per_3_day")
+        case .days4: return localizeService.localizeId("per_4_day")
+        case .days5: return localizeService.localizeId("per_5_day")
+        case .days6: return localizeService.localizeId("per_6_day")
+        case .days7: return localizeService.localizeId("per_7_day")
+        case .days8: return localizeService.localizeId("per_8_day")
         }
     }
     
-    static func toStringArray() -> [String] {
+    static func toStringArray(localizeService: StringServiceInterface) -> [String] {
         var result: [String] = []
         
         for item in DaysPeriod.allCases {
-            result += [item.toString()]
+            result += [item.toString(localizeService: localizeService)]
         }
         
         return result

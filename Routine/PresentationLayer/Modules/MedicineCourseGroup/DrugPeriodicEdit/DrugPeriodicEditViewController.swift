@@ -38,7 +38,7 @@ extension DrugPeriodicEditViewController: DrugPeriodicEditViewInput {
     func setupInitialState() {
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         
-        let title = AppDelegate.serviceProvider.makeStringService().localizeById("drug_periodic_edit_title")
+        let title = self.output.localizeService.localizeId("drug_periodic_edit_title")
         AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
         AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
@@ -51,8 +51,8 @@ extension DrugPeriodicEditViewController: DrugPeriodicEditViewInput {
             target: self,
             action: #selector(rightAcceptButton))
         
-        self.typeSelector.configureWithPagesNames([PeriodCourseType.weekDays.toString(),
-                                                   PeriodCourseType.countDays.toString() ],
+        self.typeSelector.configureWithPagesNames([PeriodCourseType.weekDays.toString(localizeService: self.output.localizeService),
+                                                   PeriodCourseType.countDays.toString(localizeService: self.output.localizeService)],
                                                   
                                                   height: self.typeSelector.frame.height,
                                                   font: FontProvider.default.standartPages,
@@ -120,7 +120,6 @@ extension DrugPeriodicEditViewController: RoutineTableViewManagerDelegate {
                 }
             }
         
-            // FIXME: - неправильно работает выделение
             self.output.valueChanged(self.daysValue())
         case .countDays:
             let daysCount = DaysPeriod.fromValue(index+1)

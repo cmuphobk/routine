@@ -72,10 +72,14 @@ class RoutineTextField<T: RoutineTextFieldViewModel>: UITextField, RoutineContai
         
         self.returnKeyType = self.viewModel.returnKeyType
         self.keyboardType = self.viewModel.keyboardType
-        self.text = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.text)
+        
+        let text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        self.text = text
         self.textColor = self.viewModel.textColor
         self.font = self.viewModel.font
-        self.placeholder = AppDelegate.serviceProvider.makeStringService().localizeById(self.viewModel.placeholderText)
+        
+        let palceholderText = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        self.placeholder = palceholderText
         self.borderStyle = self.viewModel.borderStyle
         
     }

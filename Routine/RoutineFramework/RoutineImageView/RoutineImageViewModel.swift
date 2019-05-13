@@ -7,4 +7,7 @@ class RoutineImageViewModel: RoutineViewModel {
     var width: CGFloat                  = 24.0
     var height: CGFloat                 = 24.0
     
+    override func heightForWidth(_ width: CGFloat) -> CGFloat {
+        return self.height
+    }
 }

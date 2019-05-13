@@ -7,8 +7,8 @@ final class DrugsListViewController: RoutineViewController {
     
     @IBOutlet weak private var contentView: UIView!
     
-    private var tableViewModel = { () -> RoutineTableViewModel in
-        return RoutineTableViewModel()
+    private lazy var tableViewModel = { () -> RoutineTableViewModel in
+        return RoutineTableViewModel(routineDelegate: self.output.localizeService)
     }()
     
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
@@ -50,7 +50,7 @@ final class DrugsListViewController: RoutineViewController {
     override func localizationSetup() {
         super.localizationSetup()
         
-        self.placeholderLabel.text = AppDelegate.serviceProvider.makeStringService().localizeById("drug_list_empty_placeholder")
+        self.placeholderLabel.text = self.output.localizeService.localizeId("drug_list_empty_placeholder")
         self.contentView.bringSubviewToFront(self.placeholderLabel)
     }
     

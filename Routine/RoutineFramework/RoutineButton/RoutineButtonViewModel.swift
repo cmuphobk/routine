@@ -13,4 +13,8 @@ class RoutineButtonViewModel: RoutineViewModel {
     let contentMode: UIView.ContentMode = .scaleAspectFill
     var image: UIImage?
     
+    override func heightForWidth(_ width: CGFloat) -> CGFloat {
+        return self.height
+    }
+    
 }

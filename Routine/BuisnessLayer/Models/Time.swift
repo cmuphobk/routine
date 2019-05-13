@@ -35,7 +35,7 @@ struct Time {
         return result
     }
     
-    func toString() -> String {
+    func toString(localizeService: StringServiceInterface) -> String {
         let components = self.components()
         return "\(String(format: "%02d", components.hours)):\(String(format: "%02d", components.minutes))"
     }

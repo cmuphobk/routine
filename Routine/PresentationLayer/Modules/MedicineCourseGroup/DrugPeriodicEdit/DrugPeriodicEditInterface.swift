@@ -16,6 +16,8 @@ protocol DrugPeriodicEditViewInput: class {
 }
 
 protocol DrugPeriodicEditViewOutput: class {
+    var localizeService: StringServiceInterface! { get }
+    
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
     func closeModule()

@@ -24,6 +24,8 @@ final class MedicineCoursePresenter: Module {
     }
     private var currentPopupMode: PopUpMode = .create
     private var currentSelectIndex: Int = 0
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - MedicineCourseModuleInput
@@ -107,7 +109,7 @@ extension MedicineCoursePresenter: MedicineCourseViewOutput {
 }
 
 // MARK: - ConfirmationModuleModuleOutput
-extension MedicineCoursePresenter: ConfirmationModuleModuleOutput {
+extension MedicineCoursePresenter: ConfirmationModuleOutput {
     
     func confirmWithMessage(_ msg: String) {
         

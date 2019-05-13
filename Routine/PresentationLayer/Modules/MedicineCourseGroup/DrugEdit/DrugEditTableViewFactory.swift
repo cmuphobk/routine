@@ -6,11 +6,11 @@ final class DrugEditTableViewFactory {
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
         // Общие данные
-        let labelCellViewModel = LabelCellViewModel()
+        let labelCellViewModel = LabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
         labelCellViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let generalLabelCfg = RoutineLabelViewModel()
+        let generalLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         generalLabelCfg.text = "str_drugedit_general_data"
         generalLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         generalLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -19,28 +19,28 @@ final class DrugEditTableViewFactory {
         cellViewModels += [labelCellViewModel]
         
         // Наименование
-        let drugNameField = RoutineTextFieldViewModel()
+        let drugNameField = RoutineTextFieldViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         drugNameField.text = model?.name ?? ""
         drugNameField.textColor = ColorProvider.medicineCourseColors.text
         drugNameField.font = FontProvider.medicineCourseFonts.general
         drugNameField.placeholderText = "str_drugedit_name_placeholder"
         drugNameField.borderStyle = .roundedRect
         
-        let textFieldCellViewModel = TextFieldCellViewModel(textFieldConfiguration: drugNameField, delegate: delegate)
+        let textFieldCellViewModel = TextFieldCellViewModel(textFieldConfiguration: drugNameField, delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
         textFieldCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         cellViewModels += [textFieldCellViewModel]
         
         // Тип и ЕдИзмерения
         
-        let twiceComboboxCellViewModel = TwiceComboboxCellViewModel(delegate: delegate)
+        let twiceComboboxCellViewModel = TwiceComboboxCellViewModel(delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
         twiceComboboxCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         twiceComboboxCellViewModel.betweenSpace = 16.0
         twiceComboboxCellViewModel.betweenPosition = 0.4
         
-        let typeComboboxCfg = RoutineComboboxViewModel()
+        let typeComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         typeComboboxCfg.viewName = "drug_type"
         if let type = model?.type {
-            typeComboboxCfg.textFieldViewModel.text = type.toString()
+            typeComboboxCfg.textFieldViewModel.text = type.toString(localizeService: AppDelegate.serviceProvider.makeStringService())
         } else {
             typeComboboxCfg.textFieldViewModel.text = ""
         }
@@ -50,10 +50,10 @@ final class DrugEditTableViewFactory {
         typeComboboxCfg.textFieldViewModel.borderStyle = .roundedRect
         typeComboboxCfg.markViewModel.image = ImageProvider.default.triangleToBottom
     
-        let unitComboboxCfg = RoutineComboboxViewModel()
+        let unitComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         unitComboboxCfg.viewName = "drug_unit"
         if let unit = model?.unit {
-            unitComboboxCfg.textFieldViewModel.text = unit.toString()
+            unitComboboxCfg.textFieldViewModel.text = unit.toString(localizeService: AppDelegate.serviceProvider.makeStringService())
         } else {
             unitComboboxCfg.textFieldViewModel.text = ""
         }
@@ -68,11 +68,11 @@ final class DrugEditTableViewFactory {
         cellViewModels += [twiceComboboxCellViewModel]
         
         // Продолжительность приема
-        let longtimeLabelcell = LabelCellViewModel()
+        let longtimeLabelcell = LabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
         longtimeLabelcell.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let longtimeLabelCfg = RoutineLabelViewModel()
+        let longtimeLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         longtimeLabelCfg.text = "str_drugedit_longtime_data"
         longtimeLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         longtimeLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -81,13 +81,13 @@ final class DrugEditTableViewFactory {
         cellViewModels += [longtimeLabelcell]
         
         // Начало и Конец приема
-        let beginEndComboboxCellViewModel = TwiceComboboxCellViewModel(delegate: delegate)
+        let beginEndComboboxCellViewModel = TwiceComboboxCellViewModel(delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
         beginEndComboboxCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         beginEndComboboxCellViewModel.betweenSpace = 16.0
         beginEndComboboxCellViewModel.betweenPosition = 0.5
         
-        let beginComboboxCfg = RoutineComboboxViewModel()
+        let beginComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         beginComboboxCfg.viewName = "start_using"
         if let beginDate = model?.startDate {
             beginComboboxCfg.textFieldViewModel.text = Date(timeIntervalSince1970: Double(beginDate / 1000)).format(with: "dd.MM.yyyy")
@@ -100,11 +100,11 @@ final class DrugEditTableViewFactory {
         beginComboboxCfg.textFieldViewModel.borderStyle = .roundedRect
         beginComboboxCfg.markViewModel.image = ImageProvider.default.triangleToBottom
         
-        let endComboboxCfg = RoutineComboboxViewModel()
+        let endComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         endComboboxCfg.viewName = "end_using"
         endComboboxCfg.textFieldViewModel.text = ""
         if let endingType = model?.endingCourseType, let endingValue = model?.endingCourseValue {
-            endComboboxCfg.textFieldViewModel.text = EndingCourseType.pluralsStringBy(endingType, count: endingValue)
+            endComboboxCfg.textFieldViewModel.text = endingType.toPluralsString(count: endingValue, localizeService: AppDelegate.serviceProvider.makeStringService())
         } else {
             endComboboxCfg.textFieldViewModel.text = ""
         }
@@ -120,10 +120,10 @@ final class DrugEditTableViewFactory {
         cellViewModels += [beginEndComboboxCellViewModel]
         
         // Периодичность
-        let periodCellViewModel = LabelCellViewModel()
+        let periodCellViewModel = LabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         periodCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let periodLabelCfg = RoutineLabelViewModel()
+        let periodLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         periodLabelCfg.text = "str_drugedit_period_data"
         periodLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         periodLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -132,17 +132,17 @@ final class DrugEditTableViewFactory {
         cellViewModels += [periodCellViewModel]
         
         // Выбор переодичности
-        let comboboxCellViewModel = ComboboxCellViewModel(delegate: delegate)
+        let comboboxCellViewModel = ComboboxCellViewModel(delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
-            let periodComboboxCfg = RoutineComboboxViewModel()
+            let periodComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             periodComboboxCfg.viewName = "periodic"
         
         if let type = model?.periodCourseType, let value = model?.periodCourseValue {
             switch type {
             case .weekDays:
-                periodComboboxCfg.textFieldViewModel.text = DayOfWeek.stringFromBitset(UInt8(value))
+                periodComboboxCfg.textFieldViewModel.text = DayOfWeek.stringFromBitset(UInt8(value), localizeService: AppDelegate.serviceProvider.makeStringService())
             case .countDays:
-                periodComboboxCfg.textFieldViewModel.text = DaysPeriod.fromValue(value)?.toString() ?? ""
+                periodComboboxCfg.textFieldViewModel.text = DaysPeriod.fromValue(value)?.toString(localizeService: AppDelegate.serviceProvider.makeStringService()) ?? ""
             }
         } else {
             periodComboboxCfg.textFieldViewModel.text = ""
@@ -159,11 +159,11 @@ final class DrugEditTableViewFactory {
         cellViewModels += [comboboxCellViewModel]
         
         // Время приема
-        let timesCellCellViewModel = LabelCellViewModel()
+        let timesCellCellViewModel = LabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
         timesCellCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let timesLabelCfg = RoutineLabelViewModel()
+        let timesLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         timesLabelCfg.text = "str_drugedit_times"
         timesLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         timesLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -179,19 +179,19 @@ final class DrugEditTableViewFactory {
         var cellViewModels: [RoutineTableViewCellViewModel] = []
         
         // Строка для добавления времени приема
-        let imageAndLabelCellViewModel = ImageAndLabelCellViewModel()
+        let imageAndLabelCellViewModel = ImageAndLabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         imageAndLabelCellViewModel.viewName = "add_times_view_model"
         
         imageAndLabelCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         imageAndLabelCellViewModel.betweenSpace = 12.0
         
-        let addTimesIcon = RoutineImageViewModel()
+        let addTimesIcon = RoutineImageViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         addTimesIcon.image = ImageProvider.drugEditImages.addTimesIcon
         addTimesIcon.contentMode = .scaleAspectFill
         addTimesIcon.width = 24.0
         addTimesIcon.height = 24.0
         
-        let addTimesLabelCfg = RoutineLabelViewModel()
+        let addTimesLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         addTimesLabelCfg.text = "str_drugedit_add_times"
         addTimesLabelCfg.textColor = ColorProvider.medicineCourseColors.text
         addTimesLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -201,11 +201,11 @@ final class DrugEditTableViewFactory {
         cellViewModels += [imageAndLabelCellViewModel]
         
         // Рекомендации
-        let recomendationCellViewModel = LabelCellViewModel()
+        let recomendationCellViewModel = LabelCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         
         recomendationCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let recomendationsLabelCfg = RoutineLabelViewModel()
+        let recomendationsLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         recomendationsLabelCfg.text = "str_drugedit_recomendations"
         recomendationsLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         recomendationsLabelCfg.font = FontProvider.medicineCourseFonts.general
@@ -214,10 +214,10 @@ final class DrugEditTableViewFactory {
         cellViewModels += [recomendationCellViewModel]
         
         // Ввод рекомендаций
-        let commentTextAreaCellViewModel = TextAreaCellViewModel(delegate: delegate)
+        let commentTextAreaCellViewModel = TextAreaCellViewModel(delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
         commentTextAreaCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 8.0, left: 8.0, right: 8.0)
         
-        let textAreaCfg = RoutineTextViewModel()
+        let textAreaCfg = RoutineTextViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         textAreaCfg.viewName = "comment_textarea"
         if let comment = model?.comment {
             textAreaCfg.text = comment
@@ -233,10 +233,10 @@ final class DrugEditTableViewFactory {
         
         // Кнопка удаления
         if editMode == .edit {
-            let singleButtonCellViewModel = SingleButtonCellViewModel(delegate: delegate)
+            let singleButtonCellViewModel = SingleButtonCellViewModel(delegate: delegate, routineDelegate: AppDelegate.serviceProvider.makeStringService())
             singleButtonCellViewModel.paddingOffsets = Offsets(top: 8.0, bottom: 128.0, left: 8.0, right: 8.0)
             
-            let deleteButtonCellCfg = RoutineButtonViewModel()
+            let deleteButtonCellCfg = RoutineButtonViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             deleteButtonCellCfg.viewName = "delete_button"
             
             deleteButtonCellCfg.text = "str_drugedit_delete_button_text"
@@ -261,13 +261,13 @@ final class DrugEditTableViewFactory {
         
         for (index, drugTime) in times.enumerated() {
             
-            let timesNumberLabelCfg = RoutineLabelViewModel()
+            let timesNumberLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             timesNumberLabelCfg.text = String(format: "%02d.", index + 1)
             timesNumberLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
             timesNumberLabelCfg.font = FontProvider.medicineCourseFonts.general
             
-            let timesComboboxCfg = RoutineComboboxViewModel()
-            timesComboboxCfg.textFieldViewModel.text = drugTime.usageTime.toString()
+            let timesComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
+            timesComboboxCfg.textFieldViewModel.text = drugTime.usageTime.toString(localizeService: AppDelegate.serviceProvider.makeStringService())
             timesComboboxCfg.textFieldViewModel.textColor = ColorProvider.medicineCourseColors.text
             timesComboboxCfg.textFieldViewModel.font = FontProvider.medicineCourseFonts.general
             timesComboboxCfg.textFieldViewModel.placeholderText = "str_drugedit_times_time_placeholder"
@@ -275,7 +275,7 @@ final class DrugEditTableViewFactory {
             timesComboboxCfg.markViewModel.image = ImageProvider.default.triangleToBottom
             timesComboboxCfg.textFieldViewModel.height = 44.0
             
-            let countField = RoutineTextFieldViewModel()
+            let countField = RoutineTextFieldViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             countField.text = drugTime.dose.makeDoseString()
             countField.textColor = ColorProvider.medicineCourseColors.text
             countField.font = FontProvider.medicineCourseFonts.general
@@ -284,7 +284,7 @@ final class DrugEditTableViewFactory {
             countField.height = 44.0
             countField.keyboardType = .decimalPad
             
-            let usingTimesCellViewModel = UsingTimesCellViewModel()
+            let usingTimesCellViewModel = UsingTimesCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
             
             usingTimesCellViewModel.numberLabel = timesNumberLabelCfg
             usingTimesCellViewModel.timesBox = timesComboboxCfg
@@ -302,12 +302,12 @@ final class DrugEditTableViewFactory {
 
     static func makeTimeCellViewModel(index: Int, delegate: UsingTimesCellViewModelDelegate) -> UsingTimesCellViewModel {
         
-        let timesNumberLabelCfg = RoutineLabelViewModel()
+        let timesNumberLabelCfg = RoutineLabelViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         timesNumberLabelCfg.text = String(format: "%02d.", index)
         timesNumberLabelCfg.textColor = ColorProvider.medicineCourseColors.noteText
         timesNumberLabelCfg.font = FontProvider.medicineCourseFonts.general
         
-        let timesComboboxCfg = RoutineComboboxViewModel()
+        let timesComboboxCfg = RoutineComboboxViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         timesComboboxCfg.textFieldViewModel.text = ""
         timesComboboxCfg.textFieldViewModel.textColor = ColorProvider.medicineCourseColors.text
         timesComboboxCfg.textFieldViewModel.font = FontProvider.medicineCourseFonts.general
@@ -316,7 +316,7 @@ final class DrugEditTableViewFactory {
         timesComboboxCfg.markViewModel.image = ImageProvider.default.triangleToBottom
         timesComboboxCfg.textFieldViewModel.height = 44.0
         
-        let countField = RoutineTextFieldViewModel()
+        let countField = RoutineTextFieldViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
         countField.text = ""
         countField.textColor = ColorProvider.medicineCourseColors.text
         countField.font = FontProvider.medicineCourseFonts.general
@@ -325,7 +325,7 @@ final class DrugEditTableViewFactory {
         countField.height = 44.0
         countField.keyboardType = .decimalPad
         
-        let usingTimesCellViewModel = UsingTimesCellViewModel()
+        let usingTimesCellViewModel = UsingTimesCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
  
         usingTimesCellViewModel.viewName = "using_times_cell"
         usingTimesCellViewModel.numberLabel = timesNumberLabelCfg

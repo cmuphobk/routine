@@ -5,11 +5,13 @@ protocol SingleButtonCellProtocol: class {
 }
 
 final class SingleButtonCellViewModel: RoutineTableViewCellViewModel {
-    var buttonConfiguration: RoutineButtonViewModel = RoutineButtonViewModel()
+    lazy var buttonConfiguration: RoutineButtonViewModel = RoutineButtonViewModel(routineDelegate: self.routineDelegate)
     weak var delegate: SingleButtonCellProtocol?
     
-    init(delegate: SingleButtonCellProtocol?) {
+    init(delegate: SingleButtonCellProtocol?, routineDelegate: RoutineDelegate?) {
         self.delegate = delegate
+        
+        super.init(routineDelegate: routineDelegate)
     }
 
     override var reuseIdentifier: String {

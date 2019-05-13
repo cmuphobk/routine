@@ -12,6 +12,8 @@ final class MainPresenter: Module {
     weak var viewController: UIViewController? {
         return self.view as? UIViewController
     }
+    
+    var localizeService: StringServiceInterface!
 }
 
 // MARK: - MainScreenModuleInput

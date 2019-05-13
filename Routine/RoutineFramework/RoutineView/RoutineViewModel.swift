@@ -5,6 +5,8 @@ class RoutineViewModel: RoutineHeightable {
     let uuid: String = NSUUID().uuidString
     var viewName: String = ""
     
+    weak var routineDelegate: RoutineDelegate?
+    
     var backgroundColor: UIColor = UIColor.white
     var cornerRadius: CGFloat = 0.0
     var paddingViewCornerRadius: CGFloat = 0.0
@@ -23,6 +25,9 @@ class RoutineViewModel: RoutineHeightable {
         return 0.0
     }
     
+    init(routineDelegate: RoutineDelegate?) {
+        self.routineDelegate = routineDelegate
+    }
 }
 
 // MARK: - Equatable
