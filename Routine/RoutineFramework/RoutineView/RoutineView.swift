@@ -35,7 +35,7 @@ class RoutineView<T: RoutineViewModel>: UIView, RoutineContainer {
     
     func setupLayout() {
         
-        layout(
+        self.layout(
             self.viewModel.paddingOffsets.top,
             |-self.viewModel.paddingOffsets.left-self.paddingView-self.viewModel.paddingOffsets.right-|,
             self.viewModel.paddingOffsets.bottom

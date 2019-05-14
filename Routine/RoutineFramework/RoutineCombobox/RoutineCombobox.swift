@@ -29,14 +29,14 @@ class RoutineCombobox: RoutineView<RoutineComboboxViewModel>, UITextFieldDelegat
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             self.viewModel.paddingOffsets.top,
             |-self.viewModel.paddingOffsets.left-self.textField-self.viewModel.paddingOffsets.right-|,
             self.viewModel.paddingOffsets.bottom
         )
         
         let markOffset = self.viewModel.paddingOffsets.right == 0.0 ? 8.0 : self.viewModel.paddingOffsets.right * 2
-        layout(
+        self.layout(
             18.0,
             self.mark-markOffset-|
         )

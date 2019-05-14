@@ -23,7 +23,7 @@ final class ImageAndLabelCell: RoutineTableViewCell<ImageAndLabelCellViewModel> 
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0.0,
             |self.icon-self.viewModel.betweenSpace-self.label-|,
             0.0
@@ -32,7 +32,7 @@ final class ImageAndLabelCell: RoutineTableViewCell<ImageAndLabelCellViewModel> 
         self.icon.height(24.0)
         self.icon.width(24.0)
         
-        layout(
+        self.layout(
             0.0,
             self.label,
             0.0

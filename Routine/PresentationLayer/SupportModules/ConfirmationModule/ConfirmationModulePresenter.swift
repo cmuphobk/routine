@@ -13,13 +13,16 @@ class ConfirmationModulePresenter {
     var acceptButtonText: String
     var cancelButtonText: String
     
+    var windowService: WindowServiceInterface!
+    
     init(caption: String,
          text: String,
          textFieldValue: String,
          textFieldPlaceholder: String,
          acceptButtonText: String,
          cancelButtonText: String,
-         localizeService: StringServiceInterface) {
+         localizeService: StringServiceInterface,
+         windowService: WindowServiceInterface) {
         
         self.caption = caption
         self.text = text
@@ -28,6 +31,7 @@ class ConfirmationModulePresenter {
         self.acceptButtonText = acceptButtonText
         self.cancelButtonText = cancelButtonText
         self.localizeService = localizeService
+        self.windowService = windowService
 
     }
 }

@@ -64,6 +64,8 @@
 		41F06B632289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B622289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift */; };
 		41F06B662289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B652289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift */; };
 		41F06B682289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B672289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift */; };
+		41F06B6C228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B6B228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift */; };
+		41F06B6E228AA2A400D28682 /* StandartAcceptButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B6D228AA2A400D28682 /* StandartAcceptButtonViewModel.swift */; };
 		860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */; };
 		860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C721B1ADF3007317B2 /* DrugDetailsAssembly.swift */; };
 		860AC5D921B1ADF3007317B2 /* DrugDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */; };
@@ -200,8 +202,6 @@
 		ED7874A721A1C86200FEA4DB /* RoutineCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A521A1C86200FEA4DB /* RoutineCollectionViewManager.swift */; };
 		ED7874A821A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */; };
 		ED7874AA21A1C90D00FEA4DB /* StandartPagePickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874A921A1C90C00FEA4DB /* StandartPagePickerCellViewModel.swift */; };
-		ED7874BB21A3395400FEA4DB /* CreateMedicineCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874BA21A3395400FEA4DB /* CreateMedicineCourseViewController.swift */; };
-		ED7874BD21A3395D00FEA4DB /* CreateMedicineCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7874BC21A3395D00FEA4DB /* CreateMedicineCourse.storyboard */; };
 		ED7874D521A5D5C000FEA4DB /* MedicineCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D421A5D5C000FEA4DB /* MedicineCourse.swift */; };
 		ED7874D721A5D5D400FEA4DB /* MedicineDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D621A5D5D400FEA4DB /* MedicineDrug.swift */; };
 		ED7874D921A5D5F600FEA4DB /* MedicineCourseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D821A5D5F600FEA4DB /* MedicineCourseTime.swift */; };
@@ -384,6 +384,8 @@
 		41F06B622289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugEditTableViewFactoryInterface.swift; sourceTree = "<group>"; };
 		41F06B652289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPeriodicEditTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
 		41F06B672289A90600D28682 /* DrugPeriodicEditTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPeriodicEditTableViewFactoryInterface.swift; sourceTree = "<group>"; };
+		41F06B6B228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartCheckBoxButtonViewModel.swift; sourceTree = "<group>"; };
+		41F06B6D228AA2A400D28682 /* StandartAcceptButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartAcceptButtonViewModel.swift; sourceTree = "<group>"; };
 		462C35C180BC5B7647C384B2 /* Pods-Routine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routine/Pods-Routine.release.xcconfig"; sourceTree = "<group>"; };
 		700F6105CB5EA56D2CEA09BE /* Pods_RoutineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsModuleInterface.swift; sourceTree = "<group>"; };
@@ -525,8 +527,6 @@
 		ED7874A521A1C86200FEA4DB /* RoutineCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewManager.swift; sourceTree = "<group>"; };
 		ED7874A621A1C86200FEA4DB /* StandartPagePickerCollectionViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCollectionViewFactory.swift; sourceTree = "<group>"; };
 		ED7874A921A1C90C00FEA4DB /* StandartPagePickerCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCellViewModel.swift; sourceTree = "<group>"; };
-		ED7874BA21A3395400FEA4DB /* CreateMedicineCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMedicineCourseViewController.swift; sourceTree = "<group>"; };
-		ED7874BC21A3395D00FEA4DB /* CreateMedicineCourse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateMedicineCourse.storyboard; sourceTree = "<group>"; };
 		ED7874D421A5D5C000FEA4DB /* MedicineCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourse.swift; sourceTree = "<group>"; };
 		ED7874D621A5D5D400FEA4DB /* MedicineDrug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDrug.swift; sourceTree = "<group>"; };
 		ED7874D821A5D5F600FEA4DB /* MedicineCourseTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseTime.swift; sourceTree = "<group>"; };
@@ -916,6 +916,24 @@
 			path = DrugPeriodicEditTableViewFactory;
 			sourceTree = "<group>";
 		};
+		41F06B69228AA25000D28682 /* StandartAcceptButton */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F6A9B217E2B12001DBDAA /* StandartAcceptButton.swift */,
+				41F06B6D228AA2A400D28682 /* StandartAcceptButtonViewModel.swift */,
+			);
+			path = StandartAcceptButton;
+			sourceTree = "<group>";
+		};
+		41F06B6A228AA28100D28682 /* StandartCheckBoxButton */ = {
+			isa = PBXGroup;
+			children = (
+				ED749FD42190C6DA00D996D4 /* StandartCheckBoxButton.swift */,
+				41F06B6B228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift */,
+			);
+			path = StandartCheckBoxButton;
+			sourceTree = "<group>";
+		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,7 +1110,6 @@
 		867283AA21AA9E7E0000495C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED7874B921A3392D00FEA4DB /* CreateMedicineCourse */,
 				41A6B85A220EC4CD0023CE19 /* CalculatorPopup */,
 				41A6B859220EC4C20023CE19 /* ConfirmDecisionPopup */,
 				41A6B857220EC4B10023CE19 /* InputTextPopup */,
@@ -1301,20 +1318,20 @@
 		ED4C62B421E5E70B004A999C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41F06B6A228AA28100D28682 /* StandartCheckBoxButton */,
+				41F06B69228AA25000D28682 /* StandartAcceptButton */,
 				ED4C62B121E5E133004A999C /* SectionHeaderView */,
 				ED4C62B221E5E143004A999C /* SectionView */,
 				ED4C62B321E5E14C004A999C /* SectionDescriptionView */,
 				ED78749B21A1C5D500FEA4DB /* StandartPagePicker */,
 				ED787474219E038500FEA4DB /* StandartModalView.swift */,
 				ED8F69C72179B971001DBDAA /* StandartOffsetLabel.swift */,
-				ED8F6A9B217E2B12001DBDAA /* StandartAcceptButton.swift */,
 				ED8F6A9D217E2CDF001DBDAA /* StandartTextField.swift */,
 				ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */,
 				ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */,
 				ED6669C5218A1E8900366877 /* StandartPickerView.swift */,
 				ED6669C7218B397F00366877 /* StandartDatePickerView.swift */,
 				ED6669CC218C5DAC00366877 /* StandartHtmlTextView.swift */,
-				ED749FD42190C6DA00D996D4 /* StandartCheckBoxButton.swift */,
 				86C2BEAA21A7E32B001BA77B /* StandartProgressBar.swift */,
 				ED59915A21D2AE2400253599 /* StandartLoaderView.swift */,
 			);
@@ -1407,15 +1424,6 @@
 				86F9D26C21EEFECE000ABB67 /* DrugPeriodicEdit */,
 			);
 			path = MedicineCourseGroup;
-			sourceTree = "<group>";
-		};
-		ED7874B921A3392D00FEA4DB /* CreateMedicineCourse */ = {
-			isa = PBXGroup;
-			children = (
-				ED7874BA21A3395400FEA4DB /* CreateMedicineCourseViewController.swift */,
-				ED7874BC21A3395D00FEA4DB /* CreateMedicineCourse.storyboard */,
-			);
-			path = CreateMedicineCourse;
 			sourceTree = "<group>";
 		};
 		ED7874CC21A5D14F00FEA4DB /* MedicineCourseEntity */ = {
@@ -2079,7 +2087,6 @@
 				866B3B0A21AEDCC90078361A /* DrugCell.xib in Resources */,
 				860AC63421B2B32C007317B2 /* CalculatorPopup.storyboard in Resources */,
 				ED45FBED2199D08F00E81497 /* MedicineCourse.storyboard in Resources */,
-				ED7874BD21A3395D00FEA4DB /* CreateMedicineCourse.storyboard in Resources */,
 				ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */,
 				41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */,
 				ED8F6A222179B971001DBDAA /* BackgroundViewController.storyboard in Resources */,
@@ -2308,6 +2315,7 @@
 				41F06B632289A8D400D28682 /* DrugEditTableViewFactoryInterface.swift in Sources */,
 				EDE9894621E92F5B00870F25 /* RoutineComboboxViewModel.swift in Sources */,
 				ED45FBE52199D08F00E81497 /* MedicineCourseCell.swift in Sources */,
+				41F06B6E228AA2A400D28682 /* StandartAcceptButtonViewModel.swift in Sources */,
 				8682996221C8C88500679C05 /* ComboboxCell.swift in Sources */,
 				41F06B5E2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift in Sources */,
 				41F06B4F2289A7F200D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift in Sources */,
@@ -2458,7 +2466,6 @@
 				ED241EB921AD2AD200E4E32F /* Codable+Dicitionary.swift in Sources */,
 				ED45FBEB2199D08F00E81497 /* MedicineCourseRouter.swift in Sources */,
 				ED279C2821A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift in Sources */,
-				ED7874BB21A3395400FEA4DB /* CreateMedicineCourseViewController.swift in Sources */,
 				860E48F121C36F790009E4DB /* Array+indexOf.swift in Sources */,
 				866B3AFD21AEDCC90078361A /* DrugsListPresenter.swift in Sources */,
 				ED082FD021CFFD1A00C892C8 /* HockeyServiceInterface.swift in Sources */,
@@ -2491,6 +2498,7 @@
 				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
 				ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED8F6A0C2179B971001DBDAA /* StandartOffsetLabel.swift in Sources */,
+				41F06B6C228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift in Sources */,
 				41F06B662289A8F900D28682 /* DrugPeriodicEditTableViewFactoryAssembly.swift in Sources */,
 				866F0CFB21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift in Sources */,
 				41F06B592289A86F00D28682 /* MedicineCourseTableViewFactoryInterface.swift in Sources */,

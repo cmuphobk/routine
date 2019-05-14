@@ -1,8 +1,7 @@
 import UIKit
 
-class StandartCheckBoxButton: UIButton {
+class StandartCheckBoxButton: RoutineButton<StandartCheckBoxButtonViewModel> {
     
-    var windowService: WindowServiceInterface!
     // Images
     private let checkedImageView = UIImageView(image: ImageProvider.default.checkboxPressedIcon)
     
@@ -21,10 +20,8 @@ class StandartCheckBoxButton: UIButton {
     }
     
     override func awakeFromNib() {
-        
-        self.windowService = AppDelegate.serviceProvider.makeWindowService()
-        
-        let is5sAndLess = self.windowService.is5sAndLess
+                
+        let is5sAndLess = self.viewModel.windowService.is5sAndLess
         
         self.setTitle(nil, for: .normal)
         self.tintColor = ColorProvider.default.blackColor

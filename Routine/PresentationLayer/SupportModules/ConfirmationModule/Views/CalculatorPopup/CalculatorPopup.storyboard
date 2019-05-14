@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--Calculator Popup-->
         <scene sceneID="fBN-wY-P8q">
             <objects>
-                <viewController storyboardIdentifier="CalculatorPopup" id="1aa-FK-9wd" customClass="CalculatorPopup" customModule="HCulture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorPopup" id="1aa-FK-9wd" customClass="CalculatorPopup" customModule="Routine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS1-uV-m7R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,14 +179,6 @@
                                     <constraint firstAttribute="width" constant="1" id="GBG-Sd-ML9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUI-2b-DNg" customClass="StandartAcceptButton" customModule="HCulture" customModuleProvider="target">
-                                <rect key="frame" x="188" y="616" width="187" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="&lt;ACCEPT&gt;"/>
-                                <connections>
-                                    <action selector="acceptButtonAction:" destination="1aa-FK-9wd" eventType="touchUpInside" id="TpR-8w-p9X"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWo-Q8-qie">
                                 <rect key="frame" x="0.0" y="616" width="187" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -202,15 +195,11 @@
                             <constraint firstItem="0Wp-se-Rlw" firstAttribute="leading" secondItem="OA5-s1-u1k" secondAttribute="leading" id="AqN-Pz-20v"/>
                             <constraint firstItem="btP-id-wQF" firstAttribute="leading" secondItem="OA5-s1-u1k" secondAttribute="leading" constant="32" id="C7F-90-yBF"/>
                             <constraint firstItem="OA5-s1-u1k" firstAttribute="trailing" secondItem="btP-id-wQF" secondAttribute="trailing" constant="32" id="Czr-bj-70Z"/>
-                            <constraint firstItem="OA5-s1-u1k" firstAttribute="bottom" secondItem="rUI-2b-DNg" secondAttribute="bottom" id="FE1-yS-3rN"/>
                             <constraint firstItem="njI-jz-Xdg" firstAttribute="centerX" secondItem="QS1-uV-m7R" secondAttribute="centerX" id="Fs6-L4-yHC"/>
                             <constraint firstItem="btP-id-wQF" firstAttribute="top" secondItem="OA5-s1-u1k" secondAttribute="top" constant="38" id="Irc-Aq-5QX"/>
-                            <constraint firstItem="rUI-2b-DNg" firstAttribute="leading" secondItem="njI-jz-Xdg" secondAttribute="trailing" id="KDR-VE-UIq"/>
                             <constraint firstItem="ZWo-Q8-qie" firstAttribute="leading" secondItem="OA5-s1-u1k" secondAttribute="leading" id="OKI-GJ-Qg6"/>
                             <constraint firstItem="njI-jz-Xdg" firstAttribute="top" secondItem="0Wp-se-Rlw" secondAttribute="bottom" id="Qvo-yz-lic"/>
                             <constraint firstItem="ZWo-Q8-qie" firstAttribute="top" secondItem="0Wp-se-Rlw" secondAttribute="bottom" id="ReK-a0-A4F"/>
-                            <constraint firstItem="OA5-s1-u1k" firstAttribute="trailing" secondItem="rUI-2b-DNg" secondAttribute="trailing" id="YPp-7I-lze"/>
-                            <constraint firstItem="rUI-2b-DNg" firstAttribute="top" secondItem="0Wp-se-Rlw" secondAttribute="bottom" id="oqR-6s-Xmf"/>
                             <constraint firstItem="OA5-s1-u1k" firstAttribute="bottom" secondItem="ZWo-Q8-qie" secondAttribute="bottom" id="wgo-k9-Ng6"/>
                             <constraint firstItem="OA5-s1-u1k" firstAttribute="trailing" secondItem="0Wp-se-Rlw" secondAttribute="trailing" id="yXL-5M-Vij"/>
                             <constraint firstItem="njI-jz-Xdg" firstAttribute="leading" secondItem="ZWo-Q8-qie" secondAttribute="trailing" id="yhc-SJ-Z6d"/>
@@ -218,12 +207,12 @@
                         <viewLayoutGuide key="safeArea" id="OA5-s1-u1k"/>
                     </view>
                     <connections>
-                        <outlet property="acceptButton" destination="rUI-2b-DNg" id="uQK-ii-Umg"/>
                         <outlet property="cancelButton" destination="ZWo-Q8-qie" id="0fB-cU-iRx"/>
                         <outlet property="captionLabel" destination="y4l-0k-sXf" id="nDf-wa-SZk"/>
-                        <outlet property="heightConstraint" destination="DI2-Gs-gDS" id="BVK-Fc-XZO"/>
                         <outlet property="leadingConstraint" destination="C7F-90-yBF" id="hL2-C9-NgA"/>
+                        <outlet property="leftView" destination="njI-jz-Xdg" id="Xl2-fl-4ia"/>
                         <outlet property="textField" destination="nfR-F1-E6O" id="pfs-qL-mF6"/>
+                        <outlet property="topView" destination="0Wp-se-Rlw" id="qzO-fa-oPY"/>
                         <outlet property="trailingConstraint" destination="Czr-bj-70Z" id="rGd-8a-CJJ"/>
                         <outletCollection property="calcsButtons" destination="jpb-OJ-t9f" collectionClass="NSMutableArray" id="DWI-GT-nJV"/>
                         <outletCollection property="calcsButtons" destination="zEo-7b-8Gc" collectionClass="NSMutableArray" id="E3o-Tu-YMm"/>

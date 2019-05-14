@@ -18,7 +18,7 @@ final class LabelAndMarkCell: RoutineTableViewCell<LabelAndMarkCellViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0.0,
             |-self.label-self.viewModel.betweenSpace-self.icon-|,
             0.0
@@ -27,7 +27,7 @@ final class LabelAndMarkCell: RoutineTableViewCell<LabelAndMarkCellViewModel> {
         self.icon.height(self.viewModel.image.height)
         self.icon.width(self.viewModel.image.width)
         
-        layout(
+        self.layout(
             0.0,
             self.icon,
             0.0

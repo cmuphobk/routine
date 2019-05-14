@@ -16,7 +16,7 @@ final class LabelCell: RoutineTableViewCell<LabelCellViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0,
             |self.label|,
             0

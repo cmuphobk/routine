@@ -38,22 +38,22 @@ class SectionCell: RoutineTableViewCell<SectionCellViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0.0,
             |self.sectionHeaderView|
         )
         
-        layout(
+        self.layout(
             self.sectionHeaderView,
             |self.sectionView|
         )
         
-        layout(
+        self.layout(
             self.sectionView,
             |self.sectionDescriptionView|
         )
         
-        layout(
+        self.layout(
             self.viewModel.paddingOffsets.top + 2.0,
             |-(self.viewModel.paddingOffsets.left + 2.0)-self.shadowView-(self.viewModel.paddingOffsets.right + 2.0)-|,
             self.viewModel.paddingOffsets.bottom + 2.0

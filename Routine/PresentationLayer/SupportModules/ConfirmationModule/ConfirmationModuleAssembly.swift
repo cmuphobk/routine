@@ -13,7 +13,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldPlaceholder: "create_med_course_nameplaceholder_string",
                                                    acceptButtonText: "create_med_course_accept_string",
                                                    cancelButtonText: "create_med_course_cancel_string",
-                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService(),
+                                                   windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
         viewController.presenter = presenter
         presenter.view = viewController
@@ -34,7 +35,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldPlaceholder: "rename_med_course_nameplaceholder_string",
                                                    acceptButtonText: "rename_med_course_accept_string",
                                                    cancelButtonText: "rename_med_course_cancel_string",
-                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService(),
+                                                   windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
         viewController.presenter = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
@@ -55,7 +57,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldPlaceholder: " ",
                                                    acceptButtonText: "delete_med_course_accept_string",
                                                    cancelButtonText: "delete_med_course_cancel_string",
-                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService(),
+                                                   windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
         viewController.presenter = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
@@ -81,7 +84,8 @@ enum ConfirmationModuleAssembly {
                                                     textFieldPlaceholder: " ",
                                                     acceptButtonText: acceptButtonText,
                                                     cancelButtonText: cancelButtonText,
-                                                    localizeService: AppDelegate.serviceProvider.makeStringService())
+                                                    localizeService: AppDelegate.serviceProvider.makeStringService(),
+                                                    windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
         viewController.presenter = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
@@ -102,7 +106,8 @@ enum ConfirmationModuleAssembly {
                                                    textFieldPlaceholder: "Введите количество",
                                                    acceptButtonText: "Применить",
                                                    cancelButtonText: "Отмена",
-                                                   localizeService: AppDelegate.serviceProvider.makeStringService())
+                                                   localizeService: AppDelegate.serviceProvider.makeStringService(),
+                                                   windowService: AppDelegate.serviceProvider.makeWindowService())
         
         // Inject properties
         viewController.presenter = presenter

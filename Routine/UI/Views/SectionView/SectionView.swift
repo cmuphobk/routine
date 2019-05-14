@@ -35,14 +35,14 @@ class SectionView: RoutineView<SectionViewModel> {
         self.sectionImageView.height(self.viewModel.imageHeight)
         self.sectionImageView.Width == self.sectionImageView.Height
         
-        layout(
+        self.layout(
             0.0,
             |self.sectionImageView
         )
         
         self.sectionImageView-self.viewModel.betweenImageOffset-self.sectionHeaderLabel
         
-        layout(
+        self.layout(
             0.0,
             self.sectionHeaderLabel,
             self.viewModel.betweenLabelOffset,

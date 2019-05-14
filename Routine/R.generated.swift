@@ -458,7 +458,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
   struct storyboard {
     /// Storyboard `AnimateLaunchScreenViewController`.
     static let animateLaunchScreenViewController = _R.storyboard.animateLaunchScreenViewController()
@@ -468,8 +468,6 @@ struct R: Rswift.Validatable {
     static let calculatorPopup = _R.storyboard.calculatorPopup()
     /// Storyboard `ConfirmDecisionPopup`.
     static let confirmDecisionPopup = _R.storyboard.confirmDecisionPopup()
-    /// Storyboard `CreateMedicineCourse`.
-    static let createMedicineCourse = _R.storyboard.createMedicineCourse()
     /// Storyboard `DrugDetails`.
     static let drugDetails = _R.storyboard.drugDetails()
     /// Storyboard `DrugEdit`.
@@ -509,11 +507,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ConfirmDecisionPopup", bundle: ...)`
     static func confirmDecisionPopup(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.confirmDecisionPopup)
-    }
-    
-    /// `UIStoryboard(name: "CreateMedicineCourse", bundle: ...)`
-    static func createMedicineCourse(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.createMedicineCourse)
     }
     
     /// `UIStoryboard(name: "DrugDetails", bundle: ...)`
@@ -4292,7 +4285,6 @@ struct _R: Rswift.Validatable {
       try backgroundViewController.validate()
       try calculatorPopup.validate()
       try confirmDecisionPopup.validate()
-      try createMedicineCourse.validate()
       try drugDetails.validate()
       try drugEdit.validate()
       try drugPeriodicEdit.validate()
@@ -4374,24 +4366,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.confirmDecisionPopup().confirmDecisionPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'confirmDecisionPopup' could not be loaded from storyboard 'ConfirmDecisionPopup' as 'ConfirmDecisionPopup'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct createMedicineCourse: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let createMedicineCourseViewController = StoryboardViewControllerResource<CreateMedicineCourseViewController>(identifier: "CreateMedicineCourseViewController")
-      let name = "CreateMedicineCourse"
-      
-      func createMedicineCourseViewController(_: Void = ()) -> CreateMedicineCourseViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createMedicineCourseViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.createMedicineCourse().createMedicineCourseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createMedicineCourseViewController' could not be loaded from storyboard 'CreateMedicineCourse' as 'CreateMedicineCourseViewController'.") }
       }
       
       fileprivate init() {}

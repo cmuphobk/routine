@@ -82,9 +82,9 @@ final class MedicineCourseCell: RoutineTableViewCell<MedicineCourseCellViewModel
         let endDate = Date(timeIntervalSince1970: Double(endDate1970 ?? 0) / 1000.0)
         
         self.startDateLabel.text = self.viewModel.routineDelegate?.localize("course_start") ?? ""
-        self.startDateValue.text = AppDelegate.serviceProvider.makeDateService().localizeDateString(date: startDate, format: "dd.MM.yyyy")
+        self.startDateValue.text = self.viewModel.dateService.localizeDateString(date: startDate, format: "dd.MM.yyyy")
         self.endDateLabel.text = self.viewModel.routineDelegate?.localize("course_end") ?? ""
-        self.endDateValue.text = AppDelegate.serviceProvider.makeDateService().localizeDateString(date: endDate, format: "dd.MM.yyyy")
+        self.endDateValue.text = self.viewModel.dateService.localizeDateString(date: endDate, format: "dd.MM.yyyy")
         
         self.prograssBar.progress = Float( Date.calcPercentPartByToday(fromDate: startDate, toDate: endDate) )
     }

@@ -20,7 +20,7 @@ final class TextAreaCell: RoutineTableViewCell<TextAreaCellViewModel>, UITextFie
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0,
             |self.textArea|,
             0

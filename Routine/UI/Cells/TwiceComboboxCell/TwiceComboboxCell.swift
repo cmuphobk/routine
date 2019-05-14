@@ -28,13 +28,13 @@ final class TwiceComboboxCell: RoutineTableViewCell<TwiceComboboxCellViewModel> 
         
         self.delimiter.width(0)
         
-        layout(
+        self.layout(
             0.0,
             self.leftCombobox,
             0.0
         )
         
-        layout(
+        self.layout(
             0.0,
             self.rightCombobox,
             0.0

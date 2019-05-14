@@ -14,6 +14,7 @@ protocol ConfirmationViewInput: class {
 
 protocol ConfirmationViewOutput: class {
     var localizeService: StringServiceInterface! { get }
+    var windowService: WindowServiceInterface! { get }
     
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()

@@ -1,21 +1,41 @@
 import UIKit
+import Stevia
 
 class CalculatorPopup: UIViewController {
     var presenter: ConfirmationViewOutput?
-    var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var acceptButton: UIButton!
+    
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var leftView: UIView!
+    
+    weak private var acceptButton: StandartAcceptButton!
+    
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     @IBOutlet var calcsButtons: [UIButton]!
     
     var is5sAndLess: Bool!
+    
+    override func loadView() {
+        super.loadView()
+        
+        let acceptButton = StandartAcceptButton()
+        acceptButton.addTarget(self, action: #selector(acceptButtonAction), for: .touchDown)
+        self.cancelButton.superview?.sv(acceptButton)
+        
+        acceptButton.Top == self.topView.Bottom
+        
+        align(lefts: self.leftView, acceptButton)
+        
+        acceptButton.Height == self.cancelButton.Height
+        
+        self.acceptButton = acceptButton
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +49,7 @@ class CalculatorPopup: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction private func acceptButtonAction(_ sender: Any) {
+    @objc private func acceptButtonAction(_ sender: Any) {
         self.presenter?.acceptButtonDidPressed()
     }
     
@@ -59,11 +79,9 @@ class CalculatorPopup: UIViewController {
 extension CalculatorPopup: ConfirmationViewInput {
     func setupInitialState() {
         
-        self.windowService = AppDelegate.serviceProvider.makeWindowService()
+        self.is5sAndLess = self.presenter?.windowService.is5sAndLess ?? false
         
-        self.is5sAndLess = self.windowService.is5sAndLess
-        
-        self.heightConstraint.constant = self.is5sAndLess ? 35 : 55
+        self.acceptButton.height(is5sAndLess ? 35 : 55) 
         self.leadingConstraint.constant = self.is5sAndLess ? 32 : 52
         self.trailingConstraint.constant = self.is5sAndLess ? 32 : 52
     }

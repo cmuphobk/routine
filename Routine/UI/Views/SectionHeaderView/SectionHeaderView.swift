@@ -27,7 +27,7 @@ class SectionHeaderView: RoutineView<SectionHeaderViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             |-self.viewModel.paddingOffsets.left-self.infoIcon-8-self.textLabel-(>=8.0)-self.closeButton-self.viewModel.paddingOffsets.right-|
         )
         

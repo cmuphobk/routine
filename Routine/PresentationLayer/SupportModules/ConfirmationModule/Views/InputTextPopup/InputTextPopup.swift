@@ -1,25 +1,41 @@
 import UIKit
+import Stevia
 
 class InputTextPopup: UIViewController {
     var presenter: ConfirmationViewOutput?
-    var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var acceptButton: UIButton!
+    weak private var acceptButton: StandartAcceptButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     var is5sAndLess: Bool!
     
+    override func loadView() {
+        super.loadView()
+        
+        let acceptButton = StandartAcceptButton()
+        acceptButton.addTarget(self, action: #selector(acceptButtonAction), for: .touchDown)
+        self.cancelButton.superview?.sv(acceptButton)
+        
+        align(lefts: self.textLabel, acceptButton)
+        align(rights: self.textLabel, acceptButton)
+        
+        acceptButton.Bottom == self.cancelButton.Top
+        
+        acceptButton.Height == self.cancelButton.Height
+        
+        self.acceptButton = acceptButton
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapEvent)))
-        //self.textField.clearButtonMode = .whileEditing
+
         self.textField.delegate = self
         
         self.presenter?.didTriggerViewReadyEvent()
@@ -30,7 +46,7 @@ class InputTextPopup: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction private func acceptButtonAction(_ sender: Any) {
+    @objc private func acceptButtonAction(_ sender: Any) {
         self.presenter?.acceptButtonDidPressed()
     }
     
@@ -52,11 +68,9 @@ class InputTextPopup: UIViewController {
 extension InputTextPopup: ConfirmationViewInput {
     func setupInitialState() {
         
-        self.windowService = AppDelegate.serviceProvider.makeWindowService()
+        self.is5sAndLess = self.presenter?.windowService.is5sAndLess
         
-        self.is5sAndLess = self.windowService.is5sAndLess
-        
-        self.heightConstraint.constant = self.is5sAndLess ? 35 : 55
+        self.acceptButton.height(self.is5sAndLess ? 35 : 55)
         self.leadingConstraint.constant = self.is5sAndLess ? 32 : 52
         self.trailingConstraint.constant = self.is5sAndLess ? 32 : 52
         

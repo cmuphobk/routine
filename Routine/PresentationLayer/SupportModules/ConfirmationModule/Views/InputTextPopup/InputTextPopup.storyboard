@@ -13,7 +13,7 @@
         <!--Input Text Popup-->
         <scene sceneID="M2p-nq-ugc">
             <objects>
-                <viewController storyboardIdentifier="InputTextPopup" id="UFv-WR-Ibz" customClass="InputTextPopup" customModule="HCulture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputTextPopup" id="UFv-WR-Ibz" customClass="InputTextPopup" customModule="Routine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0CC-Yo-wzp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,19 +45,8 @@
                                             <action selector="textFieldValueChangedAction:" destination="UFv-WR-Ibz" eventType="editingChanged" id="cSA-BB-xZq"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-nY-yhv" customClass="StandartAcceptButton" customModule="HCulture" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="480" width="311" height="51"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="51" id="sHI-Qg-kfK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="&lt;ACCEPT&gt;"/>
-                                        <connections>
-                                            <action selector="acceptButtonAction:" destination="UFv-WR-Ibz" eventType="touchUpInside" id="Jy6-zK-tF1"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKU-Kv-yIc">
-                                        <rect key="frame" x="0.0" y="531" width="311" height="51"/>
+                                        <rect key="frame" x="0.0" y="550" width="311" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="&lt;CANCEL&gt;"/>
                                         <connections>
@@ -74,12 +63,8 @@
                                     <constraint firstItem="2p4-n8-PmW" firstAttribute="top" secondItem="fn2-3i-6SR" secondAttribute="top" id="Lps-ic-Ire"/>
                                     <constraint firstItem="2p4-n8-PmW" firstAttribute="leading" secondItem="fn2-3i-6SR" secondAttribute="leading" id="MR7-Tz-Cbz"/>
                                     <constraint firstItem="4F6-Dj-IKC" firstAttribute="leading" secondItem="fn2-3i-6SR" secondAttribute="leading" id="R3A-Kr-hIX"/>
-                                    <constraint firstAttribute="trailing" secondItem="aYR-nY-yhv" secondAttribute="trailing" id="RRh-uR-9A1"/>
                                     <constraint firstItem="TKU-Kv-yIc" firstAttribute="leading" secondItem="fn2-3i-6SR" secondAttribute="leading" id="TXz-ES-LNi"/>
-                                    <constraint firstItem="TKU-Kv-yIc" firstAttribute="height" secondItem="aYR-nY-yhv" secondAttribute="height" id="WG8-sL-ef0"/>
                                     <constraint firstItem="4F6-Dj-IKC" firstAttribute="centerX" secondItem="fn2-3i-6SR" secondAttribute="centerX" id="Xtr-eo-CF4"/>
-                                    <constraint firstItem="aYR-nY-yhv" firstAttribute="leading" secondItem="fn2-3i-6SR" secondAttribute="leading" id="XyU-rk-V1e"/>
-                                    <constraint firstItem="TKU-Kv-yIc" firstAttribute="top" secondItem="aYR-nY-yhv" secondAttribute="bottom" id="Y2d-9h-D0e"/>
                                     <constraint firstAttribute="trailing" secondItem="2el-JK-KVT" secondAttribute="trailing" id="Z1U-WU-69r"/>
                                     <constraint firstItem="2p4-n8-PmW" firstAttribute="centerX" secondItem="fn2-3i-6SR" secondAttribute="centerX" id="bOo-CF-zF1"/>
                                     <constraint firstAttribute="bottom" secondItem="TKU-Kv-yIc" secondAttribute="bottom" id="gSC-u4-27b"/>
@@ -98,10 +83,8 @@
                         <viewLayoutGuide key="safeArea" id="pAS-kr-pvm"/>
                     </view>
                     <connections>
-                        <outlet property="acceptButton" destination="aYR-nY-yhv" id="0X3-so-zua"/>
                         <outlet property="cancelButton" destination="TKU-Kv-yIc" id="XqH-ah-w4Z"/>
                         <outlet property="captionLabel" destination="2p4-n8-PmW" id="ua2-yb-LA4"/>
-                        <outlet property="heightConstraint" destination="sHI-Qg-kfK" id="aOl-7W-SbZ"/>
                         <outlet property="leadingConstraint" destination="yZn-2J-gy7" id="aUU-6a-H3b"/>
                         <outlet property="textField" destination="2el-JK-KVT" id="0NJ-x7-fYK"/>
                         <outlet property="textLabel" destination="4F6-Dj-IKC" id="8nG-h2-aWQ"/>

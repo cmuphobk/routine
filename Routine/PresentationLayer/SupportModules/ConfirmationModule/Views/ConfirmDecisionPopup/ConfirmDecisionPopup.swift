@@ -1,19 +1,35 @@
 import UIKit
+import Stevia
 
 class ConfirmDecisionPopup: UIViewController {
     var presenter: ConfirmationViewOutput?
-    var windowService: WindowServiceInterface!
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var acceptButton: UIButton!
+    weak private var acceptButton: StandartAcceptButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     var is5sAndLess: Bool!
+    
+    override func loadView() {
+        super.loadView()
+        
+        let acceptButton = StandartAcceptButton()
+        acceptButton.addTarget(self, action: #selector(acceptButtonAction), for: .touchDown)
+        self.cancelButton.superview?.sv(acceptButton)
+        
+        align(lefts: self.textLabel, acceptButton)
+        align(rights: self.textLabel, acceptButton)
+        
+        acceptButton.Bottom == self.cancelButton.Top
+        
+        acceptButton.Height == self.cancelButton.Height
+        
+        self.acceptButton = acceptButton
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -25,7 +41,7 @@ class ConfirmDecisionPopup: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func acceptButtonAction(_ sender: Any) {
+    @objc func acceptButtonAction(_ sender: Any) {
         self.presenter?.acceptButtonDidPressed()
     }
     
@@ -37,12 +53,10 @@ class ConfirmDecisionPopup: UIViewController {
 // MARK: - ConfirmationModuleInput
 extension ConfirmDecisionPopup: ConfirmationViewInput {
     func setupInitialState() {
+                
+        self.is5sAndLess = self.presenter?.windowService.is5sAndLess
         
-        self.windowService = AppDelegate.serviceProvider.makeWindowService()
-        
-        self.is5sAndLess = self.windowService.is5sAndLess
-        
-        self.heightConstraint.constant = self.is5sAndLess ? 35 : 55
+        self.acceptButton.height(is5sAndLess ? 35 : 55) 
         self.leadingConstraint.constant = self.is5sAndLess ? 32 : 52
         self.trailingConstraint.constant = self.is5sAndLess ? 32 : 52
     }

@@ -20,7 +20,7 @@ final class ComboboxCell: RoutineTableViewCell<ComboboxCellViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0,
             |self.combobox|,
             0

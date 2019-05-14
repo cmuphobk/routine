@@ -20,7 +20,7 @@ final class SingleButtonCell: RoutineTableViewCell<SingleButtonCellViewModel> {
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0,
             |self.button|,
             0

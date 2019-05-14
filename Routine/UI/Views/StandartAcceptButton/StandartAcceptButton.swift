@@ -1,9 +1,7 @@
 import UIKit
 
-class StandartAcceptButton: UIButton {
-    
-    var windowService: WindowServiceInterface!
-    
+class StandartAcceptButton: RoutineButton<StandartAcceptButtonViewModel> {
+        
     override var isEnabled: Bool {
         get {
             return super.isEnabled
@@ -25,9 +23,7 @@ class StandartAcceptButton: UIButton {
         self.backgroundColor = ColorProvider.default.blueColor
         self.setTitleColor(ColorProvider.default.whiteColor, for: .normal)
         
-        self.windowService = AppDelegate.serviceProvider.makeWindowService()
-        
-        let is5sAndLess = self.windowService.is5sAndLess
+        let is5sAndLess = self.viewModel.windowService.is5sAndLess
         
         self.titleLabel?.font = is5sAndLess ? FontProvider.default.blueSmallButton : FontProvider.default.blueButton
     }

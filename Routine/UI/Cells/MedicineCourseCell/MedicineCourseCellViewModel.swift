@@ -18,15 +18,24 @@ final class MedicineCourseCellViewModel: RoutineTableViewCellViewModel {
     weak var delegate: MedicineCourseCellProtocol?
     var cellWidth: CGFloat = 0.0
     
+    var dateService: DateServiceInterface
+    
     var drugNames: String {
         return self.drugs.map { (item) -> String in return item.name }.joined(separator: ", ")
     }
     
-    init(name: String, drugs: [MedicineDrug], isArchive: Bool, delegate: MedicineCourseCellProtocol, routineDelegate: RoutineDelegate?) {
+    init(name: String,
+         drugs: [MedicineDrug],
+         isArchive: Bool,
+         delegate: MedicineCourseCellProtocol,
+         routineDelegate: RoutineDelegate?,
+         dateService: DateServiceInterface) {
+        
         self.name = name
         self.drugs = drugs
         self.isArchive = isArchive
         self.delegate = delegate
+        self.dateService = dateService
         
         super.init(routineDelegate: routineDelegate)
     }

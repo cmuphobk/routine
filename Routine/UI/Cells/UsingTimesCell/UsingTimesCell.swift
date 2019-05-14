@@ -28,19 +28,19 @@ final class UsingTimesCell: RoutineTableViewCell<UsingTimesCellViewModel>, UITex
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0.0,
             |self.numberLabel-8.0-self.timesBox-16.0-self.countField|,
             0.0
         )
         
-        layout(
+        self.layout(
             0.0,
             self.timesBox,
             0.0
         )
         
-        layout(
+        self.layout(
             0.0,
             self.countField,
             0.0

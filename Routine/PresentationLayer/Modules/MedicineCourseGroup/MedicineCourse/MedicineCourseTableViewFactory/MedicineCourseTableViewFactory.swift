@@ -7,7 +7,8 @@ final class MedicineCourseTableViewFactory: MedicineCourseTableViewFactoryInterf
                                                         drugs: medicineCourse.drugs ?? [],
                                                         isArchive: isArchive,
                                                         delegate: delegate,
-                                                        routineDelegate: AppDelegate.serviceProvider.makeStringService())
+                                                        routineDelegate: AppDelegate.serviceProvider.makeStringService(),
+                                                        dateService: AppDelegate.serviceProvider.makeDateService())
         return cellViewModel
     }
     

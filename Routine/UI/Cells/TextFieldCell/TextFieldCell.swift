@@ -20,7 +20,7 @@ final class TextFieldCell: RoutineTableViewCell<TextFieldCellViewModel>, UITextF
     override func setupLayout() {
         super.setupLayout()
         
-        layout(
+        self.layout(
             0.0,
             |self.textField|,
             0.0
