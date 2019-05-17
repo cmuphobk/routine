@@ -4,26 +4,28 @@ protocol ApplicationCoordinating {
     
 }
 
-class ApplicationCoordinatorHandler: CoordinatorHandler<ApplicationCoordinator.ActionType> { }
+enum ApplicationCoordinatorActionType {
+    
+}
+
+class ApplicationCoordinatorHandler: CoordinatorHandler<ApplicationCoordinatorActionType> { }
 
 class ApplicationCoordinator: Coordinatorable<ApplicationCoordinatorHandler> {
-    
-    enum ActionType: Int {
-        
-    }
 
     var coordinatorFactory: CoordinatorFactory
 
     var menuCoordinator: MenuCoordinator!
     
     let menuFlowHandler = MenuCoordinatorHandler { (actionType) in
-        print("AppCoordinator output: \(actionType) with hash: \(actionType.hashValue)")
+        print("AppCoordinator output: \(actionType)")
     }
 
-    override init(navigationController: UINavigationController, flowHandler: ApplicationCoordinatorHandler?) {
+    override init(navigationController: UINavigationController,
+                  flowHandler: ApplicationCoordinatorHandler?) {
         self.coordinatorFactory = CoordinatorFactory()
         
-        self.menuCoordinator = MenuCoordinator(navigationController: navigationController, flowHandler: menuFlowHandler)
+        self.menuCoordinator = self.coordinatorFactory.makeMenuCoordinator(navigationController: navigationController,
+                                                                           flowHandler: self.menuFlowHandler)
         
         super.init(navigationController: navigationController,
                    flowHandler: flowHandler)

@@ -4,12 +4,13 @@ protocol MedicineCourseCoordinating {
     
 }
 
-class MedicineCourseCoordinatorHandler: CoordinatorHandler<MedicineCourseCoordinator.ActionType> { }
+enum MedicineCourseCoordinatorActionType {
+    
+}
+
+class MedicineCourseCoordinatorHandler: CoordinatorHandler<MedicineCourseCoordinatorActionType> { }
 
 class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandler> {
-    
-    enum ActionType: Int {
-    }
     
     var factory: MedicineCourseCoordinatorFactory
     

@@ -4,12 +4,13 @@ protocol MainCoordinating {
     
 }
 
-class MainCoordinatorHandler: CoordinatorHandler<MainCoordinator.ActionType> { }
+enum MainCoordinatorActionType {
+    
+}
+
+class MainCoordinatorHandler: CoordinatorHandler<MainCoordinatorActionType> { }
 
 class MainCoordinator: Coordinatorable<MainCoordinatorHandler> {
-    
-    enum ActionType: Int {
-    }
     
     var factory: MainCoordinatorFactory
     

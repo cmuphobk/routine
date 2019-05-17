@@ -4,13 +4,12 @@ protocol MenuCoordinating {
 
 }
 
-class MenuCoordinatorHandler: CoordinatorHandler<MenuCoordinator.ActionType> { }
+enum MenuCoordinatorActionType {
+}
+
+class MenuCoordinatorHandler: CoordinatorHandler<MenuCoordinatorActionType> { }
 
 class MenuCoordinator: Coordinatorable<MenuCoordinatorHandler> {
-    
-    enum ActionType: Int {
-        
-    }
 
     var factory: MenuCoordinatorFactory
 

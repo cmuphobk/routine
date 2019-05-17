@@ -18,17 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.serviceProvider.makeLocalNotificationService().configure(application: application)
         
         let navigationController = UINavigationController()
-        
+
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController,
                                                             flowHandler: nil)
-        
+
         self.window = window
         self.applicationCoordinator = applicationCoordinator
-        
-        applicationCoordinator.start() 
+
+        applicationCoordinator.start()
         
         return true
     }

@@ -37,39 +37,29 @@ extension Navigationable {
 }
 
 protocol CoordinatorHandlerProtocol {
-    
     associatedtype OfType
-    
     func completion(with actionType: OfType)
-    
 }
 
 class CoordinatorHandler<ActionType>: CoordinatorHandlerProtocol {
     typealias OfType = ActionType
-    
     var closure: (ActionType) -> Void
-    
     init(closure: @escaping (ActionType) -> Void) {
         self.closure = closure
     }
-    
     func completion(with actionType: ActionType) {
         self.closure(actionType)
     }
 }
 
-class Coordinatorable<T>: Navigationable {
-    
+class Coordinatorable<T: CoordinatorHandlerProtocol>: Navigationable {
     var navigationController: UINavigationController
     var flowHandler: T?
-    
     init(navigationController: UINavigationController, flowHandler: T?) {
         self.navigationController = navigationController
         self.flowHandler = flowHandler
     }
-    
     func start() {
         
     }
-    
 }
