@@ -18,6 +18,13 @@ extension ModalObtainer where Self: UIViewController {
 }
 
 protocol NavigationBarConfiguration: class {
+    
+    var windowService: WindowService! { get set }
+    var moduleService: ModuleService! { get set }
+    
+    var navigationController: UINavigationController { get }
+    var currentViewController: UIViewController? { get }
+    
     func configureTransparentNavigationBar()
     func configureNavigationBarWithColor(_ color: UIColor)
     
@@ -34,7 +41,7 @@ extension NavigationBarConfiguration {
     
     func emptyCustomBarLeftButtonAction() {
         if self.windowService.userInterfaceIdiom != .pad {
-            AppDelegate.serviceProvider.makeModuleService().navigation?.hideMenu()
+//            self.moduleService.navigation?.hideMenu()
         }
         let emptyLeftBarButtonCustom = UIButton(type: .custom)
         emptyLeftBarButtonCustom.isUserInteractionEnabled = false
@@ -46,7 +53,7 @@ extension NavigationBarConfiguration {
     func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector) {
         if self.windowService.userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
-            self.moduleService.navigation?.openMenu()
+//            self.moduleService.navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
@@ -69,7 +76,7 @@ extension NavigationBarConfiguration {
     func customBarLeftTextButtonAction(text: String, target: Any, action: Selector) {
         if self.windowService.userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
-            self.moduleService.navigation?.openMenu()
+//            self.moduleService.navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.setTitle(text, for: .normal)
@@ -111,6 +118,13 @@ extension NavigationBarConfiguration {
 }
 
 protocol MenuConfiguration: class {
+    
+    var menuModuleViewController: UIViewController { get set }
+    var navigationController: UINavigationController { get set }
+    var view: UIView { get }
+    
+    var menuViewWidth: CGFloat { get set }
+    
     func triggerMenu()
     func openMenu()
     func hideMenu()
@@ -118,12 +132,10 @@ protocol MenuConfiguration: class {
 
 extension MenuConfiguration {
     
+    var view: UIView { return self.navigationController.view }
+    
     func triggerMenu() {
-        guard let menuModuleViewController = self.menuModuleViewController else { return }
-        let menuModuleFrame = menuModuleViewController.view.frame
-        let menuModuleViewX = menuModuleFrame.origin.x
-        
-        if menuModuleViewX < 0 {
+        if self.menuModuleViewController.view.frame.origin.x < 0 {
             self.openMenu()
         } else {
             self.hideMenu()
@@ -132,27 +144,18 @@ extension MenuConfiguration {
     
     func openMenu() {
         UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: {
-            guard let menuModuleViewController = self.menuModuleViewController else { return }
-            
-            menuModuleViewController.view.frame = CGRect(x: 0, y: 0, width: self.kMenuViewWidth, height: self.view.frame.height)
-            
-            self.navigationController.view.frame = CGRect(x: self.kMenuViewWidth, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            
+            self.menuModuleViewController.view.frame = CGRect(x: 0, y: 0, width: self.menuViewWidth, height: self.view.frame.height)
+            self.navigationController.view.frame = CGRect(x: self.menuViewWidth, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             // FIXME: - wtf
-            menuModuleViewController.viewWillAppear(false)
-            
+            self.menuModuleViewController.viewWillAppear(false)
             self.view.setNeedsLayout()
         }, completion: nil)
     }
     
     func hideMenu() {
-        
         UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: {
-            guard let menuModuleViewController = self.menuModuleViewController else { return }
-            
-            menuModuleViewController.view.frame = CGRect(x: -self.kMenuViewWidth, y: 0, width: self.kMenuViewWidth, height: self.view.frame.height)
+            self.menuModuleViewController.view.frame = CGRect(x: -self.menuViewWidth, y: 0, width: self.menuViewWidth, height: self.view.frame.height)
             self.navigationController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            
             self.view.setNeedsLayout()
         }, completion: nil)
     }
@@ -161,8 +164,8 @@ extension MenuConfiguration {
 
 protocol MessageConfiguration: class {
 
-    var navigationController: UINavigationController { get }
-    var currentViewController: UIViewController? { get }
+    var navigationController: UINavigationController { get set }
+    var currentViewController: UIViewController? { get set }
     
     var errorLabel: StandartOffsetLabel! { get set }
     var errorImageView: UIImageView! { get set }
