@@ -6,6 +6,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var applicationCoordinator: ApplicationCoordinator?
     
     static let serviceProvider: ServiceProviderInterface! = ServiceProviderAssembly.build()
 
@@ -15,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.serviceProvider.makeMagicalRecordService().setupCoreDataStack()
         AppDelegate.serviceProvider.makeLanguageService().setLanguage(languageName: AppDelegate.serviceProvider.makeLanguageService().currentLanguage().name)
         AppDelegate.serviceProvider.makeLocalNotificationService().configure(application: application)
+        
+        let navigationController = UINavigationController()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController,
+                                                            flowHandler: nil)
+        
+        self.window = window
+        self.applicationCoordinator = applicationCoordinator
+        
+        applicationCoordinator.start() 
         
         return true
     }

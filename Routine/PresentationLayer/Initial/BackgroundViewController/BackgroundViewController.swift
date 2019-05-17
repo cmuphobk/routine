@@ -11,7 +11,8 @@ final class BackgroundViewController: UIViewController {
     
     private let kMenuViewWidth: CGFloat = 300.0
     
-    var moduleService = AppDelegate.serviceProvider.makeModuleService()
+    var moduleService: ModuleServiceInterface!
+    var windowService: WindowServiceInterface!
     
     var initialNavigationController: UINavigationController!
     var menuModuleViewController: UIViewController!
@@ -79,7 +80,7 @@ extension BackgroundViewController: NavigatorInterface {
             menuModuleViewController.view.frame = CGRect(x: 0, y: 0, width: self.kMenuViewWidth, height: self.view.frame.height)
             
             var initialNavigationControllerWidth = self.view.frame.width
-            if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
+            if self.windowService.userInterfaceIdiom == .pad {
                 initialNavigationControllerWidth -= self.kMenuViewWidth
             }
             
@@ -265,7 +266,7 @@ extension BackgroundViewController: NavigatorInterface {
     }
     
     func emptyCustomBarLeftButtonAction() {
-        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom != .pad {
+        if self.windowService.userInterfaceIdiom != .pad {
             AppDelegate.serviceProvider.makeModuleService().navigation?.hideMenu()
         }
         let emptyLeftBarButtonCustom = UIButton(type: .custom)
@@ -276,9 +277,9 @@ extension BackgroundViewController: NavigatorInterface {
     }
     
     func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector) {
-        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
+        if self.windowService.userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
-            AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
+            self.moduleService.navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
@@ -299,9 +300,9 @@ extension BackgroundViewController: NavigatorInterface {
     }
     
     func customBarLeftTextButtonAction(text: String, target: Any, action: Selector) {
-        if AppDelegate.serviceProvider.makeWindowService().userInterfaceIdiom == .pad {
+        if self.windowService.userInterfaceIdiom == .pad {
             self.emptyCustomBarLeftButtonAction()
-            AppDelegate.serviceProvider.makeModuleService().navigation?.openMenu()
+            self.moduleService.navigation?.openMenu()
         } else {
             let leftBarButtonCustom = UIButton(type: .custom)
             leftBarButtonCustom.setTitle(text, for: .normal)
