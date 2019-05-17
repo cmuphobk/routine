@@ -242,7 +242,6 @@
 		ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */; };
 		ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */; };
 		ED8F6A212179B971001DBDAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */; };
-		ED8F6A222179B971001DBDAA /* BackgroundViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69E32179B971001DBDAA /* BackgroundViewController.storyboard */; };
 		ED8F6A272179B971001DBDAA /* MenuModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */; };
 		ED8F6A282179B971001DBDAA /* MenuModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */; };
 		ED8F6A292179B971001DBDAA /* MenuModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69EF2179B971001DBDAA /* MenuModuleCell.swift */; };
@@ -582,7 +581,6 @@
 		ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		ED8F69E22179B971001DBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ED8F69E42179B971001DBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BackgroundViewController.storyboard; sourceTree = "<group>"; };
 		ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModulePresenter.swift; sourceTree = "<group>"; };
 		ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleInterface.swift; sourceTree = "<group>"; };
 		ED8F69EF2179B971001DBDAA /* MenuModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleCell.swift; sourceTree = "<group>"; };
@@ -771,7 +769,6 @@
 			isa = PBXGroup;
 			children = (
 				ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */,
-				ED8F69E32179B971001DBDAA /* BackgroundViewController.storyboard */,
 			);
 			path = BackgroundViewController;
 			sourceTree = "<group>";
@@ -2140,7 +2137,6 @@
 				ED45FBED2199D08F00E81497 /* MedicineCourse.storyboard in Resources */,
 				ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */,
 				41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */,
-				ED8F6A222179B971001DBDAA /* BackgroundViewController.storyboard in Resources */,
 				860AC62921B2923A007317B2 /* DrugEdit.storyboard in Resources */,
 				ED45FBE72199D08F00E81497 /* MedicineCourseCell.xib in Resources */,
 				ED8F6A2B2179B971001DBDAA /* MenuModuleViewController.storyboard in Resources */,
@@ -2677,14 +2673,6 @@
 				ED8F69E22179B971001DBDAA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		ED8F69E32179B971001DBDAA /* BackgroundViewController.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED8F69E42179B971001DBDAA /* Base */,
-			);
-			name = BackgroundViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		ED8F6A3C2179C548001DBDAA /* Localizable.strings */ = {

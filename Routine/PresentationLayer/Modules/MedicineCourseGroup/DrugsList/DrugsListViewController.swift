@@ -39,12 +39,12 @@ final class DrugsListViewController: RoutineViewController {
         super.viewWillAppear(animated)
         self.output.didTriggerViewWillAppear()
         
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
-            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
-            target: self,
-            action: #selector(backButtonPressed))
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+//
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+//            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+//            target: self,
+//            action: #selector(backButtonPressed))
     }
     
     override func localizationSetup() {
@@ -77,14 +77,14 @@ extension DrugsListViewController: DrugsListViewInput {
     }
     
     func updateNavTitle(_ text: String) {
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(text)
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(text)
     }
     
     func enableCreateButton() {
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
-            icon: ImageProvider.drugsListImages.createDrugIcon,
-            target: self,
-            action: #selector(createDrugButtonAction))
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+//            icon: ImageProvider.drugsListImages.createDrugIcon,
+//            target: self,
+//            action: #selector(createDrugButtonAction))
     }
     
     func updateTableViewWithMedicineCourse(_ medicineCourse: MedicineCourse) {

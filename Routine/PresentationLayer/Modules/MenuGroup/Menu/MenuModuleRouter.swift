@@ -11,16 +11,16 @@ final class MenuModuleRouter: MenuModuleRouting {
             
             self.moduleService.moduleFactory.makeMainModule { [unowned self] (_, mainModuleInput) in
                 guard let module = mainModuleInput as? Module else { return }
-                self.moduleService.navigation?.openModuleFromLeft(module)
-                self.moduleService.navigation?.hideMenu()
+//                self.moduleService.navigation?.openModuleFromLeft(module)
+//                self.moduleService.navigation?.hideMenu()
             }
             
         case kMedicineCourseModuleId:
             
             self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
                 guard let module = medicineCourseModuleInput as? Module else { return }
-                self.moduleService.navigation?.openModuleFromLeft(module)
-                self.moduleService.navigation?.hideMenu()
+//                self.moduleService.navigation?.openModuleFromLeft(module)
+//                self.moduleService.navigation?.hideMenu()
             }
             
             

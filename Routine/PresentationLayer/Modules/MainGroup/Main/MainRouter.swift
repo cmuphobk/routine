@@ -8,20 +8,20 @@ final class MainRouter: MainModuleRouting {
         
         self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
             guard let module = medicineCourseModuleInput as? Module else { return }
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
         
     }
     
     func rightSwipeAction() {
-        self.moduleService.navigation?.openMenu()
+//        self.moduleService.navigation?.openMenu()
     }
     
     func leftSwipeAction() {
-        self.moduleService.navigation?.hideMenu()
+//        self.moduleService.navigation?.hideMenu()
     }
     
     func menuButtonClicked() {
-        self.moduleService.navigation?.triggerMenu()
+//        self.moduleService.navigation?.triggerMenu()
     }
 }

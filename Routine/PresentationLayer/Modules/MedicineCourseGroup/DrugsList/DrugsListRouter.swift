@@ -13,7 +13,7 @@ final class DrugsListRouter: DrugsListModuleRouting {
         }
         
         if let module = module {
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
     }
     
@@ -26,11 +26,11 @@ final class DrugsListRouter: DrugsListModuleRouting {
         }
         
         if let module = module {
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
     }
     
     func closeModule() {
-        self.moduleService.navigation?.popModule()
+//        self.moduleService.navigation?.popModule()
     }
 }

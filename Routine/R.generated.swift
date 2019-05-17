@@ -458,12 +458,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
   struct storyboard {
     /// Storyboard `AnimateLaunchScreenViewController`.
     static let animateLaunchScreenViewController = _R.storyboard.animateLaunchScreenViewController()
-    /// Storyboard `BackgroundViewController`.
-    static let backgroundViewController = _R.storyboard.backgroundViewController()
     /// Storyboard `CalculatorPopup`.
     static let calculatorPopup = _R.storyboard.calculatorPopup()
     /// Storyboard `ConfirmDecisionPopup`.
@@ -492,11 +490,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AnimateLaunchScreenViewController", bundle: ...)`
     static func animateLaunchScreenViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.animateLaunchScreenViewController)
-    }
-    
-    /// `UIStoryboard(name: "BackgroundViewController", bundle: ...)`
-    static func backgroundViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.backgroundViewController)
     }
     
     /// `UIStoryboard(name: "CalculatorPopup", bundle: ...)`
@@ -4282,7 +4275,6 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try animateLaunchScreenViewController.validate()
-      try backgroundViewController.validate()
       try calculatorPopup.validate()
       try confirmDecisionPopup.validate()
       try drugDetails.validate()
@@ -4310,26 +4302,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.animateLaunchScreenViewController().animateLaunchScreenViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'animateLaunchScreenViewController' could not be loaded from storyboard 'AnimateLaunchScreenViewController' as 'AnimateLaunchScreenViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct backgroundViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = BackgroundViewController
-      
-      let backgroundViewController = StoryboardViewControllerResource<BackgroundViewController>(identifier: "BackgroundViewController")
-      let bundle = R.hostingBundle
-      let name = "BackgroundViewController"
-      
-      func backgroundViewController(_: Void = ()) -> BackgroundViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: backgroundViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.backgroundViewController().backgroundViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backgroundViewController' could not be loaded from storyboard 'BackgroundViewController' as 'BackgroundViewController'.") }
       }
       
       fileprivate init() {}

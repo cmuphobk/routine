@@ -40,20 +40,20 @@ final class DrugTimesEditViewController: RoutineViewController {
 extension DrugTimesEditViewController: DrugTimesEditViewInput {
     
     func setupInitialState() {
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         
         let title = self.output.localizeService.localizeId("drug_times_edit_title")
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
-            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
-            target: self,
-            action: #selector(backButtonPressed))
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+//            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+//            target: self,
+//            action: #selector(backButtonPressed))
         
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
-            icon: ImageProvider.drugEditImages.agreeIcon,
-            target: self,
-            action: #selector(rightAcceptButton))
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+//            icon: ImageProvider.drugEditImages.agreeIcon,
+//            target: self,
+//            action: #selector(rightAcceptButton))
         
         self.typeSelector.configureWithPagesNames([EndingCourseType.endUsageDate.toString(localizeService: self.output.localizeService),
                                                    EndingCourseType.countUsageDays.toString(localizeService: self.output.localizeService),

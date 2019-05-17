@@ -7,16 +7,16 @@ final class DrugEditRouter: DrugEditModuleRouting {
     weak private var deleteQuestionPopupViewController: ConfirmDecisionPopup?
     
     func closeModule() {
-        self.moduleService.navigation?.popModule()
+//        self.moduleService.navigation?.popModule()
     }
     
     func closeModuleWithEditMode(_ mode: DrugEditMode) {
-        switch mode {
-        case .create:
-            self.moduleService.navigation?.popModule()
-        case .edit:
-            self.moduleService.navigation?.popModule(2)
-        }
+//        switch mode {
+//        case .create:
+//            self.moduleService.navigation?.popModule()
+//        case .edit:
+//            self.moduleService.navigation?.popModule(2)
+//        }
     }
     
     func openEndUsageEditScreen(moduleOutput: DrugTimesEditModuleOutput) {
@@ -27,7 +27,7 @@ final class DrugEditRouter: DrugEditModuleRouting {
         }
         
         if let module = module {
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
     }
     
@@ -40,7 +40,7 @@ final class DrugEditRouter: DrugEditModuleRouting {
         }
         
         if let module = module {
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
     }
     
@@ -68,11 +68,14 @@ final class DrugEditRouter: DrugEditModuleRouting {
     }
     
     func showMessageWithText(_ text: String) {
-        self.moduleService.navigation?.showMessageWithText(text, andType: .error)
+//        self.moduleService.navigation?.showMessageWithText(text, andType: .error)
     }
     
     func containerForModal() -> ModalContainer? {
-        return self.moduleService.navigation?.containerForModal()
+//        return self.moduleService.navigation?.containerForModal()
+        //FIXME:
+        let vc = UIViewController()
+        return ModalContainer(view: vc.view, viewController: vc)
     }
     
 }

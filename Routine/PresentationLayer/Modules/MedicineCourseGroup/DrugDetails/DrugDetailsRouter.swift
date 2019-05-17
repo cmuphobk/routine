@@ -13,11 +13,11 @@ final class DrugDetailsRouter: DrugDetailsModuleRouting {
         }
         
         if let module = module {
-            self.moduleService.navigation?.pushModule(module)
+//            self.moduleService.navigation?.pushModule(module)
         }
     }
     
     func closeModule() {
-        self.moduleService.navigation?.popModule()
+//        self.moduleService.navigation?.popModule()
     }
 }

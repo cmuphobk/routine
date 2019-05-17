@@ -10,17 +10,6 @@ typealias ModuleDescription = (name: String, alias: String)
 
 final class ModuleService: ModuleServiceInterface {
     
-    private var backgroundViewController: BackgroundViewController?
-    var navigation: NavigatorInterface? {
-        get {
-            return self.backgroundViewController
-        }
-        set {
-            guard let backgroundViewController = newValue as? BackgroundViewController else { return }
-            self.backgroundViewController = backgroundViewController
-        }
-    }
-    
     static let shared = ModuleService()
     
     var moduleFactory: ModuleFactoryInterface!

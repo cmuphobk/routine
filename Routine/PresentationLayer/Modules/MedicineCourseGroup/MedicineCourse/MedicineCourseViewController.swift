@@ -75,23 +75,23 @@ final class MedicineCourseViewController: RoutineViewController {
         super.viewWillAppear(animated)
         output.didTriggerViewWillAppear()
         
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
-            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
-            target: self,
-            action: #selector(backButtonPressed))
-        
-        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
-            icon: ImageProvider.medicineCourseImages.plusIcon,
-            target: self,
-            action: #selector(createCourseButtonAction))
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
+//            icon: ImageProvider.default.backArrow.imageWithMask(color: ColorProvider.default.whiteColor),
+//            target: self,
+//            action: #selector(backButtonPressed))
+//
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarRightButtonAction(
+//            icon: ImageProvider.medicineCourseImages.plusIcon,
+//            target: self,
+//            action: #selector(createCourseButtonAction))
     }
     
     override func localizationSetup() {
         super.localizationSetup()
         let title = self.output.localizeService.localizeId(kMedicineCourseModuleId)
-        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
+//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
         
         self.placeholderLabel.font = FontProvider.default.forosRegular18
         self.placeholderLabel.textColor = ColorProvider.default.lightGrayColor
@@ -280,15 +280,15 @@ extension MedicineCourseViewController {
     }
     
     @objc private func menuButtonClicked() {
-        self.moduleService.navigation?.triggerMenu()
+//        self.moduleService.navigation?.triggerMenu()
     }
     
     @objc private func rightSwipeAction() {
-        self.moduleService.navigation?.openMenu()
+//        self.moduleService.navigation?.openMenu()
     }
     
     @objc private func leftSwipeAction() {
-        self.moduleService.navigation?.hideMenu()
+//        self.moduleService.navigation?.hideMenu()
     }
     
 }

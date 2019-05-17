@@ -6,6 +6,6 @@ final class DrugPeriodicEditRouter: DrugPeriodicEditModuleRouter {
     var moduleService: ModuleServiceInterface!
     
     func closeModule() {
-        self.moduleService.navigation?.popModule()
+//        self.moduleService.navigation?.popModule()
     }
 }

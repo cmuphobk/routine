@@ -65,7 +65,7 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
     func closeModule() {
         self.moduleService.moduleFactory.makeMainModule { [unowned self] (_, mainModuleInput) in
             if let module = mainModuleInput as? Module {
-                self.moduleService.navigation?.openModuleFromLeft( module )
+//                self.moduleService.navigation?.openModuleFromLeft( module )
             }
         }
     }
@@ -78,11 +78,13 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
             drugsListModuleInput?.configureModule(selectedMedCourse: medCourse)
         }
         
-        self.moduleService.navigation?.pushModule(module)
+//        self.moduleService.navigation?.pushModule(module)
     }
     
     func containerForModal() -> ModalContainer? {
-        return self.moduleService.navigation?.containerForModal()
+//        return self.moduleService.navigation?.containerForModal()
+        let vc = UIViewController()
+        return ModalContainer(view: vc.view, viewController: vc)
     }
     
     func setupBarButtons() {
