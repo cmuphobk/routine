@@ -10,8 +10,8 @@ enum ApplicationCoordinatorActionType {
 
 class ApplicationCoordinatorHandler: CoordinatorHandler<ApplicationCoordinatorActionType> { }
 
-class ApplicationCoordinator: Coordinatorable<ApplicationCoordinatorHandler> {
-
+class ApplicationCoordinator: Coordinatorable<ApplicationCoordinatorHandler>, NavigationConfiguration {
+    
     var coordinatorFactory: CoordinatorFactory
 
     var menuCoordinator: MenuCoordinator!

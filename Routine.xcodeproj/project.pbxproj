@@ -41,7 +41,7 @@
 		41A533A422074C04009A735E /* LocalNotificationServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */; };
 		41A533A622074C10009A735E /* WindowServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A522074C10009A735E /* WindowServiceAssembly.swift */; };
 		41A533A822077604009A735E /* ServiceProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A722077604009A735E /* ServiceProviderAssembly.swift */; };
-		41A533AC220A0A94009A735E /* NavigatorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AB220A0A94009A735E /* NavigatorInterface.swift */; };
+		41A533AC220A0A94009A735E /* NavigationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AB220A0A94009A735E /* NavigationConfiguration.swift */; };
 		41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AD220A0C22009A735E /* MenuModuleRouter.swift */; };
 		41A6B853220D92750023CE19 /* ModalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B852220D92750023CE19 /* ModalContainer.swift */; };
 		41A6B864220ED7D00023CE19 /* StringServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */; };
@@ -370,7 +370,7 @@
 		41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationServiceAssembly.swift; sourceTree = "<group>"; };
 		41A533A522074C10009A735E /* WindowServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowServiceAssembly.swift; sourceTree = "<group>"; };
 		41A533A722077604009A735E /* ServiceProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderAssembly.swift; sourceTree = "<group>"; };
-		41A533AB220A0A94009A735E /* NavigatorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorInterface.swift; sourceTree = "<group>"; };
+		41A533AB220A0A94009A735E /* NavigationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfiguration.swift; sourceTree = "<group>"; };
 		41A533AD220A0C22009A735E /* MenuModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleRouter.swift; sourceTree = "<group>"; };
 		41A6B852220D92750023CE19 /* ModalContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalContainer.swift; sourceTree = "<group>"; };
 		41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringServiceInterface.swift; sourceTree = "<group>"; };
@@ -1659,7 +1659,7 @@
 			children = (
 				ED45FBC9219764D500E81497 /* AnimateLaunchScreen */,
 				41A533A9220A0A4B009A735E /* BackgroundViewController */,
-				41A533AB220A0A94009A735E /* NavigatorInterface.swift */,
+				41A533AB220A0A94009A735E /* NavigationConfiguration.swift */,
 				41A6B852220D92750023CE19 /* ModalContainer.swift */,
 				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
 			);
@@ -2533,7 +2533,7 @@
 				ED45FBEC2199D08F00E81497 /* MedicineCoursePresenter.swift in Sources */,
 				41A5339622072438009A735E /* ModuleServiceAssembly.swift in Sources */,
 				EDC891DD21CE97150002CD9E /* WindowServiceInterface.swift in Sources */,
-				41A533AC220A0A94009A735E /* NavigatorInterface.swift in Sources */,
+				41A533AC220A0A94009A735E /* NavigationConfiguration.swift in Sources */,
 				866B3B0421AEDCC90078361A /* DrugsListAssembly.swift in Sources */,
 				EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */,
 				860AC5E221B26FD8007317B2 /* MedicineType.swift in Sources */,

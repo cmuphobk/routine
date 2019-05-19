@@ -41,10 +41,10 @@ protocol ModalObtainer: class {
     func containerForModal() -> ModalContainer?
 }
 
-extension ModalObtainer where Self: Coordinatorable {
+extension ModalObtainer where Self: NavigationContainer {
     func containerForModal() -> ModalContainer? {
-        guard let view = self.view else { return nil }
-        return ModalContainer(view: view, viewController: self)
+        guard let view = self.navigationController.view else { return nil }
+        return ModalContainer(view: view, viewController: self.navigationController)
     }
 }
 
