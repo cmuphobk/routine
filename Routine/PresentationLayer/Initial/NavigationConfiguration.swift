@@ -6,24 +6,66 @@ enum MessageType {
     case warning
 }
 
+// MARK: - NavigationContainer
+
+protocol NavigationContainer: class {
+    // MARK: - required
+    
+    var navigationController: UINavigationController { get }
+    
+    // MARK: - optional
+    
+    var currentViewController: UIViewController? { get }
+    var view: UIView { get }
+    
+    var statusHeight: CGFloat { get }
+    var navHeight: CGFloat { get }
+    var statusNavHeight: CGFloat { get }
+}
+
+extension NavigationContainer {
+    var currentViewController: UIViewController? { return self.navigationController.viewControllers.last }
+    
+    var view: UIView { return self.navigationController.view }
+    
+    var statusHeight: CGFloat { return UIApplication.shared.statusBarFrame.height }
+    var navHeight: CGFloat { return self.navigationController.navigationBar.frame.height }
+    var statusNavHeight: CGFloat { return self.statusHeight + self.navHeight }
+}
+
+// MARK: - ModalObtainer
+
 protocol ModalObtainer: class {
+    // MARK: - methods
+    
     func containerForModal() -> ModalContainer?
 }
 
-extension ModalObtainer where Self: UIViewController {
+extension ModalObtainer where Self: Coordinatorable {
     func containerForModal() -> ModalContainer? {
         guard let view = self.view else { return nil }
         return ModalContainer(view: view, viewController: self)
     }
 }
 
-protocol NavigationBarConfiguration: class {
+// MARK: - NavigationBarConfiguration
+
+protocol NavigationBarConfigurationDelegate: class {
+    func hideMenu()
+    func openMenu()
+}
+
+protocol NavigationBarConfigurationIdiomChecker: class {
+    var userInterfaceIdiom: UIUserInterfaceIdiom { get }
+}
+
+protocol NavigationBarConfiguration: NavigationContainer {
+    // MARK: - required
     
-    var windowService: WindowService! { get set }
-    var moduleService: ModuleService! { get set }
+    var checker: NavigationBarConfigurationIdiomChecker? { get set }
+    var delegate: NavigationBarConfigurationDelegate? { get set }
     
-    var navigationController: UINavigationController { get }
-    var currentViewController: UIViewController? { get }
+    // MARK: - methods
     
     func configureTransparentNavigationBar()
     func configureNavigationBarWithColor(_ color: UIColor)
@@ -40,8 +82,8 @@ protocol NavigationBarConfiguration: class {
 extension NavigationBarConfiguration {
     
     func emptyCustomBarLeftButtonAction() {
-        if self.windowService.userInterfaceIdiom != .pad {
-//            self.moduleService.navigation?.hideMenu()
+        if let checker = self.checker, checker.userInterfaceIdiom != .pad {
+            self.delegate?.hideMenu()
         }
         let emptyLeftBarButtonCustom = UIButton(type: .custom)
         emptyLeftBarButtonCustom.isUserInteractionEnabled = false
@@ -51,16 +93,18 @@ extension NavigationBarConfiguration {
     }
     
     func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector) {
-        if self.windowService.userInterfaceIdiom == .pad {
-            self.emptyCustomBarLeftButtonAction()
-//            self.moduleService.navigation?.openMenu()
-        } else {
-            let leftBarButtonCustom = UIButton(type: .custom)
-            leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
-            leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
-            leftBarButtonCustom.setImage(icon, for: .normal)
-            leftBarButtonCustom.addTarget(target, action: action, for: .touchDown)
-            self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+        if let checker = self.checker {
+            if checker.userInterfaceIdiom == .pad {
+                self.emptyCustomBarLeftButtonAction()
+                self.delegate?.openMenu()
+            } else {
+                let leftBarButtonCustom = UIButton(type: .custom)
+                leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
+                leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
+                leftBarButtonCustom.setImage(icon, for: .normal)
+                leftBarButtonCustom.addTarget(target, action: action, for: .touchDown)
+                self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+            }
         }
     }
     
@@ -74,16 +118,18 @@ extension NavigationBarConfiguration {
     }
     
     func customBarLeftTextButtonAction(text: String, target: Any, action: Selector) {
-        if self.windowService.userInterfaceIdiom == .pad {
-            self.emptyCustomBarLeftButtonAction()
-//            self.moduleService.navigation?.openMenu()
-        } else {
-            let leftBarButtonCustom = UIButton(type: .custom)
-            leftBarButtonCustom.setTitle(text, for: .normal)
-            leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
-            leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: leftBarButtonCustom.intrinsicContentSize.width, height: 32.0)
-            leftBarButtonCustom.addTarget(target, action: action, for: .touchUpInside)
-            self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+        if let checker = self.checker {
+            if checker.userInterfaceIdiom == .pad {
+                self.emptyCustomBarLeftButtonAction()
+                self.delegate?.openMenu()
+            } else {
+                let leftBarButtonCustom = UIButton(type: .custom)
+                leftBarButtonCustom.setTitle(text, for: .normal)
+                leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
+                leftBarButtonCustom.frame = CGRect(x: 0.0, y: 0.0, width: leftBarButtonCustom.intrinsicContentSize.width, height: 32.0)
+                leftBarButtonCustom.addTarget(target, action: action, for: .touchUpInside)
+                self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonCustom)
+            }
         }
     }
     
@@ -117,13 +163,15 @@ extension NavigationBarConfiguration {
     
 }
 
-protocol MenuConfiguration: class {
+// MARK: - MenuConfiguration
+
+protocol MenuConfiguration: NavigationContainer {
+    // MARK: - required
     
     var menuModuleViewController: UIViewController { get set }
-    var navigationController: UINavigationController { get set }
-    var view: UIView { get }
-    
     var menuViewWidth: CGFloat { get set }
+    
+    // MARK: - methods
     
     func triggerMenu()
     func openMenu()
@@ -131,8 +179,6 @@ protocol MenuConfiguration: class {
 }
 
 extension MenuConfiguration {
-    
-    var view: UIView { return self.navigationController.view }
     
     func triggerMenu() {
         if self.menuModuleViewController.view.frame.origin.x < 0 {
@@ -162,27 +208,24 @@ extension MenuConfiguration {
     
 }
 
-protocol MessageConfiguration: class {
+// MARK: - MessageConfiguration
 
-    var navigationController: UINavigationController { get set }
-    var currentViewController: UIViewController? { get set }
+protocol MessageConfiguration: NavigationContainer {
+
+    // MARK: - required
+    
+    var window: UIWindow { get }
+    var textOffset: CGFloat { get set }
+    var iconHeight: CGFloat { get set }
+    var leftOffset: CGFloat { get set }
+    
+    // MARK: - optional
     
     var errorLabel: StandartOffsetLabel! { get set }
     var errorImageView: UIImageView! { get set }
     var taskHideError: DispatchWorkItem! { get set }
     
-    var window: UIWindow { get }
-    
-    var view: UIView { get }
-    
-    // MARK: - Constants
-    var textOffset: CGFloat { get set }
-    var iconHeight: CGFloat { get set }
-    var leftOffset: CGFloat { get set }
-    
-    var statusHeight: CGFloat { get }
-    var navHeight: CGFloat { get }
-    var statusNavHeight: CGFloat { get }
+    // MARK: - methods
     
     func showMessageWithText(_ text: String, andType type: MessageType)
     func showMessageWithText(_ text: String, andType type: MessageType, sender: Any?)
@@ -192,14 +235,6 @@ protocol MessageConfiguration: class {
 }
 
 extension MessageConfiguration {
-    
-    var currentViewController: UIViewController? { return self.navigationController.viewControllers.last }
-    
-    var view: UIView { return self.navigationController.view }
-    
-    var statusHeight: CGFloat { return UIApplication.shared.statusBarFrame.height }
-    var navHeight: CGFloat { return self.navigationController.navigationBar.frame.height }
-    var statusNavHeight: CGFloat { return self.statusHeight + self.navHeight }
     
     func showMessageWithText(_ text: String, andType type: MessageType) {
         self.showMessageWithText(text, andType: type, sender: nil)
