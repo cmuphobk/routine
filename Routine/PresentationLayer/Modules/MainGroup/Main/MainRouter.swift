@@ -2,14 +2,14 @@ import UIKit
 
 final class MainRouter: MainModuleRouting {
     weak var viewController: UIViewController?
-    var moduleService: ModuleServiceInterface!
+    var coordinator: MainCoordinator!
     
     func openCourseModule() {
         
-        self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
-            guard let module = medicineCourseModuleInput as? Module else { return }
+//        self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
+//            guard let module = medicineCourseModuleInput as? Module else { return }
 //            self.moduleService.navigation?.pushModule(module)
-        }
+//        }
         
     }
     

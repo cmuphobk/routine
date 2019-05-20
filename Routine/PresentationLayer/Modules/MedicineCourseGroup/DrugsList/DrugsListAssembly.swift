@@ -2,7 +2,7 @@ import UIKit
 
 enum DrugsListAssembly {
     
-    static func buildDrugsListScreenModuleWithModuleOutput(_ moduleOutput: DrugsListModuleOutput?, completion: (UIViewController?, DrugsListModuleInput?) -> Void) {
+    static func buildDrugsListScreenModule(with coordinator: MedicineCourseCoordinator, moduleOutput: DrugsListModuleOutput?, completion: (UIViewController?, DrugsListModuleInput?) -> Void) {
         // Creating module components
         guard let moduleViewController = R.storyboard.drugsList.drugsListViewController() else {
             completion(nil, nil)
@@ -21,7 +21,7 @@ enum DrugsListAssembly {
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.drugsListTableViewFactory = DrugsListTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
-        router.moduleService = moduleService
+        router.coordinator = coordinator
         
         completion(moduleViewController, presenter)
     }

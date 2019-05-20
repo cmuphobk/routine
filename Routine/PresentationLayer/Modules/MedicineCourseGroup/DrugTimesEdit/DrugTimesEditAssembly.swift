@@ -3,8 +3,9 @@ import UIKit
 
 enum DrugTimesEditAssembly {
     
-    static func buildDrugTimesEditScreenWithModuleOutput(_ moduleOutput: DrugTimesEditModuleOutput?,
-                                                         completion: (UIViewController?, DrugTimesEditModuleInput?) -> Void) {
+    static func buildDrugTimesEditScreen(with coordinator: MedicineCourseCoordinator,
+                                         moduleOutput: DrugTimesEditModuleOutput?,
+                                         completion: (UIViewController?, DrugTimesEditModuleInput?) -> Void) {
         
         // Creating module components
         guard let moduleViewController = R.storyboard.drugTimesEdit.drugTimesEdit() else {
@@ -26,7 +27,7 @@ enum DrugTimesEditAssembly {
 
         router.viewController = moduleViewController
         router.viewController = moduleViewController
-        router.moduleService = AppDelegate.serviceProvider.makeModuleService()
+        router.coordinator = coordinator
         
         completion(moduleViewController, presenter)
         

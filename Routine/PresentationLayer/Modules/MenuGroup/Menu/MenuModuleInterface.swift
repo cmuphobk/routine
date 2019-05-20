@@ -5,9 +5,6 @@ protocol MenuModuleInput: class {
     func selectMenuItemWithName(_ moduleName: String)
 }
 
-protocol MenuModuleOutput: class {
-}
-
 protocol MenuModuleViewInput: class {
     func setupInitialState()
     

@@ -172,56 +172,13 @@ extension NavigationBarConfiguration {
 
 // MARK: - MenuConfiguration
 
-protocol MenuConfigurationDelegate: class {
-    func obtainMenuModuleViewController() -> UIViewController
-    func obtainMenuViewWidth() -> CGFloat
-}
-
 protocol MenuConfiguration: NavigationContainer {
-    // MARK: - optional
-    
-    var menuConfigurationDelegate: MenuConfigurationDelegate? { get set }
     
     // MARK: - methods
     
     func triggerMenu()
     func hideMenu()
     func openMenu()
-}
-
-extension MenuConfiguration {
-    
-    func triggerMenu() {
-        guard let menuModuleViewController = self.menuConfigurationDelegate?.obtainMenuModuleViewController() else { return }
-        if menuModuleViewController.view.frame.origin.x < 0 {
-            self.openMenu()
-        } else {
-            self.hideMenu()
-        }
-    }
-    
-    func openMenu() {
-        guard let menuModuleViewController = self.menuConfigurationDelegate?.obtainMenuModuleViewController() else { return }
-        guard let menuViewWidth = self.menuConfigurationDelegate?.obtainMenuViewWidth() else { return }
-        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: {
-            menuModuleViewController.view.frame = CGRect(x: 0, y: 0, width: menuViewWidth, height: self.view.frame.height)
-            self.navigationController.view.frame = CGRect(x: menuViewWidth, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            // FIXME: - wtf
-            menuModuleViewController.viewWillAppear(false)
-            self.view.setNeedsLayout()
-        }, completion: nil)
-    }
-    
-    func hideMenu() {
-        guard let menuModuleViewController = self.menuConfigurationDelegate?.obtainMenuModuleViewController() else { return }
-        guard let menuViewWidth = self.menuConfigurationDelegate?.obtainMenuViewWidth() else { return }
-        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: {
-            menuModuleViewController.view.frame = CGRect(x: -menuViewWidth, y: 0, width: menuViewWidth, height: self.view.frame.height)
-            self.navigationController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            self.view.setNeedsLayout()
-        }, completion: nil)
-    }
-    
 }
 
 protocol MessageConfigurationDelegate: class {
@@ -389,14 +346,6 @@ extension NavigationConfiguration {
             print(newValue ?? "no value")
         }
     }
-    var menuConfigurationDelegate: MenuConfigurationDelegate? {
-        get {
-            return self as? MenuConfigurationDelegate
-        }
-        set {
-            print(newValue ?? "no value")
-        }
-    }
     var messageConfigurationDelegate: MessageConfigurationDelegate? {
         get {
             return self as? MessageConfigurationDelegate
@@ -413,22 +362,6 @@ extension IdiomCheckerDelegate where Self: NavigationConfiguration {
             return .phone
         }
         return idiomCheckerDelegate.userInterfaceIdiom
-    }
-}
-
-extension MenuConfigurationDelegate where Self: NavigationConfiguration {
-    func obtainMenuModuleViewController() -> UIViewController {
-        guard let menuConfigurationDelegate = self.parentNavigationConfiguration as? MenuConfigurationDelegate else {
-            return UIViewController()
-        }
-        return menuConfigurationDelegate.obtainMenuModuleViewController()
-    }
-    
-    func obtainMenuViewWidth() -> CGFloat {
-        guard let menuConfigurationDelegate = self.parentNavigationConfiguration as? MenuConfigurationDelegate else {
-            return 0.0
-        }
-        return menuConfigurationDelegate.obtainMenuViewWidth()
     }
 }
 
@@ -473,5 +406,29 @@ extension MessageConfigurationDelegate where Self: NavigationConfiguration {
             return UIImageView()
         }
         return messageConfigurationDelegate.obtainErrorImageView()
+    }
+}
+
+
+extension MenuConfiguration where Self: NavigationConfiguration {
+    func triggerMenu() {
+        guard let menuConfiguration = self.parentNavigationConfiguration else {
+            return
+        }
+        menuConfiguration.triggerMenu()
+    }
+    
+    func openMenu() {
+        guard let menuConfiguration = self.parentNavigationConfiguration else {
+            return
+        }
+        menuConfiguration.openMenu()
+    }
+    
+    func hideMenu() {
+        guard let menuConfiguration = self.parentNavigationConfiguration else {
+            return
+        }
+        menuConfiguration.hideMenu()
     }
 }

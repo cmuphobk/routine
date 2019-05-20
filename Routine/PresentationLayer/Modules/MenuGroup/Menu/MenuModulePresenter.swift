@@ -1,8 +1,6 @@
 import UIKit
 
-class MenuModulePresenter {
-    var moduleOutput: MenuModuleOutput!
-    
+class MenuModulePresenter {    
     weak var view: MenuModuleViewInput?
     var router: MenuModuleRouting!
     

@@ -3,7 +3,7 @@ import UIKit
 
 enum DrugPeriodicEditAssembly {
     
-    static func buildDrugPeriodicEditScreenWithModuleOutput(_ moduleOutput: DrugPeriodicEditModuleOutput?, completion: (UIViewController?, DrugPeriodicEditModuleInput?) -> Void) {
+    static func buildDrugPeriodicEditScreen(with coordinator: MedicineCourseCoordinator, moduleOutput: DrugPeriodicEditModuleOutput?, completion: (UIViewController?, DrugPeriodicEditModuleInput?) -> Void) {
         
         // Creating module components
         guard let moduleViewController = R.storyboard.drugPeriodicEdit.drugPeriodicEdit() else {
@@ -26,7 +26,7 @@ enum DrugPeriodicEditAssembly {
         
         router.viewController = moduleViewController
         router.viewController = moduleViewController
-        router.moduleService = AppDelegate.serviceProvider.makeModuleService()
+        router.coordinator = coordinator
         
         completion(moduleViewController, presenter)
         

@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController,
                                                             flowHandler: nil)
+        
+        applicationCoordinator.windowService = AppDelegate.serviceProvider.makeWindowService()
+        applicationCoordinator.moduleService = AppDelegate.serviceProvider.makeModuleService()
 
         self.window = window
         self.applicationCoordinator = applicationCoordinator

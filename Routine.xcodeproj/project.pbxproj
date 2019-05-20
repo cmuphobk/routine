@@ -28,9 +28,6 @@
 		41A533882206EF27009A735E /* ServiceProviderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533872206EF27009A735E /* ServiceProviderInterface.swift */; };
 		41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533892206F4A9009A735E /* NetworkRequest.swift */; };
 		41A5338D22071615009A735E /* Date+Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5338C22071615009A735E /* Date+Timestamp.swift */; };
-		41A533902207223A009A735E /* ModuleFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5338F2207223A009A735E /* ModuleFactoryAssembly.swift */; };
-		41A533922207225B009A735E /* ModuleFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533912207225B009A735E /* ModuleFactoryInterface.swift */; };
-		41A5339422072266009A735E /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5339322072266009A735E /* ModuleFactory.swift */; };
 		41A5339622072438009A735E /* ModuleServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5339522072438009A735E /* ModuleServiceAssembly.swift */; };
 		41A5339822074B5D009A735E /* StorageServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5339722074B5D009A735E /* StorageServiceAssembly.swift */; };
 		41A5339A22074B79009A735E /* ReachabilityServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5339922074B79009A735E /* ReachabilityServiceAssembly.swift */; };
@@ -356,9 +353,6 @@
 		41A533872206EF27009A735E /* ServiceProviderInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderInterface.swift; sourceTree = "<group>"; };
 		41A533892206F4A9009A735E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		41A5338C22071615009A735E /* Date+Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Timestamp.swift"; sourceTree = "<group>"; };
-		41A5338F2207223A009A735E /* ModuleFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryAssembly.swift; sourceTree = "<group>"; };
-		41A533912207225B009A735E /* ModuleFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryInterface.swift; sourceTree = "<group>"; };
-		41A5339322072266009A735E /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		41A5339522072438009A735E /* ModuleServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleServiceAssembly.swift; sourceTree = "<group>"; };
 		41A5339722074B5D009A735E /* StorageServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceAssembly.swift; sourceTree = "<group>"; };
 		41A5339922074B79009A735E /* ReachabilityServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceAssembly.swift; sourceTree = "<group>"; };
@@ -753,24 +747,6 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		41A5338E220721ED009A735E /* ModuleFactory */ = {
-			isa = PBXGroup;
-			children = (
-				41A5338F2207223A009A735E /* ModuleFactoryAssembly.swift */,
-				41A533912207225B009A735E /* ModuleFactoryInterface.swift */,
-				41A5339322072266009A735E /* ModuleFactory.swift */,
-			);
-			path = ModuleFactory;
-			sourceTree = "<group>";
-		};
-		41A533A9220A0A4B009A735E /* BackgroundViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */,
-			);
-			path = BackgroundViewController;
-			sourceTree = "<group>";
-		};
 		41A6B855220EC43E0023CE19 /* MainGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +804,7 @@
 			isa = PBXGroup;
 			children = (
 				4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */,
+				4172F8AB228AE2BE008A5AE9 /* CoordinatorFactory.swift */,
 				41A6B856220EC44A0023CE19 /* MenuGroup */,
 				41A6B855220EC43E0023CE19 /* MainGroup */,
 				ED7874B821A338F800FEA4DB /* MedicineCourseGroup */,
@@ -981,7 +958,7 @@
 			isa = PBXGroup;
 			children = (
 				4172F896228AE035008A5AE9 /* Coordinator.swift */,
-				4172F8AB228AE2BE008A5AE9 /* CoordinatorFactory.swift */,
+				41A533AB220A0A94009A735E /* NavigationConfiguration.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1664,8 +1641,7 @@
 			isa = PBXGroup;
 			children = (
 				ED45FBC9219764D500E81497 /* AnimateLaunchScreen */,
-				41A533A9220A0A4B009A735E /* BackgroundViewController */,
-				41A533AB220A0A94009A735E /* NavigationConfiguration.swift */,
+				ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */,
 				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
 			);
 			path = Initial;
@@ -1867,7 +1843,6 @@
 		EDC891D621CE799F0002CD9E /* ModuleService */ = {
 			isa = PBXGroup;
 			children = (
-				41A5338E220721ED009A735E /* ModuleFactory */,
 				41A5339522072438009A735E /* ModuleServiceAssembly.swift */,
 				EDC891DE21CE9C000002CD9E /* ModuleServiceInterface.swift */,
 				ED8F69CB2179B971001DBDAA /* ModuleService.swift */,
@@ -2402,7 +2377,6 @@
 				862E300E21D09B930097991D /* MedicineDrugService.swift in Sources */,
 				ED8F6A072179B971001DBDAA /* MainRouter.swift in Sources */,
 				866B3B0221AEDCC90078361A /* DrugsListViewController.swift in Sources */,
-				41A533922207225B009A735E /* ModuleFactoryInterface.swift in Sources */,
 				ED082FCC21CFFD0400C892C8 /* ReachabilityServiceInterface.swift in Sources */,
 				41A533A822077604009A735E /* ServiceProviderAssembly.swift in Sources */,
 				EDDA635F21B3ED31005AE695 /* MultipartRequestObject.swift in Sources */,
@@ -2461,7 +2435,6 @@
 				EDE945CC21C67329009BC60A /* RESTCode.swift in Sources */,
 				ED8F6A602179F126001DBDAA /* DownloadRequestObject.swift in Sources */,
 				41A6B871220ED8150023CE19 /* DateServiceInterface.swift in Sources */,
-				41A533902207223A009A735E /* ModuleFactoryAssembly.swift in Sources */,
 				ED78749A21A1C4D400FEA4DB /* StandartPagePicker.swift in Sources */,
 				EDA9A63521E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift in Sources */,
 				EDA9A64E21E750CC00D99B09 /* RoutineView.swift in Sources */,
@@ -2606,7 +2579,6 @@
 				ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */,
 				860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */,
 				41A533A022074BBC009A735E /* MagicalRecordServiceAssembly.swift in Sources */,
-				41A5339422072266009A735E /* ModuleFactory.swift in Sources */,
 				41A533A422074C04009A735E /* LocalNotificationServiceAssembly.swift in Sources */,
 				ED45FBEF2199D08F00E81497 /* MedicineCourseTableViewFactory.swift in Sources */,
 				8675B60021C21A5B005F631C /* LabelCell.swift in Sources */,

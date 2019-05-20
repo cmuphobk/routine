@@ -11,9 +11,7 @@ typealias ModuleDescription = (name: String, alias: String)
 final class ModuleService: ModuleServiceInterface {
     
     static let shared = ModuleService()
-    
-    var moduleFactory: ModuleFactoryInterface!
-    
+        
     private init() {}
     
     func obtainAvailableModulesAndActionsIds() -> [ModuleDescription] {

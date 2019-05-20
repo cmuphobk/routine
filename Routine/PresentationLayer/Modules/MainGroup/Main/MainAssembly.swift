@@ -2,7 +2,7 @@ import UIKit
 
 enum MainAssembly {
     
-    static func buildMainScreenModule(_ completion: (UIViewController?, MainModuleInput?) -> Void) {
+    static func buildMainScreenModuleWith(coordinator: MainCoordinator, _ completion: (UIViewController?, MainModuleInput?) -> Void) {
         // Creating module components
         guard let moduleViewController = R.storyboard.main.mainViewController() else {
             completion(nil, nil)
@@ -10,7 +10,6 @@ enum MainAssembly {
         }
         let presenter = MainPresenter()
         let router = MainRouter()
-        let moduleService = AppDelegate.serviceProvider.makeModuleService()
         
         // Inject properties
         moduleViewController.output = presenter
@@ -19,7 +18,7 @@ enum MainAssembly {
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.mainTableViewFactory = MainTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
-        router.moduleService = moduleService
+        router.coordinator = coordinator
         
         completion(moduleViewController, presenter)
     }

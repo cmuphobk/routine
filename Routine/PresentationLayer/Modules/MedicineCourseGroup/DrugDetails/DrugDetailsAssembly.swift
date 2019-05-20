@@ -2,7 +2,7 @@ import UIKit
 
 enum DrugDetailsAssembly {
     
-    static func buildDrugDetailsScreenModuleWithModuleOutput(_ moduleOutput: DrugDetailsModuleOutput?, completion: (UIViewController?, DrugDetailsModuleInput?) -> Void) {
+    static func buildDrugDetailsScreenModule(with coordinator: MedicineCourseCoordinator, moduleOutput: DrugDetailsModuleOutput?, completion: (UIViewController?, DrugDetailsModuleInput?) -> Void) {
         // Creating module components
         guard let moduleViewController = R.storyboard.drugDetails.drugDetailsViewController() else {
             completion(nil, nil)
@@ -20,7 +20,7 @@ enum DrugDetailsAssembly {
         presenter.router = router
         presenter.moduleOutput = moduleOutput
         router.viewController = moduleViewController
-        router.moduleService = moduleService
+        router.coordinator = coordinator
         
         completion(moduleViewController, presenter)
     }

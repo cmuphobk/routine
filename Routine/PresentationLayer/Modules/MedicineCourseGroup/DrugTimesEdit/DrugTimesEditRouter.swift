@@ -3,7 +3,7 @@ import UIKit
 
 final class DrugTimesEditRouter: DrugTimesEditModuleRouter {
     weak var viewController: UIViewController?
-    var moduleService: ModuleServiceInterface!
+    var coordinator: MedicineCourseCoordinator!
     
     func closeModule() {
 //        self.moduleService.navigation?.popModule()

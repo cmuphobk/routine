@@ -16,7 +16,6 @@ class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandle
     
     var parentNavigationConfiguration: NavigationConfiguration?
     weak var idiomCheckerDelegate: IdiomCheckerDelegate?
-    weak var menuConfigurationDelegate: MenuConfigurationDelegate?
     weak var messageConfigurationDelegate: MessageConfigurationDelegate?
     var taskHideError: DispatchWorkItem!
     
