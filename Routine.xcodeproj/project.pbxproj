@@ -43,7 +43,6 @@
 		41A533A822077604009A735E /* ServiceProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A722077604009A735E /* ServiceProviderAssembly.swift */; };
 		41A533AC220A0A94009A735E /* NavigationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AB220A0A94009A735E /* NavigationConfiguration.swift */; };
 		41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AD220A0C22009A735E /* MenuModuleRouter.swift */; };
-		41A6B853220D92750023CE19 /* ModalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B852220D92750023CE19 /* ModalContainer.swift */; };
 		41A6B864220ED7D00023CE19 /* StringServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */; };
 		41A6B866220ED7DA0023CE19 /* StringServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B865220ED7DA0023CE19 /* StringServiceAssembly.swift */; };
 		41A6B868220ED7E30023CE19 /* StringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B867220ED7E30023CE19 /* StringService.swift */; };
@@ -342,7 +341,7 @@
 		411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewModel.swift; sourceTree = "<group>"; };
 		411E234B224412C40003CEE0 /* RoutineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionView.swift; sourceTree = "<group>"; };
 		411E235122494DC70003CEE0 /* RoutineCellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellOwner.swift; sourceTree = "<group>"; };
-		4172F896228AE035008A5AE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Routine/Coordinator.swift; sourceTree = SOURCE_ROOT; };
+		4172F896228AE035008A5AE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Routine/Coordinator/Coordinator.swift; sourceTree = SOURCE_ROOT; };
 		4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		4172F89B228AE0B8008A5AE9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		4172F89D228AE0C3008A5AE9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -372,7 +371,6 @@
 		41A533A722077604009A735E /* ServiceProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderAssembly.swift; sourceTree = "<group>"; };
 		41A533AB220A0A94009A735E /* NavigationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfiguration.swift; sourceTree = "<group>"; };
 		41A533AD220A0C22009A735E /* MenuModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleRouter.swift; sourceTree = "<group>"; };
-		41A6B852220D92750023CE19 /* ModalContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalContainer.swift; sourceTree = "<group>"; };
 		41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringServiceInterface.swift; sourceTree = "<group>"; };
 		41A6B865220ED7DA0023CE19 /* StringServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringServiceAssembly.swift; sourceTree = "<group>"; };
 		41A6B867220ED7E30023CE19 /* StringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringService.swift; sourceTree = "<group>"; };
@@ -829,7 +827,6 @@
 		41A6B85C220ECFB60023CE19 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4172F8AB228AE2BE008A5AE9 /* CoordinatorFactory.swift */,
 				4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */,
 				41A6B856220EC44A0023CE19 /* MenuGroup */,
 				41A6B855220EC43E0023CE19 /* MainGroup */,
@@ -978,6 +975,15 @@
 				41F06B6B228AA29500D28682 /* StandartCheckBoxButtonViewModel.swift */,
 			);
 			path = StandartCheckBoxButton;
+			sourceTree = "<group>";
+		};
+		41FC81032292C45400D1E448 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4172F896228AE035008A5AE9 /* Coordinator.swift */,
+				4172F8AB228AE2BE008A5AE9 /* CoordinatorFactory.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
@@ -1543,7 +1549,7 @@
 			children = (
 				ED1F8EE521F48EFB00D467CB /* Routine.entitlements */,
 				ED8F69DA2179B971001DBDAA /* RoutineFramework */,
-				4172F896228AE035008A5AE9 /* Coordinator.swift */,
+				41FC81032292C45400D1E448 /* Coordinator */,
 				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
 				41CAA230227F186F00188189 /* R.generated.swift */,
 				ED8F6A312179C08A001DBDAA /* CoreLayer */,
@@ -1660,7 +1666,6 @@
 				ED45FBC9219764D500E81497 /* AnimateLaunchScreen */,
 				41A533A9220A0A4B009A735E /* BackgroundViewController */,
 				41A533AB220A0A94009A735E /* NavigationConfiguration.swift */,
-				41A6B852220D92750023CE19 /* ModalContainer.swift */,
 				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
 			);
 			path = Initial;
@@ -2543,7 +2548,6 @@
 				866B3B0E21AFC3ED0078361A /* MedicineCourseService.swift in Sources */,
 				862F439D21CE93EF00CB127F /* SingleButtonCell.swift in Sources */,
 				411E233D2221CE370003CEE0 /* String+DoubleFromString.swift in Sources */,
-				41A6B853220D92750023CE19 /* ModalContainer.swift in Sources */,
 				ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */,
 				ED8F6A9C217E2B12001DBDAA /* StandartAcceptButton.swift in Sources */,
 				86F9D27021EF01CC000ABB67 /* DrugPeriodicEditPresenter.swift in Sources */,

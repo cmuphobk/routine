@@ -1,6 +1,6 @@
 import UIKit
 
-class CoordinatorFactory {
+extension CoordinatorFactory {
     
     func makeMenuCoordinator(navigationController: UINavigationController,
                              flowHandler: MenuCoordinatorHandler) -> MenuCoordinator {

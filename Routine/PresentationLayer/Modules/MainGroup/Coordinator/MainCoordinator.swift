@@ -10,9 +10,15 @@ enum MainCoordinatorActionType {
 
 class MainCoordinatorHandler: CoordinatorHandler<MainCoordinatorActionType> { }
 
-class MainCoordinator: Coordinatorable<MainCoordinatorHandler> {
-    
+class MainCoordinator: Coordinatorable<MainCoordinatorHandler>, NavigationConfiguration {
+        
     var factory: MainCoordinatorFactory
+    
+    var parentNavigationConfiguration: NavigationConfiguration?
+    weak var idiomCheckerDelegate: IdiomCheckerDelegate?
+    weak var menuConfigurationDelegate: MenuConfigurationDelegate?
+    weak var messageConfigurationDelegate: MessageConfigurationDelegate?
+    var taskHideError: DispatchWorkItem!
     
     override init(navigationController: UINavigationController,
                   flowHandler: MainCoordinatorHandler?) {

@@ -52,8 +52,13 @@ class CoordinatorHandler<ActionType>: CoordinatorHandlerProtocol {
     }
 }
 
+class CoordinatorFactory {
+    
+}
+
 class Coordinatorable<T: CoordinatorHandlerProtocol>: Navigationable {
     var navigationController: UINavigationController
+    var coordinatorFactory = CoordinatorFactory()
     var flowHandler: T?
     init(navigationController: UINavigationController, flowHandler: T?) {
         self.navigationController = navigationController

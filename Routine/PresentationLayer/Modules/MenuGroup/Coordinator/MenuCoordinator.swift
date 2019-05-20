@@ -9,9 +9,16 @@ enum MenuCoordinatorActionType {
 
 class MenuCoordinatorHandler: CoordinatorHandler<MenuCoordinatorActionType> { }
 
-class MenuCoordinator: Coordinatorable<MenuCoordinatorHandler> {
-
+class MenuCoordinator: Coordinatorable<MenuCoordinatorHandler>, NavigationConfiguration {
+    
     var factory: MenuCoordinatorFactory
+    var menuViewController: UIViewController!
+    
+    var parentNavigationConfiguration: NavigationConfiguration?
+    weak var idiomCheckerDelegate: IdiomCheckerDelegate?
+    weak var menuConfigurationDelegate: MenuConfigurationDelegate?
+    weak var messageConfigurationDelegate: MessageConfigurationDelegate?
+    var taskHideError: DispatchWorkItem!
 
     override init(navigationController: UINavigationController,
                   flowHandler: MenuCoordinatorHandler?) {
@@ -23,14 +30,10 @@ class MenuCoordinator: Coordinatorable<MenuCoordinatorHandler> {
     override func start() {
         self.factory.makeMenuViewController(with: self) { (viewController, _) in
             if let viewController = viewController {
-                self.push(viewController: viewController, animated: true)
+                self.menuViewController = viewController
             }
         }
 
     }
 
-}
-
-extension MenuCoordinator: MenuCoordinating {
-    
 }

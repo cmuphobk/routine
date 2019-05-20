@@ -10,9 +10,15 @@ enum MedicineCourseCoordinatorActionType {
 
 class MedicineCourseCoordinatorHandler: CoordinatorHandler<MedicineCourseCoordinatorActionType> { }
 
-class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandler> {
+class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandler>, NavigationConfiguration {
     
     var factory: MedicineCourseCoordinatorFactory
+    
+    var parentNavigationConfiguration: NavigationConfiguration?
+    weak var idiomCheckerDelegate: IdiomCheckerDelegate?
+    weak var menuConfigurationDelegate: MenuConfigurationDelegate?
+    weak var messageConfigurationDelegate: MessageConfigurationDelegate?
+    var taskHideError: DispatchWorkItem!
     
     override init(navigationController: UINavigationController,
                   flowHandler: MedicineCourseCoordinatorHandler?) {
@@ -29,9 +35,5 @@ class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandle
             }
         }
     }
-    
-}
-
-extension MedicineCourseCoordinator: MedicineCourseCoordinating {
     
 }
