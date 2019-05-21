@@ -4,7 +4,7 @@ class MenuModuleViewController: RoutineViewController {
     
     var output: MenuModuleViewOutput!
     
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
     
     private lazy var tableViewModel = { () -> RoutineTableViewModel in 
         let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)

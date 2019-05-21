@@ -24,8 +24,8 @@ protocol NavigationContainer: class {
     var view: UIView { get }
     
     var statusHeight: CGFloat { get }
-    var navHeight: CGFloat { get }
-    var statusNavHeight: CGFloat { get }
+    var navigationBarHeight: CGFloat { get }
+    var statusBarHeight: CGFloat { get }
 }
 
 extension NavigationContainer {
@@ -34,8 +34,8 @@ extension NavigationContainer {
     var view: UIView { return self.navigationController.view }
     
     var statusHeight: CGFloat { return UIApplication.shared.statusBarFrame.height }
-    var navHeight: CGFloat { return self.navigationController.navigationBar.frame.height }
-    var statusNavHeight: CGFloat { return self.statusHeight + self.navHeight }
+    var navigationBarHeight: CGFloat { return self.navigationController.navigationBar.frame.height }
+    var statusBarHeight: CGFloat { return self.statusHeight + self.navigationBarHeight }
 }
 
 // MARK: - ModalObtainer
@@ -173,13 +173,14 @@ extension NavigationBarConfiguration {
 // MARK: - MenuConfiguration
 
 protocol MenuConfiguration: NavigationContainer {
-    
     // MARK: - methods
     
     func triggerMenu()
     func hideMenu()
     func openMenu()
 }
+
+// MARK: - MessageConfiguration
 
 protocol MessageConfigurationDelegate: class {
     func obtainMessageWidth() -> CGFloat
@@ -190,8 +191,6 @@ protocol MessageConfigurationDelegate: class {
     func obtainErrorLabel() -> StandartOffsetLabel
     func obtainErrorImageView() -> UIImageView
 }
-
-// MARK: - MessageConfiguration
 
 protocol MessageConfiguration: NavigationContainer {
     // MARK: - required
@@ -208,94 +207,6 @@ protocol MessageConfiguration: NavigationContainer {
 
 }
 
-extension MessageConfiguration {
-    
-    func showMessageWithText(_ text: String, andType type: MessageType) {
-        self.showMessageWithText(text, andType: type, sender: nil)
-    }
-    
-    func showMessageWithText(_ text: String, andType type: MessageType, sender: Any? = nil) {
-        if let senderViewController = sender as? UIViewController, self.currentViewController != senderViewController {
-            return
-        }
-        
-        guard let messageWidth = self.messageConfigurationDelegate?.obtainMessageWidth(),
-            let textOffset = self.messageConfigurationDelegate?.obtainTextOffset(),
-            let iconHeight = self.messageConfigurationDelegate?.obtainIconHeight(),
-            let leftOffset = self.messageConfigurationDelegate?.obtainLeftOffset(),
-            let errorLabel = self.messageConfigurationDelegate?.obtainErrorLabel(),
-            let errorImageView = self.messageConfigurationDelegate?.obtainErrorImageView() else { return }
-        
-        errorLabel.numberOfLines = 0
-        errorLabel.font = FontProvider.default.informationMessage
-        errorLabel.alpha = 0.0
-        errorLabel.edgeInsets = UIEdgeInsets(top: self.statusHeight + textOffset, left: leftOffset, bottom: textOffset, right: textOffset)
-        errorLabel.frame = CGRect(x: 0, y: 0, width: messageWidth, height: 0.0)
-        errorLabel.text = text
-        
-        self.navigationController.view.addSubview(errorLabel)
-        
-        errorLabel.addSubview(errorImageView)
-        
-        switch type {
-        case .success:
-            errorLabel.textColor = ColorProvider.default.whiteColor
-            errorLabel.backgroundColor = ColorProvider.messageColors.backgroundGreenColor
-            errorImageView.image = ImageProvider.default.okIcon.withRenderingMode(.alwaysTemplate)
-            errorImageView.tintColor = ColorProvider.default.whiteColor
-        case .error:
-            errorLabel.textColor = ColorProvider.default.whiteColor
-            errorLabel.backgroundColor = ColorProvider.messageColors.backgroundRedColor
-            errorImageView.image = ImageProvider.default.warnIcon.withRenderingMode(.alwaysTemplate)
-            errorImageView.tintColor = ColorProvider.default.whiteColor
-        case .warning:
-            errorLabel.textColor = ColorProvider.default.blackColor
-            errorLabel.backgroundColor = ColorProvider.messageColors.backgroundYellowColor
-            errorImageView.image = ImageProvider.default.warnIcon.withRenderingMode(.alwaysTemplate)
-            errorImageView.tintColor = ColorProvider.default.blackColor
-        }
-        
-        let width = Double(messageWidth - leftOffset - textOffset)
-        let height = FontProvider.default.informationMessage.sizeOfString(string: text, constrainedToWidth: width).height + (textOffset * 2) + 5
-        
-        errorImageView.frame = CGRect(x: textOffset, y: height/2 - iconHeight/2 + self.statusHeight, width: iconHeight, height: iconHeight)
-        errorImageView.contentMode = .scaleAspectFit
-        if #available(iOS 11.0, *) {
-            errorImageView.adjustsImageSizeForAccessibilityContentSizeCategory = true
-        }
-        
-        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            let width = Double(messageWidth - leftOffset - textOffset)
-            let height = FontProvider.default.informationMessage.sizeOfString(string: text, constrainedToWidth: width).height + (textOffset * 2) + 5
-            errorLabel.frame = CGRect(x: 0, y: 0, width: messageWidth, height: height + self.statusHeight)
-            errorLabel.alpha = 1.0
-        })
-        
-        self.taskHideError?.cancel()
-        self.taskHideError = DispatchWorkItem {
-            if !self.taskHideError.isCancelled {
-                self.hideMessages()
-            }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.taskHideError)
-        errorLabel.isUserInteractionEnabled = true
-    }
-    
-    func hideMessages() {
-        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            
-            guard let messageWidth = self.messageConfigurationDelegate?.obtainMessageWidth(),
-                let errorLabel = self.messageConfigurationDelegate?.obtainErrorLabel(),
-                let errorImageView = self.messageConfigurationDelegate?.obtainErrorImageView() else { return }
-            
-            errorLabel.frame = CGRect(x: 0, y: 0, width: messageWidth, height: 0)
-            errorImageView.removeFromSuperview()
-        }, completion: nil)
-    }
-    
-}
-
 protocol NavigationConfiguration:
 ModalObtainer,
 NavigationBarConfiguration,
@@ -304,30 +215,79 @@ MessageConfiguration {
     
     var parentNavigationConfiguration: NavigationConfiguration? { get set }
     
-//    public API
-    
-//    func containerForModal() -> ModalContainer?
-//
-//    func configureTransparentNavigationBar()
-//    func configureNavigationBarWithColor(_ color: UIColor)
-//
-//    func emptyCustomBarLeftButtonAction()
-//    func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector)
-//    func customBarRightButtonAction(icon: UIImage, target: Any, action: Selector)
-//    func customBarLeftTextButtonAction(text: String, target: Any, action: Selector)
-//    func customBarRightTextButtonAction(text: String, target: Any, action: Selector)
-//
-//    func configureNavigationTitle(_ title: String)
-//
-//    func triggerMenu()
-//    func openMenu()
-//    func hideMenu()
-//
-//    func showMessageWithText(_ text: String, andType type: MessageType)
-//    func showMessageWithText(_ text: String, andType type: MessageType, sender: Any?)
-//
-//    func hideMessages()
 }
+
+extension NavigationConfiguration {
+    var idiomCheckerDelegate: IdiomCheckerDelegate? {
+        get {
+            return self.parentNavigationConfiguration as? IdiomCheckerDelegate
+        }
+        set {
+            print(newValue ?? "no value")
+        }
+    }
+    
+    var userInterfaceIdiom: UIUserInterfaceIdiom {
+        guard let idiomCheckerDelegate = self.idiomCheckerDelegate else {
+            return .phone
+        }
+        return idiomCheckerDelegate.userInterfaceIdiom
+    }
+}
+
+extension NavigationConfiguration {
+    var messageConfigurationDelegate: MessageConfigurationDelegate? {
+        get {
+            return self.parentNavigationConfiguration as? MessageConfigurationDelegate
+        }
+        set {
+            print(newValue ?? "no value")
+        }
+    }
+    
+    func obtainMessageWidth() -> CGFloat {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return 0.0
+        }
+        return messageConfigurationDelegate.obtainMessageWidth()
+    }
+    
+    func obtainTextOffset() -> CGFloat {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return 0.0
+        }
+        return messageConfigurationDelegate.obtainTextOffset()
+    }
+    
+    func obtainIconHeight() -> CGFloat {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return 0.0
+        }
+        return messageConfigurationDelegate.obtainIconHeight()
+    }
+    
+    func obtainLeftOffset() -> CGFloat {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return 0.0
+        }
+        return messageConfigurationDelegate.obtainLeftOffset()
+    }
+    
+    func obtainErrorLabel() -> StandartOffsetLabel {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return StandartOffsetLabel()
+        }
+        return messageConfigurationDelegate.obtainErrorLabel()
+    }
+    
+    func obtainErrorImageView() -> UIImageView {
+        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+            return UIImageView()
+        }
+        return messageConfigurationDelegate.obtainErrorImageView()
+    }
+}
+
 
 extension NavigationConfiguration {
     var menuConfiguration: MenuConfiguration? {
@@ -338,79 +298,6 @@ extension NavigationConfiguration {
             print(newValue ?? "no value")
         }
     }
-    var idiomCheckerDelegate: IdiomCheckerDelegate? {
-        get {
-            return self as? IdiomCheckerDelegate
-        }
-        set {
-            print(newValue ?? "no value")
-        }
-    }
-    var messageConfigurationDelegate: MessageConfigurationDelegate? {
-        get {
-            return self as? MessageConfigurationDelegate
-        }
-        set {
-            print(newValue ?? "no value")
-        }
-    }
-}
-
-extension IdiomCheckerDelegate where Self: NavigationConfiguration {
-    var userInterfaceIdiom: UIUserInterfaceIdiom {
-        guard let idiomCheckerDelegate = self.parentNavigationConfiguration as? IdiomCheckerDelegate else {
-            return .phone
-        }
-        return idiomCheckerDelegate.userInterfaceIdiom
-    }
-}
-
-extension MessageConfigurationDelegate where Self: NavigationConfiguration {
-    func obtainMessageWidth() -> CGFloat {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return 0.0
-        }
-        return messageConfigurationDelegate.obtainMessageWidth()
-    }
-    
-    func obtainTextOffset() -> CGFloat {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return 0.0
-        }
-        return messageConfigurationDelegate.obtainTextOffset()
-    }
-    
-    func obtainIconHeight() -> CGFloat {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return 0.0
-        }
-        return messageConfigurationDelegate.obtainIconHeight()
-    }
-    
-    func obtainLeftOffset() -> CGFloat {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return 0.0
-        }
-        return messageConfigurationDelegate.obtainLeftOffset()
-    }
-    
-    func obtainErrorLabel() -> StandartOffsetLabel {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return StandartOffsetLabel()
-        }
-        return messageConfigurationDelegate.obtainErrorLabel()
-    }
-    
-    func obtainErrorImageView() -> UIImageView {
-        guard let messageConfigurationDelegate = self.parentNavigationConfiguration as? MessageConfigurationDelegate else {
-            return UIImageView()
-        }
-        return messageConfigurationDelegate.obtainErrorImageView()
-    }
-}
-
-
-extension MenuConfiguration where Self: NavigationConfiguration {
     func triggerMenu() {
         guard let menuConfiguration = self.parentNavigationConfiguration else {
             return
@@ -431,4 +318,24 @@ extension MenuConfiguration where Self: NavigationConfiguration {
         }
         menuConfiguration.hideMenu()
     }
+}
+
+extension NavigationConfiguration {
+    
+    func showMessageWithText(_ text: String, andType type: MessageType) {
+        self.showMessageWithText(text, andType: type, sender: nil)
+    }
+    
+    func showMessageWithText(_ text: String, andType type: MessageType, sender: Any? = nil) {
+        if let messageConfiguration = self.parentNavigationConfiguration {
+            messageConfiguration.showMessageWithText(text, andType: type, sender: sender)
+        }
+    }
+    
+    func hideMessages() {
+        if let messageConfiguration = self.parentNavigationConfiguration {
+            messageConfiguration.hideMessages()
+        }
+    }
+    
 }

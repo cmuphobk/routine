@@ -1,7 +1,7 @@
 import UIKit
 
 final class MedicineCourseRouter: MedicineCourseModuleRouting {
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
     var coordinator: MedicineCourseCoordinator!
     
     weak private var createMedicineCourseViewController: InputTextPopup?

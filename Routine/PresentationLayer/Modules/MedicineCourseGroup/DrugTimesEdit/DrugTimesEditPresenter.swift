@@ -5,12 +5,12 @@ let kDrugTimesEditModuleId = "kDrugTimesEditModule"
 
 class DrugTimesEditPresenter: Module {
     var moduleOutput: DrugTimesEditModuleOutput?
-    weak var view: DrugTimesEditViewInput?
+    weak var view: DrugTimesEditViewInput!
     var router: DrugTimesEditModuleRouter!
     
     var name = "DrugTimesEdit_name"
     var alias = "DrugTimesEdit"
-    weak var viewController: UIViewController? {
+    weak var viewController: UIViewController! {
         return self.view as? UIViewController
     }
     

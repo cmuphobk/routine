@@ -21,12 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = navigationController
+        window.backgroundColor = .white
         window.makeKeyAndVisible()
-        let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController,
-                                                            flowHandler: nil)
+        let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController)
         
         applicationCoordinator.windowService = AppDelegate.serviceProvider.makeWindowService()
         applicationCoordinator.moduleService = AppDelegate.serviceProvider.makeModuleService()
+        applicationCoordinator.window = window
 
         self.window = window
         self.applicationCoordinator = applicationCoordinator

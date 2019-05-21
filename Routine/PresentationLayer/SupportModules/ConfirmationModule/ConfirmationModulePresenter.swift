@@ -1,7 +1,7 @@
 import UIKit
 
 class ConfirmationModulePresenter {
-    weak var view: ConfirmationViewInput?
+    weak var view: ConfirmationViewInput!
     weak var moduleOutput: ConfirmationModuleOutput?
     
     var localizeService: StringServiceInterface!

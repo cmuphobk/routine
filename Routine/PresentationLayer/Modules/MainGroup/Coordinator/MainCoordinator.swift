@@ -1,42 +1,33 @@
 import UIKit
 
-protocol MainCoordinating {
+protocol MainCoordinatorDelegate: class {
     
 }
 
-enum MainCoordinatorActionType {
-    
-}
+class MainCoordinator: Coordinatorable, NavigationConfiguration {
 
-class MainCoordinatorHandler: CoordinatorHandler<MainCoordinatorActionType> { }
+    // MARK: - Coordinatorable
+    var navigationController: UINavigationController
+    var childCoordinators: [Coordinatorable] = []
 
-class MainCoordinator: Coordinatorable<MainCoordinatorHandler>, NavigationConfiguration {
-        
-    var factory: MainCoordinatorFactory
-    
+    // MARK: - NavigationConfiguration
     var parentNavigationConfiguration: NavigationConfiguration?
-    weak var idiomCheckerDelegate: IdiomCheckerDelegate?
-    weak var messageConfigurationDelegate: MessageConfigurationDelegate?
     var taskHideError: DispatchWorkItem!
     
-    override init(navigationController: UINavigationController,
-                  flowHandler: MainCoordinatorHandler?) {
-        
-        self.factory = MainCoordinatorFactory()
-        super.init(navigationController: navigationController,
-                   flowHandler: flowHandler)
+    // MARK: - MainCoordinator
+    var factory = MainModuleFactory()
+    weak var delegate: MainCoordinatorDelegate?
+    
+    required init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
-    override func start() {
+    func start() {
         self.factory.makeMainViewController(with: self) { (viewController, _) in
             if let viewController = viewController {
                 self.push(viewController: viewController, animated: true)
             }
         }
     }
-    
-}
-
-extension MainCoordinator: MainCoordinating {
     
 }

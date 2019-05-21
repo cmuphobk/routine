@@ -4,12 +4,12 @@ let kMainModuleId = "main_name"
 let kMainModuleAlias = "main_alias"
 
 final class MainPresenter: Module {
-    weak var view: MainViewInput?
+    weak var view: MainViewInput!
     var router: MainModuleRouting!
     
     var name = kMainModuleId
     var alias = kMainModuleAlias
-    weak var viewController: UIViewController? {
+    weak var viewController: UIViewController! {
         return self.view as? UIViewController
     }
     
@@ -54,8 +54,8 @@ extension MainPresenter: MainViewOutput {
         self.router.leftSwipeAction()
     }
     
-    func menuButtonClicked() {
-        self.router.menuButtonClicked()
+    func configureNavigationBar(title: String) {
+        self.router.configureNavigationBar(title: title)
     }
     
 }

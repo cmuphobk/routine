@@ -1,6 +1,6 @@
 import UIKit
 
-class MainCoordinatorFactory {
+class MainModuleFactory {
     
     func makeMainViewController(with coordinator: MainCoordinator,
                                 completion: (UIViewController?, MainModuleInput?) -> Void) {

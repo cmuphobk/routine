@@ -1,33 +1,28 @@
 import UIKit
 
-protocol MedicineCourseCoordinating {
+protocol MedicineCourseCoordinatorDelegate: class {
     
 }
 
-enum MedicineCourseCoordinatorActionType {
+class MedicineCourseCoordinator: Coordinatorable, NavigationConfiguration {
     
-}
+    // MARK: - Coordinatorable
+    var navigationController: UINavigationController
+    var childCoordinators: [Coordinatorable] = []
 
-class MedicineCourseCoordinatorHandler: CoordinatorHandler<MedicineCourseCoordinatorActionType> { }
-
-class MedicineCourseCoordinator: Coordinatorable<MedicineCourseCoordinatorHandler>, NavigationConfiguration {
-    
-    var factory: MedicineCourseCoordinatorFactory
-    
+    // MARK: - NavigationConfiguration
     var parentNavigationConfiguration: NavigationConfiguration?
-    weak var idiomCheckerDelegate: IdiomCheckerDelegate?
-    weak var messageConfigurationDelegate: MessageConfigurationDelegate?
     var taskHideError: DispatchWorkItem!
     
-    override init(navigationController: UINavigationController,
-                  flowHandler: MedicineCourseCoordinatorHandler?) {
-        
-        self.factory = MedicineCourseCoordinatorFactory()
-        super.init(navigationController: navigationController,
-                   flowHandler: flowHandler)
+    // MARK: - MedicineCourseCoordinator
+    var factory = MedicineCourseModuleFactory()
+    weak var delegate: MedicineCourseCoordinatorDelegate?
+    
+    required init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
-    override func start() {
+    func start() {
         self.factory.makeMedicineCourseViewController(with: self) { (viewController, _) in
             if let viewController = viewController {
                 self.push(viewController: viewController, animated: true)

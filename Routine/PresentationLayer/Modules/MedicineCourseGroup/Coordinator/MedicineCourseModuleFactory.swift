@@ -1,11 +1,11 @@
 import UIKit
 
-class MedicineCourseCoordinatorFactory {
+class MedicineCourseModuleFactory {
     
     func makeMedicineCourseViewController(with coordinator: MedicineCourseCoordinator,
                                           completion: (UIViewController?, MedicineCourseModuleInput?) -> Void) {
         
-        completion(nil, nil)
+        MedicineCourseAssembly.buildMedicineCourseScreenModule(with: coordinator, completion)
     }
     
 }

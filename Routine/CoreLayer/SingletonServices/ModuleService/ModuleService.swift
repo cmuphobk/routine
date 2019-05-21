@@ -3,7 +3,7 @@ import UIKit
 protocol Module {
     var name: String { get set }
     var alias: String { get set }
-    var viewController: UIViewController? { get }
+    var viewController: UIViewController! { get }
 }
 
 typealias ModuleDescription = (name: String, alias: String)

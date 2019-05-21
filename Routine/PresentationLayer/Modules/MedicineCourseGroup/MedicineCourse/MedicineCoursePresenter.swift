@@ -4,13 +4,13 @@ let kMedicineCourseModuleId = "medicine_course_name"
 let kMedicineCourseModuleAlias = "medicine_course_alias"
 
 final class MedicineCoursePresenter: Module {
-    weak var view: MedicineCourseViewInput?
+    weak var view: MedicineCourseViewInput!
     var router: MedicineCourseModuleRouting!
     var medicineCourseService: MedicineCourseServiceInterface!
     
     var name = kMedicineCourseModuleId
     var alias = kMedicineCourseModuleAlias
-    weak var viewController: UIViewController? {
+    weak var viewController: UIViewController! {
         return self.view as? UIViewController
     }
     

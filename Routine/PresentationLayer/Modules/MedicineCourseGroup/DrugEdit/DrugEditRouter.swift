@@ -1,7 +1,7 @@
 import UIKit
 
 final class DrugEditRouter: DrugEditModuleRouting {
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
     var coordinator: MedicineCourseCoordinator!
     
     weak private var deleteQuestionPopupViewController: ConfirmDecisionPopup?

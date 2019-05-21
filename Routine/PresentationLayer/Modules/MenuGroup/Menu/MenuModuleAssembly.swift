@@ -2,7 +2,7 @@ import UIKit
 
 enum MenuModuleAssembly {
     
-    static func buildMenuModule(with coordinator: MenuCoordinator, _ completion: (UIViewController?, MenuModuleInput?) -> Void) {
+    static func buildMenuModule(with coordinator: ApplicationCoordinator, _ completion: (UIViewController?, MenuModuleInput?) -> Void) {
 
         // Creating module components
         guard let moduleViewController = R.storyboard.menuModuleViewController.menuModuleViewController() else {

@@ -1,7 +1,7 @@
 import UIKit
 
 class MenuModulePresenter {    
-    weak var view: MenuModuleViewInput?
+    weak var view: MenuModuleViewInput!
     var router: MenuModuleRouting!
     
     var menuItems: [ModuleDescription] = []

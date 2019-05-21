@@ -3,7 +3,7 @@ import Stevia
 
 final class MainViewController: RoutineViewController {
     var output: MainViewOutput!
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
 
     private lazy var tableViewModel = { () -> RoutineTableViewModel in
         let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)
@@ -45,19 +45,12 @@ final class MainViewController: RoutineViewController {
         super.viewWillAppear(animated)
         output.didTriggerViewWillAppear()
         
-//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationBarWithColor(ColorProvider.default.blueColor)
-        
-//        AppDelegate.serviceProvider.makeModuleService().navigation?.customBarLeftButtonAction(
-//            icon: ImageProvider.default.menuIcon.imageWithMask(color: ColorProvider.default.whiteColor),
-//            target: self,
-//            action: #selector(menuButtonClicked))
+
     }
     
     override func localizationSetup() {
         super.localizationSetup()
-        
-        let title = self.output.localizeService.localizeId(kMainModuleId)
-//        AppDelegate.serviceProvider.makeModuleService().navigation?.configureNavigationTitle(title)
+        self.output.configureNavigationBar(title: self.output.localizeService.localizeId(kMainModuleId))
     }
     
 }
@@ -108,9 +101,5 @@ extension MainViewController {
     @objc private func leftSwipeAction() {
         self.output.leftSwipeAction()
     }
-    
-    @objc private func menuButtonClicked() {
-        self.output.menuButtonClicked()
-    }
-    
+
 }

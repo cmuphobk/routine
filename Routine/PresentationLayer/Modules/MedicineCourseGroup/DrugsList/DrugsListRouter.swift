@@ -1,7 +1,7 @@
 import UIKit
 
 final class DrugsListRouter: DrugsListModuleRouting {
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
     var coordinator: MedicineCourseCoordinator!
     
     func openDrugDetails(_ drug: MedicineDrug, medicineCourse: MedicineCourse, drugsListModuleInput: DrugsListModuleInput) {

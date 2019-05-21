@@ -1,7 +1,7 @@
 import UIKit
 
 final class MainRouter: MainModuleRouting {
-    weak var viewController: UIViewController?
+    weak var viewController: UIViewController!
     var coordinator: MainCoordinator!
     
     func openCourseModule() {
@@ -14,14 +14,25 @@ final class MainRouter: MainModuleRouting {
     }
     
     func rightSwipeAction() {
-//        self.moduleService.navigation?.openMenu()
+        self.coordinator.openMenu()
     }
     
     func leftSwipeAction() {
-//        self.moduleService.navigation?.hideMenu()
+        self.coordinator.hideMenu()
     }
     
-    func menuButtonClicked() {
-//        self.moduleService.navigation?.triggerMenu()
+    @objc func menuButtonClicked() {
+        self.coordinator.triggerMenu()
+    }
+    
+    func configureNavigationBar(title: String) {
+        self.coordinator.configureNavigationTitle(title)
+        
+        self.coordinator.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        
+        self.coordinator.customBarLeftButtonAction(
+            icon: ImageProvider.default.menuIcon.imageWithMask(color: ColorProvider.default.whiteColor),
+            target: self,
+            action: #selector(menuButtonClicked))
     }
 }

@@ -17,15 +17,17 @@ protocol MainViewOutput: class {
     
     func rightSwipeAction()
     func leftSwipeAction()
-    func menuButtonClicked()
     
     func didTriggerCell(viewModel: RoutineTableViewCellViewModel)
+    
+    func configureNavigationBar(title: String)
 }
 
-protocol MainModuleRouting: class {    
+protocol MainModuleRouting: class {
     func openCourseModule()
     
     func rightSwipeAction()
     func leftSwipeAction()
-    func menuButtonClicked()
+    
+    func configureNavigationBar(title: String)
 }
