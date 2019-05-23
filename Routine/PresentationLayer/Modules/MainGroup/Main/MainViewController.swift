@@ -1,9 +1,8 @@
 import UIKit
 import Stevia
 
-final class MainViewController: RoutineViewController {
+final class MainViewController: RoutineViewController, BaseView {
     var output: MainViewOutput!
-    weak var viewController: UIViewController!
 
     private lazy var tableViewModel = { () -> RoutineTableViewModel in
         let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)

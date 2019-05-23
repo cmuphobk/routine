@@ -13,7 +13,6 @@
 		411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */; };
 		411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E234B224412C40003CEE0 /* RoutineCollectionView.swift */; };
 		411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E235122494DC70003CEE0 /* RoutineCellOwner.swift */; };
-		4172F897228AE035008A5AE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172F896228AE035008A5AE9 /* Coordinator.swift */; };
 		4172F899228AE062008A5AE9 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */; };
 		4172F89E228AE0C3008A5AE9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172F89D228AE0C3008A5AE9 /* MainCoordinator.swift */; };
 		4172F8A1228AE0D7008A5AE9 /* MedicineCourseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172F8A0228AE0D7008A5AE9 /* MedicineCourseCoordinator.swift */; };
@@ -37,8 +36,8 @@
 		41A533A422074C04009A735E /* LocalNotificationServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */; };
 		41A533A622074C10009A735E /* WindowServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A522074C10009A735E /* WindowServiceAssembly.swift */; };
 		41A533A822077604009A735E /* ServiceProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533A722077604009A735E /* ServiceProviderAssembly.swift */; };
-		41A533AC220A0A94009A735E /* NavigationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AB220A0A94009A735E /* NavigationConfiguration.swift */; };
-		41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AD220A0C22009A735E /* MenuModuleRouter.swift */; };
+		41A533AC220A0A94009A735E /* ScreenEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AB220A0A94009A735E /* ScreenEventManager.swift */; };
+		41A533AE220A0C22009A735E /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A533AD220A0C22009A735E /* MenuRouter.swift */; };
 		41A6B864220ED7D00023CE19 /* StringServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */; };
 		41A6B866220ED7DA0023CE19 /* StringServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B865220ED7DA0023CE19 /* StringServiceAssembly.swift */; };
 		41A6B868220ED7E30023CE19 /* StringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B867220ED7E30023CE19 /* StringService.swift */; };
@@ -73,7 +72,6 @@
 		860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */; };
 		860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C721B1ADF3007317B2 /* DrugDetailsAssembly.swift */; };
 		860AC5D921B1ADF3007317B2 /* DrugDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */; };
-		860AC5DA21B1ADF3007317B2 /* DrugDetailsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C921B1ADF3007317B2 /* DrugDetailsAnimator.swift */; };
 		860AC5DB21B1ADF3007317B2 /* DrugDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5CA21B1ADF3007317B2 /* DrugDetailsRouter.swift */; };
 		860AC5DC21B1ADF3007317B2 /* DrugDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5CB21B1ADF3007317B2 /* DrugDetailsPresenter.swift */; };
 		860AC5DD21B1ADF3007317B2 /* DrugDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860AC5CC21B1ADF3007317B2 /* DrugDetails.storyboard */; };
@@ -88,8 +86,6 @@
 		860AC62721B2923A007317B2 /* DrugEditTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC61521B2923A007317B2 /* DrugEditTableViewFactory.swift */; };
 		860AC62921B2923A007317B2 /* DrugEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860AC61721B2923A007317B2 /* DrugEdit.storyboard */; };
 		860AC63021B2923A007317B2 /* DrugEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC62121B2923A007317B2 /* DrugEditRouter.swift */; };
-		860AC63221B2B31B007317B2 /* CalculatorPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC63121B2B31B007317B2 /* CalculatorPopup.swift */; };
-		860AC63421B2B32C007317B2 /* CalculatorPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860AC63321B2B32C007317B2 /* CalculatorPopup.storyboard */; };
 		860AC65D21B57A44007317B2 /* DaysPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC65C21B57A44007317B2 /* DaysPeriod.swift */; };
 		860AC66121B65B58007317B2 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC66021B65B58007317B2 /* Time.swift */; };
 		860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC68621B7A1B0007317B2 /* UIView+Shadow.swift */; };
@@ -105,7 +101,6 @@
 		86385B3F21C4F4720097A544 /* TwiceComboboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86385B3C21C4F4720097A544 /* TwiceComboboxCell.swift */; };
 		866B3AFD21AEDCC90078361A /* DrugsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3AE921AEDCC80078361A /* DrugsListPresenter.swift */; };
 		866B3AFF21AEDCC90078361A /* DrugsListTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3AED21AEDCC80078361A /* DrugsListTableViewFactory.swift */; };
-		866B3B0021AEDCC90078361A /* DrugsListAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3AEE21AEDCC80078361A /* DrugsListAnimator.swift */; };
 		866B3B0121AEDCC90078361A /* DrugsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866B3AEF21AEDCC80078361A /* DrugsList.storyboard */; };
 		866B3B0221AEDCC90078361A /* DrugsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3AF021AEDCC80078361A /* DrugsListViewController.swift */; };
 		866B3B0321AEDCC90078361A /* DrugsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B3AF121AEDCC80078361A /* DrugsListRouter.swift */; };
@@ -128,7 +123,7 @@
 		866F0CFB21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CFA21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift */; };
 		867283A721AA8FB50000495C /* ConfirmationModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283A621AA8FB50000495C /* ConfirmationModuleInterface.swift */; };
 		867283A921AA949A0000495C /* ConfirmationModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283A821AA949A0000495C /* ConfirmationModulePresenter.swift */; };
-		867283AC21AA9EAD0000495C /* InputTextPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283AB21AA9EAD0000495C /* InputTextPopup.swift */; };
+		867283AC21AA9EAD0000495C /* InputTextPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283AB21AA9EAD0000495C /* InputTextPopupViewController.swift */; };
 		867283AE21AA9EFA0000495C /* InputTextPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867283AD21AA9EFA0000495C /* InputTextPopup.storyboard */; };
 		867283B221AAB0E90000495C /* ConfirmationModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283B121AAB0E90000495C /* ConfirmationModuleAssembly.swift */; };
 		867283B421AAD4020000495C /* ConfirmDecisionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867283B321AAD4020000495C /* ConfirmDecisionPopup.swift */; };
@@ -160,6 +155,7 @@
 		ED082FD421CFFD3F00C892C8 /* NotificationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD321CFFD3F00C892C8 /* NotificationServiceInterface.swift */; };
 		ED082FD621CFFD4C00C892C8 /* MagicalRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD521CFFD4C00C892C8 /* MagicalRecordService.swift */; };
 		ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */; };
+		ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E5F2296EC7F008998F4 /* Coordinator.swift */; };
 		ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */; };
 		ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */; };
 		ED241EA521AC014D00E4E32F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA421AC014D00E4E32F /* Repository.swift */; };
@@ -172,8 +168,6 @@
 		ED279C2821A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED279C2621A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift */; };
 		ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */; };
 		ED312CC321872AB3006D95F7 /* StandartCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */; };
-		ED45FBCB219764FF00E81497 /* AnimateLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45FBCA219764FF00E81497 /* AnimateLaunchScreenViewController.swift */; };
-		ED45FBCD2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED45FBCC2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard */; };
 		ED45FBE52199D08F00E81497 /* MedicineCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45FBD52199D08F00E81497 /* MedicineCourseCell.swift */; };
 		ED45FBE62199D08F00E81497 /* MedicineCourseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45FBD62199D08F00E81497 /* MedicineCourseCellViewModel.swift */; };
 		ED45FBE72199D08F00E81497 /* MedicineCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED45FBD72199D08F00E81497 /* MedicineCourseCell.xib */; };
@@ -209,6 +203,7 @@
 		ED7874D521A5D5C000FEA4DB /* MedicineCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D421A5D5C000FEA4DB /* MedicineCourse.swift */; };
 		ED7874D721A5D5D400FEA4DB /* MedicineDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D621A5D5D400FEA4DB /* MedicineDrug.swift */; };
 		ED7874D921A5D5F600FEA4DB /* MedicineCourseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7874D821A5D5F600FEA4DB /* MedicineCourseTime.swift */; };
+		ED83C0A52296CA1B008F35E0 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83C0A42296CA1B008F35E0 /* Module.swift */; };
 		ED8F69762179B839001DBDAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69752179B839001DBDAA /* AppDelegate.swift */; };
 		ED8F697D2179B83A001DBDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8F697C2179B83A001DBDAA /* Assets.xcassets */; };
 		ED8F698B2179B83A001DBDAA /* RoutineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F698A2179B83A001DBDAA /* RoutineTests.swift */; };
@@ -235,15 +230,14 @@
 		ED8F6A1C2179B971001DBDAA /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */; };
 		ED8F6A1D2179B971001DBDAA /* RoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DC2179B971001DBDAA /* RoutineCollectionViewCell.swift */; };
 		ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */; };
-		ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */; };
 		ED8F6A212179B971001DBDAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */; };
-		ED8F6A272179B971001DBDAA /* MenuModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */; };
-		ED8F6A282179B971001DBDAA /* MenuModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */; };
+		ED8F6A272179B971001DBDAA /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69EC2179B971001DBDAA /* MenuPresenter.swift */; };
+		ED8F6A282179B971001DBDAA /* MenuInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69ED2179B971001DBDAA /* MenuInterface.swift */; };
 		ED8F6A292179B971001DBDAA /* MenuModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69EF2179B971001DBDAA /* MenuModuleCell.swift */; };
 		ED8F6A2A2179B971001DBDAA /* MenuModuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69F02179B971001DBDAA /* MenuModuleCell.xib */; };
-		ED8F6A2B2179B971001DBDAA /* MenuModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69F12179B971001DBDAA /* MenuModuleViewController.storyboard */; };
-		ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F22179B971001DBDAA /* MenuModuleAssembly.swift */; };
-		ED8F6A2D2179B971001DBDAA /* MenuModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F32179B971001DBDAA /* MenuModuleViewController.swift */; };
+		ED8F6A2B2179B971001DBDAA /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69F12179B971001DBDAA /* MenuViewController.storyboard */; };
+		ED8F6A2C2179B971001DBDAA /* MenuAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F22179B971001DBDAA /* MenuAssembly.swift */; };
+		ED8F6A2D2179B971001DBDAA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69F32179B971001DBDAA /* MenuViewController.swift */; };
 		ED8F6A3A2179C548001DBDAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED8F6A3C2179C548001DBDAA /* Localizable.strings */; };
 		ED8F6A4C2179F106001DBDAA /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A4B2179F106001DBDAA /* AsyncOperation.swift */; };
 		ED8F6A5F2179F126001DBDAA /* DownloadOperationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F6A542179F125001DBDAA /* DownloadOperationHandler.swift */; };
@@ -337,7 +331,6 @@
 		411E234A224412C40003CEE0 /* RoutineCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewModel.swift; sourceTree = "<group>"; };
 		411E234B224412C40003CEE0 /* RoutineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionView.swift; sourceTree = "<group>"; };
 		411E235122494DC70003CEE0 /* RoutineCellOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellOwner.swift; sourceTree = "<group>"; };
-		4172F896228AE035008A5AE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Routine/Coordinator/Coordinator.swift; sourceTree = SOURCE_ROOT; };
 		4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		4172F89D228AE0C3008A5AE9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4172F8A0228AE0D7008A5AE9 /* MedicineCourseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseCoordinator.swift; sourceTree = "<group>"; };
@@ -361,8 +354,8 @@
 		41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationServiceAssembly.swift; sourceTree = "<group>"; };
 		41A533A522074C10009A735E /* WindowServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowServiceAssembly.swift; sourceTree = "<group>"; };
 		41A533A722077604009A735E /* ServiceProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderAssembly.swift; sourceTree = "<group>"; };
-		41A533AB220A0A94009A735E /* NavigationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfiguration.swift; sourceTree = "<group>"; };
-		41A533AD220A0C22009A735E /* MenuModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleRouter.swift; sourceTree = "<group>"; };
+		41A533AB220A0A94009A735E /* ScreenEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenEventManager.swift; sourceTree = "<group>"; };
+		41A533AD220A0C22009A735E /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		41A6B863220ED7D00023CE19 /* StringServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringServiceInterface.swift; sourceTree = "<group>"; };
 		41A6B865220ED7DA0023CE19 /* StringServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringServiceAssembly.swift; sourceTree = "<group>"; };
 		41A6B867220ED7E30023CE19 /* StringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringService.swift; sourceTree = "<group>"; };
@@ -398,7 +391,6 @@
 		860AC5C621B1ADF3007317B2 /* DrugDetailsModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsModuleInterface.swift; sourceTree = "<group>"; };
 		860AC5C721B1ADF3007317B2 /* DrugDetailsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsAssembly.swift; sourceTree = "<group>"; };
 		860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsViewController.swift; sourceTree = "<group>"; };
-		860AC5C921B1ADF3007317B2 /* DrugDetailsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsAnimator.swift; sourceTree = "<group>"; };
 		860AC5CA21B1ADF3007317B2 /* DrugDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsRouter.swift; sourceTree = "<group>"; };
 		860AC5CB21B1ADF3007317B2 /* DrugDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailsPresenter.swift; sourceTree = "<group>"; };
 		860AC5CC21B1ADF3007317B2 /* DrugDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrugDetails.storyboard; sourceTree = "<group>"; };
@@ -413,8 +405,6 @@
 		860AC61521B2923A007317B2 /* DrugEditTableViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugEditTableViewFactory.swift; sourceTree = "<group>"; };
 		860AC61721B2923A007317B2 /* DrugEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrugEdit.storyboard; sourceTree = "<group>"; };
 		860AC62121B2923A007317B2 /* DrugEditRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugEditRouter.swift; sourceTree = "<group>"; };
-		860AC63121B2B31B007317B2 /* CalculatorPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPopup.swift; sourceTree = "<group>"; };
-		860AC63321B2B32C007317B2 /* CalculatorPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorPopup.storyboard; sourceTree = "<group>"; };
 		860AC65C21B57A44007317B2 /* DaysPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysPeriod.swift; sourceTree = "<group>"; };
 		860AC66021B65B58007317B2 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		860AC68621B7A1B0007317B2 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
@@ -430,7 +420,6 @@
 		86385B3C21C4F4720097A544 /* TwiceComboboxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwiceComboboxCell.swift; sourceTree = "<group>"; };
 		866B3AE921AEDCC80078361A /* DrugsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListPresenter.swift; sourceTree = "<group>"; };
 		866B3AED21AEDCC80078361A /* DrugsListTableViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListTableViewFactory.swift; sourceTree = "<group>"; };
-		866B3AEE21AEDCC80078361A /* DrugsListAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListAnimator.swift; sourceTree = "<group>"; };
 		866B3AEF21AEDCC80078361A /* DrugsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrugsList.storyboard; sourceTree = "<group>"; };
 		866B3AF021AEDCC80078361A /* DrugsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListViewController.swift; sourceTree = "<group>"; };
 		866B3AF121AEDCC80078361A /* DrugsListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugsListRouter.swift; sourceTree = "<group>"; };
@@ -453,7 +442,7 @@
 		866F0CFA21EB76DE00D9FF94 /* DrugTimesEditAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugTimesEditAssembly.swift; sourceTree = "<group>"; };
 		867283A621AA8FB50000495C /* ConfirmationModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModuleInterface.swift; sourceTree = "<group>"; };
 		867283A821AA949A0000495C /* ConfirmationModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModulePresenter.swift; sourceTree = "<group>"; };
-		867283AB21AA9EAD0000495C /* InputTextPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextPopup.swift; sourceTree = "<group>"; };
+		867283AB21AA9EAD0000495C /* InputTextPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextPopupViewController.swift; sourceTree = "<group>"; };
 		867283AD21AA9EFA0000495C /* InputTextPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputTextPopup.storyboard; sourceTree = "<group>"; };
 		867283B121AAB0E90000495C /* ConfirmationModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModuleAssembly.swift; sourceTree = "<group>"; };
 		867283B321AAD4020000495C /* ConfirmDecisionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDecisionPopup.swift; sourceTree = "<group>"; };
@@ -486,6 +475,7 @@
 		ED082FD321CFFD3F00C892C8 /* NotificationServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceInterface.swift; sourceTree = "<group>"; };
 		ED082FD521CFFD4C00C892C8 /* MagicalRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordService.swift; sourceTree = "<group>"; };
 		ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceInterface.swift; sourceTree = "<group>"; };
+		ED178E5F2296EC7F008998F4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ED1F8EE521F48EFB00D467CB /* Routine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routine.entitlements; sourceTree = "<group>"; };
 		ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableEntityInterface.swift; sourceTree = "<group>"; };
@@ -500,8 +490,6 @@
 		ED279C2621A5E890004BB7D2 /* MedicineCourseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MedicineCourseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationInterface.swift; sourceTree = "<group>"; };
 		ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartCheckBox.swift; sourceTree = "<group>"; };
-		ED45FBCA219764FF00E81497 /* AnimateLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLaunchScreenViewController.swift; sourceTree = "<group>"; };
-		ED45FBCC2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimateLaunchScreenViewController.storyboard; sourceTree = "<group>"; };
 		ED45FBD52199D08F00E81497 /* MedicineCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineCourseCell.swift; sourceTree = "<group>"; };
 		ED45FBD62199D08F00E81497 /* MedicineCourseCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineCourseCellViewModel.swift; sourceTree = "<group>"; };
 		ED45FBD72199D08F00E81497 /* MedicineCourseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicineCourseCell.xib; sourceTree = "<group>"; };
@@ -537,6 +525,7 @@
 		ED7874D421A5D5C000FEA4DB /* MedicineCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourse.swift; sourceTree = "<group>"; };
 		ED7874D621A5D5D400FEA4DB /* MedicineDrug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDrug.swift; sourceTree = "<group>"; };
 		ED7874D821A5D5F600FEA4DB /* MedicineCourseTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCourseTime.swift; sourceTree = "<group>"; };
+		ED83C0A42296CA1B008F35E0 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		ED8F69722179B839001DBDAA /* Routine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8F69752179B839001DBDAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8F697C2179B83A001DBDAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -569,15 +558,14 @@
 		ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		ED8F69DC2179B971001DBDAA /* RoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED8F69DD2179B971001DBDAA /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
-		ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		ED8F69E22179B971001DBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModulePresenter.swift; sourceTree = "<group>"; };
-		ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleInterface.swift; sourceTree = "<group>"; };
+		ED8F69EC2179B971001DBDAA /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		ED8F69ED2179B971001DBDAA /* MenuInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInterface.swift; sourceTree = "<group>"; };
 		ED8F69EF2179B971001DBDAA /* MenuModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleCell.swift; sourceTree = "<group>"; };
 		ED8F69F02179B971001DBDAA /* MenuModuleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuModuleCell.xib; sourceTree = "<group>"; };
-		ED8F69F12179B971001DBDAA /* MenuModuleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuModuleViewController.storyboard; sourceTree = "<group>"; };
-		ED8F69F22179B971001DBDAA /* MenuModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleAssembly.swift; sourceTree = "<group>"; };
-		ED8F69F32179B971001DBDAA /* MenuModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModuleViewController.swift; sourceTree = "<group>"; };
+		ED8F69F12179B971001DBDAA /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		ED8F69F22179B971001DBDAA /* MenuAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuAssembly.swift; sourceTree = "<group>"; };
+		ED8F69F32179B971001DBDAA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED8F6A3B2179C548001DBDAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED8F6A3D2179C54A001DBDAA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED8F6A4B2179F106001DBDAA /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
@@ -756,7 +744,7 @@
 		41A6B857220EC4B10023CE19 /* InputTextPopup */ = {
 			isa = PBXGroup;
 			children = (
-				867283AB21AA9EAD0000495C /* InputTextPopup.swift */,
+				867283AB21AA9EAD0000495C /* InputTextPopupViewController.swift */,
 				867283AD21AA9EFA0000495C /* InputTextPopup.storyboard */,
 			);
 			path = InputTextPopup;
@@ -769,15 +757,6 @@
 				867283B721AAD4ED0000495C /* ConfirmDecisionPopup.storyboard */,
 			);
 			path = ConfirmDecisionPopup;
-			sourceTree = "<group>";
-		};
-		41A6B85A220EC4CD0023CE19 /* CalculatorPopup */ = {
-			isa = PBXGroup;
-			children = (
-				860AC63121B2B31B007317B2 /* CalculatorPopup.swift */,
-				860AC63321B2B32C007317B2 /* CalculatorPopup.storyboard */,
-			);
-			path = CalculatorPopup;
 			sourceTree = "<group>";
 		};
 		41A6B85B220ECF820023CE19 /* SupportModules */ = {
@@ -951,15 +930,6 @@
 			path = StandartCheckBoxButton;
 			sourceTree = "<group>";
 		};
-		41FC81032292C45400D1E448 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				4172F896228AE035008A5AE9 /* Coordinator.swift */,
-				41A533AB220A0A94009A735E /* NavigationConfiguration.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -980,7 +950,6 @@
 				860AC5C821B1ADF3007317B2 /* DrugDetailsViewController.swift */,
 				860AC5CC21B1ADF3007317B2 /* DrugDetails.storyboard */,
 				860AC5CA21B1ADF3007317B2 /* DrugDetailsRouter.swift */,
-				860AC5C921B1ADF3007317B2 /* DrugDetailsAnimator.swift */,
 			);
 			path = DrugDetails;
 			sourceTree = "<group>";
@@ -1067,7 +1036,6 @@
 				866B3AF021AEDCC80078361A /* DrugsListViewController.swift */,
 				866B3AEF21AEDCC80078361A /* DrugsList.storyboard */,
 				866B3AF121AEDCC80078361A /* DrugsListRouter.swift */,
-				866B3AEE21AEDCC80078361A /* DrugsListAnimator.swift */,
 			);
 			path = DrugsList;
 			sourceTree = "<group>";
@@ -1136,7 +1104,6 @@
 		867283AA21AA9E7E0000495C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				41A6B85A220EC4CD0023CE19 /* CalculatorPopup */,
 				41A6B859220EC4C20023CE19 /* ConfirmDecisionPopup */,
 				41A6B857220EC4B10023CE19 /* InputTextPopup */,
 			);
@@ -1244,6 +1211,17 @@
 			path = MagicalRecordService;
 			sourceTree = "<group>";
 		};
+		ED178E612296EEAC008998F4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F69DA2179B971001DBDAA /* Routine */,
+				ED83C0A42296CA1B008F35E0 /* Module.swift */,
+				ED178E5F2296EC7F008998F4 /* Coordinator.swift */,
+				41A533AB220A0A94009A735E /* ScreenEventManager.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		ED241EA621AC02C100E4E32F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1270,15 +1248,6 @@
 				866B3B0D21AFC3ED0078361A /* MedicineCourseService.swift */,
 			);
 			path = MedicineCourseService;
-			sourceTree = "<group>";
-		};
-		ED45FBC9219764D500E81497 /* AnimateLaunchScreen */ = {
-			isa = PBXGroup;
-			children = (
-				ED45FBCA219764FF00E81497 /* AnimateLaunchScreenViewController.swift */,
-				ED45FBCC2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard */,
-			);
-			path = AnimateLaunchScreen;
 			sourceTree = "<group>";
 		};
 		ED45FBCE2199D08F00E81497 /* MedicineCourse */ = {
@@ -1521,9 +1490,8 @@
 		ED8F69742179B839001DBDAA /* Routine */ = {
 			isa = PBXGroup;
 			children = (
+				ED178E612296EEAC008998F4 /* Library */,
 				ED1F8EE521F48EFB00D467CB /* Routine.entitlements */,
-				ED8F69DA2179B971001DBDAA /* RoutineFramework */,
-				41FC81032292C45400D1E448 /* Coordinator */,
 				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
 				41CAA230227F186F00188189 /* R.generated.swift */,
 				ED8F6A312179C08A001DBDAA /* CoreLayer */,
@@ -1558,7 +1526,7 @@
 		ED8F69A32179B971001DBDAA /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				ED8F69DE2179B971001DBDAA /* Initial */,
+				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
 				41A6B85C220ECFB60023CE19 /* Modules */,
 				41A6B85B220ECF820023CE19 /* SupportModules */,
 			);
@@ -1609,7 +1577,7 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		ED8F69DA2179B971001DBDAA /* RoutineFramework */ = {
+		ED8F69DA2179B971001DBDAA /* Routine */ = {
 			isa = PBXGroup;
 			children = (
 				41F06B422286F79700D28682 /* RoutineManager */,
@@ -1631,29 +1599,19 @@
 				411E235122494DC70003CEE0 /* RoutineCellOwner.swift */,
 				41F06B4322872BFF00D28682 /* RoutineDelegate.swift */,
 			);
-			path = RoutineFramework;
-			sourceTree = "<group>";
-		};
-		ED8F69DE2179B971001DBDAA /* Initial */ = {
-			isa = PBXGroup;
-			children = (
-				ED45FBC9219764D500E81497 /* AnimateLaunchScreen */,
-				ED8F69E02179B971001DBDAA /* BackgroundViewController.swift */,
-				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
-			);
-			path = Initial;
+			path = Routine;
 			sourceTree = "<group>";
 		};
 		ED8F69EB2179B971001DBDAA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				41F06B472289A67300D28682 /* MenuTableViewFactory */,
-				ED8F69ED2179B971001DBDAA /* MenuModuleInterface.swift */,
-				ED8F69F22179B971001DBDAA /* MenuModuleAssembly.swift */,
-				ED8F69EC2179B971001DBDAA /* MenuModulePresenter.swift */,
-				ED8F69F32179B971001DBDAA /* MenuModuleViewController.swift */,
-				ED8F69F12179B971001DBDAA /* MenuModuleViewController.storyboard */,
-				41A533AD220A0C22009A735E /* MenuModuleRouter.swift */,
+				ED8F69ED2179B971001DBDAA /* MenuInterface.swift */,
+				ED8F69F22179B971001DBDAA /* MenuAssembly.swift */,
+				ED8F69EC2179B971001DBDAA /* MenuPresenter.swift */,
+				ED8F69F32179B971001DBDAA /* MenuViewController.swift */,
+				ED8F69F12179B971001DBDAA /* MenuViewController.storyboard */,
+				41A533AD220A0C22009A735E /* MenuRouter.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -2097,7 +2055,6 @@
 				86F9D27E21EF71DE000ABB67 /* DrugPeriodicEdit.storyboard in Resources */,
 				ED8F6AA6217F7B61001DBDAA /* Foros-Medium.otf in Resources */,
 				860AC5DD21B1ADF3007317B2 /* DrugDetails.storyboard in Resources */,
-				ED45FBCD2197650C00E81497 /* AnimateLaunchScreenViewController.storyboard in Resources */,
 				ED8F6AA5217F7B61001DBDAA /* Foros-Regular.otf in Resources */,
 				ED8F6AA7217F7B61001DBDAA /* Foros-Bold.otf in Resources */,
 				866B3B0121AEDCC90078361A /* DrugsList.storyboard in Resources */,
@@ -2110,13 +2067,12 @@
 				866F0CF321EB616C00D9FF94 /* DrugTimesEdit.storyboard in Resources */,
 				ED8F697D2179B83A001DBDAA /* Assets.xcassets in Resources */,
 				866B3B0A21AEDCC90078361A /* DrugCell.xib in Resources */,
-				860AC63421B2B32C007317B2 /* CalculatorPopup.storyboard in Resources */,
 				ED45FBED2199D08F00E81497 /* MedicineCourse.storyboard in Resources */,
 				ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */,
 				41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */,
 				860AC62921B2923A007317B2 /* DrugEdit.storyboard in Resources */,
 				ED45FBE72199D08F00E81497 /* MedicineCourseCell.xib in Resources */,
-				ED8F6A2B2179B971001DBDAA /* MenuModuleViewController.storyboard in Resources */,
+				ED8F6A2B2179B971001DBDAA /* MenuViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2343,7 +2299,6 @@
 				8682996221C8C88500679C05 /* ComboboxCell.swift in Sources */,
 				41F06B5E2289A8A000D28682 /* DrugsListTableViewFactoryInterface.swift in Sources */,
 				41F06B4F2289A7F200D28682 /* StandartPagePickerCollectionViewFactoryInterface.swift in Sources */,
-				ED45FBCB219764FF00E81497 /* AnimateLaunchScreenViewController.swift in Sources */,
 				860AC5D721B1ADF3007317B2 /* DrugDetailsModuleInterface.swift in Sources */,
 				EDA9A64821E725D300D99B09 /* FileService.swift in Sources */,
 				ED241EA521AC014D00E4E32F /* Repository.swift in Sources */,
@@ -2365,6 +2320,7 @@
 				ED8F6A642179F126001DBDAA /* MultipartOperation.swift in Sources */,
 				ED8F6A162179B971001DBDAA /* UITableView+Scrolls.swift in Sources */,
 				ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */,
+				ED83C0A52296CA1B008F35E0 /* Module.swift in Sources */,
 				ED8F6A9E217E2CDF001DBDAA /* StandartTextField.swift in Sources */,
 				4172F899228AE062008A5AE9 /* ApplicationCoordinator.swift in Sources */,
 				41A533782206280A009A735E /* RoutineScrollView.swift in Sources */,
@@ -2379,7 +2335,7 @@
 				EDDA635F21B3ED31005AE695 /* MultipartRequestObject.swift in Sources */,
 				4172F8A6228AE1E2008A5AE9 /* ApplicationModuleFactory.swift in Sources */,
 				ED8F6A0B2179B971001DBDAA /* ColorProvider.swift in Sources */,
-				ED8F6A2C2179B971001DBDAA /* MenuModuleAssembly.swift in Sources */,
+				ED8F6A2C2179B971001DBDAA /* MenuAssembly.swift in Sources */,
 				860AC5D821B1ADF3007317B2 /* DrugDetailsAssembly.swift in Sources */,
 				41F06B5C2289A89600D28682 /* DrugsListTableViewFactoryAssembly.swift in Sources */,
 				ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */,
@@ -2414,7 +2370,7 @@
 				41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */,
 				867283B221AAB0E90000495C /* ConfirmationModuleAssembly.swift in Sources */,
 				ED279C2021A5E7FD004BB7D2 /* MedicineDrugEntity+CoreDataProperties.swift in Sources */,
-				ED8F6A2D2179B971001DBDAA /* MenuModuleViewController.swift in Sources */,
+				ED8F6A2D2179B971001DBDAA /* MenuViewController.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,
 				ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */,
 				86385B3E21C4F4720097A544 /* TwiceComboboxCellViewModel.swift in Sources */,
@@ -2435,7 +2391,7 @@
 				ED78749A21A1C4D400FEA4DB /* StandartPagePicker.swift in Sources */,
 				EDA9A63521E6286500D99B09 /* RoutineCollectionViewCellViewModel.swift in Sources */,
 				EDA9A64E21E750CC00D99B09 /* RoutineView.swift in Sources */,
-				ED8F6A282179B971001DBDAA /* MenuModuleInterface.swift in Sources */,
+				ED8F6A282179B971001DBDAA /* MenuInterface.swift in Sources */,
 				ED45FBEA2199D08F00E81497 /* MedicineCourseViewController.swift in Sources */,
 				86F9D27821EF6E22000ABB67 /* DrugPeriodicEditViewController.swift in Sources */,
 				EDC0DC6521EBAE2D00D5327D /* MenuModuleCellViewModel.swift in Sources */,
@@ -2444,11 +2400,11 @@
 				866B3B0821AEDCC90078361A /* DrugCell.swift in Sources */,
 				ED082FCA21CFFCFA00C892C8 /* ReachabilityService.swift in Sources */,
 				ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */,
-				41A533AE220A0C22009A735E /* MenuModuleRouter.swift in Sources */,
+				41A533AE220A0C22009A735E /* MenuRouter.swift in Sources */,
 				EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */,
-				ED8F6A272179B971001DBDAA /* MenuModulePresenter.swift in Sources */,
+				ED8F6A272179B971001DBDAA /* MenuPresenter.swift in Sources */,
 				41A5337A22062814009A735E /* RoutineScrollViewModel.swift in Sources */,
-				867283AC21AA9EAD0000495C /* InputTextPopup.swift in Sources */,
+				867283AC21AA9EAD0000495C /* InputTextPopupViewController.swift in Sources */,
 				41A6B86A220ED7F20023CE19 /* ImageServiceInterface.swift in Sources */,
 				ED082FD421CFFD3F00C892C8 /* NotificationServiceInterface.swift in Sources */,
 				4172F8AC228AE2BE008A5AE9 /* ApplicationCoordinatorFactory.swift in Sources */,
@@ -2470,7 +2426,6 @@
 				EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */,
 				EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */,
 				866B3B0B21AEDCC90078361A /* DrugsListModuleInterface.swift in Sources */,
-				860AC63221B2B31B007317B2 /* CalculatorPopup.swift in Sources */,
 				866F0CF121EB576100D9FF94 /* DrugTimesEditInterface.swift in Sources */,
 				8682996321C8C88500679C05 /* ComboboxCellViewModel.swift in Sources */,
 				ED8F6A752179F4F3001DBDAA /* SessionManager+Multipart.swift in Sources */,
@@ -2508,7 +2463,7 @@
 				ED45FBEC2199D08F00E81497 /* MedicineCoursePresenter.swift in Sources */,
 				41A5339622072438009A735E /* ModuleServiceAssembly.swift in Sources */,
 				EDC891DD21CE97150002CD9E /* WindowServiceInterface.swift in Sources */,
-				41A533AC220A0A94009A735E /* NavigationConfiguration.swift in Sources */,
+				41A533AC220A0A94009A735E /* ScreenEventManager.swift in Sources */,
 				866B3B0421AEDCC90078361A /* DrugsListAssembly.swift in Sources */,
 				EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */,
 				860AC5E221B26FD8007317B2 /* MedicineType.swift in Sources */,
@@ -2556,10 +2511,10 @@
 				ED45FBE62199D08F00E81497 /* MedicineCourseCellViewModel.swift in Sources */,
 				86F9D27C21EF7103000ABB67 /* DrugPeriodicEditAssembly.swift in Sources */,
 				866B3B0921AEDCC90078361A /* DrugCellViewModel.swift in Sources */,
+				ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */,
 				EDE9894821E92F5B00870F25 /* RoutineLabelViewModel.swift in Sources */,
 				860E48E621C2B1440009E4DB /* TextFieldCellViewModel.swift in Sources */,
 				EDA9A63E21E672DD00D99B09 /* SectionViewModel.swift in Sources */,
-				4172F897228AE035008A5AE9 /* Coordinator.swift in Sources */,
 				860AC62721B2923A007317B2 /* DrugEditTableViewFactory.swift in Sources */,
 				862E301021D09BB30097991D /* MedicineDrugServiceAssembly.swift in Sources */,
 				ED8F6A052179B971001DBDAA /* MainPresenter.swift in Sources */,
@@ -2580,7 +2535,6 @@
 				8675B60021C21A5B005F631C /* LabelCell.swift in Sources */,
 				867283B421AAD4020000495C /* ConfirmDecisionPopup.swift in Sources */,
 				867EF4FE21F0F1B50019253C /* DrugPeriodicEditTableViewFactory.swift in Sources */,
-				ED8F6A202179B971001DBDAA /* BackgroundViewController.swift in Sources */,
 				EDA9A65021E750D600D99B09 /* RoutineViewModel.swift in Sources */,
 				EDE9894921E92F5B00870F25 /* RoutineLabel.swift in Sources */,
 				86F9D26E21EEFFC2000ABB67 /* DrugPeriodicEditInterface.swift in Sources */,
@@ -2589,12 +2543,10 @@
 				ED279C2721A5E890004BB7D2 /* MedicineCourseEntity+CoreDataProperties.swift in Sources */,
 				860AC63021B2923A007317B2 /* DrugEditRouter.swift in Sources */,
 				86C2BEAB21A7E32B001BA77B /* StandartProgressBar.swift in Sources */,
-				866B3B0021AEDCC90078361A /* DrugsListAnimator.swift in Sources */,
 				ED082FD621CFFD4C00C892C8 /* MagicalRecordService.swift in Sources */,
 				866CA11021CA1E8600363BC9 /* ImageAndLabelCell.swift in Sources */,
 				ED8F6A612179F126001DBDAA /* DownloadOperation.swift in Sources */,
 				ED8F6A1C2179B971001DBDAA /* RoutineViewController.swift in Sources */,
-				860AC5DA21B1ADF3007317B2 /* DrugDetailsAnimator.swift in Sources */,
 				41F06B492289A68E00D28682 /* MenuTableViewFactoryInterface.swift in Sources */,
 				860AC65D21B57A44007317B2 /* DaysPeriod.swift in Sources */,
 				EDCD216F21A722BE009D704B /* LocalNotificationService.swift in Sources */,

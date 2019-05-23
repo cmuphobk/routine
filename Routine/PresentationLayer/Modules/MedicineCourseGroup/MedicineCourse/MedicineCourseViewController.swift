@@ -26,7 +26,7 @@ enum MedicineCourseGroupType: String {
     }
 }
 
-final class MedicineCourseViewController: RoutineViewController {
+final class MedicineCourseViewController: RoutineViewController, BaseView {
     
     var output: MedicineCourseViewOutput!
     var moduleService: ModuleServiceInterface!

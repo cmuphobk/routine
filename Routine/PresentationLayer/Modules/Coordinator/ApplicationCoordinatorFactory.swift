@@ -4,19 +4,19 @@ class ApplicationCoordinatorFactory {
     
     func makeMainCoordinator(navigationController: UINavigationController,
                              delegate: MainCoordinatorDelegate,
-                             parentNavigationConfiguration: NavigationConfiguration?) -> MainCoordinator {
+                             parentScreenEventManager: ScreenEventManager?) -> MainCoordinator {
         let coordinator = MainCoordinator(navigationController: navigationController)
         coordinator.delegate = delegate
-        coordinator.parentNavigationConfiguration = parentNavigationConfiguration
+        coordinator.parentScreenEventManager = parentScreenEventManager
         return coordinator
     }
     
     func makeMedicineCourseCoordinator(navigationController: UINavigationController,
                                        delegate: MedicineCourseCoordinatorDelegate,
-                                       parentNavigationConfiguration: NavigationConfiguration?) -> MedicineCourseCoordinator {
+                                       parentScreenEventManager: ScreenEventManager?) -> MedicineCourseCoordinator {
         let coordinator = MedicineCourseCoordinator(navigationController: navigationController)
         coordinator.delegate = delegate
-        coordinator.parentNavigationConfiguration = parentNavigationConfiguration
+        coordinator.parentScreenEventManager = parentScreenEventManager
         return coordinator
     }
 }

@@ -37,7 +37,7 @@ enum DrugEditAssembly {
         
         router.viewController = moduleViewController
         router.viewController = moduleViewController
-        router.coordinator = coordinator
+        router.routerOutput = coordinator
         
         completion(moduleViewController, presenter)
     }

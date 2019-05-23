@@ -1,21 +1,19 @@
 import Foundation
 import UIKit
 
-protocol DrugPeriodicEditModuleInput: class {
+protocol DrugPeriodicEditModuleInput: ModuleInput {
     func configureModule(periodType: PeriodCourseType, periodValue: Int)
 }
 
-protocol DrugPeriodicEditModuleOutput: class {
+protocol DrugPeriodicEditModuleOutput: ModuleOutput {
     func acceptNewPeriod(newDrugPeriodCourseType: PeriodCourseType, newDrugPeriodCourseValue: Int)
 }
 
-protocol DrugPeriodicEditViewInput: class {
-    func setupInitialState()
-    
+protocol DrugPeriodicEditViewInput: ViewInput {    
     func updateSelectedType(periodType: PeriodCourseType, andValue value: Int)
 }
 
-protocol DrugPeriodicEditViewOutput: class {
+protocol DrugPeriodicEditViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     
     var drugPeriodicEditTableViewFactory: DrugPeriodicEditTableViewFactoryInterface! { get}
@@ -29,10 +27,10 @@ protocol DrugPeriodicEditViewOutput: class {
     func valueChanged(_ value: Int)
 }
 
-protocol DrugPeriodicEditModuleRouter: class {
+protocol DrugPeriodicEditRouterInput: RouterInput {
     func closeModule()
 }
 
-protocol DrugPeriodicEditModuleAnimating: class {
-    // empty
+protocol DrugPeriodicEditRouterOutput: RouterOutput {
+    
 }

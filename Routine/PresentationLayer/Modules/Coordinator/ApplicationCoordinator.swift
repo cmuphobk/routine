@@ -1,33 +1,27 @@
 import UIKit
 
-protocol ApplicationCoordinating {
-    func openModuleById(_ identifier: String)
-    func openMenu()
-    func hideMenu()
-}
-
-protocol ApplicationCoordinatingDelegate: class {
+protocol ApplicationCoordinatorDelegate: class {
     
 }
 
-class ApplicationCoordinator: Coordinatorable, NavigationConfiguration {
+class ApplicationCoordinator: Coordinatorable, ScreenEventManager {
 
     // MARK: - Coordinatorable
     var navigationController: UINavigationController
     var childCoordinators: [Coordinatorable] = []
     
-    // MARK: - NavigationConfiguration
-    var parentNavigationConfiguration: NavigationConfiguration?
+    // MARK: - ScreenEventManager
+    var parentScreenEventManager: ScreenEventManager?
     var taskHideError: DispatchWorkItem!
     
     // MARK: - ApplicationCoordinator
-    var window: UIWindow!
+    var rootView: UIView!
     var windowService: WindowServiceInterface!
     var moduleService: ModuleServiceInterface!
 
     var factory = ApplicationModuleFactory()
     var coordinatorFactory = ApplicationCoordinatorFactory()
-    weak var delegate: ApplicationCoordinatingDelegate?
+    weak var delegate: ApplicationCoordinatorDelegate?
     
     var menuViewController: UIViewController!
     let menuViewWidth: CGFloat = 300.0
@@ -45,32 +39,33 @@ class ApplicationCoordinator: Coordinatorable, NavigationConfiguration {
                 self.menuViewController = viewController
                 self.menuViewController.view.frame = CGRect(x: -self.menuViewWidth, y: 0, width: self.menuViewWidth, height: self.view.frame.height)
                 self.navigationController.addChild(viewController)
-                self.window.addSubview(viewController.view)
+                self.rootView.addSubview(viewController.view)
             }
         }
         
         let mainCoordinator = self.coordinatorFactory.makeMainCoordinator(navigationController: self.navigationController,
                                                                           delegate: self,
-                                                                          parentNavigationConfiguration: self)
+                                                                          parentScreenEventManager: self)
+        self.childCoordinators.append(mainCoordinator)
         mainCoordinator.start()
     }
     
 }
 
-extension ApplicationCoordinator: ApplicationCoordinating {
+extension ApplicationCoordinator: MenuRouterOutput {
     
     func openModuleById(_ identifier: String) {
         switch identifier {
         case kMainModuleId:
             let mainCoordinator = self.coordinatorFactory.makeMainCoordinator(navigationController: self.navigationController,
                                                                               delegate: self,
-                                                                              parentNavigationConfiguration: self)
+                                                                              parentScreenEventManager: self)
             mainCoordinator.start()
         case kMedicineCourseModuleId:
             let medicineCoordinator = self.coordinatorFactory.makeMedicineCourseCoordinator(
                 navigationController: self.navigationController,
                 delegate: self,
-                parentNavigationConfiguration: self)
+                parentScreenEventManager: self)
             
             medicineCoordinator.start()
         default: return

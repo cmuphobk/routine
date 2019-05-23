@@ -1,9 +1,8 @@
 import Foundation
 import UIKit
 
-final class DrugPeriodicEditViewController: RoutineViewController {
+final class DrugPeriodicEditViewController: RoutineViewController, BaseView {
     var output: DrugPeriodicEditViewOutput!
-    var animator: DrugPeriodicEditModuleAnimating!
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet var typeSelector: StandartPagePicker!

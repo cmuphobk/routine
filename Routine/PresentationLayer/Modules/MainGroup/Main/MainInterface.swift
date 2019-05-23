@@ -1,14 +1,13 @@
 import UIKit
 
-protocol MainModuleInput: class {
+protocol MainModuleInput: ModuleInput {
     func configureModule()
 }
 
-protocol MainViewInput: class {
-    func setupInitialState()
+protocol MainViewInput: ViewInput {
 }
 
-protocol MainViewOutput: class {
+protocol MainViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     var mainTableViewFactory: MainTableViewFactoryInterface! { get }
     
@@ -23,11 +22,15 @@ protocol MainViewOutput: class {
     func configureNavigationBar(title: String)
 }
 
-protocol MainModuleRouting: class {
+protocol MainRouterInput: RouterInput {
     func openCourseModule()
     
     func rightSwipeAction()
     func leftSwipeAction()
     
     func configureNavigationBar(title: String)
+}
+
+protocol MainRouterOutput: RouterOutput {
+    
 }

@@ -40,20 +40,20 @@ extension NavigationContainer {
 
 // MARK: - ModalObtainer
 
-protocol ModalObtainer: class {
+protocol ModalManager: class {
     // MARK: - methods
     
     func containerForModal() -> ModalContainer?
 }
 
-extension ModalObtainer where Self: UIViewController {
+extension ModalManager where Self: UIViewController {
     func containerForModal() -> ModalContainer? {
         guard let view = self.view else { return nil }
         return ModalContainer(view: view, viewController: self)
     }
 }
 
-extension ModalObtainer where Self: NavigationContainer {
+extension ModalManager where Self: NavigationContainer {
     func containerForModal() -> ModalContainer? {
         guard let view = self.navigationController.view else { return nil }
         return ModalContainer(view: view, viewController: self.navigationController)
@@ -66,11 +66,11 @@ protocol IdiomCheckerDelegate: class {
     var userInterfaceIdiom: UIUserInterfaceIdiom { get }
 }
 
-protocol NavigationBarConfiguration: NavigationContainer {
+protocol NavigationBarManager: NavigationContainer {
     // MARK: - optional
     
     var idiomCheckerDelegate: IdiomCheckerDelegate? { get set }
-    var menuConfiguration: MenuConfiguration? { get set }
+    var menuConfiguration: MenuManager? { get set }
     
     // MARK: - methods
     
@@ -86,7 +86,7 @@ protocol NavigationBarConfiguration: NavigationContainer {
     func configureNavigationTitle(_ title: String)
 }
 
-extension NavigationBarConfiguration {
+extension NavigationBarManager {
     
     func emptyCustomBarLeftButtonAction() {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate, idiomCheckerDelegate.userInterfaceIdiom != .pad {
@@ -172,7 +172,7 @@ extension NavigationBarConfiguration {
 
 // MARK: - MenuConfiguration
 
-protocol MenuConfiguration: NavigationContainer {
+protocol MenuManager: NavigationContainer {
     // MARK: - methods
     
     func triggerMenu()
@@ -192,7 +192,7 @@ protocol MessageConfigurationDelegate: class {
     func obtainErrorImageView() -> UIImageView
 }
 
-protocol MessageConfiguration: NavigationContainer {
+protocol MessageManager: NavigationContainer {
     // MARK: - required
     
     var messageConfigurationDelegate: MessageConfigurationDelegate? { get set }
@@ -207,20 +207,20 @@ protocol MessageConfiguration: NavigationContainer {
 
 }
 
-protocol NavigationConfiguration:
-ModalObtainer,
-NavigationBarConfiguration,
-MenuConfiguration,
-MessageConfiguration {
+protocol ScreenEventManager:
+ModalManager,
+NavigationBarManager,
+MenuManager,
+MessageManager {
     
-    var parentNavigationConfiguration: NavigationConfiguration? { get set }
+    var parentScreenEventManager: ScreenEventManager? { get set }
     
 }
 
-extension NavigationConfiguration {
+extension ScreenEventManager {
     var idiomCheckerDelegate: IdiomCheckerDelegate? {
         get {
-            return self.parentNavigationConfiguration as? IdiomCheckerDelegate
+            return self.parentScreenEventManager as? IdiomCheckerDelegate
         }
         set {
             print(newValue ?? "no value")
@@ -235,10 +235,10 @@ extension NavigationConfiguration {
     }
 }
 
-extension NavigationConfiguration {
+extension ScreenEventManager {
     var messageConfigurationDelegate: MessageConfigurationDelegate? {
         get {
-            return self.parentNavigationConfiguration as? MessageConfigurationDelegate
+            return self.parentScreenEventManager as? MessageConfigurationDelegate
         }
         set {
             print(newValue ?? "no value")
@@ -289,8 +289,8 @@ extension NavigationConfiguration {
 }
 
 
-extension NavigationConfiguration {
-    var menuConfiguration: MenuConfiguration? {
+extension ScreenEventManager {
+    var menuConfiguration: MenuManager? {
         get {
             return self
         }
@@ -299,41 +299,41 @@ extension NavigationConfiguration {
         }
     }
     func triggerMenu() {
-        guard let menuConfiguration = self.parentNavigationConfiguration else {
+        guard let menuConfiguration = self.parentScreenEventManager else {
             return
         }
         menuConfiguration.triggerMenu()
     }
     
     func openMenu() {
-        guard let menuConfiguration = self.parentNavigationConfiguration else {
+        guard let menuConfiguration = self.parentScreenEventManager else {
             return
         }
         menuConfiguration.openMenu()
     }
     
     func hideMenu() {
-        guard let menuConfiguration = self.parentNavigationConfiguration else {
+        guard let menuConfiguration = self.parentScreenEventManager else {
             return
         }
         menuConfiguration.hideMenu()
     }
 }
 
-extension NavigationConfiguration {
+extension ScreenEventManager {
     
     func showMessageWithText(_ text: String, andType type: MessageType) {
         self.showMessageWithText(text, andType: type, sender: nil)
     }
     
     func showMessageWithText(_ text: String, andType type: MessageType, sender: Any? = nil) {
-        if let messageConfiguration = self.parentNavigationConfiguration {
+        if let messageConfiguration = self.parentScreenEventManager {
             messageConfiguration.showMessageWithText(text, andType: type, sender: sender)
         }
     }
     
     func hideMessages() {
-        if let messageConfiguration = self.parentNavigationConfiguration {
+        if let messageConfiguration = self.parentScreenEventManager {
             messageConfiguration.hideMessages()
         }
     }

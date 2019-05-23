@@ -1,20 +1,19 @@
 import Foundation
 import UIKit
 
-protocol DrugTimesEditModuleInput: class {
+protocol DrugTimesEditModuleInput: ModuleInput {
     func configureModule()
 }
 
-protocol DrugTimesEditModuleOutput: class {
+protocol DrugTimesEditModuleOutput: ModuleOutput {
     func acceptNewTimes(newDrugEndingCourseType: EndingCourseType, newDrugEndingCourseValue: Int)
 }
 
-protocol DrugTimesEditViewInput: class {
-    func setupInitialState()
+protocol DrugTimesEditViewInput: ViewInput {
     func updateSelectedType(endingType: EndingCourseType, andValue: Int)
 }
 
-protocol DrugTimesEditViewOutput: class {
+protocol DrugTimesEditViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     
     func didTriggerViewReadyEvent()
@@ -26,10 +25,10 @@ protocol DrugTimesEditViewOutput: class {
     func valueChanged(_ value: Int)
 }
 
-protocol DrugTimesEditModuleRouter: class {
+protocol DrugTimesEditRouterInput: RouterInput {
     func closeModule()
 }
 
-protocol DrugTimesEditModuleAnimating: class {
-    // empty
+protocol DrugTimesEditRouterOutput: RouterOutput {
+    
 }

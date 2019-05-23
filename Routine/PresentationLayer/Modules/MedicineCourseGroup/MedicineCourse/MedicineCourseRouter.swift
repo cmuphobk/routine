@@ -1,13 +1,15 @@
 import UIKit
 
-final class MedicineCourseRouter: MedicineCourseModuleRouting {
+final class MedicineCourseRouter: BaseRouter {
+    var routerOutput: MedicineCourseRouterOutput!
     weak var viewController: UIViewController!
-    var coordinator: MedicineCourseCoordinator!
+}
+
+extension MedicineCourseRouter: MedicineCourseRouterInput {
+//    weak private var createMedicineCourseViewController: InputTextPopupViewController?
+//    weak private var deleteMedicineCourseViewController: ConfirmDecisionPopup?
     
-    weak private var createMedicineCourseViewController: InputTextPopup?
-    weak private var deleteMedicineCourseViewController: ConfirmDecisionPopup?
-    
-    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup? {
+    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopupViewController? {
         
 //        self.createMedicineCourseViewController = self.moduleService.moduleFactory.makeCreatePopUpModule(confirmationDelegate: confirmationDelegate)
 //        guard let createMedicineCourseViewController = self.createMedicineCourseViewController else { return nil }
@@ -21,7 +23,7 @@ final class MedicineCourseRouter: MedicineCourseModuleRouting {
         return nil
     }
     
-    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
+    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopupViewController? {
         
 //        self.createMedicineCourseViewController = self.moduleService.moduleFactory.makeRenamePopupModule(confirmationDelegate: confirmationDelegate, medCourse: medCourse)
 //        guard let createMedicineCourseViewController = self.createMedicineCourseViewController else { return nil }

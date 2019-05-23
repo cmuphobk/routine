@@ -1,8 +1,8 @@
 import UIKit
 
-class MenuModulePresenter {    
-    weak var view: MenuModuleViewInput!
-    var router: MenuModuleRouting!
+class MenuPresenter: BasePresenter {    
+    weak var view: MenuViewInput!
+    var router: MenuRouterInput!
     
     var menuItems: [ModuleDescription] = []
     
@@ -12,7 +12,7 @@ class MenuModulePresenter {
 }
 
 // MARK: - MenuModuleInput
-extension MenuModulePresenter: MenuModuleInput {
+extension MenuPresenter: MenuModuleInput {
     func configureModule(menuItems: [ModuleDescription]) {
         self.menuItems = menuItems
     }
@@ -22,8 +22,8 @@ extension MenuModulePresenter: MenuModuleInput {
     }
 }
 
-// MARK: - MenuModuleViewOutput
-extension MenuModulePresenter: MenuModuleViewOutput {
+// MARK: - MenuViewOutput
+extension MenuPresenter: MenuViewOutput {
     
     func didTriggerShowMenu() {
         self.router.didTriggerShowMenu()

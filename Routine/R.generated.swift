@@ -458,12 +458,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 11 storyboards.
   struct storyboard {
-    /// Storyboard `AnimateLaunchScreenViewController`.
-    static let animateLaunchScreenViewController = _R.storyboard.animateLaunchScreenViewController()
-    /// Storyboard `CalculatorPopup`.
-    static let calculatorPopup = _R.storyboard.calculatorPopup()
     /// Storyboard `ConfirmDecisionPopup`.
     static let confirmDecisionPopup = _R.storyboard.confirmDecisionPopup()
     /// Storyboard `DrugDetails`.
@@ -484,18 +480,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `MedicineCourse`.
     static let medicineCourse = _R.storyboard.medicineCourse()
-    /// Storyboard `MenuModuleViewController`.
-    static let menuModuleViewController = _R.storyboard.menuModuleViewController()
-    
-    /// `UIStoryboard(name: "AnimateLaunchScreenViewController", bundle: ...)`
-    static func animateLaunchScreenViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.animateLaunchScreenViewController)
-    }
-    
-    /// `UIStoryboard(name: "CalculatorPopup", bundle: ...)`
-    static func calculatorPopup(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.calculatorPopup)
-    }
+    /// Storyboard `MenuViewController`.
+    static let menuViewController = _R.storyboard.menuViewController()
     
     /// `UIStoryboard(name: "ConfirmDecisionPopup", bundle: ...)`
     static func confirmDecisionPopup(_: Void = ()) -> UIKit.UIStoryboard {
@@ -547,9 +533,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.medicineCourse)
     }
     
-    /// `UIStoryboard(name: "MenuModuleViewController", bundle: ...)`
-    static func menuModuleViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.menuModuleViewController)
+    /// `UIStoryboard(name: "MenuViewController", bundle: ...)`
+    static func menuViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.menuViewController)
     }
     
     fileprivate init() {}
@@ -4274,8 +4260,6 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try animateLaunchScreenViewController.validate()
-      try calculatorPopup.validate()
       try confirmDecisionPopup.validate()
       try drugDetails.validate()
       try drugEdit.validate()
@@ -4286,43 +4270,7 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       try main.validate()
       try medicineCourse.validate()
-      try menuModuleViewController.validate()
-    }
-    
-    struct animateLaunchScreenViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let animateLaunchScreenViewController = StoryboardViewControllerResource<AnimateLaunchScreenViewController>(identifier: "AnimateLaunchScreenViewController")
-      let bundle = R.hostingBundle
-      let name = "AnimateLaunchScreenViewController"
-      
-      func animateLaunchScreenViewController(_: Void = ()) -> AnimateLaunchScreenViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: animateLaunchScreenViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.animateLaunchScreenViewController().animateLaunchScreenViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'animateLaunchScreenViewController' could not be loaded from storyboard 'AnimateLaunchScreenViewController' as 'AnimateLaunchScreenViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct calculatorPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let calculatorPopup = StoryboardViewControllerResource<CalculatorPopup>(identifier: "CalculatorPopup")
-      let name = "CalculatorPopup"
-      
-      func calculatorPopup(_: Void = ()) -> CalculatorPopup? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: calculatorPopup)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.calculatorPopup().calculatorPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'calculatorPopup' could not be loaded from storyboard 'CalculatorPopup' as 'CalculatorPopup'.") }
-      }
-      
-      fileprivate init() {}
+      try menuViewController.validate()
     }
     
     struct confirmDecisionPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -4435,17 +4383,17 @@ struct _R: Rswift.Validatable {
     
     struct inputTextPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let inputTextPopup = StoryboardViewControllerResource<InputTextPopup>(identifier: "InputTextPopup")
+      let inputTextPopup = StoryboardViewControllerResource<InputTextPopupViewController>(identifier: "InputTextPopup")
       let name = "InputTextPopup"
       
-      func inputTextPopup(_: Void = ()) -> InputTextPopup? {
+      func inputTextPopup(_: Void = ()) -> InputTextPopupViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: inputTextPopup)
       }
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
-        if _R.storyboard.inputTextPopup().inputTextPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'inputTextPopup' could not be loaded from storyboard 'InputTextPopup' as 'InputTextPopup'.") }
+        if _R.storyboard.inputTextPopup().inputTextPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'inputTextPopup' could not be loaded from storyboard 'InputTextPopup' as 'InputTextPopupViewController'.") }
       }
       
       fileprivate init() {}
@@ -4502,19 +4450,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct menuModuleViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct menuViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let menuModuleViewController = StoryboardViewControllerResource<MenuModuleViewController>(identifier: "MenuModuleViewController")
-      let name = "MenuModuleViewController"
+      let menuViewController = StoryboardViewControllerResource<MenuViewController>(identifier: "MenuViewController")
+      let name = "MenuViewController"
       
-      func menuModuleViewController(_: Void = ()) -> MenuModuleViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuModuleViewController)
+      func menuViewController(_: Void = ()) -> MenuViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuViewController)
       }
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
-        if _R.storyboard.menuModuleViewController().menuModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuModuleViewController' could not be loaded from storyboard 'MenuModuleViewController' as 'MenuModuleViewController'.") }
+        if _R.storyboard.menuViewController().menuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuViewController' could not be loaded from storyboard 'MenuViewController' as 'MenuViewController'.") }
       }
       
       fileprivate init() {}

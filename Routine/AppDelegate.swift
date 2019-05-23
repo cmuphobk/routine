@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         applicationCoordinator.windowService = AppDelegate.serviceProvider.makeWindowService()
         applicationCoordinator.moduleService = AppDelegate.serviceProvider.makeModuleService()
-        applicationCoordinator.window = window
+        applicationCoordinator.rootView = window
 
         self.window = window
         self.applicationCoordinator = applicationCoordinator

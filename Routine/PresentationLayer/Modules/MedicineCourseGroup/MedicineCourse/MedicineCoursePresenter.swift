@@ -3,9 +3,9 @@ import UIKit
 let kMedicineCourseModuleId = "medicine_course_name"
 let kMedicineCourseModuleAlias = "medicine_course_alias"
 
-final class MedicineCoursePresenter: Module {
+final class MedicineCoursePresenter: Module, BasePresenter {
     weak var view: MedicineCourseViewInput!
-    var router: MedicineCourseModuleRouting!
+    var router: MedicineCourseRouterInput!
     var medicineCourseService: MedicineCourseServiceInterface!
     
     var name = kMedicineCourseModuleId

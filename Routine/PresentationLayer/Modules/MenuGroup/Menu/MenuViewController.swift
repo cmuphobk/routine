@@ -1,10 +1,8 @@
 import UIKit
 
-class MenuModuleViewController: RoutineViewController {
+class MenuViewController: RoutineViewController, BaseView {
     
-    var output: MenuModuleViewOutput!
-    
-    weak var viewController: UIViewController!
+    var output: MenuViewOutput!
     
     private lazy var tableViewModel = { () -> RoutineTableViewModel in 
         let model = RoutineTableViewModel(routineDelegate: self.output.localizeService)
@@ -53,8 +51,8 @@ class MenuModuleViewController: RoutineViewController {
 
 }
 
-// MARK: - MenuModuleViewInput
-extension MenuModuleViewController: MenuModuleViewInput {
+// MARK: - MenuViewInput
+extension MenuViewController: MenuViewInput {
     
     func setupInitialState() {
         self.tableViewManager = RoutineTableViewManager(tableView: self.tableView, delegate: self)
@@ -84,7 +82,7 @@ extension MenuModuleViewController: MenuModuleViewInput {
 }
 
 // MARK: - RoutineTableViewManager
-extension MenuModuleViewController: RoutineTableViewManagerDelegate {
+extension MenuViewController: RoutineTableViewManagerDelegate {
     
     func didTriggerCell(index: Int, actionType: RoutineActionType) {
         if actionType != .select {

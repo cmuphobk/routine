@@ -1,10 +1,12 @@
 import Foundation
 import UIKit
 
-final class DrugTimesEditRouter: DrugTimesEditModuleRouter {
+final class DrugTimesEditRouter: BaseRouter {
     weak var viewController: UIViewController!
-    var coordinator: MedicineCourseCoordinator!
-    
+    var routerOutput: DrugTimesEditRouterOutput!
+}
+
+extension DrugTimesEditRouter: DrugTimesEditRouterInput {
     func closeModule() {
 //        self.moduleService.navigation?.popModule()
     }

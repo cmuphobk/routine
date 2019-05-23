@@ -21,7 +21,7 @@ enum DrugsListAssembly {
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.drugsListTableViewFactory = DrugsListTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
-        router.coordinator = coordinator
+        router.routerOutput = coordinator
         
         completion(moduleViewController, presenter)
     }

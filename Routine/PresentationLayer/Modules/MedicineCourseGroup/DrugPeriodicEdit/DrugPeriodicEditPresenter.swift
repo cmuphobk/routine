@@ -3,10 +3,10 @@ import UIKit
 
 let kDrugPeriodicEditModuleId = "kDrugPeriodicEdit"
 
-class DrugPeriodicEditPresenter: Module {
+class DrugPeriodicEditPresenter: Module, BasePresenter {
     var moduleOutput: DrugPeriodicEditModuleOutput?
     weak var view: DrugPeriodicEditViewInput!
-    var router: DrugPeriodicEditModuleRouter!
+    var router: DrugPeriodicEditRouter!
     
     var name = "DrugPeriodicEdit_name"
     var alias = "DrugPeriodicEdit"
@@ -29,7 +29,6 @@ class DrugPeriodicEditPresenter: Module {
 
 // MARK: - DrugTimesEditModuleInput
 extension DrugPeriodicEditPresenter: DrugPeriodicEditModuleInput {
-    
     func configureModule(periodType: PeriodCourseType, periodValue: Int) {
         self.periodType = periodType
         self.periodValue = periodValue

@@ -1,8 +1,6 @@
 import UIKit
 
-protocol ConfirmationViewInput: class {
-    func setupInitialState()
-    
+protocol ConfirmationViewInput: ViewInput {    
     func updateCaptionText(_ text: String)
     func updateText(_ text: String)
     func updateTextFieldValue(_ value: String, placeholder: String)
@@ -12,7 +10,7 @@ protocol ConfirmationViewInput: class {
     func updateAcceptButtonAvilable(_ avilable: Bool)
 }
 
-protocol ConfirmationViewOutput: class {
+protocol ConfirmationViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     var windowService: WindowServiceInterface! { get }
     
@@ -26,7 +24,7 @@ protocol ConfirmationViewOutput: class {
     func cancelButtonDidPressed()
 }
 
-protocol ConfirmationModuleOutput: class {
+protocol ConfirmationModuleOutput: ModuleOutput {
     func confirmWithMessage(_ msg: String)
     func cancelWithoutMessage()
 }

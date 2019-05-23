@@ -1,8 +1,7 @@
 import UIKit
 
-final class DrugsListViewController: RoutineViewController {
+final class DrugsListViewController: RoutineViewController, BaseView {
     var output: DrugsListViewOutput!
-    var animator: DrugsListAnimator!
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak private var contentView: UIView!

@@ -1,17 +1,16 @@
 import UIKit
 
-protocol DrugsListModuleInput: class {
+protocol DrugsListModuleInput: ModuleInput {
     func configureModule(selectedMedCourse: MedicineCourse)
     func updateDrug(_ drug: MedicineDrug)
     func removeDrug(_ drug: MedicineDrug)
 }
 
-protocol DrugsListModuleOutput: class {
-    // empty
+protocol DrugsListModuleOutput: ModuleOutput {
+
 }
 
-protocol DrugsListViewInput: class {
-    func setupInitialState()
+protocol DrugsListViewInput: ViewInput {
     func updateNavTitle(_ text: String)
     func enableCreateButton()
     func updateTableViewWithMedicineCourse(_ medicineCourse: MedicineCourse)
@@ -19,7 +18,7 @@ protocol DrugsListViewInput: class {
     func removeDrug(_ drug: MedicineDrug, forIndex: Int)
 }
 
-protocol DrugsListViewOutput: class {
+protocol DrugsListViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     var drugsListTableViewFactory: DrugsListTableViewFactoryInterface! { get }
     
@@ -30,12 +29,12 @@ protocol DrugsListViewOutput: class {
     func rowDidPressed(index: Int)
 }
 
-protocol DrugsListModuleRouting: class {
+protocol DrugsListRouterInput: RouterInput {
     func openDrugDetails(_ drug: MedicineDrug, medicineCourse: MedicineCourse, drugsListModuleInput: DrugsListModuleInput)
     func openCreateDrugsForCourse(_ medicineCourse: MedicineCourse, drugsListModuleInput: DrugsListModuleInput)
     func closeModule()
 }
 
-protocol DrugsListModuleAnimating: class {
-    // empty
+protocol DrugsListRouterOutput: RouterOutput {
+    
 }

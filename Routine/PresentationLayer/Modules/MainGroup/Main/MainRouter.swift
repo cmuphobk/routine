@@ -1,9 +1,11 @@
 import UIKit
 
-final class MainRouter: MainModuleRouting {
+final class MainRouter: BaseRouter {
     weak var viewController: UIViewController!
-    var coordinator: MainCoordinator!
-    
+    weak var routerOutput: RouterOutput!
+}
+
+extension MainRouter: MainRouterInput {
     func openCourseModule() {
         
 //        self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
@@ -14,23 +16,23 @@ final class MainRouter: MainModuleRouting {
     }
     
     func rightSwipeAction() {
-        self.coordinator.openMenu()
+        self.routerOutput.openMenu()
     }
     
     func leftSwipeAction() {
-        self.coordinator.hideMenu()
+        self.routerOutput.hideMenu()
     }
     
     @objc func menuButtonClicked() {
-        self.coordinator.triggerMenu()
+        self.routerOutput.triggerMenu()
     }
     
     func configureNavigationBar(title: String) {
-        self.coordinator.configureNavigationTitle(title)
+        self.routerOutput.configureNavigationTitle(title)
         
-        self.coordinator.configureNavigationBarWithColor(ColorProvider.default.blueColor)
+        self.routerOutput.configureNavigationBarWithColor(ColorProvider.default.blueColor)
         
-        self.coordinator.customBarLeftButtonAction(
+        self.routerOutput.customBarLeftButtonAction(
             icon: ImageProvider.default.menuIcon.imageWithMask(color: ColorProvider.default.whiteColor),
             target: self,
             action: #selector(menuButtonClicked))

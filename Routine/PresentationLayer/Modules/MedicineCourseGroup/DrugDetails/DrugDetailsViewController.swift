@@ -1,9 +1,9 @@
 import UIKit
 
-final class DrugDetailsViewController: RoutineViewController {
+final class DrugDetailsViewController: RoutineViewController, BaseView {
     var output: DrugDetailsViewOutput!
-    var animator: DrugDetailsAnimator!
-    //FIXME: 
+    
+    //FIXME:
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak private var webView: UIWebView!

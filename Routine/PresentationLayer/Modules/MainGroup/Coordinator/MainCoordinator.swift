@@ -4,14 +4,14 @@ protocol MainCoordinatorDelegate: class {
     
 }
 
-class MainCoordinator: Coordinatorable, NavigationConfiguration {
+class MainCoordinator: Coordinatorable, ScreenEventManager {
 
     // MARK: - Coordinatorable
     var navigationController: UINavigationController
     var childCoordinators: [Coordinatorable] = []
 
-    // MARK: - NavigationConfiguration
-    var parentNavigationConfiguration: NavigationConfiguration?
+    // MARK: - ScreenEventManager
+    var parentScreenEventManager: ScreenEventManager?
     var taskHideError: DispatchWorkItem!
     
     // MARK: - MainCoordinator
@@ -29,5 +29,9 @@ class MainCoordinator: Coordinatorable, NavigationConfiguration {
             }
         }
     }
+    
+}
+
+extension MainCoordinator: MainRouterOutput {
     
 }

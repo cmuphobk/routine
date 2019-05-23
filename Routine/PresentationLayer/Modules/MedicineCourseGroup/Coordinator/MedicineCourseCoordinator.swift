@@ -4,14 +4,14 @@ protocol MedicineCourseCoordinatorDelegate: class {
     
 }
 
-class MedicineCourseCoordinator: Coordinatorable, NavigationConfiguration {
+class MedicineCourseCoordinator: Coordinatorable, ScreenEventManager {
     
     // MARK: - Coordinatorable
     var navigationController: UINavigationController
     var childCoordinators: [Coordinatorable] = []
 
-    // MARK: - NavigationConfiguration
-    var parentNavigationConfiguration: NavigationConfiguration?
+    // MARK: - ScreenEventManager
+    var parentScreenEventManager: ScreenEventManager?
     var taskHideError: DispatchWorkItem!
     
     // MARK: - MedicineCourseCoordinator
@@ -29,5 +29,29 @@ class MedicineCourseCoordinator: Coordinatorable, NavigationConfiguration {
             }
         }
     }
+    
+}
+
+extension MedicineCourseCoordinator: MedicineCourseRouterOutput {
+    
+}
+
+extension MedicineCourseCoordinator: DrugsListRouterOutput {
+    
+}
+
+extension MedicineCourseCoordinator: DrugEditRouterOutput {
+    
+}
+
+extension MedicineCourseCoordinator: DrugTimesEditRouterOutput {
+    
+}
+
+extension MedicineCourseCoordinator: DrugDetailsRouterOutput {
+    
+}
+
+extension MedicineCourseCoordinator: DrugPeriodicEditRouterOutput {
     
 }

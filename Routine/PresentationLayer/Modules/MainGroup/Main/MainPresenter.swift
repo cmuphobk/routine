@@ -3,9 +3,9 @@ import UIKit
 let kMainModuleId = "main_name"
 let kMainModuleAlias = "main_alias"
 
-final class MainPresenter: Module {
+final class MainPresenter: Module, BasePresenter {
     weak var view: MainViewInput!
-    var router: MainModuleRouting!
+    var router: MainRouterInput!
     
     var name = kMainModuleId
     var alias = kMainModuleAlias
@@ -19,10 +19,6 @@ final class MainPresenter: Module {
 
 // MARK: - MainScreenModuleInput
 extension MainPresenter: MainModuleInput {
-    
-    func configureModule() {
-        
-    }
     
 }
 

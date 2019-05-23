@@ -1,6 +1,6 @@
 import UIKit
 
-final class DrugEditViewController: RoutineViewController {
+final class DrugEditViewController: RoutineViewController, BaseView {
     var output: DrugEditViewOutput!
     
     private lazy var tableViewModel = { () -> RoutineTableViewModel in

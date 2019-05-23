@@ -1,8 +1,8 @@
 import UIKit
 import Stevia
 
-class InputTextPopup: UIViewController {
-    var presenter: ConfirmationViewOutput?
+class InputTextPopupViewController: RoutineViewController, BaseView {    
+    var output: ConfirmationViewOutput!
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
@@ -38,20 +38,20 @@ class InputTextPopup: UIViewController {
 
         self.textField.delegate = self
         
-        self.presenter?.didTriggerViewReadyEvent()
+        self.output?.didTriggerViewReadyEvent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.presenter?.didTriggerViewWillAppear()
+        self.output?.didTriggerViewWillAppear()
     }
     
     // MARK: - Actions
     @objc private func acceptButtonAction(_ sender: Any) {
-        self.presenter?.acceptButtonDidPressed()
+        self.output?.acceptButtonDidPressed()
     }
     
     @IBAction private func cancelButonAction(_ sender: Any) {
-        self.presenter?.cancelButtonDidPressed()
+        self.output?.cancelButtonDidPressed()
     }
     
     // MARK: - Private
@@ -60,15 +60,15 @@ class InputTextPopup: UIViewController {
     }
     
     @IBAction func textFieldValueChangedAction(_ sender: UITextField) {
-        self.presenter?.textFieldValueChanged(newValue: sender.text ?? "")
+        self.output?.textFieldValueChanged(newValue: sender.text ?? "")
     }
 }
 
 // MARK: - ConfirmationModuleInput
-extension InputTextPopup: ConfirmationViewInput {
+extension InputTextPopupViewController: ConfirmationViewInput {
     func setupInitialState() {
         
-        self.is5sAndLess = self.presenter?.windowService.is5sAndLess
+        self.is5sAndLess = self.output?.windowService.is5sAndLess
         
         self.acceptButton.height(self.is5sAndLess ? 35 : 55)
         self.leadingConstraint.constant = self.is5sAndLess ? 32 : 52
@@ -123,7 +123,7 @@ extension InputTextPopup: ConfirmationViewInput {
 }
 
 // MARK: - UITextFieldDelegate
-extension InputTextPopup: UITextFieldDelegate {
+extension InputTextPopupViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

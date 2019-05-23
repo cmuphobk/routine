@@ -3,10 +3,10 @@ import DateToolsSwift
 
 let kDrugEditModuleId = "kDrugEditModule"
 
-class DrugEditPresenter: Module {
+class DrugEditPresenter: Module, BasePresenter {
     var moduleOutput: DrugEditModuleOutput?
     weak var view: DrugEditViewInput!
-    var router: DrugEditModuleRouting!
+    var router: DrugEditRouterInput!
     
     var name = "DrugEdit_name"
     var alias = "DrugEdit_alias"

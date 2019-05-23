@@ -1,10 +1,12 @@
 import UIKit
 
-final class DrugEditRouter: DrugEditModuleRouting {
-    weak var viewController: UIViewController!
-    var coordinator: MedicineCourseCoordinator!
-    
-    weak private var deleteQuestionPopupViewController: ConfirmDecisionPopup?
+final class DrugEditRouter: BaseRouter {
+    var routerOutput: DrugEditRouterOutput!
+    var viewController: UIViewController!
+}
+
+extension DrugEditRouter: DrugEditRouterInput {
+//    weak private var deleteQuestionPopupViewController: ConfirmDecisionPopup?
     
     func closeModule() {
 //        self.moduleService.navigation?.popModule()

@@ -1,14 +1,14 @@
 import UIKit
 
-protocol DrugEditModuleInput: class {
+protocol DrugEditModuleInput: ModuleInput {
     func configureModule(medicineCourse: MedicineCourse, drug: MedicineDrug?, editMode: DrugEditMode, drugsListModuleInput: DrugsListModuleInput?)
 }
 
-protocol DrugEditModuleOutput: class {
-    // empty
+protocol DrugEditModuleOutput: ModuleOutput {
+    
 }
 
-protocol DrugEditViewInput: class {
+protocol DrugEditViewInput: ViewInput {
     func setupInitialState(editMode: DrugEditMode)
     func updateNavTitle(_ text: String)
     
@@ -23,7 +23,7 @@ protocol DrugEditViewInput: class {
     func closeModal(completion: @escaping (Bool) -> Void) 
 }
 
-protocol DrugEditViewOutput: class {
+protocol DrugEditViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     var languageService: LanguageServiceInterface! { get }
     var drugEditTableViewFactory: DrugEditTableViewFactoryInterface! { get }
@@ -52,7 +52,7 @@ protocol DrugEditViewOutput: class {
     func obtainUnitList() -> [SimpleComboboxUnit]
 }
 
-protocol DrugEditModuleRouting: class {
+protocol DrugEditRouterInput: RouterInput {
     func closeModule()
     func closeModuleWithEditMode(_ mode: DrugEditMode)
     
@@ -67,6 +67,6 @@ protocol DrugEditModuleRouting: class {
     func containerForModal() -> ModalContainer?
 }
 
-protocol DrugEditModuleAnimating: class {
-    // empty
+protocol DrugEditRouterOutput: RouterOutput {
+    
 }

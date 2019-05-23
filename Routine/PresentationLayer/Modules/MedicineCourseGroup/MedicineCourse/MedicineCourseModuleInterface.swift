@@ -1,11 +1,10 @@
 import UIKit
 
-protocol MedicineCourseModuleInput: class {
+protocol MedicineCourseModuleInput: ModuleInput {
     func configureModule()
 }
 
-protocol MedicineCourseViewInput: class {
-    func setupInitialState()
+protocol MedicineCourseViewInput: ViewInput {
     func updateTableView(models: [MedicineCourse], isArchive: Bool)
     
     func reloadRowAtIndex(_ index: Int, medCourse: MedicineCourse)
@@ -15,7 +14,7 @@ protocol MedicineCourseViewInput: class {
     func closeModal(completion: @escaping (Bool) -> Void) 
 }
 
-protocol MedicineCourseViewOutput: class {
+protocol MedicineCourseViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     
     var medicineCourseTableViewFactory: MedicineCourseTableViewFactoryInterface! { get }
@@ -33,12 +32,16 @@ protocol MedicineCourseViewOutput: class {
     func rowDidRemoved(index: Int)
 }
 
-protocol MedicineCourseModuleRouting: class {
-    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup?
-    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup?
+protocol MedicineCourseRouterInput: RouterInput {
+    func openCreateCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopupViewController?
+    func openRenameCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopupViewController?
     func openDeleteCourseStandartModal(_ modal: StandartModalView, parentViewController: UIViewController, confirmationDelegate: ConfirmationModuleOutput) -> ConfirmDecisionPopup?
     func closeEditStandartModal()
     func closeModule()
     func openDrugsList(medCourse: MedicineCourse)
     func containerForModal() -> ModalContainer?
+}
+
+protocol MedicineCourseRouterOutput: RouterOutput {
+    
 }

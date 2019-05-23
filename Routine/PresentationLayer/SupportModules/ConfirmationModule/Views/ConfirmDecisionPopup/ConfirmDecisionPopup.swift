@@ -1,8 +1,8 @@
 import UIKit
 import Stevia
 
-class ConfirmDecisionPopup: UIViewController {
-    var presenter: ConfirmationViewOutput?
+class ConfirmDecisionPopup: RoutineViewController, BaseView {
+    var output: ConfirmationViewOutput!
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
@@ -33,20 +33,20 @@ class ConfirmDecisionPopup: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()        
-        self.presenter?.didTriggerViewReadyEvent()
+        self.output?.didTriggerViewReadyEvent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.presenter?.didTriggerViewWillAppear()
+        self.output?.didTriggerViewWillAppear()
     }
     
     // MARK: - Actions
     @objc func acceptButtonAction(_ sender: Any) {
-        self.presenter?.acceptButtonDidPressed()
+        self.output?.acceptButtonDidPressed()
     }
     
     @IBAction func cancelButonAction(_ sender: Any) {
-        self.presenter?.cancelButtonDidPressed()
+        self.output?.cancelButtonDidPressed()
     }
 }
 
@@ -54,7 +54,7 @@ class ConfirmDecisionPopup: UIViewController {
 extension ConfirmDecisionPopup: ConfirmationViewInput {
     func setupInitialState() {
                 
-        self.is5sAndLess = self.presenter?.windowService.is5sAndLess
+        self.is5sAndLess = self.output?.windowService.is5sAndLess
         
         self.acceptButton.height(is5sAndLess ? 35 : 55) 
         self.leadingConstraint.constant = self.is5sAndLess ? 32 : 52

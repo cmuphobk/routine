@@ -22,7 +22,7 @@ enum MedicineCourseAssembly {
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.medicineCourseTableViewFactory = MedicineCourseTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
-        router.coordinator = coordinator
+        router.routerOutput = coordinator
         
         completion(moduleViewController, presenter)
     }

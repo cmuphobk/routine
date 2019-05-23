@@ -1,18 +1,16 @@
 import UIKit
 
-protocol MenuModuleInput: class {
+protocol MenuModuleInput: ModuleInput {
     func configureModule(menuItems: [ModuleDescription])
     func selectMenuItemWithName(_ moduleName: String)
 }
 
-protocol MenuModuleViewInput: class {
-    func setupInitialState()
-    
+protocol MenuViewInput: ViewInput {    
     func configureViewWithItemTitles(_ itemTitles: [String])
     func selectMenuItemWithName(_ moduleName: String)
 }
 
-protocol MenuModuleViewOutput: class {
+protocol MenuViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     var menuTableViewFactory: MenuTableViewFactoryInterface! { get }
     
@@ -23,8 +21,12 @@ protocol MenuModuleViewOutput: class {
     func didTriggerHideMenu() 
 }
 
-protocol MenuModuleRouting: class {
+protocol MenuRouterInput: RouterInput {
     func didTriggerOpenModuleById(_ identifier: String)
     func didTriggerShowMenu()
     func didTriggerHideMenu()
+}
+
+protocol MenuRouterOutput: RouterOutput {
+    func openModuleById(_ identifier: String)
 }

@@ -2,7 +2,7 @@ import UIKit
 
 enum ConfirmationModuleAssembly {
     
-    static func buildCourseCreatePopup(confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopup? {
+    static func buildCourseCreatePopup(confirmationDelegate: ConfirmationModuleOutput) -> InputTextPopupViewController? {
         guard let viewController = R.storyboard.inputTextPopup.inputTextPopup() else {
             return nil
         }
@@ -16,7 +16,7 @@ enum ConfirmationModuleAssembly {
                                                    localizeService: AppDelegate.serviceProvider.makeStringService(),
                                                    windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
-        viewController.presenter = presenter
+        viewController.output = presenter
         presenter.view = viewController
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.moduleOutput = confirmationDelegate
@@ -24,7 +24,7 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildCourseRenamePopup(confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopup? {
+    static func buildCourseRenamePopup(confirmationDelegate: ConfirmationModuleOutput, medCourse: MedicineCourse) -> InputTextPopupViewController? {
         guard let viewController = R.storyboard.inputTextPopup.inputTextPopup() else {
             return nil
         }
@@ -38,7 +38,7 @@ enum ConfirmationModuleAssembly {
                                                    localizeService: AppDelegate.serviceProvider.makeStringService(),
                                                    windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
-        viewController.presenter = presenter
+        viewController.output = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
@@ -60,7 +60,7 @@ enum ConfirmationModuleAssembly {
                                                    localizeService: AppDelegate.serviceProvider.makeStringService(),
                                                    windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
-        viewController.presenter = presenter
+        viewController.output = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
@@ -87,7 +87,7 @@ enum ConfirmationModuleAssembly {
                                                     localizeService: AppDelegate.serviceProvider.makeStringService(),
                                                     windowService: AppDelegate.serviceProvider.makeWindowService())
         // Inject properties
-        viewController.presenter = presenter
+        viewController.output = presenter
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
         presenter.view = viewController
         presenter.moduleOutput = confirmationDelegate
@@ -95,26 +95,4 @@ enum ConfirmationModuleAssembly {
         return viewController
     }
     
-    static func buildCalculatorPopup(confirmationDelegate: ConfirmationModuleOutput) -> CalculatorPopup? {
-        guard let viewController = R.storyboard.calculatorPopup.calculatorPopup() else {
-            return nil
-        }
-        
-        let presenter = ConfirmationModulePresenter(caption: "Ввод значения",
-                                                   text: "",
-                                                   textFieldValue: "",
-                                                   textFieldPlaceholder: "Введите количество",
-                                                   acceptButtonText: "Применить",
-                                                   cancelButtonText: "Отмена",
-                                                   localizeService: AppDelegate.serviceProvider.makeStringService(),
-                                                   windowService: AppDelegate.serviceProvider.makeWindowService())
-        
-        // Inject properties
-        viewController.presenter = presenter
-        presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
-        presenter.view = viewController
-        presenter.moduleOutput = confirmationDelegate
-        
-        return viewController
-    }
 }

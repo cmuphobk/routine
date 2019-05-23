@@ -1,9 +1,8 @@
 import Foundation
 import UIKit
 
-final class DrugTimesEditViewController: RoutineViewController {
+final class DrugTimesEditViewController: RoutineViewController, BaseView {
     var output: DrugTimesEditViewOutput!
-    var animator: DrugTimesEditModuleAnimating!
     var moduleService: ModuleServiceInterface!
     
     @IBOutlet weak var typeSelector: StandartPagePicker!

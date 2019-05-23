@@ -3,10 +3,10 @@ import UIKit
 
 let kDrugTimesEditModuleId = "kDrugTimesEditModule"
 
-class DrugTimesEditPresenter: Module {
+class DrugTimesEditPresenter: Module, BasePresenter {
     var moduleOutput: DrugTimesEditModuleOutput?
     weak var view: DrugTimesEditViewInput!
-    var router: DrugTimesEditModuleRouter!
+    var router: DrugTimesEditRouter!
     
     var name = "DrugTimesEdit_name"
     var alias = "DrugTimesEdit"

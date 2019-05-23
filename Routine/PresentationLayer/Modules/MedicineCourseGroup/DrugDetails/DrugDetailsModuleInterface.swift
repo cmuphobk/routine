@@ -1,21 +1,20 @@
 import UIKit
 
-protocol DrugDetailsModuleInput: class {
+protocol DrugDetailsModuleInput: ModuleInput {
     func configureModule(medicineCourse: MedicineCourse, drug: MedicineDrug, drugsListModuleInput: DrugsListModuleInput)
 }
 
-protocol DrugDetailsModuleOutput: class {
+protocol DrugDetailsModuleOutput: ModuleOutput {
     
 }
 
-protocol DrugDetailsViewInput: class {
-    func setupInitialState()
+protocol DrugDetailsViewInput: ViewInput {
     func updateNavTitle(_ text: String)
     func enableEditButton()
     func updateDetailsInfo(htmlCode: String)
 }
 
-protocol DrugDetailsViewOutput: class {
+protocol DrugDetailsViewOutput: ViewOutput {
     var localizeService: StringServiceInterface! { get }
     
     func didTriggerViewReadyEvent()
@@ -26,11 +25,11 @@ protocol DrugDetailsViewOutput: class {
     func didTriggerBackAction()
 }
 
-protocol DrugDetailsModuleRouting: class {
+protocol DrugDetailsRouterInput: RouterInput {
     func openDrigEdit(_ drug: MedicineDrug, medCourse: MedicineCourse, drugsListModuleInput: DrugsListModuleInput)
     func closeModule()
 }
 
-protocol DrugDetailsModuleAnimating: class {
+protocol DrugDetailsRouterOutput: RouterOutput {
     
 }

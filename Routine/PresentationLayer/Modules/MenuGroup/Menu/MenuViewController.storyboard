@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menu Module View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="Xj0-u5-w2q">
             <objects>
-                <viewController storyboardIdentifier="MenuModuleViewController" id="2FX-Ke-jiW" customClass="MenuModuleViewController" customModule="HCulture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="2FX-Ke-jiW" customClass="MenuViewController" customModule="Routine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mZf-Oy-Mov">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
