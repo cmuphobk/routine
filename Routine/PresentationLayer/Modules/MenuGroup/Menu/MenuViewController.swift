@@ -12,7 +12,7 @@ class MenuViewController: RoutineViewController, BaseView {
     
     weak private var tableView: RoutineTableView<RoutineTableViewModel>!
     
-    private var viewModels: [MenuModuleCellViewModel] = []
+    private var viewModels: [LabelCellViewModel] = []
     private var currentSelectedCellIndex: Int = 0
     private let tableViewOffset: CGFloat = 60.0
     
@@ -32,8 +32,6 @@ class MenuViewController: RoutineViewController, BaseView {
         self.tableView.fillContainer()
         
         output.didTriggerViewReadyEvent()
-        
-        self.addLeftSwipe(action: #selector(leftSwipeAction))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,11 +42,6 @@ class MenuViewController: RoutineViewController, BaseView {
     override func localizationSetup() {
         super.localizationSetup()
     }
-    
-    @objc private func leftSwipeAction() {
-        self.output.didTriggerHideMenu()
-    }
-
 }
 
 // MARK: - MenuViewInput
@@ -72,7 +65,7 @@ extension MenuViewController: MenuViewInput {
     }
     
     func selectMenuItemWithName(_ moduleName: String) {
-        let enumerate = self.viewModels.enumerated().first { $0.element.text == moduleName }
+        let enumerate = self.viewModels.enumerated().first { $0.element.labelViewModel.text == moduleName }
     
         self.tableViewManager.deselectRow(self.currentSelectedCellIndex)
         self.currentSelectedCellIndex = enumerate?.offset ?? 0
@@ -88,7 +81,6 @@ extension MenuViewController: RoutineTableViewManagerDelegate {
         if actionType != .select {
             return
         }
-        
         self.output.didTriggerSelectRow(index)
         self.output.didTriggerHideMenu()
         

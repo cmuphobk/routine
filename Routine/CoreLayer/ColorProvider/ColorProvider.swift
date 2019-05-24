@@ -3,8 +3,6 @@ import UIKit
 final class ColorProvider {
     static var `default`: DefaultColors = DefaultColors.shared
     static var messageColors: MessageColors = MessageColors.shared
-    static var medicineCourseColors: MedicineCourseColors = MedicineCourseColors.shared
-    static var confirmationModuleColors: ConfirmationModuleColors = ConfirmationModuleColors.shared
     static var mainModuleColors: MainModuleColors = MainModuleColors.shared
     static var menuColors: MenuColors = MenuColors.shared
 }
@@ -79,68 +77,6 @@ class MessageColors {
     }
     var backgroundYellowColor: UIColor {
         return UIColor(red: 225.0/255.0, green: 222.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-    }
-}
-
-// MARK: - MedicineCourseColors
-class MedicineCourseColors {
-    static var shared = MedicineCourseColors()
-    private init() { }
-    
-    var screenBackgroundColor: UIColor {
-        return ColorProvider.default.backgroundWhiteColor
-    }
-    var text: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    var noteText: UIColor {
-        return ColorProvider.default.grayColor
-    }
-    
-    var drugName: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    var drugPortion: UIColor {
-        return ColorProvider.default.grayColor
-    }
-    var drugTimes: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    
-    var currentDrugBackground: UIColor {
-        return ColorProvider.default.whiteColor
-    }
-    var overDrugBackground: UIColor {
-        return ColorProvider.default.lighterGrayColor
-    }
-    
-    var deleteButtonTextColor: UIColor {
-        return ColorProvider.default.whiteColor
-    }
-    var deleteButtonColor: UIColor {
-        return ColorProvider.default.lightRedColor
-    }
-}
-
-// MARK: - ConfirmationModuleColors
-class ConfirmationModuleColors {
-    static var shared = ConfirmationModuleColors()
-    private init() { }
-    
-    var captionText: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    var text: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    var textField: UIColor {
-        return ColorProvider.default.blackColor
-    }
-    var acceptButton: UIColor {
-        return ColorProvider.default.whiteColor
-    }
-    var cancelButton: UIColor {
-        return ColorProvider.default.lightBlackColor
     }
 }
 

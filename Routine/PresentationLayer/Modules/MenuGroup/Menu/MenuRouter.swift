@@ -2,7 +2,7 @@ import UIKit
 
 final class MenuRouter: BaseRouter {
     weak var viewController: UIViewController!
-    var routerOutput: MenuRouterOutput!
+    weak var routerOutput: MenuRouterOutput!
 }
 
 extension MenuRouter: MenuRouterInput {

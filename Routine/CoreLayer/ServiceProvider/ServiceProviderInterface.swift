@@ -1,7 +1,6 @@
 import Foundation
 
 protocol ServiceProviderInterface {
-    
     func makeLanguageService() -> LanguageServiceInterface
     func makeStringService() -> StringServiceInterface
     func makeImageService() -> ImageServiceInterface
@@ -14,7 +13,4 @@ protocol ServiceProviderInterface {
     func makeMagicalRecordService() -> MagicalRecordServiceInterface
     func makeNotificationService() -> NotificationServiceInterface
     func makeHockeyService() -> HockeyServiceInterface
-    func makeMedicineCourseService() -> MedicineCourseServiceInterface
-    func makeMedicineDrugService() -> MedicineDrugServiceInterface
-    
 }

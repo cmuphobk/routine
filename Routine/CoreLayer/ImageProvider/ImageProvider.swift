@@ -2,12 +2,6 @@ import UIKit
 
 final class ImageProvider {
     static var `default`: DefaultImages = DefaultImages.shared
-    static var authImages: AuthImages = AuthImages.shared
-    static var profileImages: ProfileImages = ProfileImages.shared
-    static var medicineCourseImages: MedicineCourseImages = MedicineCourseImages.shared
-    static var drugsListImages: DrugsListImages = DrugsListImages.shared
-    static var drugsDetailsImages: DrugsDetailsImages = DrugsDetailsImages.shared
-    static var drugEditImages: DrugEditImages = DrugEditImages.shared
     static var mainModuleImages: MainModuleImages = MainModuleImages.shared
 }
 
@@ -66,32 +60,6 @@ class DefaultImages {
     }
 }
 
-// MARK: - AuthImages
-class AuthImages {
-    static var shared = AuthImages()
-    private init() { }
-
-    var logoIcon: UIImage {
-        return AppDelegate.serviceProvider.makeImageService().localizeById("logo_icon")
-    }
-    var eyeIcon: UIImage {
-        return R.image.eye_icon()!
-    }
-    var eyeOpenIcon: UIImage {
-        return R.image.eye_open_icon()!
-    }
-}
-
-// MARK: - ProfileImages
-class ProfileImages {
-    static var shared = ProfileImages()
-    private init() { }
-
-    var logoIcon: UIImage {
-        return AppDelegate.serviceProvider.makeImageService().localizeById("logo_icon")
-    }
-}
-
 // MARK: - MainModuleImages
 class MainModuleImages {
     static var shared = MainModuleImages()
@@ -128,53 +96,4 @@ class MainModuleImages {
         return AppDelegate.serviceProvider.makeImageService().localizeById("notification_icon")
     }
     
-}
-
-// MARK: - MedicineCourseImages
-class MedicineCourseImages {
-    static var shared = MedicineCourseImages()
-    private init() { }
-    
-    var plusIcon: UIImage {
-        return ImageProvider.default.plusIcon
-    }
-}
-
-// MARK: - DrugsListImages
-class DrugsListImages {
-    static var shared = DrugsListImages()
-    private init() { }
-    
-    var createDrugIcon: UIImage {
-        return ImageProvider.default.plusIcon
-    }
-}
-
-// MARK: - DrugsDetailsImages
-class DrugsDetailsImages {
-    static var shared = DrugsDetailsImages()
-    private init() { }
-    
-    var editIcon: UIImage {
-        return ImageProvider.default.editNavIcon
-    }
-}
-
-// MARK: - DrugEditImages
-class DrugEditImages {
-    static var shared = DrugEditImages()
-    private init() { }
-    
-    var agreeIcon: UIImage {
-        return ImageProvider.default.agreeIcon
-    }
-    var deleteIcon: UIImage {
-        return ImageProvider.default.deleteIcon
-    }
-    var addTimesIcon: UIImage {
-        return ImageProvider.default.addTimesIcon
-    }
-    var periodCheckMarkIcon: UIImage {
-        return ImageProvider.default.markIcon
-    }
 }

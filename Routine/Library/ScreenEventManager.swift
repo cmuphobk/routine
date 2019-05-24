@@ -38,7 +38,7 @@ extension NavigationContainer {
     var statusBarHeight: CGFloat { return self.statusHeight + self.navigationBarHeight }
 }
 
-// MARK: - ModalObtainer
+// MARK: - ModalManager
 
 protocol ModalManager: class {
     // MARK: - methods
@@ -60,7 +60,7 @@ extension ModalManager where Self: NavigationContainer {
     }
 }
 
-// MARK: - NavigationBarConfiguration
+// MARK: - NavigationBarManager
 
 protocol IdiomCheckerDelegate: class {
     var userInterfaceIdiom: UIUserInterfaceIdiom { get }
@@ -70,7 +70,7 @@ protocol NavigationBarManager: NavigationContainer {
     // MARK: - optional
     
     var idiomCheckerDelegate: IdiomCheckerDelegate? { get set }
-    var menuConfiguration: MenuManager? { get set }
+    var menuManager: MenuManager? { get set }
     
     // MARK: - methods
     
@@ -90,7 +90,7 @@ extension NavigationBarManager {
     
     func emptyCustomBarLeftButtonAction() {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate, idiomCheckerDelegate.userInterfaceIdiom != .pad {
-            self.menuConfiguration?.hideMenu()
+            self.menuManager?.hideMenu()
         }
         let emptyLeftBarButtonCustom = UIButton(type: .custom)
         emptyLeftBarButtonCustom.isUserInteractionEnabled = false
@@ -103,7 +103,7 @@ extension NavigationBarManager {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate {
             if idiomCheckerDelegate.userInterfaceIdiom == .pad {
                 self.emptyCustomBarLeftButtonAction()
-                self.menuConfiguration?.openMenu()
+                self.menuManager?.openMenu()
             } else {
                 let leftBarButtonCustom = UIButton(type: .custom)
                 leftBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
@@ -128,7 +128,7 @@ extension NavigationBarManager {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate {
             if idiomCheckerDelegate.userInterfaceIdiom == .pad {
                 self.emptyCustomBarLeftButtonAction()
-                self.menuConfiguration?.openMenu()
+                self.menuManager?.openMenu()
             } else {
                 let leftBarButtonCustom = UIButton(type: .custom)
                 leftBarButtonCustom.setTitle(text, for: .normal)
@@ -170,7 +170,7 @@ extension NavigationBarManager {
     
 }
 
-// MARK: - MenuConfiguration
+// MARK: - MenuManager
 
 protocol MenuManager: NavigationContainer {
     // MARK: - methods
@@ -180,22 +180,22 @@ protocol MenuManager: NavigationContainer {
     func openMenu()
 }
 
-// MARK: - MessageConfiguration
+// MARK: - MessageManager
 
-protocol MessageConfigurationDelegate: class {
+protocol MessageManagerDelegate: class {
     func obtainMessageWidth() -> CGFloat
     func obtainTextOffset() -> CGFloat
     func obtainIconHeight() -> CGFloat
     func obtainLeftOffset() -> CGFloat
     
-    func obtainErrorLabel() -> StandartOffsetLabel
+    func obtainErrorLabel() -> RoutineOffsetLabel
     func obtainErrorImageView() -> UIImageView
 }
 
 protocol MessageManager: NavigationContainer {
     // MARK: - required
     
-    var messageConfigurationDelegate: MessageConfigurationDelegate? { get set }
+    var messageManagerDelegate: MessageManagerDelegate? { get set }
     var taskHideError: DispatchWorkItem! { get set }
     
     // MARK: - methods
@@ -236,9 +236,9 @@ extension ScreenEventManager {
 }
 
 extension ScreenEventManager {
-    var messageConfigurationDelegate: MessageConfigurationDelegate? {
+    var messageManagerDelegate: MessageManagerDelegate? {
         get {
-            return self.parentScreenEventManager as? MessageConfigurationDelegate
+            return self.parentScreenEventManager as? MessageManagerDelegate
         }
         set {
             print(newValue ?? "no value")
@@ -246,51 +246,51 @@ extension ScreenEventManager {
     }
     
     func obtainMessageWidth() -> CGFloat {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
-        return messageConfigurationDelegate.obtainMessageWidth()
+        return messageManagerDelegate.obtainMessageWidth()
     }
     
     func obtainTextOffset() -> CGFloat {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
-        return messageConfigurationDelegate.obtainTextOffset()
+        return messageManagerDelegate.obtainTextOffset()
     }
     
     func obtainIconHeight() -> CGFloat {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
-        return messageConfigurationDelegate.obtainIconHeight()
+        return messageManagerDelegate.obtainIconHeight()
     }
     
     func obtainLeftOffset() -> CGFloat {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
-        return messageConfigurationDelegate.obtainLeftOffset()
+        return messageManagerDelegate.obtainLeftOffset()
     }
     
-    func obtainErrorLabel() -> StandartOffsetLabel {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
-            return StandartOffsetLabel()
+    func obtainErrorLabel() -> RoutineOffsetLabel {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
+            return RoutineOffsetLabel()
         }
-        return messageConfigurationDelegate.obtainErrorLabel()
+        return messageManagerDelegate.obtainErrorLabel()
     }
     
     func obtainErrorImageView() -> UIImageView {
-        guard let messageConfigurationDelegate = self.messageConfigurationDelegate else {
+        guard let messageManagerDelegate = self.messageManagerDelegate else {
             return UIImageView()
         }
-        return messageConfigurationDelegate.obtainErrorImageView()
+        return messageManagerDelegate.obtainErrorImageView()
     }
 }
 
 
 extension ScreenEventManager {
-    var menuConfiguration: MenuManager? {
+    var menuManager: MenuManager? {
         get {
             return self
         }
@@ -299,24 +299,24 @@ extension ScreenEventManager {
         }
     }
     func triggerMenu() {
-        guard let menuConfiguration = self.parentScreenEventManager else {
+        guard let menuManager = self.parentScreenEventManager else {
             return
         }
-        menuConfiguration.triggerMenu()
+        menuManager.triggerMenu()
     }
     
     func openMenu() {
-        guard let menuConfiguration = self.parentScreenEventManager else {
+        guard let menuManager = self.parentScreenEventManager else {
             return
         }
-        menuConfiguration.openMenu()
+        menuManager.openMenu()
     }
     
     func hideMenu() {
-        guard let menuConfiguration = self.parentScreenEventManager else {
+        guard let menuManager = self.parentScreenEventManager else {
             return
         }
-        menuConfiguration.hideMenu()
+        menuManager.hideMenu()
     }
 }
 
@@ -327,14 +327,14 @@ extension ScreenEventManager {
     }
     
     func showMessageWithText(_ text: String, andType type: MessageType, sender: Any? = nil) {
-        if let messageConfiguration = self.parentScreenEventManager {
-            messageConfiguration.showMessageWithText(text, andType: type, sender: sender)
+        if let messageManager = self.parentScreenEventManager {
+            messageManager.showMessageWithText(text, andType: type, sender: sender)
         }
     }
     
     func hideMessages() {
-        if let messageConfiguration = self.parentScreenEventManager {
-            messageConfiguration.hideMessages()
+        if let messageManager = self.parentScreenEventManager {
+            messageManager.hideMessages()
         }
     }
     

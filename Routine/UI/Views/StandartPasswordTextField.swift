@@ -101,9 +101,7 @@ class StandartPasswordTextField: UITextField {
     }
     
     @objc private func clickEyeButton() {
-    
         self.isSecureTextEntry = !isSecureTextEntry
-        
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {

@@ -16,7 +16,7 @@ final class ImageAndLabelCellViewModel: RoutineTableViewCellViewModel {
     
     override func heightForWidth(_ width: CGFloat) -> CGFloat {
         let viewHeight = max(self.image.height,
-                             self.label.font.sizeOfString(string: self.routineDelegate?.localize(self.label.text) ?? "",
+                             self.label.font.sizeOfStringLabel(string: self.routineDelegate?.localize(self.label.text) ?? "",
                                                                              constrainedToWidth: Double(width - self.leftAndRightPadding - self.image.width - self.betweenSpace)).height)
         return viewHeight + self.topAndBottomPadding
     }

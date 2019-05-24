@@ -34,12 +34,7 @@ extension MainPresenter: MainViewOutput {
     }
     
     func didTriggerCell(viewModel: RoutineTableViewCellViewModel) {
-        switch viewModel.viewName {
-        case kMedicineCourseModuleId:
-            self.router.openCourseModule()
-        default:
-            return
-        }
+
     }
     
     func rightSwipeAction() {

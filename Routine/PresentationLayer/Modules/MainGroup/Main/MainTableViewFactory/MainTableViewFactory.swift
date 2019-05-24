@@ -10,10 +10,10 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 20.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 20.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -27,7 +27,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.percentIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -47,7 +47,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "risk_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -62,10 +62,10 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -79,7 +79,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.drugsIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -99,7 +99,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "check_health_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -114,10 +114,10 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 20.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 20.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -131,7 +131,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.drugsIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -151,7 +151,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "recommend_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -166,11 +166,11 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 20.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 20.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             cellObj.contentViewColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -184,7 +184,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.doctorClinicIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -204,7 +204,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "doctor_clinic_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -219,11 +219,11 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             cellObj.contentViewColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -237,7 +237,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.monitoringIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -257,7 +257,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "monitoring_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -269,15 +269,14 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
         
         if true {
             let cellObj = SectionCellViewModel(routineDelegate: AppDelegate.serviceProvider.makeStringService())
-            cellObj.viewName = kMedicineCourseModuleId
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             cellObj.contentViewColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -287,7 +286,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.tintColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.drugsIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -307,7 +306,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = ImageProvider.mainModuleImages.arrowIcon
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "course_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -322,11 +321,11 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             cellObj.contentViewColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -340,7 +339,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.archiveIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -360,7 +359,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "archive_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel
@@ -375,11 +374,11 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             
             cellObj.delegate = delegate
             
-            cellObj.paddingOffsets = Offsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
+            cellObj.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
             cellObj.paddingViewCornerRadius = 5.0
             cellObj.contentViewColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionHeaderViewModel.paddingOffsets = Offsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
+            cellObj.sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
             cellObj.sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
             cellObj.sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
             cellObj.sectionHeaderViewModel.infoIconViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
@@ -393,7 +392,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
             cellObj.sectionHeaderViewModel.closeButtonViewModel.backgroundColor = ColorProvider.mainModuleColors.blueViewColor
             
-            cellObj.sectionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.notificationIcon
             cellObj.sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
             cellObj.sectionViewModel.sectionImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
@@ -413,7 +412,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
             cellObj.sectionViewModel.sectionArrowImageViewModel.image = UIImage()
             cellObj.sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
             
-            cellObj.sectionDescriptionViewModel.paddingOffsets = Offsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
+            cellObj.sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.text = "notification_description"
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
             cellObj.sectionDescriptionViewModel.descriptionLabelViewModel.font = FontProvider.mainModuleFonts.sectionDescriptionLabel

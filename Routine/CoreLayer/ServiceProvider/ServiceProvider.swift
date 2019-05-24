@@ -71,13 +71,4 @@ final class ServiceProvider: ServiceProviderInterface {
     func makeHockeyService() -> HockeyServiceInterface {
         return self.hockeyService
     }
-    
-    func makeMedicineCourseService() -> MedicineCourseServiceInterface {
-        return MedicineCourseServiceAssembly.build()
-    }
-    
-    func makeMedicineDrugService() -> MedicineDrugServiceInterface {
-        return MedicineDrugServiceAssembly.build()
-    }
-    
 }

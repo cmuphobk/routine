@@ -35,9 +35,6 @@ final class MainViewController: RoutineViewController, BaseView {
         self.tableView.top(0).left(0).right(0).bottom(-offsetTableView)
         
         self.output.didTriggerViewReadyEvent()
-        
-        self.addRightSwipe(action: #selector(rightSwipeAction))
-        self.addLeftSwipe(action: #selector(leftSwipeAction))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,21 +81,8 @@ extension MainViewController: RoutineTableViewManagerDelegate {
 extension MainViewController: SectionCellViewModelDelegate {
     
     func needUpdate(viewModel: SectionCellViewModel) {
-        guard let index = self.cellViewModels.indexOf(viewModel) else { return }
+        guard let index = self.cellViewModels.index(ref: viewModel) else { return }
         self.tableViewManager.updateRowAtIndex(index)
-    }
-
-}
-
-// MARK: - Private
-extension MainViewController {
-
-    @objc private func rightSwipeAction() {
-        self.output.rightSwipeAction()
-    }
-    
-    @objc private func leftSwipeAction() {
-        self.output.leftSwipeAction()
     }
 
 }

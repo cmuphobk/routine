@@ -378,63 +378,15 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `DrugCell`.
-    static let drugCell = _R.nib._DrugCell()
-    /// Nib `MedicineCourseCell`.
-    static let medicineCourseCell = _R.nib._MedicineCourseCell()
-    /// Nib `MenuModuleCell`.
-    static let menuModuleCell = _R.nib._MenuModuleCell()
     /// Nib `StandartPagePickerCell`.
     static let standartPagePickerCell = _R.nib._StandartPagePickerCell()
-    /// Nib `StandartPagePicker`.
-    static let standartPagePicker = _R.nib._StandartPagePicker()
-    
-    /// `UINib(name: "DrugCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.drugCell) instead")
-    static func drugCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.drugCell)
-    }
-    
-    /// `UINib(name: "MedicineCourseCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.medicineCourseCell) instead")
-    static func medicineCourseCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.medicineCourseCell)
-    }
-    
-    /// `UINib(name: "MenuModuleCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.menuModuleCell) instead")
-    static func menuModuleCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.menuModuleCell)
-    }
-    
-    /// `UINib(name: "StandartPagePicker", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.standartPagePicker) instead")
-    static func standartPagePicker(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.standartPagePicker)
-    }
     
     /// `UINib(name: "StandartPagePickerCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.standartPagePickerCell) instead")
     static func standartPagePickerCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.standartPagePickerCell)
-    }
-    
-    static func drugCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DrugCell? {
-      return R.nib.drugCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DrugCell
-    }
-    
-    static func medicineCourseCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MedicineCourseCell? {
-      return R.nib.medicineCourseCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MedicineCourseCell
-    }
-    
-    static func menuModuleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuModuleCell? {
-      return R.nib.menuModuleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuModuleCell
-    }
-    
-    static func standartPagePicker(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StandartPagePicker? {
-      return R.nib.standartPagePicker.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StandartPagePicker
     }
     
     static func standartPagePickerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StandartPagePickerCell? {
@@ -444,79 +396,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `DrugCell`.
-    static let drugCell: Rswift.ReuseIdentifier<DrugCell> = Rswift.ReuseIdentifier(identifier: "DrugCell")
-    /// Reuse identifier `MedicineCourseCell`.
-    static let medicineCourseCell: Rswift.ReuseIdentifier<MedicineCourseCell> = Rswift.ReuseIdentifier(identifier: "MedicineCourseCell")
-    /// Reuse identifier `MenuModuleCell`.
-    static let menuModuleCell: Rswift.ReuseIdentifier<MenuModuleCell> = Rswift.ReuseIdentifier(identifier: "MenuModuleCell")
     /// Reuse identifier `StandartPagePickerCell`.
     static let standartPagePickerCell: Rswift.ReuseIdentifier<StandartPagePickerCell> = Rswift.ReuseIdentifier(identifier: "StandartPagePickerCell")
     
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 11 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
-    /// Storyboard `ConfirmDecisionPopup`.
-    static let confirmDecisionPopup = _R.storyboard.confirmDecisionPopup()
-    /// Storyboard `DrugDetails`.
-    static let drugDetails = _R.storyboard.drugDetails()
-    /// Storyboard `DrugEdit`.
-    static let drugEdit = _R.storyboard.drugEdit()
-    /// Storyboard `DrugPeriodicEdit`.
-    static let drugPeriodicEdit = _R.storyboard.drugPeriodicEdit()
-    /// Storyboard `DrugTimesEdit`.
-    static let drugTimesEdit = _R.storyboard.drugTimesEdit()
-    /// Storyboard `DrugsList`.
-    static let drugsList = _R.storyboard.drugsList()
-    /// Storyboard `InputTextPopup`.
-    static let inputTextPopup = _R.storyboard.inputTextPopup()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `MedicineCourse`.
-    static let medicineCourse = _R.storyboard.medicineCourse()
     /// Storyboard `MenuViewController`.
     static let menuViewController = _R.storyboard.menuViewController()
-    
-    /// `UIStoryboard(name: "ConfirmDecisionPopup", bundle: ...)`
-    static func confirmDecisionPopup(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.confirmDecisionPopup)
-    }
-    
-    /// `UIStoryboard(name: "DrugDetails", bundle: ...)`
-    static func drugDetails(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.drugDetails)
-    }
-    
-    /// `UIStoryboard(name: "DrugEdit", bundle: ...)`
-    static func drugEdit(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.drugEdit)
-    }
-    
-    /// `UIStoryboard(name: "DrugPeriodicEdit", bundle: ...)`
-    static func drugPeriodicEdit(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.drugPeriodicEdit)
-    }
-    
-    /// `UIStoryboard(name: "DrugTimesEdit", bundle: ...)`
-    static func drugTimesEdit(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.drugTimesEdit)
-    }
-    
-    /// `UIStoryboard(name: "DrugsList", bundle: ...)`
-    static func drugsList(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.drugsList)
-    }
-    
-    /// `UIStoryboard(name: "InputTextPopup", bundle: ...)`
-    static func inputTextPopup(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.inputTextPopup)
-    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -526,11 +421,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "MedicineCourse", bundle: ...)`
-    static func medicineCourse(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.medicineCourse)
     }
     
     /// `UIStoryboard(name: "MenuViewController", bundle: ...)`
@@ -4165,82 +4055,9 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
-    try nib.validate()
   }
   
-  struct nib: Rswift.Validatable {
-    static func validate() throws {
-      try _DrugCell.validate()
-      try _MedicineCourseCell.validate()
-    }
-    
-    struct _DrugCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = DrugCell
-      
-      let bundle = R.hostingBundle
-      let identifier = "DrugCell"
-      let name = "DrugCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DrugCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DrugCell
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "capsules", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'capsules' is used in nib 'DrugCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "path_arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'path_arrow' is used in nib 'DrugCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _MedicineCourseCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = MedicineCourseCell
-      
-      let bundle = R.hostingBundle
-      let identifier = "MedicineCourseCell"
-      let name = "MedicineCourseCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MedicineCourseCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MedicineCourseCell
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "close_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'close_icon' is used in nib 'MedicineCourseCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "edit_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit_icon' is used in nib 'MedicineCourseCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _MenuModuleCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = MenuModuleCell
-      
-      let bundle = R.hostingBundle
-      let identifier = "MenuModuleCell"
-      let name = "MenuModuleCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuModuleCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuModuleCell
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _StandartPagePicker: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "StandartPagePicker"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StandartPagePicker? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StandartPagePicker
-      }
-      
-      fileprivate init() {}
-    }
-    
+  struct nib {
     struct _StandartPagePickerCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = StandartPagePickerCell
       
@@ -4260,143 +4077,9 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try confirmDecisionPopup.validate()
-      try drugDetails.validate()
-      try drugEdit.validate()
-      try drugPeriodicEdit.validate()
-      try drugTimesEdit.validate()
-      try drugsList.validate()
-      try inputTextPopup.validate()
       try launchScreen.validate()
       try main.validate()
-      try medicineCourse.validate()
       try menuViewController.validate()
-    }
-    
-    struct confirmDecisionPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let confirmDecisionPopup = StoryboardViewControllerResource<ConfirmDecisionPopup>(identifier: "ConfirmDecisionPopup")
-      let name = "ConfirmDecisionPopup"
-      
-      func confirmDecisionPopup(_: Void = ()) -> ConfirmDecisionPopup? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: confirmDecisionPopup)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.confirmDecisionPopup().confirmDecisionPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'confirmDecisionPopup' could not be loaded from storyboard 'ConfirmDecisionPopup' as 'ConfirmDecisionPopup'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct drugDetails: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let drugDetailsViewController = StoryboardViewControllerResource<DrugDetailsViewController>(identifier: "DrugDetailsViewController")
-      let name = "DrugDetails"
-      
-      func drugDetailsViewController(_: Void = ()) -> DrugDetailsViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: drugDetailsViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.drugDetails().drugDetailsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'drugDetailsViewController' could not be loaded from storyboard 'DrugDetails' as 'DrugDetailsViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct drugEdit: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let drugEditViewController = StoryboardViewControllerResource<DrugEditViewController>(identifier: "DrugEditViewController")
-      let name = "DrugEdit"
-      
-      func drugEditViewController(_: Void = ()) -> DrugEditViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: drugEditViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.drugEdit().drugEditViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'drugEditViewController' could not be loaded from storyboard 'DrugEdit' as 'DrugEditViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct drugPeriodicEdit: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let drugPeriodicEdit = StoryboardViewControllerResource<DrugPeriodicEditViewController>(identifier: "DrugPeriodicEdit")
-      let name = "DrugPeriodicEdit"
-      
-      func drugPeriodicEdit(_: Void = ()) -> DrugPeriodicEditViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: drugPeriodicEdit)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.drugPeriodicEdit().drugPeriodicEdit() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'drugPeriodicEdit' could not be loaded from storyboard 'DrugPeriodicEdit' as 'DrugPeriodicEditViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct drugTimesEdit: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let drugTimesEdit = StoryboardViewControllerResource<DrugTimesEditViewController>(identifier: "DrugTimesEdit")
-      let name = "DrugTimesEdit"
-      
-      func drugTimesEdit(_: Void = ()) -> DrugTimesEditViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: drugTimesEdit)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.drugTimesEdit().drugTimesEdit() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'drugTimesEdit' could not be loaded from storyboard 'DrugTimesEdit' as 'DrugTimesEditViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct drugsList: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let drugsListViewController = StoryboardViewControllerResource<DrugsListViewController>(identifier: "DrugsListViewController")
-      let name = "DrugsList"
-      
-      func drugsListViewController(_: Void = ()) -> DrugsListViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: drugsListViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.drugsList().drugsListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'drugsListViewController' could not be loaded from storyboard 'DrugsList' as 'DrugsListViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct inputTextPopup: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let inputTextPopup = StoryboardViewControllerResource<InputTextPopupViewController>(identifier: "InputTextPopup")
-      let name = "InputTextPopup"
-      
-      func inputTextPopup(_: Void = ()) -> InputTextPopupViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: inputTextPopup)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.inputTextPopup().inputTextPopup() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'inputTextPopup' could not be loaded from storyboard 'InputTextPopup' as 'InputTextPopupViewController'.") }
-      }
-      
-      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -4427,24 +4110,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct medicineCourse: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let medicineCourseViewController = StoryboardViewControllerResource<MedicineCourseViewController>(identifier: "MedicineCourseViewController")
-      let name = "MedicineCourse"
-      
-      func medicineCourseViewController(_: Void = ()) -> MedicineCourseViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: medicineCourseViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.medicineCourse().medicineCourseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'medicineCourseViewController' could not be loaded from storyboard 'MedicineCourse' as 'MedicineCourseViewController'.") }
       }
       
       fileprivate init() {}
