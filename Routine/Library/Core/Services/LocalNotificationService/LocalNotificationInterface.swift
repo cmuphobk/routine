@@ -12,7 +12,7 @@ protocol LocalNotificationServiceInterface: UNUserNotificationCenterDelegate, Me
                              periodCourseValue: Int,
                              endingCourseType: EndingCourseType,
                              endingCourseValue: Int,
-                             userInfo: Any)
+                             userInfo: CustomStringConvertible)
     
     func removeAllNotifications()
     

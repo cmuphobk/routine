@@ -4,26 +4,6 @@ import UserNotifications
 import Firebase
 import FirebaseMessaging
 
-struct DateForNotification: Hashable {
-    let userInfo: CustomStringConvertible
-    let timestamp: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(NSUUID().uuidString)
-    }
-    
-    static func == (lhs: DateForNotification, rhs: DateForNotification) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-}
-
-struct LocalNotification {
-    var name: String
-    var timestamp: Int
-    var categoryIdentifier: String
-    var title: String
-}
-
 private let dayLength = 60 * 60 * 24 * 1000
 
 final class LocalNotificationService: NSObject {
@@ -93,10 +73,10 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
         var dates: [DateForNotification] = self.obtainDatesNotifications(startDate: startDate,
                                                                           times: times,
                                                                           periodCourseType: periodCourseType,
-                                                                          periodCourseValue: Int,
+                                                                          periodCourseValue: periodCourseValue,
                                                                           endingCourseType: endingCourseType,
                                                                           endingCourseValue: endingCourseValue,
-                                                                          userInfo: CustomStringConvertible)
+                                                                          userInfo: userInfo)
         
         dates = dates.filter { (date) -> Bool in
             return date.timestamp >= Int(Date().timeIntervalSince1970 * 1000.0)

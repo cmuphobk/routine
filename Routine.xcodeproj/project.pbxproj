@@ -84,6 +84,11 @@
 		ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */; };
 		ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E5F2296EC7F008998F4 /* Coordinator.swift */; };
 		ED178E6D22982086008998F4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6C22982086008998F4 /* Time.swift */; };
+		ED178E7022982B33008998F4 /* PeriodCourseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6F22982B33008998F4 /* PeriodCourseType.swift */; };
+		ED178E7222982B3D008998F4 /* EndingCourseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7122982B3D008998F4 /* EndingCourseType.swift */; };
+		ED178E7422982B4A008998F4 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7322982B4A008998F4 /* DayOfWeek.swift */; };
+		ED178E7622982BA5008998F4 /* DateForNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7522982BA5008998F4 /* DateForNotification.swift */; };
+		ED178E7822982BBF008998F4 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7722982BBF008998F4 /* LocalNotification.swift */; };
 		ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */; };
 		ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */; };
 		ED241EA521AC014D00E4E32F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA421AC014D00E4E32F /* Repository.swift */; };
@@ -294,6 +299,11 @@
 		ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceInterface.swift; sourceTree = "<group>"; };
 		ED178E5F2296EC7F008998F4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ED178E6C22982086008998F4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		ED178E6F22982B33008998F4 /* PeriodCourseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCourseType.swift; sourceTree = "<group>"; };
+		ED178E7122982B3D008998F4 /* EndingCourseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingCourseType.swift; sourceTree = "<group>"; };
+		ED178E7322982B4A008998F4 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		ED178E7522982BA5008998F4 /* DateForNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForNotification.swift; sourceTree = "<group>"; };
+		ED178E7722982BBF008998F4 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		ED1F8EE521F48EFB00D467CB /* Routine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routine.entitlements; sourceTree = "<group>"; };
 		ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableEntityInterface.swift; sourceTree = "<group>"; };
@@ -887,6 +897,19 @@
 			path = RoutineHtmlTextView;
 			sourceTree = "<group>";
 		};
+		ED178E6E22982B1C008998F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED178E6C22982086008998F4 /* Time.swift */,
+				ED178E6F22982B33008998F4 /* PeriodCourseType.swift */,
+				ED178E7122982B3D008998F4 /* EndingCourseType.swift */,
+				ED178E7322982B4A008998F4 /* DayOfWeek.swift */,
+				ED178E7522982BA5008998F4 /* DateForNotification.swift */,
+				ED178E7722982BBF008998F4 /* LocalNotification.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		ED2CEFF421BD529700D9EFAF /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,10 +1321,10 @@
 		EDCD216D21A722A2009D704B /* LocalNotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				ED178E6E22982B1C008998F4 /* Models */,
 				ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */,
 				41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */,
 				EDCD216E21A722BE009D704B /* LocalNotificationService.swift */,
-				ED178E6C22982086008998F4 /* Time.swift */,
 			);
 			path = LocalNotificationService;
 			sourceTree = "<group>";
@@ -1724,10 +1747,12 @@
 				ED8F6A632179F126001DBDAA /* MultipartOperationHandler.swift in Sources */,
 				ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */,
 				EDFA69B82187796700195622 /* WindowService.swift in Sources */,
+				ED178E7222982B3D008998F4 /* EndingCourseType.swift in Sources */,
 				EDC891D121CE59360002CD9E /* DecodeResponseContainerInterface.swift in Sources */,
 				EDE9894321E92F5B00870F25 /* RoutineButtonViewModel.swift in Sources */,
 				41A6B875220ED8270023CE19 /* DateService.swift in Sources */,
 				ED8F6A642179F126001DBDAA /* MultipartOperation.swift in Sources */,
+				ED178E7822982BBF008998F4 /* LocalNotification.swift in Sources */,
 				ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */,
 				ED83C0A52296CA1B008F35E0 /* Module.swift in Sources */,
 				4172F899228AE062008A5AE9 /* ApplicationCoordinator.swift in Sources */,
@@ -1829,6 +1854,7 @@
 				4172F89E228AE0C3008A5AE9 /* MainCoordinator.swift in Sources */,
 				ED082FC021CFDDC100C892C8 /* StorageService.swift in Sources */,
 				862F439D21CE93EF00CB127F /* ButtonCell.swift in Sources */,
+				ED178E7422982B4A008998F4 /* DayOfWeek.swift in Sources */,
 				ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */,
 				41F06B4B2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift in Sources */,
 				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
@@ -1848,6 +1874,7 @@
 				41A6B868220ED7E30023CE19 /* StringService.swift in Sources */,
 				ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */,
 				41A6B86C220ED7FD0023CE19 /* ImageServiceAssembly.swift in Sources */,
+				ED178E7022982B33008998F4 /* PeriodCourseType.swift in Sources */,
 				860E48E821C2B1440009E4DB /* TextFieldCell.swift in Sources */,
 				ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */,
 				ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */,
@@ -1864,6 +1891,7 @@
 				ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */,
 				860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */,
 				41A533A022074BBC009A735E /* MagicalRecordServiceAssembly.swift in Sources */,
+				ED178E7622982BA5008998F4 /* DateForNotification.swift in Sources */,
 				41A533A422074C04009A735E /* LocalNotificationServiceAssembly.swift in Sources */,
 				8675B60021C21A5B005F631C /* LabelCell.swift in Sources */,
 				EDA9A65021E750D600D99B09 /* RoutineViewModel.swift in Sources */,
