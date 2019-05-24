@@ -77,9 +77,11 @@ class StandartPasswordTextField: UITextField {
             eyeButton.isHidden = false
             
             if self.isSecureTextEntry == true {
-                eyeButton.setImage(ImageProvider.authImages.eyeIcon, for: .normal)
+                
+                //FIXME: Images eye and eyeOpen
+                eyeButton.setImage(nil, for: .normal)
             } else {
-                eyeButton.setImage(ImageProvider.authImages.eyeOpenIcon, for: .normal)
+                eyeButton.setImage(nil, for: .normal)
             }
             
             okImageView.isHidden = true

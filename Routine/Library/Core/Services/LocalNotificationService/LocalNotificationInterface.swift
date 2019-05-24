@@ -6,13 +6,15 @@ protocol LocalNotificationServiceInterface: UNUserNotificationCenterDelegate, Me
     
     func configure(application: UIApplication)
     
-    func createNotifications(_ courses: [MedicineCourse])
+    func createNotifications(startDate: Int,
+                             times: [Time],
+                             periodCourseType: PeriodCourseType,
+                             periodCourseValue: Int,
+                             endingCourseType: EndingCourseType,
+                             endingCourseValue: Int,
+                             userInfo: Any)
     
     func removeAllNotifications()
-    
-    func obtainDatesNotificationsFromCourses(_ courses: [MedicineCourse]) -> [DateForNotification]
-   
-    func obtainDatesNotificationsFromDrugsModel(_ model: MedicineDrug) -> [DateForNotification]
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
     

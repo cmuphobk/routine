@@ -83,6 +83,7 @@
 		ED082FD621CFFD4C00C892C8 /* MagicalRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD521CFFD4C00C892C8 /* MagicalRecordService.swift */; };
 		ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */; };
 		ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E5F2296EC7F008998F4 /* Coordinator.swift */; };
+		ED178E6D22982086008998F4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6C22982086008998F4 /* Time.swift */; };
 		ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */; };
 		ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */; };
 		ED241EA521AC014D00E4E32F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA421AC014D00E4E32F /* Repository.swift */; };
@@ -292,6 +293,7 @@
 		ED082FD521CFFD4C00C892C8 /* MagicalRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordService.swift; sourceTree = "<group>"; };
 		ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceInterface.swift; sourceTree = "<group>"; };
 		ED178E5F2296EC7F008998F4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ED178E6C22982086008998F4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		ED1F8EE521F48EFB00D467CB /* Routine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routine.entitlements; sourceTree = "<group>"; };
 		ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableEntityInterface.swift; sourceTree = "<group>"; };
@@ -1299,6 +1301,7 @@
 				ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */,
 				41A533A322074C04009A735E /* LocalNotificationServiceAssembly.swift */,
 				EDCD216E21A722BE009D704B /* LocalNotificationService.swift */,
+				ED178E6C22982086008998F4 /* Time.swift */,
 			);
 			path = LocalNotificationService;
 			sourceTree = "<group>";
@@ -1802,6 +1805,7 @@
 				41A6B866220ED7DA0023CE19 /* StringServiceAssembly.swift in Sources */,
 				EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */,
 				411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */,
+				ED178E6D22982086008998F4 /* Time.swift in Sources */,
 				ED59915B21D2AE2400253599 /* RoutineLoaderView.swift in Sources */,
 				41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */,
 				41A6B873220ED81E0023CE19 /* DateServiceAssembly.swift in Sources */,
