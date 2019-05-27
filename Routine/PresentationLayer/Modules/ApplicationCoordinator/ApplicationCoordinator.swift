@@ -79,7 +79,7 @@ extension ApplicationCoordinator: MenuRouterOutput {
         }
         
         switch identifier {
-        case kMainModuleId:
+        case R.string.localizable.main_name.key:
             let mainCoordinator = self.coordinatorFactory.makeMainCoordinator(navigationController: self.navigationController,
                                                                               delegate: self,
                                                                               parentScreenEventManager: self)

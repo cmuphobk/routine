@@ -46,7 +46,7 @@ final class MainViewController: RoutineViewController, BaseView {
     
     override func localizationSetup() {
         super.localizationSetup()
-        self.output.configureNavigationBar(title: self.output.localizeService.localizeId(kMainModuleId))
+        self.output.configureNavigationBar(title: self.output.localizeService.localizeId(self.output.name))
     }
     
 }

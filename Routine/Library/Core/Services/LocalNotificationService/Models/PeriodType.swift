@@ -1,6 +1,6 @@
 import Foundation
 
-enum PeriodCourseType: Int, CaseIterable {
+enum PeriodType: Int, CaseIterable {
     case weekDays
     case countDays
     
@@ -11,7 +11,7 @@ enum PeriodCourseType: Int, CaseIterable {
         }
     }
     
-    static func fromValue(_ value: Int) -> PeriodCourseType? {
+    static func fromValue(_ value: Int) -> PeriodType? {
         switch value {
         case 1: return .weekDays
         case 2: return .countDays
@@ -23,9 +23,9 @@ enum PeriodCourseType: Int, CaseIterable {
     func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .weekDays:
-            return localizeService.localizeId("periodic_days")
+            return localizeService.localizeId(R.string.localizable.week_days.key)
         case .countDays:
-            return localizeService.localizeId("periodic_interval")
+            return localizeService.localizeId(R.string.localizable.count_days.key)
         }
     }
 }

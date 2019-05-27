@@ -4,6 +4,12 @@ class MenuPresenter: BasePresenter {
     weak var view: MenuViewInput!
     var router: MenuRouterInput!
     
+    var name = R.string.localizable.menu_name.key
+    var alias = R.string.localizable.menu_alias.key
+    weak var viewController: UIViewController! {
+        return self.view as? UIViewController
+    }
+    
     var menuItems: [ModuleDescription] = []
     
     var localizeService: StringServiceInterface!

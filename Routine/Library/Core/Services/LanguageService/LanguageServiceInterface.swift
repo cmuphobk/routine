@@ -1,7 +1,6 @@
 import Foundation
 
 protocol LanguageServiceInterface: class {
-    
     var bundle: Bundle? { get set }
     
     func languagesList() -> [String]

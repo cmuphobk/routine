@@ -62,21 +62,9 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
         
     }
     
-    func createNotifications(startDate: Int,
-                             times: [Time],
-                             periodCourseType: PeriodCourseType,
-                             periodCourseValue: Int,
-                             endingCourseType: EndingCourseType,
-                             endingCourseValue: Int,
-                             userInfo: CustomStringConvertible) {
+    func createNotifications(model: NotificationsModel) {
         
-        var dates: [DateForNotification] = self.obtainDatesNotifications(startDate: startDate,
-                                                                          times: times,
-                                                                          periodCourseType: periodCourseType,
-                                                                          periodCourseValue: periodCourseValue,
-                                                                          endingCourseType: endingCourseType,
-                                                                          endingCourseValue: endingCourseValue,
-                                                                          userInfo: userInfo)
+        var dates: [DateForNotification] = self.obtainDatesNotifications(model: model)
         
         dates = dates.filter { (date) -> Bool in
             return date.timestamp >= Int(Date().timeIntervalSince1970 * 1000.0)
@@ -86,15 +74,15 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
             return date1.timestamp < date2.timestamp
         }
         
-        let notifications: [LocalNotification] = dates.map { (timestamp) -> LocalNotification in
-            return LocalNotification(name: "\(timestamp.hashValue)_\(timestamp)_notification",
-                timestamp: timestamp.timestamp,
-                categoryIdentifier: String(timestamp.hashValue),
-                title: timestamp.userInfo.description)
+        let notifications: [LocalNotification] = dates.map { (date) -> LocalNotification in
+            return LocalNotification(
+                name: "\(date.hashValue)_notification",
+                timestamp: date.timestamp,
+                categoryIdentifier: date.userInfo.description,
+                title: date.userInfo.description)
         }
         
         self.removeAllNotifications()
-        
         
         var index = 0
         var poolNotifications: [LocalNotification] = []
@@ -119,63 +107,57 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
     }
     
     
-    func obtainDatesNotifications(startDate: Int,
-                                                times: [Time],
-                                                periodCourseType: PeriodCourseType,
-                                                periodCourseValue: Int,
-                                                endingCourseType: EndingCourseType,
-                                                endingCourseValue: Int,
-                                                userInfo: CustomStringConvertible) -> [DateForNotification] {
+    func obtainDatesNotifications(model: NotificationsModel) -> [DateForNotification] {
         
         var arrayDates: [DateForNotification] = []
         
-        if periodCourseType == .countDays && endingCourseType == .countUsageNumber {
+        if model.periodType == .countDays && model.endingType == .countUsageNumber {
             
-            arrayDates = self.obtainTimesForPeriod(periodCourseValue,
-                                                   andStartDate: startDate,
-                                                   andCountUsageNumber: endingCourseValue,
-                                                   andTimes: times,
-                                                   userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriod(model.periodValue,
+                                                   andStartDate: model.startDate,
+                                                   andCountUsageNumber: model.endingValue,
+                                                   andTimes: model.times,
+                                                   userInfo: model.userInfo)
             
-        } else if periodCourseType == .countDays && endingCourseType == .countUsageDays {
+        } else if model.periodType == .countDays && model.endingType == .countUsageDays {
             
-            arrayDates = self.obtainTimesForPeriod(periodCourseValue,
-                                                   andStartDate: startDate,
-                                                   andCountUsageDays: endingCourseValue,
-                                                   andTimes: times,
-                                                   userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriod(model.periodValue,
+                                                   andStartDate: model.startDate,
+                                                   andCountUsageDays: model.endingValue,
+                                                   andTimes: model.times,
+                                                   userInfo: model.userInfo)
             
-        } else if periodCourseType == .countDays && endingCourseType == .endUsageDate {
+        } else if model.periodType == .countDays && model.endingType == .endUsageDate {
             
-            arrayDates = self.obtainTimesForPeriod(periodCourseValue,
-                                                   andStartDate: startDate,
-                                                   andEndUsageDate: endingCourseValue,
-                                                   andTimes: times,
-                                                   userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriod(model.periodValue,
+                                                   andStartDate: model.startDate,
+                                                   andEndUsageDate: model.endingValue,
+                                                   andTimes: model.times,
+                                                   userInfo: model.userInfo)
             
-        } else if periodCourseType == .weekDays && endingCourseType == .countUsageNumber {
+        } else if model.periodType == .weekDays && model.endingType == .countUsageNumber {
             
-            arrayDates = self.obtainTimesForPeriodDays(periodCourseValue,
-                                                       andStartDate: startDate,
-                                                       andCountUsageNumber: endingCourseValue,
-                                                       andTimes: times,
-                                                       userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriodDays(model.periodValue,
+                                                       andStartDate: model.startDate,
+                                                       andCountUsageNumber: model.endingValue,
+                                                       andTimes: model.times,
+                                                       userInfo: model.userInfo)
             
-        } else if periodCourseType == .weekDays && endingCourseType == .countUsageDays {
+        } else if model.periodType == .weekDays && model.endingType == .countUsageDays {
             
-            arrayDates = self.obtainTimesForPeriodDays(periodCourseValue,
-                                                       andStartDate: startDate,
-                                                       andCountUsageDays: endingCourseValue,
-                                                       andTimes: times,
-                                                       userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriodDays(model.periodValue,
+                                                       andStartDate: model.startDate,
+                                                       andCountUsageDays: model.endingValue,
+                                                       andTimes: model.times,
+                                                       userInfo: model.userInfo)
             
-        } else if periodCourseType == .weekDays && endingCourseType == .endUsageDate {
+        } else if model.periodType == .weekDays && model.endingType == .endUsageDate {
             
-            arrayDates = self.obtainTimesForPeriodDays(periodCourseValue,
-                                                       andStartDate: startDate,
-                                                       andEndUsageDate: endingCourseValue,
-                                                       andTimes: times,
-                                                       userInfo: userInfo)
+            arrayDates = self.obtainTimesForPeriodDays(model.periodValue,
+                                                       andStartDate: model.startDate,
+                                                       andEndUsageDate: model.endingValue,
+                                                       andTimes: model.times,
+                                                       userInfo: model.userInfo)
             
         }
         
@@ -211,7 +193,7 @@ extension LocalNotificationService {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("RegisterForRemoteNotificationsWithDeviceToken")
     }
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         print("Firebase push message: \(userInfo)")
     }
     
@@ -317,8 +299,7 @@ extension LocalNotificationService {
                 //добавляем прием
                 if countUsageNumberVar > 0 {
                     
-                    arrayDates.append(DateForNotification(userInfo: userInfo,
-                                                          timestamp: startDate + time.rawValue()))
+                    arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
                     countUsageNumberVar -= 1
                     
                 } else {
@@ -355,10 +336,7 @@ extension LocalNotificationService {
             var countUsageDaysVar = countUsageDays
             
             for time in times {
- 
-                arrayDates.append(DateForNotification(userInfo: userInfo,
-                                                      timestamp: startDate + time.rawValue()))
-                
+                arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
             }
             
             countUsageDaysVar -= 1
@@ -391,8 +369,7 @@ extension LocalNotificationService {
                 
                 if startDate + time.rawValue() <= endUsageDate {
                     
-                    arrayDates.append(DateForNotification(userInfo: userInfo,
-                                                          timestamp: startDate + time.rawValue()))
+                    arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
                     
                 }
                 

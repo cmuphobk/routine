@@ -6,13 +6,7 @@ protocol LocalNotificationServiceInterface: UNUserNotificationCenterDelegate, Me
     
     func configure(application: UIApplication)
     
-    func createNotifications(startDate: Int,
-                             times: [Time],
-                             periodCourseType: PeriodCourseType,
-                             periodCourseValue: Int,
-                             endingCourseType: EndingCourseType,
-                             endingCourseValue: Int,
-                             userInfo: CustomStringConvertible)
+    func createNotifications(model: NotificationsModel)
     
     func removeAllNotifications()
     

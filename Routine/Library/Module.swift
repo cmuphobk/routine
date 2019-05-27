@@ -24,7 +24,7 @@ extension ViewInput {
     }
 }
 
-protocol ViewOutput: class {
+protocol ViewOutput: Module {
     func didTriggerViewReadyEvent()
 }
 

@@ -1,8 +1,8 @@
 import Foundation
 
 struct DateForNotification: Hashable {
-    let userInfo: CustomStringConvertible
     let timestamp: Int
+    let userInfo: CustomStringConvertible
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(NSUUID().uuidString)

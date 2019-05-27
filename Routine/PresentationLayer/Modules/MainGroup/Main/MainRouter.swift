@@ -6,14 +6,6 @@ final class MainRouter: BaseRouter {
 }
 
 extension MainRouter: MainRouterInput {
-    func openCourseModule() {
-        
-//        self.moduleService.moduleFactory.makeMedicineCourseModule { [unowned self] (_, medicineCourseModuleInput) in
-//            guard let module = medicineCourseModuleInput as? Module else { return }
-//            self.moduleService.navigation?.pushModule(module)
-//        }
-        
-    }
     
     func rightSwipeAction() {
         self.routerOutput.openMenu()

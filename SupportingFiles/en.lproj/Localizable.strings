@@ -1,1 +1,44 @@
+"main_name" = "Рабочий стол";
+"main_alias" = "Рабочий стол";
 
+"menu_name" = "Меню";
+"menu_alias" = "Меню";
+
+"logo_string" = "Рутина";
+
+"short_monday" = "Пн";
+"short_tuesday" = "Вт";
+"short_wednesday" = "Ср";
+"short_thursday" = "Чт";
+"short_friday" = "Пт";
+"short_saturday" = "Сб";
+"short_sunday" = "Вс";
+
+"full_monday" = "Понедельник";
+"full_tuesday" = "Вторник";
+"full_wednesday" = "Среда";
+"full_thursday" = "Четверг";
+"full_friday" = "Пятница";
+"full_saturday" = "Суббота";
+"full_sunday" = "Воскресенье";
+
+"full_allday" = "Каждый день";
+
+"error_network" = "Ошибка соединения!";
+
+"week_days" = "week_days";
+"count_days" = "count_days";
+
+"end_usage_date" = "end_usage_date";
+"count_usage_days" = "count_usage_days";
+"count_usage_number" = "count_usage_number";
+
+"end_usage_date_to" = "end_usage_date_to";
+
+"days_1" = "days_1";
+"days2_4" = "days2_4";
+"days5" = "days5";
+
+"usage_1" = "usage_1";
+"usage_2_4" = "usage_2_4";
+"usage_5" = "usage_5";

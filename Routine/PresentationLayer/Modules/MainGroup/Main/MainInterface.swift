@@ -22,9 +22,7 @@ protocol MainViewOutput: ViewOutput {
     func configureNavigationBar(title: String)
 }
 
-protocol MainRouterInput: RouterInput {
-    func openCourseModule()
-    
+protocol MainRouterInput: RouterInput {    
     func rightSwipeAction()
     func leftSwipeAction()
     

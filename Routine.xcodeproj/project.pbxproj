@@ -50,15 +50,12 @@
 		41F06B4B2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */; };
 		41F06B522289A81400D28682 /* MainTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B512289A81400D28682 /* MainTableViewFactoryAssembly.swift */; };
 		41F06B542289A81F00D28682 /* MainTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B532289A81F00D28682 /* MainTableViewFactoryInterface.swift */; };
-		41F06B6C228AA29500D28682 /* RoutineCheckBoxButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B6B228AA29500D28682 /* RoutineCheckBoxButtonViewModel.swift */; };
 		860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC68621B7A1B0007317B2 /* UIView+Shadow.swift */; };
 		860E48E621C2B1440009E4DB /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860E48E321C2B1440009E4DB /* TextFieldCellViewModel.swift */; };
 		860E48E821C2B1440009E4DB /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860E48E521C2B1440009E4DB /* TextFieldCell.swift */; };
 		860E48F121C36F790009E4DB /* Array+AnyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860E48F021C36F780009E4DB /* Array+AnyObject.swift */; };
 		862F439D21CE93EF00CB127F /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F439C21CE93EF00CB127F /* ButtonCell.swift */; };
 		862F439F21CE940700CB127F /* ButtonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F439E21CE940700CB127F /* ButtonCellViewModel.swift */; };
-		86385B3E21C4F4720097A544 /* RoutineTwiceComboboxCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86385B3B21C4F4720097A544 /* RoutineTwiceComboboxCellViewModel.swift */; };
-		86385B3F21C4F4720097A544 /* RoutineTwiceComboboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86385B3C21C4F4720097A544 /* RoutineTwiceComboboxCell.swift */; };
 		866CA11021CA1E8600363BC9 /* ImageAndLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA10F21CA1E8600363BC9 /* ImageAndLabelCell.swift */; };
 		866CA11221CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA11121CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift */; };
 		866F0CE721E77E5400D9FF94 /* RoutineTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866F0CE621E77E5400D9FF94 /* RoutineTextViewModel.swift */; };
@@ -84,18 +81,18 @@
 		ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */; };
 		ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E5F2296EC7F008998F4 /* Coordinator.swift */; };
 		ED178E6D22982086008998F4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6C22982086008998F4 /* Time.swift */; };
-		ED178E7022982B33008998F4 /* PeriodCourseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6F22982B33008998F4 /* PeriodCourseType.swift */; };
-		ED178E7222982B3D008998F4 /* EndingCourseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7122982B3D008998F4 /* EndingCourseType.swift */; };
+		ED178E7022982B33008998F4 /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E6F22982B33008998F4 /* PeriodType.swift */; };
+		ED178E7222982B3D008998F4 /* EndingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7122982B3D008998F4 /* EndingType.swift */; };
 		ED178E7422982B4A008998F4 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7322982B4A008998F4 /* DayOfWeek.swift */; };
 		ED178E7622982BA5008998F4 /* DateForNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7522982BA5008998F4 /* DateForNotification.swift */; };
 		ED178E7822982BBF008998F4 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7722982BBF008998F4 /* LocalNotification.swift */; };
+		ED178E7A229BE676008998F4 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E79229BE676008998F4 /* NotificationsModel.swift */; };
 		ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */; };
 		ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */; };
 		ED241EA521AC014D00E4E32F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA421AC014D00E4E32F /* Repository.swift */; };
 		ED241EA821AC065F00E4E32F /* IdentifierModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA721AC065F00E4E32F /* IdentifierModelInterface.swift */; };
 		ED241EB921AD2AD200E4E32F /* Codable+Dicitionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EB821AD2AD200E4E32F /* Codable+Dicitionary.swift */; };
 		ED2CEFF921BD53B400D9EFAF /* LocalNotificationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */; };
-		ED312CC321872AB3006D95F7 /* StandartCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */; };
 		ED4C62A121E34F01004A999C /* MainTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */; };
 		ED4C62A321E34F5B004A999C /* RoutineTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A221E34F5B004A999C /* RoutineTableViewManager.swift */; };
 		ED4C62A721E4A056004A999C /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62A621E4A056004A999C /* SectionCell.swift */; };
@@ -103,12 +100,6 @@
 		ED4C62AC21E5E0AD004A999C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */; };
 		ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AD21E5E0CB004A999C /* SectionView.swift */; };
 		ED4C62B021E5E0D7004A999C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C62AF21E5E0D7004A999C /* SectionDescriptionView.swift */; };
-		ED59915B21D2AE2400253599 /* RoutineLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59915A21D2AE2400253599 /* RoutineLoaderView.swift */; };
-		ED6669C6218A1E8900366877 /* StandartPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669C5218A1E8900366877 /* StandartPickerView.swift */; };
-		ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669C7218B397F00366877 /* StandartDatePickerView.swift */; };
-		ED6669CD218C5DAC00366877 /* RoutineHtmlTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669CC218C5DAC00366877 /* RoutineHtmlTextView.swift */; };
-		ED749FD52190C6DA00D996D4 /* RoutineCheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED749FD42190C6DA00D996D4 /* RoutineCheckBoxButton.swift */; };
-		ED78745A219C8F9B00FEA4DB /* StandartPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */; };
 		ED787475219E038500FEA4DB /* RoutineModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED787474219E038500FEA4DB /* RoutineModalView.swift */; };
 		ED7874A121A1C67B00FEA4DB /* StandartPagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */; };
 		ED7874A221A1C67B00FEA4DB /* StandartPagePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7874A021A1C67B00FEA4DB /* StandartPagePickerCell.xib */; };
@@ -262,7 +253,6 @@
 		41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
 		41F06B512289A81400D28682 /* MainTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
 		41F06B532289A81F00D28682 /* MainTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactoryInterface.swift; sourceTree = "<group>"; };
-		41F06B6B228AA29500D28682 /* RoutineCheckBoxButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCheckBoxButtonViewModel.swift; sourceTree = "<group>"; };
 		462C35C180BC5B7647C384B2 /* Pods-Routine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routine/Pods-Routine.release.xcconfig"; sourceTree = "<group>"; };
 		700F6105CB5EA56D2CEA09BE /* Pods_RoutineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860AC68621B7A1B0007317B2 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
@@ -271,8 +261,6 @@
 		860E48F021C36F780009E4DB /* Array+AnyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+AnyObject.swift"; sourceTree = "<group>"; };
 		862F439C21CE93EF00CB127F /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		862F439E21CE940700CB127F /* ButtonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellViewModel.swift; sourceTree = "<group>"; };
-		86385B3B21C4F4720097A544 /* RoutineTwiceComboboxCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTwiceComboboxCellViewModel.swift; sourceTree = "<group>"; };
-		86385B3C21C4F4720097A544 /* RoutineTwiceComboboxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTwiceComboboxCell.swift; sourceTree = "<group>"; };
 		866CA10F21CA1E8600363BC9 /* ImageAndLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndLabelCell.swift; sourceTree = "<group>"; };
 		866CA11121CA1E9800363BC9 /* ImageAndLabelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndLabelCellViewModel.swift; sourceTree = "<group>"; };
 		866F0CE621E77E5400D9FF94 /* RoutineTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTextViewModel.swift; sourceTree = "<group>"; };
@@ -299,11 +287,12 @@
 		ED082FD721CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceInterface.swift; sourceTree = "<group>"; };
 		ED178E5F2296EC7F008998F4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ED178E6C22982086008998F4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
-		ED178E6F22982B33008998F4 /* PeriodCourseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCourseType.swift; sourceTree = "<group>"; };
-		ED178E7122982B3D008998F4 /* EndingCourseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingCourseType.swift; sourceTree = "<group>"; };
+		ED178E6F22982B33008998F4 /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
+		ED178E7122982B3D008998F4 /* EndingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingType.swift; sourceTree = "<group>"; };
 		ED178E7322982B4A008998F4 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		ED178E7522982BA5008998F4 /* DateForNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForNotification.swift; sourceTree = "<group>"; };
 		ED178E7722982BBF008998F4 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		ED178E79229BE676008998F4 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
 		ED1F8EE521F48EFB00D467CB /* Routine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routine.entitlements; sourceTree = "<group>"; };
 		ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableEntityInterface.swift; sourceTree = "<group>"; };
@@ -311,7 +300,6 @@
 		ED241EA721AC065F00E4E32F /* IdentifierModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierModelInterface.swift; sourceTree = "<group>"; };
 		ED241EB821AD2AD200E4E32F /* Codable+Dicitionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Dicitionary.swift"; sourceTree = "<group>"; };
 		ED2CEFF821BD53B400D9EFAF /* LocalNotificationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationInterface.swift; sourceTree = "<group>"; };
-		ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartCheckBox.swift; sourceTree = "<group>"; };
 		ED4C62A021E34F01004A999C /* MainTableViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewFactory.swift; sourceTree = "<group>"; };
 		ED4C62A221E34F5B004A999C /* RoutineTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewManager.swift; sourceTree = "<group>"; };
 		ED4C62A621E4A056004A999C /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
@@ -319,12 +307,6 @@
 		ED4C62AB21E5E0AD004A999C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		ED4C62AD21E5E0CB004A999C /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		ED4C62AF21E5E0D7004A999C /* SectionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionView.swift; sourceTree = "<group>"; };
-		ED59915A21D2AE2400253599 /* RoutineLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineLoaderView.swift; sourceTree = "<group>"; };
-		ED6669C5218A1E8900366877 /* StandartPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPickerView.swift; sourceTree = "<group>"; };
-		ED6669C7218B397F00366877 /* StandartDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartDatePickerView.swift; sourceTree = "<group>"; };
-		ED6669CC218C5DAC00366877 /* RoutineHtmlTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHtmlTextView.swift; sourceTree = "<group>"; };
-		ED749FD42190C6DA00D996D4 /* RoutineCheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCheckBoxButton.swift; sourceTree = "<group>"; };
-		ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPasswordTextField.swift; sourceTree = "<group>"; };
 		ED787474219E038500FEA4DB /* RoutineModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModalView.swift; sourceTree = "<group>"; };
 		ED78749F21A1C67B00FEA4DB /* StandartPagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartPagePickerCell.swift; sourceTree = "<group>"; };
 		ED7874A021A1C67B00FEA4DB /* StandartPagePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartPagePickerCell.xib; sourceTree = "<group>"; };
@@ -615,15 +597,6 @@
 			path = MainTableViewFactory;
 			sourceTree = "<group>";
 		};
-		41F06B6A228AA28100D28682 /* RoutineCheckBoxButton */ = {
-			isa = PBXGroup;
-			children = (
-				ED749FD42190C6DA00D996D4 /* RoutineCheckBoxButton.swift */,
-				41F06B6B228AA29500D28682 /* RoutineCheckBoxButtonViewModel.swift */,
-			);
-			path = RoutineCheckBoxButton;
-			sourceTree = "<group>";
-		};
 		6819D66EA2073674BDF72EB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,15 +624,6 @@
 				862F439E21CE940700CB127F /* ButtonCellViewModel.swift */,
 			);
 			path = RoutineButtonCell;
-			sourceTree = "<group>";
-		};
-		86385B3921C4F3910097A544 /* RoutineTwiceComboboxCell */ = {
-			isa = PBXGroup;
-			children = (
-				86385B3C21C4F4720097A544 /* RoutineTwiceComboboxCell.swift */,
-				86385B3B21C4F4720097A544 /* RoutineTwiceComboboxCellViewModel.swift */,
-			);
-			path = RoutineTwiceComboboxCell;
 			sourceTree = "<group>";
 		};
 		866CA10E21CA1B7C00363BC9 /* ImageAndLabelCell */ = {
@@ -810,12 +774,8 @@
 				860E48E221C2B0E30009E4DB /* RoutineTextFieldCell */,
 				866F0CEA21E785AB00D9FF94 /* RoutineTextAreaCell */,
 				8682995F21C8C83900679C05 /* RoutineComboboxCell */,
-				86385B3921C4F3910097A544 /* RoutineTwiceComboboxCell */,
-				41F06B6A228AA28100D28682 /* RoutineCheckBoxButton */,
-				ED178E6822981B35008998F4 /* RoutineLoaderView */,
 				ED178E6922981B3F008998F4 /* RoutineModalView */,
 				ED178E6A22981B4C008998F4 /* RoutineOffsetLabel */,
-				ED178E6B22981B58008998F4 /* RoutineHtmlTextView */,
 				86C2BE5C21A682F4001BA77B /* PaddingOffsets.swift */,
 			);
 			path = UI;
@@ -865,14 +825,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		ED178E6822981B35008998F4 /* RoutineLoaderView */ = {
-			isa = PBXGroup;
-			children = (
-				ED59915A21D2AE2400253599 /* RoutineLoaderView.swift */,
-			);
-			path = RoutineLoaderView;
-			sourceTree = "<group>";
-		};
 		ED178E6922981B3F008998F4 /* RoutineModalView */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,23 +841,16 @@
 			path = RoutineOffsetLabel;
 			sourceTree = "<group>";
 		};
-		ED178E6B22981B58008998F4 /* RoutineHtmlTextView */ = {
-			isa = PBXGroup;
-			children = (
-				ED6669CC218C5DAC00366877 /* RoutineHtmlTextView.swift */,
-			);
-			path = RoutineHtmlTextView;
-			sourceTree = "<group>";
-		};
 		ED178E6E22982B1C008998F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ED178E6C22982086008998F4 /* Time.swift */,
-				ED178E6F22982B33008998F4 /* PeriodCourseType.swift */,
-				ED178E7122982B3D008998F4 /* EndingCourseType.swift */,
+				ED178E6F22982B33008998F4 /* PeriodType.swift */,
+				ED178E7122982B3D008998F4 /* EndingType.swift */,
 				ED178E7322982B4A008998F4 /* DayOfWeek.swift */,
 				ED178E7522982BA5008998F4 /* DateForNotification.swift */,
 				ED178E7722982BBF008998F4 /* LocalNotification.swift */,
+				ED178E79229BE676008998F4 /* NotificationsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -961,10 +906,6 @@
 				ED4C62B121E5E133004A999C /* SectionHeaderView */,
 				ED4C62B221E5E143004A999C /* SectionView */,
 				ED4C62B321E5E14C004A999C /* SectionDescriptionView */,
-				ED787459219C8F9B00FEA4DB /* StandartPasswordTextField.swift */,
-				ED312CC221872AB3006D95F7 /* StandartCheckBox.swift */,
-				ED6669C5218A1E8900366877 /* StandartPickerView.swift */,
-				ED6669C7218B397F00366877 /* StandartDatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1747,7 +1688,7 @@
 				ED8F6A632179F126001DBDAA /* MultipartOperationHandler.swift in Sources */,
 				ED8F6A1E2179B971001DBDAA /* RoutineTableViewCell.swift in Sources */,
 				EDFA69B82187796700195622 /* WindowService.swift in Sources */,
-				ED178E7222982B3D008998F4 /* EndingCourseType.swift in Sources */,
+				ED178E7222982B3D008998F4 /* EndingType.swift in Sources */,
 				EDC891D121CE59360002CD9E /* DecodeResponseContainerInterface.swift in Sources */,
 				EDE9894321E92F5B00870F25 /* RoutineButtonViewModel.swift in Sources */,
 				41A6B875220ED8270023CE19 /* DateService.swift in Sources */,
@@ -1777,14 +1718,11 @@
 				41F06B522289A81400D28682 /* MainTableViewFactoryAssembly.swift in Sources */,
 				411E234822440F150003CEE0 /* RoutineActionType.swift in Sources */,
 				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
-				86385B3F21C4F4720097A544 /* RoutineTwiceComboboxCell.swift in Sources */,
 				41A5339E22074BA9009A735E /* NotificationServiceAssembly.swift in Sources */,
 				41F06B542289A81F00D28682 /* MainTableViewFactoryInterface.swift in Sources */,
 				41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */,
 				ED8F6A2D2179B971001DBDAA /* MenuViewController.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,
-				ED6669C8218B397F00366877 /* StandartDatePickerView.swift in Sources */,
-				86385B3E21C4F4720097A544 /* RoutineTwiceComboboxCellViewModel.swift in Sources */,
 				EDE9894221E92F5B00870F25 /* RoutineButton.swift in Sources */,
 				41F06B4422872BFF00D28682 /* RoutineDelegate.swift in Sources */,
 				EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */,
@@ -1792,6 +1730,7 @@
 				41A533A222074BED009A735E /* LanguageServiceAssembly.swift in Sources */,
 				867EF4F921F0B9690019253C /* LabelAndMarkCell.swift in Sources */,
 				ED4C62A921E4A09B004A999C /* SectionCellViewModel.swift in Sources */,
+				ED178E7A229BE676008998F4 /* NotificationsModel.swift in Sources */,
 				ED787475219E038500FEA4DB /* RoutineModalView.swift in Sources */,
 				41A5339C22074B92009A735E /* HockeyServiceAssembly.swift in Sources */,
 				EDE945CC21C67329009BC60A /* RESTCode.swift in Sources */,
@@ -1812,7 +1751,6 @@
 				4172F8AC228AE2BE008A5AE9 /* ApplicationCoordinatorFactory.swift in Sources */,
 				41A533A622074C10009A735E /* WindowServiceAssembly.swift in Sources */,
 				41A5339822074B5D009A735E /* StorageServiceAssembly.swift in Sources */,
-				ED6669CD218C5DAC00366877 /* RoutineHtmlTextView.swift in Sources */,
 				ED4C62B021E5E0D7004A999C /* SectionDescriptionView.swift in Sources */,
 				ED8F6A672179F126001DBDAA /* RequestOperationHandler.swift in Sources */,
 				86C2BE5D21A682F4001BA77B /* PaddingOffsets.swift in Sources */,
@@ -1831,18 +1769,15 @@
 				EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */,
 				411E234D224412C50003CEE0 /* RoutineCollectionView.swift in Sources */,
 				ED178E6D22982086008998F4 /* Time.swift in Sources */,
-				ED59915B21D2AE2400253599 /* RoutineLoaderView.swift in Sources */,
 				41A5338A2206F4A9009A735E /* NetworkRequest.swift in Sources */,
 				41A6B873220ED81E0023CE19 /* DateServiceAssembly.swift in Sources */,
 				ED8F6A0A2179B971001DBDAA /* ImageProvider.swift in Sources */,
 				41CAA231227F186F00188189 /* R.generated.swift in Sources */,
 				4172F8AA228AE1FA008A5AE9 /* MainModuleFactory.swift in Sources */,
-				ED749FD52190C6DA00D996D4 /* RoutineCheckBoxButton.swift in Sources */,
 				ED7874A721A1C86200FEA4DB /* RoutineCollectionViewManager.swift in Sources */,
 				ED241EB921AD2AD200E4E32F /* Codable+Dicitionary.swift in Sources */,
 				860E48F121C36F790009E4DB /* Array+AnyObject.swift in Sources */,
 				ED082FD021CFFD1A00C892C8 /* HockeyServiceInterface.swift in Sources */,
-				ED78745A219C8F9B00FEA4DB /* StandartPasswordTextField.swift in Sources */,
 				ED8F6A0E2179B971001DBDAA /* LanguageService.swift in Sources */,
 				41A533852206EED5009A735E /* ServiceProvider.swift in Sources */,
 				EDA9A63C21E672D200D99B09 /* SectionHeaderViewModel.swift in Sources */,
@@ -1860,7 +1795,6 @@
 				EDE9894721E92F5B00870F25 /* RoutineCombobox.swift in Sources */,
 				ED082FD821CFFD5B00C892C8 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED8F6A0C2179B971001DBDAA /* RoutineOffsetLabel.swift in Sources */,
-				41F06B6C228AA29500D28682 /* RoutineCheckBoxButtonViewModel.swift in Sources */,
 				ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */,
 				411E235222494DC70003CEE0 /* RoutineCellOwner.swift in Sources */,
 				ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */,
@@ -1868,13 +1802,12 @@
 				866F0CEE21E7865D00D9FF94 /* TextAreaCellViewModel.swift in Sources */,
 				EDE9894421E92F5B00870F25 /* RoutineImageViewModel.swift in Sources */,
 				ED8F6A6E2179F184001DBDAA /* BaseResponseModels.swift in Sources */,
-				ED6669C6218A1E8900366877 /* StandartPickerView.swift in Sources */,
 				ED082FD221CFFD3700C892C8 /* NotificationService.swift in Sources */,
 				EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */,
 				41A6B868220ED7E30023CE19 /* StringService.swift in Sources */,
 				ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */,
 				41A6B86C220ED7FD0023CE19 /* ImageServiceAssembly.swift in Sources */,
-				ED178E7022982B33008998F4 /* PeriodCourseType.swift in Sources */,
+				ED178E7022982B33008998F4 /* PeriodType.swift in Sources */,
 				860E48E821C2B1440009E4DB /* TextFieldCell.swift in Sources */,
 				ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */,
 				ED178E602296EC7F008998F4 /* Coordinator.swift in Sources */,
@@ -1882,7 +1815,6 @@
 				860E48E621C2B1440009E4DB /* TextFieldCellViewModel.swift in Sources */,
 				EDA9A63E21E672DD00D99B09 /* SectionViewModel.swift in Sources */,
 				ED8F6A052179B971001DBDAA /* MainPresenter.swift in Sources */,
-				ED312CC321872AB3006D95F7 /* StandartCheckBox.swift in Sources */,
 				ED8F6A652179F126001DBDAA /* RESTOperationHandler.swift in Sources */,
 				ED8F69762179B839001DBDAA /* AppDelegate.swift in Sources */,
 				EDDA636121B3ED49005AE695 /* RESTRequestObject.swift in Sources */,

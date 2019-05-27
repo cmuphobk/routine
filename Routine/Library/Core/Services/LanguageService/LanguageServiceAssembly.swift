@@ -2,10 +2,9 @@ import Foundation
 
 enum LanguageServiceAssembly {
     
-    static func build(storageService: StorageServiceInterface) -> LanguageServiceInterface {
+    static func build() -> LanguageServiceInterface {
         
         let languageService = LanguageService.shared
-        languageService.storageService = storageService
         return languageService
         
     }

@@ -7,7 +7,7 @@ enum ServiceProviderAssembly {
         let serviceProvider = ServiceProvider.shared
         
         serviceProvider.storageService = StorageServiceAssembly.build()
-        serviceProvider.languageService = LanguageServiceAssembly.build(storageService: serviceProvider.storageService)
+        serviceProvider.languageService = LanguageServiceAssembly.build()
         
         serviceProvider.localNotificationService = LocalNotificationServiceAssembly.build(storageService: serviceProvider.storageService)
         serviceProvider.moduleService = ModuleServiceAssembly.build()

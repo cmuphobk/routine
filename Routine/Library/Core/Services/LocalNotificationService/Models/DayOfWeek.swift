@@ -14,9 +14,7 @@ enum DayOfWeek: UInt8, CaseIterable {
     
     //Проверить есть ли день в наборе дней
     func checkIfExist(_ enter: UInt8) -> Bool {
-        
         let int8 = self.rawValue
-        
         return enter & int8 == int8
     }
     
@@ -32,42 +30,25 @@ enum DayOfWeek: UInt8, CaseIterable {
     
     //получить день по Int
     static func dayOfWeekFromWeekday(_ weekday: Int) -> DayOfWeek? {
-        
         if weekday == 1 {
-            
             return .monday
-            
         } else if weekday == 2 {
-            
             return .tuesday
-            
         } else if weekday == 3 {
-            
             return .wednesday
-            
         } else if weekday == 4 {
-            
             return .thursday
-            
         } else if weekday == 5 {
-            
             return .friday
-            
         } else if weekday == 6 {
-            
             return .saturday
-            
         } else if weekday == 7 {
-            
             return .sunday
-            
         } else { return nil }
-        
     }
     
     //Определить по timestamp какой день недели
     static func checkDateWeekDay(timestamp: Int) -> DayOfWeek? {
-        
         let date = Date(timeIntervalSince1970: Double(timestamp / 1000))
         let weekday = date.weekday
         return self.dayOfWeekFromWeekday(weekday)
@@ -76,53 +57,51 @@ enum DayOfWeek: UInt8, CaseIterable {
     
     static func stringBy(_ value: DayOfWeek, localizeService: StringServiceInterface) -> String {
         switch value {
-        case .monday: return localizeService.localizeId("short_monday")
-        case .tuesday: return localizeService.localizeId("short_tuesday")
-        case .wednesday: return localizeService.localizeId("short_wednesday")
-        case .thursday: return localizeService.localizeId("short_thursday")
-        case .friday: return localizeService.localizeId("short_friday")
-        case .saturday: return localizeService.localizeId("short_saturday")
-        case .sunday: return localizeService.localizeId("short_sunday")
+        case .monday: return localizeService.localizeId(R.string.localizable.short_monday.key)
+        case .tuesday: return localizeService.localizeId(R.string.localizable.short_tuesday.key)
+        case .wednesday: return localizeService.localizeId(R.string.localizable.short_wednesday.key)
+        case .thursday: return localizeService.localizeId(R.string.localizable.short_thursday.key)
+        case .friday: return localizeService.localizeId(R.string.localizable.short_friday.key)
+        case .saturday: return localizeService.localizeId(R.string.localizable.short_saturday.key)
+        case .sunday: return localizeService.localizeId(R.string.localizable.short_sunday.key)
         }
     }
     
     func toFullString(localizeService: StringServiceInterface) -> String {
         switch self {
-        case .monday: return localizeService.localizeId("full_monday")
-        case .tuesday: return localizeService.localizeId("full_tuesday")
-        case .wednesday: return localizeService.localizeId("full_wednesday")
-        case .thursday: return localizeService.localizeId("full_thursday")
-        case .friday: return localizeService.localizeId("full_friday")
-        case .saturday: return localizeService.localizeId("full_saturday")
-        case .sunday: return localizeService.localizeId("full_sunday")
+        case .monday: return localizeService.localizeId(R.string.localizable.full_monday.key)
+        case .tuesday: return localizeService.localizeId(R.string.localizable.full_tuesday.key)
+        case .wednesday: return localizeService.localizeId(R.string.localizable.full_wednesday.key)
+        case .thursday: return localizeService.localizeId(R.string.localizable.full_thursday.key)
+        case .friday: return localizeService.localizeId(R.string.localizable.full_friday.key)
+        case .saturday: return localizeService.localizeId(R.string.localizable.full_saturday.key)
+        case .sunday: return localizeService.localizeId(R.string.localizable.full_sunday.key)
         }
     }
     
     static func stringFromBitset(_ bitset: UInt8, localizeService: StringServiceInterface) -> String {
         var result: String = ""
-        
         if DayOfWeek.monday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_monday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_monday.key)). " )
         }
         if DayOfWeek.tuesday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_tuesday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_tuesday.key)). " )
         }
         if DayOfWeek.wednesday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_wednesday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_wednesday.key)). " )
         }
         if DayOfWeek.thursday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_thursday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_thursday.key)). " )
         }
         if DayOfWeek.friday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_friday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_friday.key)). " )
         }
         if DayOfWeek.saturday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_saturday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_saturday.key)). " )
         }
         if DayOfWeek.sunday.checkIfExist(bitset) {
-            result.append( "\(localizeService.localizeId("short_sunday")). " )
+            result.append( "\(localizeService.localizeId(R.string.localizable.short_sunday.key)). " )
         }
-        
         return result
     }
 }
