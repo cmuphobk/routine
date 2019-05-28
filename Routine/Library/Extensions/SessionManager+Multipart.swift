@@ -2,11 +2,11 @@ import Foundation
 import Alamofire
 
 extension SessionManager {
-    
+
     fileprivate struct CustomProperties {
         static var queueExt = "queueExt"
     }
-    
+
     fileprivate var queueExt: DispatchQueue {
         get {
             if let queueExt = objc_getAssociatedObject(self, &CustomProperties.queueExt) as? DispatchQueue {
@@ -20,9 +20,9 @@ extension SessionManager {
             objc_setAssociatedObject(self, &CustomProperties.queueExt, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
+
     // MARK: - Copy from Alamofire SessionManager
-    
+
     func upload(
         multipartFormData: MultipartFormData,
         usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
@@ -32,7 +32,7 @@ extension SessionManager {
         encodingCompletion: ((MultipartFormDataEncodingResult) -> Void)?) {
         do {
             let urlRequest = try URLRequest(url: url, method: method, headers: headers)
-            
+
             return self.upload(
                 multipartFormData: multipartFormData,
                 usingThreshold: encodingMemoryThreshold,
@@ -43,7 +43,7 @@ extension SessionManager {
             DispatchQueue.main.async { encodingCompletion?(.failure(error)) }
         }
     }
-    
+
     func upload(
         multipartFormData: MultipartFormData,
         usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
@@ -51,24 +51,24 @@ extension SessionManager {
         encodingCompletion: ((MultipartFormDataEncodingResult) -> Void)?) {
         DispatchQueue.global(qos: .utility).async {
             let formData = multipartFormData
-            
+
             var tempFileURL: URL?
-            
+
             do {
                 var urlRequestWithContentType = try urlRequest.asURLRequest()
                 urlRequestWithContentType.setValue(formData.contentType, forHTTPHeaderField: "Content-Type")
-                
+
                 let isBackgroundSession = self.session.configuration.identifier != nil
-                
+
                 if formData.contentLength < encodingMemoryThreshold && !isBackgroundSession {
                     let data = try formData.encode()
-                    
+
                     let encodingResult = MultipartFormDataEncodingResult.success(
                         request: self.upload(data, with: urlRequestWithContentType),
                         streamingFromDisk: false,
                         streamFileURL: nil
                     )
-                    
+
                     DispatchQueue.main.async { encodingCompletion?(encodingResult) }
                 } else {
                     let fileManager = FileManager.default
@@ -76,11 +76,11 @@ extension SessionManager {
                     let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
                     let fileName = UUID().uuidString
                     let fileURL = directoryURL.appendingPathComponent(fileName)
-                    
+
                     tempFileURL = fileURL
-                    
+
                     var directoryError: Error?
-                    
+
                     // Create directory inside serial queue to ensure two threads don't do this in parallel
                     self.queueExt.sync {
                         do {
@@ -89,13 +89,13 @@ extension SessionManager {
                             directoryError = error
                         }
                     }
-                    
+
                     if let directoryError = directoryError { throw directoryError }
-                    
+
                     try formData.writeEncodedData(to: fileURL)
-                    
+
                     let upload = self.upload(fileURL, with: urlRequestWithContentType)
-                    
+
                     // Cleanup the temp file once the upload is complete
                     upload.delegate.queue.addOperation {
                         do {
@@ -104,14 +104,14 @@ extension SessionManager {
                             // No-op
                         }
                     }
-                    
+
                     DispatchQueue.main.async {
                         let encodingResult = MultipartFormDataEncodingResult.success(
                             request: upload,
                             streamingFromDisk: true,
                             streamFileURL: fileURL
                         )
-                        
+
                         encodingCompletion?(encodingResult)
                     }
                 }
@@ -124,10 +124,10 @@ extension SessionManager {
                         // No-op
                     }
                 }
-                
+
                 DispatchQueue.main.async { encodingCompletion?(.failure(error)) }
             }
         }
     }
-    
+
 }

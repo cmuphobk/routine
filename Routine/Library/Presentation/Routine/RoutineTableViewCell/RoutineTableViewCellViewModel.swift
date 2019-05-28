@@ -1,11 +1,11 @@
 import UIKit
 
 class RoutineTableViewCellViewModel: RoutineViewModel {
-    
+
     var reuseIdentifier: String? {
         return nil
     }
-    
+
     var cellOwner: RoutineCellOwner? {
         return nil
     }
@@ -14,5 +14,5 @@ class RoutineTableViewCellViewModel: RoutineViewModel {
     var backgroundViewColor: UIColor = UIColor.white
     var contentViewColor: UIColor = UIColor.clear
     var isExpand: Bool = false
-        
+
 }

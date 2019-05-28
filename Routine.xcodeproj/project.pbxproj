@@ -87,6 +87,8 @@
 		ED178E7622982BA5008998F4 /* DateForNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7522982BA5008998F4 /* DateForNotification.swift */; };
 		ED178E7822982BBF008998F4 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7722982BBF008998F4 /* LocalNotification.swift */; };
 		ED178E7A229BE676008998F4 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E79229BE676008998F4 /* NotificationsModel.swift */; };
+		ED178E7E229C1093008998F4 /* RoutineOffsetLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7D229C1093008998F4 /* RoutineOffsetLabelViewModel.swift */; };
+		ED178E80229C109F008998F4 /* RoutineModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED178E7F229C109F008998F4 /* RoutineModalViewModel.swift */; };
 		ED241EA121ABD71B00E4E32F /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */; };
 		ED241EA321ABDA1D00E4E32F /* ConfigurableEntityInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */; };
 		ED241EA521AC014D00E4E32F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED241EA421AC014D00E4E32F /* Repository.swift */; };
@@ -293,6 +295,8 @@
 		ED178E7522982BA5008998F4 /* DateForNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForNotification.swift; sourceTree = "<group>"; };
 		ED178E7722982BBF008998F4 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		ED178E79229BE676008998F4 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		ED178E7D229C1093008998F4 /* RoutineOffsetLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineOffsetLabelViewModel.swift; sourceTree = "<group>"; };
+		ED178E7F229C109F008998F4 /* RoutineModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModalViewModel.swift; sourceTree = "<group>"; };
 		ED1F8EE521F48EFB00D467CB /* Routine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Routine.entitlements; sourceTree = "<group>"; };
 		ED241EA021ABD71B00E4E32F /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		ED241EA221ABDA1D00E4E32F /* ConfigurableEntityInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableEntityInterface.swift; sourceTree = "<group>"; };
@@ -829,6 +833,7 @@
 			isa = PBXGroup;
 			children = (
 				ED787474219E038500FEA4DB /* RoutineModalView.swift */,
+				ED178E7F229C109F008998F4 /* RoutineModalViewModel.swift */,
 			);
 			path = RoutineModalView;
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 			isa = PBXGroup;
 			children = (
 				ED8F69C72179B971001DBDAA /* RoutineOffsetLabel.swift */,
+				ED178E7D229C1093008998F4 /* RoutineOffsetLabelViewModel.swift */,
 			);
 			path = RoutineOffsetLabel;
 			sourceTree = "<group>";
@@ -975,9 +981,9 @@
 				ED1F8EE521F48EFB00D467CB /* Routine.entitlements */,
 				ED8F69752179B839001DBDAA /* AppDelegate.swift */,
 				41CAA230227F186F00188189 /* R.generated.swift */,
-				ED8F6A312179C08A001DBDAA /* CoreLayer */,
-				ED8F69C02179B971001DBDAA /* BuisnessLayer */,
-				ED8F69A32179B971001DBDAA /* PresentationLayer */,
+				ED8F6A312179C08A001DBDAA /* Core */,
+				ED8F69C02179B971001DBDAA /* Buisness */,
+				ED8F69A32179B971001DBDAA /* Presentation */,
 				ED8F69C12179B971001DBDAA /* Extension */,
 				ED8F6A9A217E2AF2001DBDAA /* UI */,
 				ED8F69812179B83A001DBDAA /* Info.plist */,
@@ -1003,13 +1009,13 @@
 			path = RoutineUITests;
 			sourceTree = "<group>";
 		};
-		ED8F69A32179B971001DBDAA /* PresentationLayer */ = {
+		ED8F69A32179B971001DBDAA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				ED8F69E12179B971001DBDAA /* LaunchScreen.storyboard */,
 				41A6B85C220ECFB60023CE19 /* Modules */,
 			);
-			path = PresentationLayer;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		ED8F69B92179B971001DBDAA /* Main */ = {
@@ -1026,12 +1032,12 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		ED8F69C02179B971001DBDAA /* BuisnessLayer */ = {
+		ED8F69C02179B971001DBDAA /* Buisness */ = {
 			isa = PBXGroup;
 			children = (
 				ED2CEFF421BD529700D9EFAF /* Services */,
 			);
-			path = BuisnessLayer;
+			path = Buisness;
 			sourceTree = "<group>";
 		};
 		ED8F69C12179B971001DBDAA /* Extension */ = {
@@ -1083,7 +1089,7 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		ED8F6A312179C08A001DBDAA /* CoreLayer */ = {
+		ED8F6A312179C08A001DBDAA /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				41A533862206EF13009A735E /* ServiceProvider */,
@@ -1091,7 +1097,7 @@
 				41A6B861220ED6F10023CE19 /* FontProvider */,
 				41A6B862220ED6FA0023CE19 /* ImageProvider */,
 			);
-			path = CoreLayer;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		ED8F6A322179C13F001DBDAA /* Network */ = {
@@ -1492,7 +1498,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
 		};
 		688D644777BE538D7E0124FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1715,11 +1721,13 @@
 				866F0CEC21E7863600D9FF94 /* TextAreaCell.swift in Sources */,
 				EDA9A63221E61F2500D99B09 /* RoutineTableViewCellViewModel.swift in Sources */,
 				EDC891E521CFC64E0002CD9E /* Language.swift in Sources */,
+				ED178E80229C109F008998F4 /* RoutineModalViewModel.swift in Sources */,
 				41F06B522289A81400D28682 /* MainTableViewFactoryAssembly.swift in Sources */,
 				411E234822440F150003CEE0 /* RoutineActionType.swift in Sources */,
 				411E234C224412C50003CEE0 /* RoutineCollectionViewModel.swift in Sources */,
 				41A5339E22074BA9009A735E /* NotificationServiceAssembly.swift in Sources */,
 				41F06B542289A81F00D28682 /* MainTableViewFactoryInterface.swift in Sources */,
+				ED178E7E229C1093008998F4 /* RoutineOffsetLabelViewModel.swift in Sources */,
 				41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */,
 				ED8F6A2D2179B971001DBDAA /* MenuViewController.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,

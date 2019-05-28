@@ -1,11 +1,11 @@
 import UIKit
 
 extension UIView {
-    
+
     func aroundShadow() {
         self.aroundShadow(cornerRadius: 8.0, shadowRadius: 8.0)
     }
-    
+
     func aroundShadow(cornerRadius: CGFloat, shadowRadius: CGFloat) {
         self.layer.cornerRadius = cornerRadius
         self.layer.shadowColor = UIColor.gray.cgColor
@@ -13,5 +13,5 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = 0.65
     }
-    
+
 }

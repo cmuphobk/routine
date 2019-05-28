@@ -2,11 +2,11 @@ import Foundation
 import HockeySDK
 
 final class HockeyService: HockeyServiceInterface {
-    
+
     static var shared = HockeyService()
-    
+
     private let hockeyId = "3dfa3d93e3324d16a9c38ae59f42d063"
-    
+
     private init () {
         //Configure hockeyAppSDK
         BITHockeyManager.shared().configure(withIdentifier: self.hockeyId)
@@ -14,5 +14,5 @@ final class HockeyService: HockeyServiceInterface {
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
     }
-    
+
 }

@@ -1,17 +1,25 @@
 import UIKit
 
-protocol ModuleInput: class {
+protocol Module {
+    var name: String { get set }
+    var alias: String { get set }
+    var viewController: UIViewController! { get }
+}
+
+typealias ModuleDescription = (name: String, alias: String)
+
+protocol ModuleInput: Module {
     func configureModule()
 }
 
 extension ModuleInput {
     func configureModule() {
-        
+
     }
 }
 
 protocol ModuleOutput: class {
-    
+
 }
 
 protocol ViewInput: class {
@@ -20,7 +28,7 @@ protocol ViewInput: class {
 
 extension ViewInput {
     func setupInitialState() {
-        
+
     }
 }
 
@@ -30,16 +38,16 @@ protocol ViewOutput: Module {
 
 extension ViewOutput {
     func didTriggerViewReadyEvent() {
-        
+
     }
 }
 
 protocol RouterInput: class {
-    
+
 }
 
 protocol RouterOutput: ScreenEventManager {
-    
+
 }
 
 protocol BasePresenter {

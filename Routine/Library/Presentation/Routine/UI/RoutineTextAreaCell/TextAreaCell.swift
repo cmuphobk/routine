@@ -4,56 +4,56 @@ import Stevia
 final class TextAreaCell: RoutineTableViewCell<TextAreaCellViewModel>, UITextFieldDelegate, UITextViewDelegate {
 
     weak private var textArea: RoutineTextView<RoutineTextViewModel>!
-    
+
     override func setupView() {
         super.setupView()
-        
+
         let textArea = RoutineTextView()
-        
+
         self.paddingView.sv(
             textArea
         )
-        
+
         self.textArea = textArea
     }
-    
+
     override func setupLayout() {
         super.setupLayout()
-        
+
         self.layout(
             0,
             |self.textArea|,
             0
         )
-        
+
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         self.textArea.configureView(config: self.viewModel.textAreaViewModel)
         self.textArea.delegate = self
     }
 
     override func localizationSetup() {
-        
+
     }
-    
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             self.textArea.resignFirstResponder()
             return false
         }
-        
+
         return true
     }
-    
+
     func textViewDidChange(_ textView: UITextView) {
         self.viewModel.delegate?.textChanged(object: self.viewModel.textAreaViewModel, newValue: textView.text)
     }
-    
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.viewModel.delegate?.textBeginEdited(object: self.viewModel.textAreaViewModel)
     }
-    
+
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 enum DayOfWeek: UInt8, CaseIterable {
-    
+
     case monday    = 0b00000001
     case tuesday   = 0b00000010
     case wednesday = 0b00000100
@@ -9,25 +9,25 @@ enum DayOfWeek: UInt8, CaseIterable {
     case friday    = 0b00010000
     case saturday  = 0b00100000
     case sunday    = 0b01000000
-    
+
     static var allDay: UInt8 { return 0b01111111 }
-    
+
     //Проверить есть ли день в наборе дней
     func checkIfExist(_ enter: UInt8) -> Bool {
         let int8 = self.rawValue
         return enter & int8 == int8
     }
-    
+
     //Сложить два дня недели
     static func + (left: DayOfWeek, right: DayOfWeek) -> UInt8 {
         return left.rawValue | right.rawValue
     }
-    
+
     //Прибавить день к множеству
     static func + (left: UInt8, right: DayOfWeek) -> UInt8 {
         return left | right.rawValue
     }
-    
+
     //получить день по Int
     static func dayOfWeekFromWeekday(_ weekday: Int) -> DayOfWeek? {
         if weekday == 1 {
@@ -46,15 +46,15 @@ enum DayOfWeek: UInt8, CaseIterable {
             return .sunday
         } else { return nil }
     }
-    
+
     //Определить по timestamp какой день недели
     static func checkDateWeekDay(timestamp: Int) -> DayOfWeek? {
         let date = Date(timeIntervalSince1970: Double(timestamp / 1000))
         let weekday = date.weekday
         return self.dayOfWeekFromWeekday(weekday)
-        
+
     }
-    
+
     static func stringBy(_ value: DayOfWeek, localizeService: StringServiceInterface) -> String {
         switch value {
         case .monday: return localizeService.localizeId(R.string.localizable.short_monday.key)
@@ -66,7 +66,7 @@ enum DayOfWeek: UInt8, CaseIterable {
         case .sunday: return localizeService.localizeId(R.string.localizable.short_sunday.key)
         }
     }
-    
+
     func toFullString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .monday: return localizeService.localizeId(R.string.localizable.full_monday.key)
@@ -78,7 +78,7 @@ enum DayOfWeek: UInt8, CaseIterable {
         case .sunday: return localizeService.localizeId(R.string.localizable.full_sunday.key)
         }
     }
-    
+
     static func stringFromBitset(_ bitset: UInt8, localizeService: StringServiceInterface) -> String {
         var result: String = ""
         if DayOfWeek.monday.checkIfExist(bitset) {

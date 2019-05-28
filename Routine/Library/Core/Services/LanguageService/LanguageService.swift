@@ -3,22 +3,22 @@ import Foundation
 // Singlton
 final class LanguageService: LanguageServiceInterface {
     static let shared = LanguageService() // Instance
-    
+
     private init() {}
-    
+
     private lazy var ruLanguage = Language(code: "ru", subCode: "ru", name: "Русский")
     private lazy var enLanguage = Language(code: "en", subCode: "us", name: "English")
-    
+
     // языки в приложении
     private lazy var languagesArray = [
         self.ruLanguage,
         self.enLanguage
     ]
-    
+
     var bundle: Bundle? // Bundle с текущей локализацией
-    
+
     // MARK: - Methods
-    
+
     // формирование списка наименований языков
     func languagesList() -> [String] {
         var languages: [String] = []
@@ -27,7 +27,7 @@ final class LanguageService: LanguageServiceInterface {
         }
         return languages
     }
-    
+
     // установка языка по его полному наименованию
     func setLanguage(languageName: String?) {
         guard let name = languageName else {
@@ -48,7 +48,7 @@ final class LanguageService: LanguageServiceInterface {
             self.bundle = nil
         }
     }
-    
+
     // получаем текущий язык
     func currentLanguage() -> Language {
         var currentLanguageCode: String? = Locale.current.languageCode

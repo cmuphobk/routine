@@ -12,17 +12,14 @@ struct ModalContainer {
 }
 
 // MARK: - NavigationContainer
-
 protocol NavigationContainer: class {
     // MARK: - required
-    
     var navigationController: UINavigationController { get }
-    
+
     // MARK: - optional
-    
     var currentViewController: UIViewController? { get }
     var view: UIView { get }
-    
+
     var statusHeight: CGFloat { get }
     var navigationBarHeight: CGFloat { get }
     var statusBarHeight: CGFloat { get }
@@ -30,19 +27,17 @@ protocol NavigationContainer: class {
 
 extension NavigationContainer {
     var currentViewController: UIViewController? { return self.navigationController.viewControllers.last }
-    
+
     var view: UIView { return self.navigationController.view }
-    
+
     var statusHeight: CGFloat { return UIApplication.shared.statusBarFrame.height }
     var navigationBarHeight: CGFloat { return self.navigationController.navigationBar.frame.height }
     var statusBarHeight: CGFloat { return self.statusHeight + self.navigationBarHeight }
 }
 
 // MARK: - ModalManager
-
 protocol ModalManager: class {
     // MARK: - methods
-    
     func containerForModal() -> ModalContainer?
 }
 
@@ -61,33 +56,30 @@ extension ModalManager where Self: NavigationContainer {
 }
 
 // MARK: - NavigationBarManager
-
 protocol IdiomCheckerDelegate: class {
     var userInterfaceIdiom: UIUserInterfaceIdiom { get }
 }
 
 protocol NavigationBarManager: NavigationContainer {
     // MARK: - optional
-    
     var idiomCheckerDelegate: IdiomCheckerDelegate? { get set }
     var menuManager: MenuManager? { get set }
-    
+
     // MARK: - methods
-    
     func configureTransparentNavigationBar()
     func configureNavigationBarWithColor(_ color: UIColor)
-    
+
     func emptyCustomBarLeftButtonAction()
     func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector)
     func customBarRightButtonAction(icon: UIImage, target: Any, action: Selector)
     func customBarLeftTextButtonAction(text: String, target: Any, action: Selector)
     func customBarRightTextButtonAction(text: String, target: Any, action: Selector)
-    
+
     func configureNavigationTitle(_ title: String)
 }
 
 extension NavigationBarManager {
-    
+
     func emptyCustomBarLeftButtonAction() {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate, idiomCheckerDelegate.userInterfaceIdiom != .pad {
             self.menuManager?.hideMenu()
@@ -98,7 +90,7 @@ extension NavigationBarManager {
         emptyLeftBarButtonCustom.isHidden = true
         self.currentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: emptyLeftBarButtonCustom)
     }
-    
+
     func customBarLeftButtonAction(icon: UIImage, target: Any, action: Selector) {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate {
             if idiomCheckerDelegate.userInterfaceIdiom == .pad {
@@ -114,7 +106,7 @@ extension NavigationBarManager {
             }
         }
     }
-    
+
     func customBarRightButtonAction(icon: UIImage, target: Any, action: Selector) {
         let rightBarButtonCustom = UIButton(type: .custom)
         rightBarButtonCustom.backgroundColor = ColorProvider.default.clearColor
@@ -123,7 +115,7 @@ extension NavigationBarManager {
         rightBarButtonCustom.addTarget(target, action: action, for: .touchDown)
         self.currentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
     }
-    
+
     func customBarLeftTextButtonAction(text: String, target: Any, action: Selector) {
         if let idiomCheckerDelegate = self.idiomCheckerDelegate {
             if idiomCheckerDelegate.userInterfaceIdiom == .pad {
@@ -139,7 +131,7 @@ extension NavigationBarManager {
             }
         }
     }
-    
+
     func customBarRightTextButtonAction(text: String, target: Any, action: Selector) {
         let rightBarButtonCustom = UIButton(type: .custom)
         rightBarButtonCustom.setTitle(text, for: .normal)
@@ -148,14 +140,14 @@ extension NavigationBarManager {
         rightBarButtonCustom.addTarget(target, action: action, for: .touchUpInside)
         self.currentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButtonCustom)
     }
-    
+
     func configureTransparentNavigationBar() {
         self.navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController.navigationBar.shadowImage = UIImage()
         self.navigationController.navigationBar.isTranslucent = true
         self.navigationController.navigationBar.barTintColor = UIColor.clear
     }
-    
+
     func configureNavigationBarWithColor(_ color: UIColor) {
         self.navigationController.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController.navigationBar.shadowImage = nil
@@ -163,18 +155,15 @@ extension NavigationBarManager {
         self.navigationController.navigationBar.barTintColor = color
         self.navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-    
+
     func configureNavigationTitle(_ title: String) {
         self.currentViewController?.navigationItem.title = title
     }
-    
 }
 
 // MARK: - MenuManager
-
 protocol MenuManager: NavigationContainer {
     // MARK: - methods
-    
     func triggerMenu()
     func hideMenu()
     func openMenu()
@@ -187,24 +176,21 @@ protocol MessageManagerDelegate: class {
     func obtainTextOffset() -> CGFloat
     func obtainIconHeight() -> CGFloat
     func obtainLeftOffset() -> CGFloat
-    
+
     func obtainErrorLabel() -> RoutineOffsetLabel
     func obtainErrorImageView() -> UIImageView
 }
 
 protocol MessageManager: NavigationContainer {
     // MARK: - required
-    
     var messageManagerDelegate: MessageManagerDelegate? { get set }
     var taskHideError: DispatchWorkItem! { get set }
-    
+
     // MARK: - methods
-    
     func showMessageWithText(_ text: String, andType type: MessageType)
     func showMessageWithText(_ text: String, andType type: MessageType, sender: Any?)
-    
-    func hideMessages()
 
+    func hideMessages()
 }
 
 protocol ScreenEventManager:
@@ -212,9 +198,7 @@ ModalManager,
 NavigationBarManager,
 MenuManager,
 MessageManager {
-    
     var parentScreenEventManager: ScreenEventManager? { get set }
-    
 }
 
 extension ScreenEventManager {
@@ -226,7 +210,7 @@ extension ScreenEventManager {
             print(newValue ?? "no value")
         }
     }
-    
+
     var userInterfaceIdiom: UIUserInterfaceIdiom {
         guard let idiomCheckerDelegate = self.idiomCheckerDelegate else {
             return .phone
@@ -244,42 +228,42 @@ extension ScreenEventManager {
             print(newValue ?? "no value")
         }
     }
-    
+
     func obtainMessageWidth() -> CGFloat {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
         return messageManagerDelegate.obtainMessageWidth()
     }
-    
+
     func obtainTextOffset() -> CGFloat {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
         return messageManagerDelegate.obtainTextOffset()
     }
-    
+
     func obtainIconHeight() -> CGFloat {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
         return messageManagerDelegate.obtainIconHeight()
     }
-    
+
     func obtainLeftOffset() -> CGFloat {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return 0.0
         }
         return messageManagerDelegate.obtainLeftOffset()
     }
-    
+
     func obtainErrorLabel() -> RoutineOffsetLabel {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return RoutineOffsetLabel()
         }
         return messageManagerDelegate.obtainErrorLabel()
     }
-    
+
     func obtainErrorImageView() -> UIImageView {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
             return UIImageView()
@@ -287,7 +271,6 @@ extension ScreenEventManager {
         return messageManagerDelegate.obtainErrorImageView()
     }
 }
-
 
 extension ScreenEventManager {
     var menuManager: MenuManager? {
@@ -304,14 +287,14 @@ extension ScreenEventManager {
         }
         menuManager.triggerMenu()
     }
-    
+
     func openMenu() {
         guard let menuManager = self.parentScreenEventManager else {
             return
         }
         menuManager.openMenu()
     }
-    
+
     func hideMenu() {
         guard let menuManager = self.parentScreenEventManager else {
             return
@@ -321,21 +304,21 @@ extension ScreenEventManager {
 }
 
 extension ScreenEventManager {
-    
+
     func showMessageWithText(_ text: String, andType type: MessageType) {
         self.showMessageWithText(text, andType: type, sender: nil)
     }
-    
+
     func showMessageWithText(_ text: String, andType type: MessageType, sender: Any? = nil) {
         if let messageManager = self.parentScreenEventManager {
             messageManager.showMessageWithText(text, andType: type, sender: sender)
         }
     }
-    
+
     func hideMessages() {
         if let messageManager = self.parentScreenEventManager {
             messageManager.hideMessages()
         }
     }
-    
+
 }

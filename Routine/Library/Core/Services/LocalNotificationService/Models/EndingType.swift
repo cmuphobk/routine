@@ -4,7 +4,7 @@ enum EndingType: Int {
     case endUsageDate
     case countUsageDays
     case countUsageNumber
-    
+
     func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .endUsageDate: return localizeService.localizeId(R.string.localizable.end_usage_date.key)
@@ -12,10 +12,10 @@ enum EndingType: Int {
         case .countUsageNumber: return localizeService.localizeId(R.string.localizable.count_usage_number.key)
         }
     }
-    
+
     func toPluralsString(count: Int, localizeService: StringServiceInterface) -> String {
         var typeString: String
-        
+
         switch self {
         case .endUsageDate:
             let date = Date(timeIntervalSince1970: Double(count) / 1000.0)
@@ -34,7 +34,7 @@ enum EndingType: Int {
             return "\(count) \(typeString.lowercased())"
         }
     }
-    
+
     var value: Int {
         switch self {
         case .endUsageDate: return 1
@@ -42,7 +42,7 @@ enum EndingType: Int {
         case .countUsageNumber: return 3
         }
     }
-    
+
     static func fromValue(_ value: Int) -> EndingType? {
         switch value {
         case 1: return .endUsageDate
@@ -52,6 +52,5 @@ enum EndingType: Int {
             return nil
         }
     }
-    
-    
+
 }

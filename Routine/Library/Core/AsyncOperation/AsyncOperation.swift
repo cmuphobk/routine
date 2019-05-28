@@ -1,17 +1,17 @@
 import Foundation
 
 class AsyncOperation: Operation {
-    
+
     enum State: String {
         case ready
         case executing
         case finished
-        
+
         fileprivate var keyPath: String {
             return "is" + self.rawValue.capitalized
         }
     }
-    
+
     var state = State.ready {
         willSet {
             self.willChangeValue(forKey: newValue.keyPath)
@@ -22,7 +22,7 @@ class AsyncOperation: Operation {
             self.didChangeValue(forKey: self.state.keyPath)
         }
     }
-    
+
     override var isAsynchronous: Bool {
         return true
     }

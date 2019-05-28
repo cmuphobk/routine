@@ -3,14 +3,14 @@ import Foundation
 enum PeriodType: Int, CaseIterable {
     case weekDays
     case countDays
-    
+
     var value: Int {
         switch self {
         case .weekDays: return 1
         case .countDays: return 2
         }
     }
-    
+
     static func fromValue(_ value: Int) -> PeriodType? {
         switch value {
         case 1: return .weekDays
@@ -19,7 +19,7 @@ enum PeriodType: Int, CaseIterable {
             return nil
         }
     }
-    
+
     func toString(localizeService: StringServiceInterface) -> String {
         switch self {
         case .weekDays:

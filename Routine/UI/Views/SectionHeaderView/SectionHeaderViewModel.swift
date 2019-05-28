@@ -5,7 +5,7 @@ protocol SectionHeaderViewModelDelegate: class {
 }
 
 class SectionHeaderViewModel: RoutineViewModel {
-    
+
     lazy var infoIconViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
     lazy var textLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
     lazy var closeButtonViewModel = RoutineButtonViewModel(routineDelegate: self.routineDelegate)
