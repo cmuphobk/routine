@@ -9,9 +9,7 @@ class DateService: DateServiceInterface {
     private init () {}
 
     func localizeDateString(date: Date, format: String) -> String {
-
         return date.format(with: format, locale: Locale(identifier: self.languageService.currentLanguage().code))
-
     }
 
 }

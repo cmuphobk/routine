@@ -44,7 +44,6 @@
 		41A6B875220ED8270023CE19 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B874220ED8270023CE19 /* DateService.swift */; };
 		41CAA231227F186F00188189 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CAA230227F186F00188189 /* R.generated.swift */; };
 		41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CAA232227F1C6700188189 /* GoogleService-Info.plist */; };
-		41F06B4422872BFF00D28682 /* RoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4322872BFF00D28682 /* RoutineDelegate.swift */; };
 		41F06B4622896B5F00D28682 /* MenuTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */; };
 		41F06B492289A68E00D28682 /* MenuTableViewFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B482289A68E00D28682 /* MenuTableViewFactoryInterface.swift */; };
 		41F06B4B2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */; };
@@ -163,7 +162,6 @@
 		EDA9A65421E76B6B00D99B09 /* RoutineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */; };
 		EDC0DC6821ED0D5F00D5327D /* RoutineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */; };
 		EDC0DC6A21ED0D6800D5327D /* RoutineTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */; };
-		EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */; };
 		EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */; };
 		EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */; };
 		EDC891D121CE59360002CD9E /* DecodeResponseContainerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC891D021CE59360002CD9E /* DecodeResponseContainerInterface.swift */; };
@@ -249,7 +247,6 @@
 		41A6B874220ED8270023CE19 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		41CAA230227F186F00188189 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		41CAA232227F1C6700188189 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		41F06B4322872BFF00D28682 /* RoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDelegate.swift; sourceTree = "<group>"; };
 		41F06B4522896B5F00D28682 /* MenuTableViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactory.swift; sourceTree = "<group>"; };
 		41F06B482289A68E00D28682 /* MenuTableViewFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactoryInterface.swift; sourceTree = "<group>"; };
 		41F06B4A2289A69F00D28682 /* MenuTableViewFactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewFactoryAssembly.swift; sourceTree = "<group>"; };
@@ -379,7 +376,6 @@
 		EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineContainer.swift; sourceTree = "<group>"; };
 		EDC0DC6721ED0D5F00D5327D /* RoutineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableView.swift; sourceTree = "<group>"; };
 		EDC0DC6921ED0D6800D5327D /* RoutineTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewModel.swift; sourceTree = "<group>"; };
-		EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeightable.swift; sourceTree = "<group>"; };
 		EDC891CC21CE55AF0002CD9E /* FileServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceAssembly.swift; sourceTree = "<group>"; };
 		EDC891CE21CE55BD0002CD9E /* FileServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceInterface.swift; sourceTree = "<group>"; };
 		EDC891D021CE59360002CD9E /* DecodeResponseContainerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeResponseContainerInterface.swift; sourceTree = "<group>"; };
@@ -1068,9 +1064,7 @@
 				ED178E6322980EEE008998F4 /* UI */,
 				EDA9A65321E76B6B00D99B09 /* RoutineContainer.swift */,
 				ED8F69DB2179B971001DBDAA /* RoutineViewController.swift */,
-				EDC0DC6B21EDF17600D5327D /* RoutineHeightable.swift */,
 				411E235122494DC70003CEE0 /* RoutineCellOwner.swift */,
-				41F06B4322872BFF00D28682 /* RoutineDelegate.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -1498,7 +1492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
 		};
 		688D644777BE538D7E0124FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1732,7 +1726,6 @@
 				ED8F6A2D2179B971001DBDAA /* MenuViewController.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,
 				EDE9894221E92F5B00870F25 /* RoutineButton.swift in Sources */,
-				41F06B4422872BFF00D28682 /* RoutineDelegate.swift in Sources */,
 				EDE9894B21E92FC600870F25 /* RoutineTextView.swift in Sources */,
 				ED8F6A662179F126001DBDAA /* RESTOperation.swift in Sources */,
 				41A533A222074BED009A735E /* LanguageServiceAssembly.swift in Sources */,
@@ -1811,7 +1804,6 @@
 				EDE9894421E92F5B00870F25 /* RoutineImageViewModel.swift in Sources */,
 				ED8F6A6E2179F184001DBDAA /* BaseResponseModels.swift in Sources */,
 				ED082FD221CFFD3700C892C8 /* NotificationService.swift in Sources */,
-				EDC0DC6C21EDF17600D5327D /* RoutineHeightable.swift in Sources */,
 				41A6B868220ED7E30023CE19 /* StringService.swift in Sources */,
 				ED4C62AE21E5E0CB004A999C /* SectionView.swift in Sources */,
 				41A6B86C220ED7FD0023CE19 /* ImageServiceAssembly.swift in Sources */,

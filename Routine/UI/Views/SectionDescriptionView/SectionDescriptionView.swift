@@ -1,7 +1,9 @@
 import UIKit
 import Stevia
 
-class SectionDescriptionView: RoutineView<SectionDescriptionViewModel> {
+class SectionDescriptionView: RoutineView {
+    
+//    SectionDescriptionViewModel
 
     weak var descriptionLabel: RoutineLabel<RoutineLabelViewModel>!
 
@@ -20,11 +22,6 @@ class SectionDescriptionView: RoutineView<SectionDescriptionViewModel> {
     override func setupLayout() {
         super.setupLayout()
 
-        self.layout(
-            self.viewModel.paddingOffsets.top,
-            |-self.viewModel.paddingOffsets.left-self.descriptionLabel-self.viewModel.paddingOffsets.right-|,
-            self.viewModel.paddingOffsets.bottom
-        )
     }
 
     override func layoutSubviews() {

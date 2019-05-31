@@ -152,7 +152,9 @@ extension RoutineCollectionViewManager: UICollectionViewDelegate {
 // MARK: - UICollectionViewFlowLayout
 extension RoutineCollectionViewManager: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let viewModel = self.cellViewModels[indexPath.row]
 
@@ -160,12 +162,17 @@ extension RoutineCollectionViewManager: UICollectionViewDelegateFlowLayout {
 
     }
 
-    // FIXME: - сделать вью модель для секций, чтобы можно было работать с секциями (для таблицы тоже самое)
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    // FIXME: - сделать вью модель для секций
+    // чтобы можно было работать с секциями (для таблицы тоже самое)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
 

@@ -6,7 +6,7 @@ protocol TextAreaCellProtocol: class {
 }
 
 final class TextAreaCellViewModel: RoutineTableViewCellViewModel {
-    lazy var textAreaViewModel: RoutineTextViewModel = RoutineTextViewModel(routineDelegate: self.routineDelegate)
+    lazy var textAreaViewModel: RoutineTextViewModel = RoutineTextViewModel()
     weak var delegate: TextAreaCellProtocol?
 
     init(delegate: TextAreaCellProtocol, routineDelegate: RoutineDelegate?) {

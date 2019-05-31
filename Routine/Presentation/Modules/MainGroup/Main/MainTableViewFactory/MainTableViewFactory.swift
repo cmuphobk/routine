@@ -103,11 +103,11 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
         let sectionHeaderViewModel = viewModel.sectionHeaderViewModel
         let sectionViewModel = viewModel.sectionViewModel
         let sectionDescriptionViewModel = viewModel.sectionDescriptionViewModel
-        
+
         viewModel.paddingOffsets = PaddingOffsets(top: 10.0, bottom: 10.0, left: 14.0, right: 14.0)
         viewModel.paddingViewCornerRadius = 5.0
         viewModel.contentViewColor = ColorProvider.mainModuleColors.whiteColor
-        
+
         sectionHeaderViewModel.paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0)
         sectionHeaderViewModel.infoIconViewModel.image = ImageProvider.mainModuleImages.infoIcon
         sectionHeaderViewModel.infoIconViewModel.contentMode = .scaleAspectFit
@@ -120,7 +120,7 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
         sectionHeaderViewModel.delegate = viewModel
         sectionHeaderViewModel.closeButtonViewModel.image = ImageProvider.mainModuleImages.questionIcon
         sectionHeaderViewModel.closeButtonViewModel.backgroundColor = blueViewColor
-        
+
         sectionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
         sectionViewModel.sectionImageViewModel.image = ImageProvider.mainModuleImages.notificationIcon
         sectionViewModel.sectionImageViewModel.contentMode = .scaleAspectFit
@@ -135,13 +135,13 @@ final class MainTableViewFactory: MainTableViewFactoryInterface {
         sectionViewModel.sectionDescriptionLabelModel.numberOfLines = 0
         sectionViewModel.sectionArrowImageViewModel.image = UIImage()
         sectionViewModel.sectionArrowImageViewModel.backgroundColor = ColorProvider.mainModuleColors.whiteColor
-        
+
         sectionDescriptionViewModel.paddingOffsets = PaddingOffsets(top: 16.0, bottom: 16.0, left: 20.0, right: 20.0)
         sectionDescriptionViewModel.descriptionLabelViewModel.textColor = ColorProvider.mainModuleColors.blackTextColor
         sectionDescriptionViewModel.descriptionLabelViewModel.font = descriptionLabelViewModelFont
         sectionDescriptionViewModel.descriptionLabelViewModel.backgroundColor = descriptionLabelViewModelBackgroundColor
         sectionDescriptionViewModel.descriptionLabelViewModel.numberOfLines = 0
-        
+
         return viewModel
     }
 

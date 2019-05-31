@@ -1,12 +1,21 @@
 import UIKit
 
-class SectionDescriptionViewModel: RoutineViewModel {
+protocol SectionDescriptionViewModel {
+    associatedtype ViewModel: RoutineViewModel
+    var viewModel: ViewModel { get set }
+    var descriptionLabelViewModel: RoutineLabelViewModel { get set }
+    init(viewModel: ViewModel,
+         descriptionLabelViewModel: RoutineLabelViewModel)
+}
 
-    lazy var descriptionLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
-
-    override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let heightLabel = self.descriptionLabelViewModel.heightForWidth(width - self.leftAndRightPadding )
-        return heightLabel + self.topAndBottomPadding
+extension SectionDescriptionViewModel {
+    init(viewModel: ViewModel,
+         descriptionLabelViewModel: RoutineLabelViewModel) {
+        self.viewModel = viewModel
+        self.descriptionLabelViewModel = descriptionLabelViewModel
     }
-
+    func heightForWidth(_ width: CGFloat) -> CGFloat {
+        let heightLabel = self.descriptionLabelViewModel.heightForWidth(width)
+        return heightLabel
+    }
 }

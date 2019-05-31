@@ -13,6 +13,5 @@ class RoutineTableViewCellViewModel: RoutineViewModel {
     var selectionStyle: UITableViewCell.SelectionStyle = .none
     var backgroundViewColor: UIColor = UIColor.white
     var contentViewColor: UIColor = UIColor.clear
-    var isExpand: Bool = false
 
 }

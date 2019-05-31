@@ -1,40 +1,40 @@
 import UIKit
 
-class RoutineViewModel: RoutineHeightable {
+protocol RoutineHeightable {
+    func heightForWidth(_ width: CGFloat) -> CGFloat
+}
 
-    let uuid: String = NSUUID().uuidString
-    var viewName: String = ""
+protocol RoutineViewNamed {
+    var viewName: String { get set }
+}
 
-    weak var routineDelegate: RoutineDelegate?
+protocol RoutineViewModel: RoutineViewNamed, RoutineHeightable {
+    var uuid: String { get }
+    var backgroundColor: UIColor { get set }
+    var cornerRadius: CGFloat { get set }
+    init(viewName: String,
+         backgroundColor: UIColor,
+         cornerRadius: CGFloat)
+}
 
-    var backgroundColor: UIColor = UIColor.white
-    var cornerRadius: CGFloat = 0.0
-    var paddingViewCornerRadius: CGFloat = 0.0
-
-    var paddingOffsets = PaddingOffsets(top: 0.0, bottom: 0.0, left: 0.0, right: 0.0)
-
-    var leftAndRightPadding: CGFloat {
-        return self.paddingOffsets.left + self.paddingOffsets.right
+extension RoutineViewModel {
+    var uuid: String {
+        return UUID().uuidString
     }
-
-    var topAndBottomPadding: CGFloat {
-        return self.paddingOffsets.top + self.paddingOffsets.bottom
-    }
-
-    func heightForWidth(_ width: CGFloat) -> CGFloat {
-        return 0.0
-    }
-
-    init(routineDelegate: RoutineDelegate?) {
-        self.routineDelegate = routineDelegate
+    init(viewName: String,
+         backgroundColor: UIColor,
+         cornerRadius: CGFloat) {
+        self.viewName = viewName
+        self.backgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
     }
 }
 
-// MARK: - Equatable
-extension RoutineViewModel: Equatable {
-
-    static func == (left: RoutineViewModel, right: RoutineViewModel) -> Bool {
-        return left.uuid == right.uuid
+struct RoutineBaseViewModel: RoutineViewModel {
+    var backgroundColor: UIColor
+    var cornerRadius: CGFloat
+    var viewName: String
+    func heightForWidth(_ width: CGFloat) -> CGFloat {
+        return 0.0
     }
-
 }

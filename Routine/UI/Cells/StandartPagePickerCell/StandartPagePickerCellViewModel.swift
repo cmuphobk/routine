@@ -11,8 +11,7 @@ final class StandartPagePickerCellViewModel: RoutineCollectionViewCellViewModel 
          isSelected: Bool,
          font: UIFont,
          textColor: UIColor,
-         backgroundColor: UIColor,
-         routineDelegate: RoutineDelegate?) {
+         backgroundColor: UIColor) {
         self.text = text
         self.font = font
         self.textColor = textColor

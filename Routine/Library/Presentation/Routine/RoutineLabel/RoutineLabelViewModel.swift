@@ -1,14 +1,35 @@
 import UIKit
 
-class RoutineLabelViewModel: RoutineViewModel {
+protocol RoutineLabelViewModel {
+    associatedtype ViewModel: RoutineViewModel
+    var viewModel: ViewModel { get set }
+    var text: String { get set }
+    var textColor: UIColor { get set }
+    var font: UIFont { get set }
+    var numberOfLines: Int { get set }
+    init(viewModel: ViewModel,
+         text: String,
+         textColor: UIColor,
+         font: UIFont,
+         numberOfLines: Int)
+}
 
-    var text: String = ""
-    var textColor: UIColor = UIColor.black
-    var font: UIFont  = UIFont.systemFont(ofSize: 12.00)
-    var numberOfLines = 1
-
-    override func heightForWidth(_ width: CGFloat) -> CGFloat {
-        let text = self.routineDelegate?.localize(self.text) ?? self.text
+extension RoutineLabelViewModel {
+    
+    init(viewModel: ViewModel,
+         text: String,
+         textColor: UIColor,
+         font: UIFont,
+         numberOfLines: Int) {
+        self.viewModel = viewModel
+        self.text = text
+        self.textColor = textColor
+        self.font = font
+        self.numberOfLines = numberOfLines
+    }
+    
+    func heightForWidth(_ width: CGFloat) -> CGFloat {
+        let text = self.text
         let height = self.font.sizeOfStringLabel(string: text, constrainedToWidth: Double(width)).height
         return height
     }

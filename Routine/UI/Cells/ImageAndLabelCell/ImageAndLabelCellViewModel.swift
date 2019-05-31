@@ -2,8 +2,8 @@ import UIKit
 
 final class ImageAndLabelCellViewModel: RoutineTableViewCellViewModel {
 
-    lazy var image: RoutineImageViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
-    lazy var label: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var image: RoutineImageViewModel = RoutineImageViewModel()
+    lazy var label: RoutineLabelViewModel = RoutineLabelViewModel()
     var betweenSpace: CGFloat = 8.0
 
     override var reuseIdentifier: String {

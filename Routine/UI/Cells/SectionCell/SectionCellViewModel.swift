@@ -8,11 +8,11 @@ protocol SectionCellViewModelDelegate: class {
 
 final class SectionCellViewModel: RoutineTableViewCellViewModel {
 
-    lazy var sectionHeaderViewModel = SectionHeaderViewModel(routineDelegate: self.routineDelegate)
-    lazy var sectionViewModel = SectionViewModel(routineDelegate: self.routineDelegate)
-    lazy var sectionDescriptionViewModel = SectionDescriptionViewModel(routineDelegate: self.routineDelegate)
+    lazy var sectionHeaderViewModel = SectionHeaderViewModel()
+    lazy var sectionViewModel = SectionViewModel()
+    lazy var sectionDescriptionViewModel = SectionDescriptionViewModel()
 
-    lazy var shadowViewModel = RoutineViewModel(routineDelegate: self.routineDelegate)
+    lazy var shadowViewModel = RoutineViewModel()
 
     weak var delegate: SectionCellViewModelDelegate?
 

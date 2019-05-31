@@ -1,14 +1,10 @@
 import UIKit
 import Stevia
 
-class RoutineView<T: RoutineViewModel>: UIView, RoutineContainer {
-
-    typealias ViewModel = T
+class RoutineView<T: RoutineBaseViewModel>: UIView, RoutineContainer {
 
     var viewName: String?
     var viewModel: T!
-
-    weak var paddingView: UIView!
 
     var didSetupConstraints: Bool = false
 
@@ -22,24 +18,11 @@ class RoutineView<T: RoutineViewModel>: UIView, RoutineContainer {
     }
 
     func setupView() {
-
-        let paddingView = UIView(frame: CGRect.zero)
-        self.sv(
-            paddingView
-        )
-        self.paddingView = paddingView
-
         self.removeConstraints(self.constraints)
-
     }
 
+    // func for setup constraints
     func setupLayout() {
-
-        self.layout(
-            self.viewModel.paddingOffsets.top,
-            |-self.viewModel.paddingOffsets.left-self.paddingView-self.viewModel.paddingOffsets.right-|,
-            self.viewModel.paddingOffsets.bottom
-        )
 
     }
 
@@ -75,11 +58,7 @@ class RoutineView<T: RoutineViewModel>: UIView, RoutineContainer {
     }
 
     func setupViewModel() {
-
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius
-        self.paddingView.layer.cornerRadius = self.viewModel.paddingViewCornerRadius
-        self.paddingView.clipsToBounds = true
-
     }
 }

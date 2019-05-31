@@ -1,7 +1,21 @@
 import UIKit
 
-class RoutineScrollViewModel: RoutineViewModel {
+protocol RoutineScrollViewModel: RoutineViewModel {
+    var contentInset: UIEdgeInsets { get set }
+    init(viewName: String,
+         backgroundColor: UIColor,
+         cornerRadius: CGFloat,
+         contentInset: UIEdgeInsets)
+}
 
-    var contentInset: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-
+extension RoutineScrollViewModel {
+    init(viewName: String,
+         backgroundColor: UIColor,
+         cornerRadius: CGFloat,
+         contentInset: UIEdgeInsets) {
+        self.init(viewName: viewName,
+                  backgroundColor: backgroundColor,
+                  cornerRadius: cornerRadius)
+        self.contentInset = contentInset
+    }
 }

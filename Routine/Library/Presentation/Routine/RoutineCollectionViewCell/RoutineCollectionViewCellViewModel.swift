@@ -1,18 +1,36 @@
 import UIKit
 
-class RoutineCollectionViewCellViewModel: RoutineViewModel {
+protocol RoutineCollectionViewCellViewModel {
+    associatedtype ViewModel: RoutineViewModel
+    var viewModel: ViewModel { get set }
+    var reuseIdentifier: String { get set }
 
-    var reuseIdentifier: String? {
-        return nil
+    var cellOwner: RoutineCellOwner { get set }
+    var isSelected: Bool { get set }
+    var backgroundViewModel: ViewModel { get set }
+
+    var width: CGFloat { get set }
+
+    init(viewModel: ViewModel,
+         reuseIdentifier: String,
+         cellOwner: RoutineCellOwner,
+         isSelected: Bool,
+         backgroundViewModel: ViewModel,
+         width: CGFloat)
+}
+
+extension RoutineCollectionViewCellViewModel {
+    init(viewModel: ViewModel,
+         reuseIdentifier: String,
+         cellOwner: RoutineCellOwner,
+         isSelected: Bool,
+         backgroundViewModel: ViewModel,
+         width: CGFloat) {
+        self.viewModel = viewModel
+        self.reuseIdentifier = reuseIdentifier
+        self.cellOwner = cellOwner
+        self.isSelected = isSelected
+        self.backgroundViewModel = backgroundViewModel
+        self.width = width
     }
-
-    var cellOwner: RoutineCellOwner? {
-        return nil
-    }
-    var isSelected: Bool = false
-    var backgroundViewColor: UIColor = UIColor.white
-    var isExpand: Bool = false
-
-    var width: CGFloat = 0.0
-
 }

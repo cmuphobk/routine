@@ -73,12 +73,12 @@ class RoutineTextField<T: RoutineTextFieldViewModel>: UITextField, RoutineContai
         self.returnKeyType = self.viewModel.returnKeyType
         self.keyboardType = self.viewModel.keyboardType
 
-        let text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        let text = self.viewModel.text
         self.text = text
         self.textColor = self.viewModel.textColor
         self.font = self.viewModel.font
 
-        let palceholderText = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        let palceholderText = self.viewModel.text
         self.placeholder = palceholderText
         self.borderStyle = self.viewModel.borderStyle
 

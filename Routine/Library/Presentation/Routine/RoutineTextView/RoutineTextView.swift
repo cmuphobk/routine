@@ -73,7 +73,7 @@ class RoutineTextView<T: RoutineTextViewModel>: UITextView, RoutineContainer {
 
         self.returnKeyType = self.viewModel.returnKeyType
 
-        let text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        let text = self.viewModel.text
         self.text = text
         self.textColor = self.viewModel.textColor
         self.font = self.viewModel.font

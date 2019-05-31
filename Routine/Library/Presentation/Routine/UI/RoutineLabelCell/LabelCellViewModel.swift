@@ -1,7 +1,7 @@
 import UIKit
 
 final class LabelCellViewModel: RoutineTableViewCellViewModel {
-    lazy var labelViewModel: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
+    lazy var labelViewModel: RoutineLabelViewModel = RoutineLabelViewModel()
 
     override var reuseIdentifier: String {
         return "LabelCell"

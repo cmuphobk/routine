@@ -5,7 +5,7 @@ protocol RoutineComboboxCellProtocol: class {
 }
 
 final class RoutineComboboxCellViewModel: RoutineTableViewCellViewModel {
-    lazy var combobox: RoutineComboboxViewModel = RoutineComboboxViewModel(routineDelegate: self.routineDelegate)
+    lazy var combobox: RoutineComboboxViewModel = RoutineComboboxViewModel()
     weak var delegate: RoutineComboboxCellProtocol?
 
     init(delegate: RoutineComboboxCellProtocol, routineDelegate: RoutineDelegate?) {

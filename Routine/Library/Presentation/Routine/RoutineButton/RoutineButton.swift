@@ -70,7 +70,7 @@ class RoutineButton<T: RoutineButtonViewModel>: UIButton, RoutineContainer {
         self.backgroundColor = self.viewModel.backgroundColor
         self.layer.cornerRadius = self.viewModel.cornerRadius
 
-        let text = self.viewModel.routineDelegate?.localize(self.viewModel.text) ?? self.viewModel.text
+        let text = self.viewModel.text
         self.setTitle(text, for: .normal)
         self.setTitleColor(self.viewModel.textColor, for: .normal)
         self.titleLabel?.font = self.viewModel.font

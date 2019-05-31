@@ -5,7 +5,7 @@ protocol RoutineConfigure: class {
 }
 
 protocol RoutineContainer: RoutineConfigure {
-    associatedtype ViewModel: RoutineViewModel
+    associatedtype ViewModel: RoutineViewNamed
 
     var viewName: String? { get set }
     var viewModel: ViewModel! { get set }
@@ -20,7 +20,6 @@ protocol RoutineContainer: RoutineConfigure {
     func setupLayout()
     func updateLayout()
     func setupViewModel()
-
 }
 
 extension RoutineContainer where Self: UIView {
@@ -35,10 +34,8 @@ extension RoutineContainer where Self: UIView {
     func localizationSetup() { }
 
     func configureView(config: AnyObject) {
-        if config.isKind(of: ViewModel.self) {
-            guard let config = config as? ViewModel else { return }
-            self.configureView(config: config)
-        }
+        guard let config = config as? ViewModel else { return }
+        self.configureView(config: config)
     }
 
     func configureView(config: ViewModel) {

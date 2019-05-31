@@ -28,7 +28,9 @@ final class RoutineTableViewManager: NSObject {
 
     weak var delegate: RoutineTableViewManagerDelegate?
 
-    init(tableView: UITableView, delegate: RoutineTableViewManagerDelegate?) {
+    init(tableView: UITableView,
+         delegate: RoutineTableViewManagerDelegate?) {
+
         self.tableView = tableView
         self.delegate = delegate
         super.init()

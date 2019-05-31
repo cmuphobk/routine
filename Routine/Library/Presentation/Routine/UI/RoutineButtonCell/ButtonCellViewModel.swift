@@ -5,7 +5,7 @@ protocol ButtonCellProtocol: class {
 }
 
 final class ButtonCellViewModel: RoutineTableViewCellViewModel {
-    lazy var buttonViewModel: RoutineButtonViewModel = RoutineButtonViewModel(routineDelegate: self.routineDelegate)
+    lazy var buttonViewModel: RoutineButtonViewModel = RoutineButtonViewModel()
     weak var delegate: ButtonCellProtocol?
 
     init(delegate: ButtonCellProtocol?, routineDelegate: RoutineDelegate?) {

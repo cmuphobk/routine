@@ -2,8 +2,8 @@ import Foundation
 import UIKit
 
 final class LabelAndMarkCellViewModel: RoutineTableViewCellViewModel {
-    lazy var label: RoutineLabelViewModel = RoutineLabelViewModel(routineDelegate: self.routineDelegate)
-    lazy var image: RoutineImageViewModel = RoutineImageViewModel(routineDelegate: self.routineDelegate)
+    lazy var label: RoutineLabelViewModel = RoutineLabelViewModel()
+    lazy var image: RoutineImageViewModel = RoutineImageViewModel()
     var betweenSpace: CGFloat = 8.0
 
     override var reuseIdentifier: String {
