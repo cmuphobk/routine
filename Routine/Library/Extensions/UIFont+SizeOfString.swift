@@ -2,7 +2,7 @@ import UIKit
 
 extension UIFont {
 
-    func sizeOfStringLabel (string: String, constrainedToWidth width: Double) -> CGSize {
+    func sizeOfStringLabel (string: String, constrainedToWidth width: CGFloat) -> CGSize {
         let attributes = [NSAttributedString.Key.font: self]
         let attString = NSAttributedString(string: string, attributes: attributes)
 
@@ -12,7 +12,7 @@ extension UIFont {
         return label.sizeThatFits(CGSize(width: width, height: 0))
     }
 
-    func sizeOfStringTextView (string: String, constrainedToWidth width: Double) -> CGSize {
+    func sizeOfStringTextView (string: String, constrainedToWidth width: CGFloat) -> CGSize {
         let attributes = [NSAttributedString.Key.font: self]
         let attString = NSAttributedString(string: string, attributes: attributes)
 

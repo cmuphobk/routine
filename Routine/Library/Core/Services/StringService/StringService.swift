@@ -40,7 +40,10 @@ class StringService: StringServiceInterface {
 
     private func localized(string: String, tableName: String = "Localizable") -> String {
         let bundle: Bundle? = self.languageService.bundle
-        let string = NSLocalizedString(string, tableName: tableName, bundle: bundle ?? Bundle.main, value: "\(string)", comment: "")
+        let string = NSLocalizedString(string,
+                                       tableName: tableName,
+                                       bundle: bundle ?? Bundle.main,
+                                       value: "\(string)", comment: "")
         return string
     }
 

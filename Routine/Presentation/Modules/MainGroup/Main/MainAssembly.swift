@@ -17,7 +17,6 @@ enum MainAssembly {
         presenter.view = moduleViewController
         presenter.router = router
         presenter.localizeService = AppDelegate.serviceProvider.makeStringService()
-        presenter.mainTableViewFactory = MainTableViewFactoryAssembly.build()
         router.viewController = moduleViewController
         router.routerOutput = coordinator
 

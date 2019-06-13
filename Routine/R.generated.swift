@@ -64,115 +64,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 44 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `agree_icon`.
     static let agree_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "agree_icon")
-    /// Image `ampoules`.
-    static let ampoules = Rswift.ImageResource(bundle: R.hostingBundle, name: "ampoules")
-    /// Image `archive_icon`.
-    static let archive_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "archive_icon")
-    /// Image `arrow_icon`.
-    static let arrow_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_icon")
     /// Image `back_arrow`.
     static let back_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "back_arrow")
-    /// Image `candles`.
-    static let candles = Rswift.ImageResource(bundle: R.hostingBundle, name: "candles")
-    /// Image `capsules`.
-    static let capsules = Rswift.ImageResource(bundle: R.hostingBundle, name: "capsules")
-    /// Image `checkbox_icon`.
-    static let checkbox_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox_icon")
-    /// Image `checkbox_pressed_icon`.
-    static let checkbox_pressed_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox_pressed_icon")
-    /// Image `close_icon`.
-    static let close_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "close_icon")
-    /// Image `delete_drug_icon`.
-    static let delete_drug_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "delete_drug_icon")
-    /// Image `doctor_clinic_icon`.
-    static let doctor_clinic_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "doctor_clinic_icon")
-    /// Image `drops`.
-    static let drops = Rswift.ImageResource(bundle: R.hostingBundle, name: "drops")
-    /// Image `drugs_icon`.
-    static let drugs_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "drugs_icon")
-    /// Image `edit_icon`.
-    static let edit_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit_icon")
-    /// Image `edit_nav_icon`.
-    static let edit_nav_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "edit_nav_icon")
-    /// Image `eye_icon`.
-    static let eye_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "eye_icon")
-    /// Image `eye_open_icon`.
-    static let eye_open_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "eye_open_icon")
-    /// Image `icon_add_times`.
-    static let icon_add_times = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_add_times")
-    /// Image `info_icon`.
-    static let info_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "info_icon")
-    /// Image `injections`.
-    static let injections = Rswift.ImageResource(bundle: R.hostingBundle, name: "injections")
-    /// Image `logo_icon_ru`.
-    static let logo_icon_ru = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo_icon_ru")
-    /// Image `logo_splash_ru`.
-    static let logo_splash_ru = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo_splash_ru")
-    /// Image `logo`.
-    static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
-    /// Image `mark`.
-    static let mark = Rswift.ImageResource(bundle: R.hostingBundle, name: "mark")
     /// Image `menu_icon`.
     static let menu_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "menu_icon")
-    /// Image `monitoring_icon`.
-    static let monitoring_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "monitoring_icon")
-    /// Image `notification_icon`.
-    static let notification_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notification_icon")
-    /// Image `ointment`.
-    static let ointment = Rswift.ImageResource(bundle: R.hostingBundle, name: "ointment")
-    /// Image `ok_icon`.
-    static let ok_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ok_icon")
-    /// Image `pass_no_icon`.
-    static let pass_no_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "pass_no_icon")
-    /// Image `pass_ok_icon`.
-    static let pass_ok_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "pass_ok_icon")
-    /// Image `path_arrow`.
-    static let path_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "path_arrow")
-    /// Image `percent_icon`.
-    static let percent_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "percent_icon")
-    /// Image `pills`.
-    static let pills = Rswift.ImageResource(bundle: R.hostingBundle, name: "pills")
-    /// Image `plus_icon`.
-    static let plus_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "plus_icon")
-    /// Image `powder`.
-    static let powder = Rswift.ImageResource(bundle: R.hostingBundle, name: "powder")
-    /// Image `question_icon`.
-    static let question_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "question_icon")
-    /// Image `sprays`.
-    static let sprays = Rswift.ImageResource(bundle: R.hostingBundle, name: "sprays")
-    /// Image `syrup`.
-    static let syrup = Rswift.ImageResource(bundle: R.hostingBundle, name: "syrup")
-    /// Image `triangle_to_bottom`.
-    static let triangle_to_bottom = Rswift.ImageResource(bundle: R.hostingBundle, name: "triangle_to_bottom")
-    /// Image `triangle_to_right`.
-    static let triangle_to_right = Rswift.ImageResource(bundle: R.hostingBundle, name: "triangle_to_right")
     /// Image `warn_icon`.
     static let warn_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "warn_icon")
-    /// Image `white_close_icon`.
-    static let white_close_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "white_close_icon")
     
     /// `UIImage(named: "agree_icon", bundle: ..., traitCollection: ...)`
     static func agree_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.agree_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ampoules", bundle: ..., traitCollection: ...)`
-    static func ampoules(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ampoules, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "archive_icon", bundle: ..., traitCollection: ...)`
-    static func archive_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.archive_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "arrow_icon", bundle: ..., traitCollection: ...)`
-    static func arrow_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrow_icon, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "back_arrow", bundle: ..., traitCollection: ...)`
@@ -180,226 +85,15 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.back_arrow, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "candles", bundle: ..., traitCollection: ...)`
-    static func candles(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.candles, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "capsules", bundle: ..., traitCollection: ...)`
-    static func capsules(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.capsules, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "checkbox_icon", bundle: ..., traitCollection: ...)`
-    static func checkbox_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.checkbox_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "checkbox_pressed_icon", bundle: ..., traitCollection: ...)`
-    static func checkbox_pressed_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.checkbox_pressed_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "close_icon", bundle: ..., traitCollection: ...)`
-    static func close_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.close_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "delete_drug_icon", bundle: ..., traitCollection: ...)`
-    static func delete_drug_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.delete_drug_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "doctor_clinic_icon", bundle: ..., traitCollection: ...)`
-    static func doctor_clinic_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.doctor_clinic_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "drops", bundle: ..., traitCollection: ...)`
-    static func drops(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.drops, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "drugs_icon", bundle: ..., traitCollection: ...)`
-    static func drugs_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.drugs_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "edit_icon", bundle: ..., traitCollection: ...)`
-    static func edit_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.edit_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "edit_nav_icon", bundle: ..., traitCollection: ...)`
-    static func edit_nav_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.edit_nav_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "eye_icon", bundle: ..., traitCollection: ...)`
-    static func eye_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.eye_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "eye_open_icon", bundle: ..., traitCollection: ...)`
-    static func eye_open_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.eye_open_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "icon_add_times", bundle: ..., traitCollection: ...)`
-    static func icon_add_times(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon_add_times, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "info_icon", bundle: ..., traitCollection: ...)`
-    static func info_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.info_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "injections", bundle: ..., traitCollection: ...)`
-    static func injections(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.injections, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
-    static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "logo_icon_ru", bundle: ..., traitCollection: ...)`
-    static func logo_icon_ru(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.logo_icon_ru, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "logo_splash_ru", bundle: ..., traitCollection: ...)`
-    static func logo_splash_ru(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.logo_splash_ru, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "mark", bundle: ..., traitCollection: ...)`
-    static func mark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.mark, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "menu_icon", bundle: ..., traitCollection: ...)`
     static func menu_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.menu_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "monitoring_icon", bundle: ..., traitCollection: ...)`
-    static func monitoring_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.monitoring_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "notification_icon", bundle: ..., traitCollection: ...)`
-    static func notification_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.notification_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ointment", bundle: ..., traitCollection: ...)`
-    static func ointment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ointment, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ok_icon", bundle: ..., traitCollection: ...)`
-    static func ok_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ok_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "pass_no_icon", bundle: ..., traitCollection: ...)`
-    static func pass_no_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pass_no_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "pass_ok_icon", bundle: ..., traitCollection: ...)`
-    static func pass_ok_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pass_ok_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "path_arrow", bundle: ..., traitCollection: ...)`
-    static func path_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.path_arrow, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "percent_icon", bundle: ..., traitCollection: ...)`
-    static func percent_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.percent_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "pills", bundle: ..., traitCollection: ...)`
-    static func pills(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pills, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "plus_icon", bundle: ..., traitCollection: ...)`
-    static func plus_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plus_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "powder", bundle: ..., traitCollection: ...)`
-    static func powder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.powder, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "question_icon", bundle: ..., traitCollection: ...)`
-    static func question_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.question_icon, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "sprays", bundle: ..., traitCollection: ...)`
-    static func sprays(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.sprays, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "syrup", bundle: ..., traitCollection: ...)`
-    static func syrup(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.syrup, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "triangle_to_bottom", bundle: ..., traitCollection: ...)`
-    static func triangle_to_bottom(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.triangle_to_bottom, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "triangle_to_right", bundle: ..., traitCollection: ...)`
-    static func triangle_to_right(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.triangle_to_right, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "warn_icon", bundle: ..., traitCollection: ...)`
     static func warn_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.warn_icon, compatibleWith: traitCollection)
     }
-    
-    /// `UIImage(named: "white_close_icon", bundle: ..., traitCollection: ...)`
-    static func white_close_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.white_close_icon, compatibleWith: traitCollection)
-    }
-    
-    fileprivate init() {}
-  }
-  
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
-  struct nib {
-    /// Nib `StandartPagePickerCell`.
-    static let standartPagePickerCell = _R.nib._StandartPagePickerCell()
-    
-    /// `UINib(name: "StandartPagePickerCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.standartPagePickerCell) instead")
-    static func standartPagePickerCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.standartPagePickerCell)
-    }
-    
-    static func standartPagePickerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StandartPagePickerCell? {
-      return R.nib.standartPagePickerCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StandartPagePickerCell
-    }
-    
-    fileprivate init() {}
-  }
-  
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
-    /// Reuse identifier `StandartPagePickerCell`.
-    static let standartPagePickerCell: Rswift.ReuseIdentifier<StandartPagePickerCell> = Rswift.ReuseIdentifier(identifier: "StandartPagePickerCell")
     
     fileprivate init() {}
   }
@@ -821,24 +515,6 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
-  }
-  
-  struct nib {
-    struct _StandartPagePickerCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = StandartPagePickerCell
-      
-      let bundle = R.hostingBundle
-      let identifier = "StandartPagePickerCell"
-      let name = "StandartPagePickerCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StandartPagePickerCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StandartPagePickerCell
-      }
-      
-      fileprivate init() {}
-    }
-    
-    fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {

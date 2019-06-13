@@ -1,7 +1,6 @@
 import UIKit
 
 extension UIView {
-
     func aroundShadow() {
         self.aroundShadow(cornerRadius: 8.0, shadowRadius: 8.0)
     }
@@ -13,5 +12,4 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = 0.65
     }
-
 }

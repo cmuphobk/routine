@@ -11,7 +11,6 @@ final class MainPresenter: Module, BasePresenter {
     }
 
     var localizeService: StringServiceInterface!
-    var mainTableViewFactory: MainTableViewFactoryInterface!
 }
 
 // MARK: - MainScreenModuleInput
@@ -27,10 +26,6 @@ extension MainPresenter: MainViewOutput {
     }
 
     func didTriggerViewWillAppear() {
-
-    }
-
-    func didTriggerCell(viewModel: RoutineTableViewCellViewModel) {
 
     }
 

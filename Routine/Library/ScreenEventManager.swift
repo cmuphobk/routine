@@ -177,7 +177,7 @@ protocol MessageManagerDelegate: class {
     func obtainIconHeight() -> CGFloat
     func obtainLeftOffset() -> CGFloat
 
-    func obtainErrorLabel() -> RoutineOffsetLabel
+    func obtainErrorLabel() -> UILabel
     func obtainErrorImageView() -> UIImageView
 }
 
@@ -257,9 +257,9 @@ extension ScreenEventManager {
         return messageManagerDelegate.obtainLeftOffset()
     }
 
-    func obtainErrorLabel() -> RoutineOffsetLabel {
+    func obtainErrorLabel() -> UILabel {
         guard let messageManagerDelegate = self.messageManagerDelegate else {
-            return RoutineOffsetLabel()
+            return UILabel()
         }
         return messageManagerDelegate.obtainErrorLabel()
     }
