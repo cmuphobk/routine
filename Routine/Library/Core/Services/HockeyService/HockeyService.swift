@@ -1,6 +1,7 @@
 import Foundation
 import HockeySDK
 
+// FIXME: - абстрагироваться от hockey
 final class HockeyService: HockeyServiceInterface {
 
     static var shared = HockeyService()
