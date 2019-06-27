@@ -17,7 +17,10 @@ extension SessionManager {
             }
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &CustomProperties.queueExt, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self,
+                                     &CustomProperties.queueExt,
+                                     newValue,
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
@@ -73,7 +76,8 @@ extension SessionManager {
                 } else {
                     let fileManager = FileManager.default
                     let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
-                    let directoryURL = tempDirectoryURL.appendingPathComponent("org.alamofire.manager/multipart.form.data")
+                    let key = "org.alamofire.manager/multipart.form.data"
+                    let directoryURL = tempDirectoryURL.appendingPathComponent(key)
                     let fileName = UUID().uuidString
                     let fileURL = directoryURL.appendingPathComponent(fileName)
 
@@ -84,7 +88,9 @@ extension SessionManager {
                     // Create directory inside serial queue to ensure two threads don't do this in parallel
                     self.queueExt.sync {
                         do {
-                            try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true, attributes: nil)
+                            try fileManager.createDirectory(at: directoryURL,
+                                                            withIntermediateDirectories: true,
+                                                            attributes: nil)
                         } catch {
                             directoryError = error
                         }
@@ -129,5 +135,4 @@ extension SessionManager {
             }
         }
     }
-
 }

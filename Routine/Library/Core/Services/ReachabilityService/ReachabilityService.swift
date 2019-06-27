@@ -12,7 +12,10 @@ final class ReachabilityService: ReachabilityServiceInterface {
     private init () { }
 
     func configure() {
-        self.notificationService.addObserver(self, selector: #selector(checkForReachability), name: NSNotification.Name.reachabilityChanged, object: nil)
+        self.notificationService.addObserver(self,
+                                             selector: #selector(checkForReachability),
+                                             name: NSNotification.Name.reachabilityChanged,
+                                             object: nil)
         self.reachability.startNotifier()
     }
 

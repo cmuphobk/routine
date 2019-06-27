@@ -10,7 +10,11 @@ class RequestObject<ParametersType> {
 
     let url: String
 
-    init(method: HTTPMethod, encoding: ParameterEncoding?, parameters: ParametersType?, headers: HTTPHeaders?, url: String) {
+    init(method: HTTPMethod,
+         encoding: ParameterEncoding?,
+         parameters: ParametersType?,
+         headers: HTTPHeaders?,
+         url: String) {
         self.method = method
         self.encoding = encoding
         self.parameters = parameters

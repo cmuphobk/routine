@@ -19,7 +19,9 @@ enum EndingType: Int {
         switch self {
         case .endUsageDate:
             let date = Date(timeIntervalSince1970: Double(count) / 1000.0)
-            return "\(localizeService.localizeId(R.string.localizable.end_usage_date_to.key)) \(date.format(with: "dd.MM.yyyy"))"
+            let dateFormat = date.format(with: "dd.MM.yyyy")
+            let string = localizeService.localizeId(R.string.localizable.end_usage_date_to.key)
+            return "\(string) \(dateFormat)"
         case .countUsageDays:
             typeString = localizeService.pluralsLocalizeId(str1: R.string.localizable.days_1.key,
                                                            str24: R.string.localizable.days2_4.key,

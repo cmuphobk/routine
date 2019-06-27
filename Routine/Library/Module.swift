@@ -46,7 +46,7 @@ protocol RouterInput: class {
 
 }
 
-protocol RouterOutput: ScreenEventManager {
+protocol RouterOutput: class {
 
 }
 

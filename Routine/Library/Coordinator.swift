@@ -3,37 +3,26 @@ import UIKit
 //Can see - https://github.com/umbrellaitcom/iOS-Clean-Architecture-with-Coordinator-pattern
 
 protocol Navigationable {
-
     var navigationController: UINavigationController { get set }
-
     func present(viewController: UIViewController, animated: Bool)
-
     func dismiss(animated: Bool)
-
     func push(viewController: UIViewController, animated: Bool)
-
     func pop(animated: Bool)
-
 }
 
 extension Navigationable {
-
     func present(viewController: UIViewController, animated: Bool) {
         self.navigationController.present(viewController, animated: animated, completion: nil)
     }
-
     func push(viewController: UIViewController, animated: Bool) {
         self.navigationController.pushViewController(viewController, animated: animated)
     }
-
     func pop(animated: Bool) {
         self.navigationController.popViewController(animated: animated)
     }
-
     func dismiss(animated: Bool) {
         self.navigationController.dismiss(animated: animated, completion: nil)
     }
-
 }
 
 protocol Coordinatorable: AnyObject, Navigationable {
@@ -52,7 +41,6 @@ protocol Coordinatorable: AnyObject, Navigationable {
 }
 
 extension Coordinatorable {
-
     // FIXME: - не тестировалось
     func viewControllerDidBackForward(_ viewController: UIViewController) {
         for childCoordinator in self.childCoordinators {
@@ -86,11 +74,9 @@ extension Coordinatorable {
             return
         }
     }
-
 }
 
 extension Navigationable where Self: Coordinatorable {
-
     func present(viewController: UIViewController, animated: Bool) {
         self.navigationController.present(viewController, animated: animated, completion: nil)
     }
@@ -105,14 +91,11 @@ extension Navigationable where Self: Coordinatorable {
 
         if let index = self.childViewControllers.index(ref: viewController) {
             self.childViewControllers.remove(at: index)
-
             if self.childViewControllers.count == 0 {
                 self.parentCoordinator?.childNeedFinish(self)
             }
-
             return
         }
-
     }
 
     func dismiss(animated: Bool) {

@@ -8,7 +8,10 @@ final class NotificationService: NotificationServiceInterface {
 
     private init () {}
 
-    func addObserver(_ observer: Any, selector aSelector: Selector, name aName: NSNotification.Name?, object anObject: Any?) {
+    func addObserver(_ observer: Any,
+                     selector aSelector: Selector,
+                     name aName: NSNotification.Name?,
+                     object anObject: Any?) {
         self.default.addObserver(observer, selector: aSelector, name: aName, object: anObject)
     }
 

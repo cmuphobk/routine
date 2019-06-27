@@ -1,7 +1,7 @@
 import UIKit
 import Stevia
 
-final class MainViewController: RoutineViewController, BaseView {
+final class MainViewController: UIViewController, BaseView {
     var output: MainViewOutput!
 
     override func viewDidLoad() {
@@ -11,20 +11,12 @@ final class MainViewController: RoutineViewController, BaseView {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output.didTriggerViewWillAppear()
-
+        self.output.didTriggerViewWillAppear()
     }
-
-    override func localizationSetup() {
-        super.localizationSetup()
-        self.output.configureNavigationBar(title: self.output.localizeService.localizeId(self.output.name))
-    }
-
 }
 
 // MARK: - MainViewInput
 extension MainViewController: MainViewInput {
     func setupInitialState() {
-        
     }
 }

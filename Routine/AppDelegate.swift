@@ -73,9 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        AppDelegate.serviceProvider.makeLocalNotificationService().application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+        let localService = AppDelegate.serviceProvider.makeLocalNotificationService()
+        localService.application(application,
+                                 didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        AppDelegate.serviceProvider.makeLocalNotificationService().application(application, didReceiveRemoteNotification: userInfo)
+        let localService = AppDelegate.serviceProvider.makeLocalNotificationService()
+        localService.application(application,
+                                                                               didReceiveRemoteNotification: userInfo)
     }
 }

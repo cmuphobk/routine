@@ -98,14 +98,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `MenuViewController`.
-    static let menuViewController = _R.storyboard.menuViewController()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -115,11 +113,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "MenuViewController", bundle: ...)`
-    static func menuViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.menuViewController)
     }
     
     fileprivate init() {}
@@ -521,7 +514,6 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try launchScreen.validate()
       try main.validate()
-      try menuViewController.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -552,24 +544,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct menuViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let menuViewController = StoryboardViewControllerResource<MenuViewController>(identifier: "MenuViewController")
-      let name = "MenuViewController"
-      
-      func menuViewController(_: Void = ()) -> MenuViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.menuViewController().menuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuViewController' could not be loaded from storyboard 'MenuViewController' as 'MenuViewController'.") }
       }
       
       fileprivate init() {}

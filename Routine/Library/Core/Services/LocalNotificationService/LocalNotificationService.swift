@@ -7,73 +7,46 @@ import FirebaseMessaging
 private let dayLength = 60 * 60 * 24 * 1000
 
 final class LocalNotificationService: NSObject {
-
     var storageService: StorageServiceInterface!
-
     static let shared = LocalNotificationService()
-
     private let center: UNUserNotificationCenter
-
     private var application: UIApplication!
-
     private let maxRequestsCount = 64
     private let poolNotificationsString = "kPoolNotifications"
 
     private override init() {
-
         self.center = UNUserNotificationCenter.current()
-
         super.init()
-
         self.center.delegate = self
-        //Configure FirebaseApp
         FirebaseApp.configure()
-
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
-
         self.recreateNotifications()
-
     }
-
 }
 
 // MARK: LocalNotificationServiceInterface
 extension LocalNotificationService: LocalNotificationServiceInterface {
-
     func configure(application: UIApplication) {
-
         self.application = application
-
-        //Configure push notifications
         if #available(iOS 10.0, *) {
-
-            // For iOS 10 display notification (sent via APNS)
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-
             self.center.requestAuthorization(options: authOptions) {_, _ in }
         } else {
-
             let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             self.application.registerUserNotificationSettings(settings)
         }
-
         self.application.registerForRemoteNotifications()
-
     }
 
     func createNotifications(model: NotificationsModel) {
-
         var dates: [DateForNotification] = self.obtainDatesNotifications(model: model)
-
         dates = dates.filter { (date) -> Bool in
             return date.timestamp >= Int(Date().timeIntervalSince1970 * 1000.0)
         }
-
         dates.sort { (date1, date2) -> Bool in
             return date1.timestamp < date2.timestamp
         }
-
         let notifications: [LocalNotification] = dates.map { (date) -> LocalNotification in
             return LocalNotification(
                 name: "\(date.hashValue)_notification",
@@ -81,9 +54,7 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
                 categoryIdentifier: date.userInfo.description,
                 title: date.userInfo.description)
         }
-
         self.removeAllNotifications()
-
         var index = 0
         var poolNotifications: [LocalNotification] = []
         for notification in notifications {
@@ -94,16 +65,12 @@ extension LocalNotificationService: LocalNotificationServiceInterface {
                 self.configure(notification: notification)
             }
         }
-
         self.savePoolNotifications(poolNotifications: poolNotifications)
-
     }
 
     func removeAllNotifications() {
-
         self.center.removeAllPendingNotificationRequests()
         self.center.removeAllDeliveredNotifications()
-
     }
 
     func obtainDatesNotifications(model: NotificationsModel) -> [DateForNotification] {
@@ -177,18 +144,15 @@ extension LocalNotificationService {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-
+                                withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void) {
         self.recreateNotifications()
-
         completionHandler([.alert, .sound, .badge])
-
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-
         switch response.actionIdentifier {
         case UNNotificationDismissActionIdentifier:
             print("Dismiss Action")
@@ -197,21 +161,15 @@ extension LocalNotificationService {
         default:
             print("Unknown action")
         }
-
         self.recreateNotifications()
-
         completionHandler()
     }
-
 }
 
 // MARK: Private
 extension LocalNotificationService {
-
     private func recreateNotifications() {
-
         self.center.getPendingNotificationRequests { [unowned self] (requests) in
-
             let count = self.maxRequestsCount - requests.count
             var array = self.obtainPoolNotifications()
 
@@ -224,11 +182,9 @@ extension LocalNotificationService {
 
             print("\(String(describing: requests))")
         }
-
     }
 
     private func obtainPoolNotifications() -> [LocalNotification] {
-
         guard let poolNotificationsData = self.storageService.object(forKey: self.poolNotificationsString) as? Data,
             let poolNotifications = try? JSONDecoder().decode([LocalNotification].self,
                                                               from: poolNotificationsData)
@@ -238,16 +194,13 @@ extension LocalNotificationService {
     }
 
     private func savePoolNotifications(poolNotifications: [LocalNotification]) {
-
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(poolNotifications) {
             self.storageService.set(encoded, forKey: self.poolNotificationsString)
         }
-
     }
 
     private func configure(notification: LocalNotification) {
-
         let identifier = notification.name
         let content = UNMutableNotificationContent()
         content.categoryIdentifier = notification.categoryIdentifier
@@ -264,7 +217,6 @@ extension LocalNotificationService {
                 print("Unhandled error LocalNotificationService: \(String(describing: error))")
             }
         }
-
     }
 
     private func obtainTimesForPeriod(_ period: Int,
@@ -272,28 +224,18 @@ extension LocalNotificationService {
                                       andCountUsageNumber countUsageNumber: Int,
                                       andTimes times: [Time],
                                       userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
-
         if countUsageNumber > 0 {
-
             var countUsageNumberVar = countUsageNumber
-
             for time in times {
-
                 //добавляем прием
                 if countUsageNumberVar > 0 {
-
                     arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
                     countUsageNumberVar -= 1
-
                 } else {
-
                     return arrayDates
                 }
-
             }
-
             let newStartDate = startDate + (period * dayLength)
             //startDate += period day and call
             arrayDates += self.obtainTimesForPeriod(period,
@@ -303,9 +245,7 @@ extension LocalNotificationService {
                                                     userInfo: userInfo)
 
         }
-
         return arrayDates
-
     }
 
     private func obtainTimesForPeriod(_ period: Int,
@@ -313,19 +253,13 @@ extension LocalNotificationService {
                                       andCountUsageDays countUsageDays: Int,
                                       andTimes times: [Time],
                                       userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
-
         if countUsageDays > 0 {
-
             var countUsageDaysVar = countUsageDays
-
             for time in times {
                 arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
             }
-
             countUsageDaysVar -= 1
-
             let newStartDate = startDate + (period * dayLength)
             //startDate += period day and call
             arrayDates += self.obtainTimesForPeriod(period,
@@ -335,9 +269,7 @@ extension LocalNotificationService {
                                                     userInfo: userInfo)
 
         }
-
         return arrayDates
-
     }
 
     private func obtainTimesForPeriod(_ period: Int,
@@ -345,23 +277,16 @@ extension LocalNotificationService {
                                       andEndUsageDate endUsageDate: Int,
                                       andTimes times: [Time],
                                       userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
 
         if startDate <= endUsageDate {
-
             for time in times {
-
                 if startDate + time.rawValue() <= endUsageDate {
-
                     arrayDates.append(DateForNotification(timestamp: startDate + time.rawValue(), userInfo: userInfo))
-
                 }
-
             }
 
             let newStartDate = startDate + (period * dayLength)
-
             //startDate += period day and call
             arrayDates += self.obtainTimesForPeriod(period,
                                                     andStartDate: newStartDate,
@@ -370,9 +295,7 @@ extension LocalNotificationService {
                                                     userInfo: userInfo)
 
         }
-
         return arrayDates
-
     }
 
     private func obtainTimesForPeriodDays(_ periodDays: Int,
@@ -380,18 +303,14 @@ extension LocalNotificationService {
                                           andCountUsageNumber countUsageNumber: Int,
                                           andTimes times: [Time],
                                           userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
-
         let peroidDaysInt8 = UInt8(periodDays)
         let dayOfWeek = DayOfWeek.checkDateWeekDay(timestamp: startDate)
         guard let ifExist = dayOfWeek?.checkIfExist(peroidDaysInt8) else {
             return arrayDates
         }
-
         let newStartDate = startDate + dayLength
         var newCountUsageNumber = countUsageNumber
-
         //если startDate попала в periodDays вызываем получения дат в startDate
         if ifExist {
             let count = times.count <= countUsageNumber ? times.count : countUsageNumber
@@ -402,9 +321,7 @@ extension LocalNotificationService {
                                                     userInfo: userInfo)
             newCountUsageNumber -= times.count
         }
-
         //увеличиваем startDate на 1 день и рекурсивно вызываем себя
-
         if newCountUsageNumber > 0 {
             arrayDates += self.obtainTimesForPeriodDays(periodDays,
                                                         andStartDate: newStartDate,
@@ -413,7 +330,6 @@ extension LocalNotificationService {
                                                         userInfo: userInfo)
         }
         return arrayDates
-
     }
 
     private func obtainTimesForPeriodDays(_ periodDays: Int,
@@ -421,18 +337,14 @@ extension LocalNotificationService {
                                           andCountUsageDays countUsageDays: Int,
                                           andTimes times: [Time],
                                           userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
-
         let peroidDaysInt8 = UInt8(periodDays)
         let dayOfWeek = DayOfWeek.checkDateWeekDay(timestamp: startDate)
         guard let ifExist = dayOfWeek?.checkIfExist(peroidDaysInt8) else {
             return arrayDates
         }
-
         let newStartDate = startDate + dayLength
         var newCountUsageDays = countUsageDays
-
         //если startDate попала в periodDays вызываем получения дат в startDate
         if ifExist {
             arrayDates += self.obtainTimesForPeriod(1,
@@ -442,7 +354,6 @@ extension LocalNotificationService {
                                                     userInfo: userInfo)
             newCountUsageDays -= 1
         }
-
         if newCountUsageDays > 0 {
             arrayDates += self.obtainTimesForPeriodDays(periodDays,
                                                         andStartDate: newStartDate,
@@ -451,7 +362,6 @@ extension LocalNotificationService {
                                                         userInfo: userInfo)
         }
         return arrayDates
-
     }
 
     private func obtainTimesForPeriodDays(_ periodDays: Int,
@@ -459,17 +369,13 @@ extension LocalNotificationService {
                                           andEndUsageDate endUsageDate: Int,
                                           andTimes times: [Time],
                                           userInfo: CustomStringConvertible) -> [DateForNotification] {
-
         var arrayDates: [DateForNotification] = []
-
         let peroidDaysInt8 = UInt8(periodDays)
         let dayOfWeek = DayOfWeek.checkDateWeekDay(timestamp: startDate)
         guard let ifExist = dayOfWeek?.checkIfExist(peroidDaysInt8) else {
             return arrayDates
         }
-
         let newStartDate = startDate + dayLength
-
         //если startDate попала в periodDays вызываем получения дат в startDate
         if ifExist {
             arrayDates += self.obtainTimesForPeriod(1,
@@ -478,7 +384,6 @@ extension LocalNotificationService {
                                                     andTimes: times,
                                                     userInfo: userInfo)
         }
-
         if newStartDate <= endUsageDate {
             arrayDates += self.obtainTimesForPeriodDays(periodDays,
                                                         andStartDate: newStartDate,
@@ -487,7 +392,5 @@ extension LocalNotificationService {
                                                         userInfo: userInfo)
         }
         return arrayDates
-
     }
-
 }

@@ -4,7 +4,7 @@ protocol MainCoordinatorDelegate: class {
 
 }
 
-class MainCoordinator: Coordinatorable, ScreenEventManager {
+class MainCoordinator: Coordinatorable {
 
     // MARK: - Coordinatorable
     var navigationController: UINavigationController
@@ -12,10 +12,6 @@ class MainCoordinator: Coordinatorable, ScreenEventManager {
 
     var childCoordinators: [Coordinatorable] = []
     var childViewControllers: [UIViewController] = []
-
-    // MARK: - ScreenEventManager
-    var parentScreenEventManager: ScreenEventManager?
-    var taskHideError: DispatchWorkItem!
 
     // MARK: - MainCoordinator
     var factory = MainModuleFactory()

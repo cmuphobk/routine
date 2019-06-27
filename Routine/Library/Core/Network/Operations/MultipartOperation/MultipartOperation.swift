@@ -73,7 +73,10 @@ class MultipartOperation<T: Decodable>: AsyncOperation, OperationHandlerContaine
                     return
                 }
 
-                let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "File Uploading Failed. Please try again."]) as Error
+                let dict = [NSLocalizedDescriptionKey: "File Uploading Failed. Please try again."]
+                let error = NSError(domain: "",
+                                    code: 404,
+                                    userInfo: dict) as Error
                 let result = Result<AnyObject>.failure(error)
                 let response = DataResponse(request: nil, response: nil, data: nil, result: result)
                 handler.deserializeResponseObject(response)

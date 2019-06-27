@@ -66,7 +66,9 @@ final class RESTOperationHandler<T: Decodable>: RequestOperationHandler, DecodeR
             let decoder = JSONDecoder()
             var entry: T?
             do {
-                entry = try decoder.decode(T.self, from: responseData.isEmpty ? "{}".data(using: String.Encoding.utf8)! : responseData)
+                let data = responseData.isEmpty ? "{}".data(using: String.Encoding.utf8)! : responseData
+                entry = try decoder.decode(T.self,
+                                           from: data)
             } catch {
                 print(error)
             }

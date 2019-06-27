@@ -12,20 +12,10 @@ protocol MainViewOutput: ViewOutput {
 
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
-
-    func rightSwipeAction()
-    func leftSwipeAction()
-
-    func configureNavigationBar(title: String)
 }
 
 protocol MainRouterInput: RouterInput {
-    func rightSwipeAction()
-    func leftSwipeAction()
-
-    func configureNavigationBar(title: String)
 }
 
 protocol MainRouterOutput: RouterOutput {
-
 }

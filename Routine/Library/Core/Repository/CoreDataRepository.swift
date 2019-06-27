@@ -1,7 +1,8 @@
 import Foundation
 import MagicalRecord
 
-final class CoreDataRepository<EntityGeneric: NSManagedObject & ConfigurableEntityInterface, ModelGeneric: IdentifierModelInterface>: Repository {
+final class CoreDataRepository
+<EntityGeneric: NSManagedObject & ConfigurableEntityInterface, ModelGeneric: IdentifierModelInterface>: Repository {
 
     var context: NSManagedObjectContext
 
@@ -20,9 +21,11 @@ final class CoreDataRepository<EntityGeneric: NSManagedObject & ConfigurableEnti
 
         guard let objectIdUnwrap = objectId else { return nil }
 
-        guard let url = URL(string: objectIdUnwrap), let managedObjectID = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url) else {
-            return nil
-        }
+        guard let url = URL(string: objectIdUnwrap),
+            let managedObjectID = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url)
+            else {
+                return nil
+            }
 
         let predicate = NSPredicate(format: "self == %@", managedObjectID)
         guard let entityFound = EntityGeneric.mr_findFirst(with: predicate, in: self.context) else {
@@ -37,7 +40,8 @@ final class CoreDataRepository<EntityGeneric: NSManagedObject & ConfigurableEnti
 
         let predicate = filterObject as? NSPredicate
 
-        guard let entities = EntityGeneric.mr_findAll(with: predicate, in: self.context) as? [EntityGeneric] else { return [] }
+        guard let entities = EntityGeneric.mr_findAll(with: predicate,
+                                                      in: self.context) as? [EntityGeneric] else { return [] }
 
         return entities
 
@@ -65,9 +69,11 @@ final class CoreDataRepository<EntityGeneric: NSManagedObject & ConfigurableEnti
 
     func deleteEntityWithModel(model: ModelGeneric) -> Bool {
 
-        guard let url = URL(string: model.objectId ?? ""), let managedObjectID = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url) else {
-            return false
-        }
+        guard let url = URL(string: model.objectId ?? ""),
+            let managedObjectID = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url)
+            else {
+                return false
+            }
 
         let predicate = NSPredicate(format: "self == %@", managedObjectID)
         if EntityGeneric.mr_deleteAll(matching: predicate, in: self.context) == false {

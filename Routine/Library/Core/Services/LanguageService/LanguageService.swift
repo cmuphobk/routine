@@ -29,7 +29,6 @@ final class LanguageService: LanguageServiceInterface {
     }
 
     // установка языка по его полному наименованию
-    // FIXME: - отправлять уведомление о том, что язык сменился
     func setLanguage(languageName: String?) {
         guard let name = languageName else {
             return

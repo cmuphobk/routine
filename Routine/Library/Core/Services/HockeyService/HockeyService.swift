@@ -12,7 +12,7 @@ final class HockeyService: HockeyServiceInterface {
         BITHockeyManager.shared().configure(withIdentifier: self.hockeyId)
         BITHockeyManager.shared().isUpdateManagerDisabled = true
         BITHockeyManager.shared().start()
-        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
     }
 
 }

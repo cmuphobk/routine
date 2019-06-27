@@ -23,7 +23,12 @@ final class FileService: FileServiceInterface {
         } else {
             let parameters: [String: String] = [:]
 
-            let requestObject = DownloadRequestObject(method: .get, encoding: URLEncoding.default, parameters: parameters, headers: nil, url: imageUrl, fileUrl: fileUrl)
+            let requestObject = DownloadRequestObject(method: .get,
+                                                      encoding: URLEncoding.default,
+                                                      parameters: parameters,
+                                                      headers: nil,
+                                                      url: imageUrl,
+                                                      fileUrl: fileUrl)
             let networkOperationHandler = DownloadOperationHandler(withRequestObject: requestObject)
             let downloadOperation = DownloadOperation(withHandler: networkOperationHandler)
 
@@ -68,7 +73,12 @@ final class FileService: FileServiceInterface {
             })
         } else {
             let parameters: [String: String] = [:]
-            let requestObject = DownloadRequestObject(method: .get, encoding: URLEncoding.default, parameters: parameters, headers: nil, url: documentUrl, fileUrl: fileUrl)
+            let requestObject = DownloadRequestObject(method: .get,
+                                                      encoding: URLEncoding.default,
+                                                      parameters: parameters,
+                                                      headers: nil,
+                                                      url: documentUrl,
+                                                      fileUrl: fileUrl)
             let networkOperationHandler = DownloadOperationHandler(withRequestObject: requestObject)
             let downloadOperation = DownloadOperation(withHandler: networkOperationHandler)
 

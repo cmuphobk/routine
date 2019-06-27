@@ -9,7 +9,8 @@ class ImageService: ImageServiceInterface {
     private init () {}
 
     func localizeById(_ identifier: String) -> UIImage {
-        return UIImage(named: String(format: "%@_%@", identifier, self.languageService.currentLanguage().code))  ??  UIImage(named: identifier)  ??  UIImage()
+        let string = String(format: "%@_%@", identifier, self.languageService.currentLanguage().code)
+        return UIImage(named: string) ?? UIImage(named: identifier) ?? UIImage()
     }
 
 }

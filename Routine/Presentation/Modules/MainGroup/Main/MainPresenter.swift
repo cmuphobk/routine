@@ -29,16 +29,4 @@ extension MainPresenter: MainViewOutput {
 
     }
 
-    func rightSwipeAction() {
-        self.router.rightSwipeAction()
-    }
-
-    func leftSwipeAction() {
-        self.router.leftSwipeAction()
-    }
-
-    func configureNavigationBar(title: String) {
-        self.router.configureNavigationBar(title: title)
-    }
-
 }
