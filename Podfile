@@ -9,7 +9,6 @@ def all_pods
   
   # RestAPI
   pod 'Alamofire', '~> 4.7'
-  pod 'SwiftyJSON'
   
   #CoreData
   pod 'MagicalRecord'
@@ -23,25 +22,15 @@ def all_pods
   
   #R.swift
   pod "R.swift"
-
-  #UIScrollView-InfiniteScroll
-  pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
-  pod 'PinCodeTextField'
   
   #Reachability
   pod 'Reachability'
-  
-  #UI
-  pod 'PocketSVG', '~> 2.0'
-  
-  #DateTools
-  pod 'DateToolsSwift'
-
-  #AutoLayout
-  pod 'SteviaLayout'
 
   #SwiftLint
   pod 'SwiftLint'
+  
+  #SnapKit
+  pod 'SnapKit'
   
 end
 
