@@ -44,9 +44,6 @@
 		ED3AE40222C50B9F00FA0EC5 /* DateServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B022C50B9F00FA0EC5 /* DateServiceAssembly.swift */; };
 		ED3AE40322C50B9F00FA0EC5 /* DateServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B122C50B9F00FA0EC5 /* DateServiceInterface.swift */; };
 		ED3AE40422C50B9F00FA0EC5 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B222C50B9F00FA0EC5 /* DateService.swift */; };
-		ED3AE40522C50B9F00FA0EC5 /* HockeyServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B422C50B9F00FA0EC5 /* HockeyServiceInterface.swift */; };
-		ED3AE40622C50B9F00FA0EC5 /* HockeyServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B522C50B9F00FA0EC5 /* HockeyServiceAssembly.swift */; };
-		ED3AE40722C50B9F00FA0EC5 /* HockeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B622C50B9F00FA0EC5 /* HockeyService.swift */; };
 		ED3AE40822C50B9F00FA0EC5 /* NotificationServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B822C50B9F00FA0EC5 /* NotificationServiceAssembly.swift */; };
 		ED3AE40922C50B9F00FA0EC5 /* NotificationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3B922C50B9F00FA0EC5 /* NotificationServiceInterface.swift */; };
 		ED3AE40A22C50B9F00FA0EC5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3BA22C50B9F00FA0EC5 /* NotificationService.swift */; };
@@ -88,6 +85,15 @@
 		ED3AE42E22C50B9F00FA0EC5 /* UIFont+SizeOfString.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E822C50B9F00FA0EC5 /* UIFont+SizeOfString.swift */; };
 		ED3AE42F22C50B9F00FA0EC5 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E922C50B9F00FA0EC5 /* Module.swift */; };
 		ED3AE43022C50B9F00FA0EC5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3EA22C50B9F00FA0EC5 /* Coordinator.swift */; };
+		ED3AE43222C5E75E00FA0EC5 /* LocalNotificationService+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43122C5E75E00FA0EC5 /* LocalNotificationService+Private.swift */; };
+		ED3AE43422C6000800FA0EC5 /* Date+WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43322C6000800FA0EC5 /* Date+WeekDay.swift */; };
+		ED3AE43B22C6240C00FA0EC5 /* HelloWorldInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43622C6240C00FA0EC5 /* HelloWorldInterface.swift */; };
+		ED3AE43C22C6240C00FA0EC5 /* HelloWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43722C6240C00FA0EC5 /* HelloWorldViewController.swift */; };
+		ED3AE43D22C6240C00FA0EC5 /* HelloWorldPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43822C6240C00FA0EC5 /* HelloWorldPresenter.swift */; };
+		ED3AE43E22C6240C00FA0EC5 /* HelloWorldRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43922C6240C00FA0EC5 /* HelloWorldRouter.swift */; };
+		ED3AE43F22C6240C00FA0EC5 /* HelloWorldAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE43A22C6240C00FA0EC5 /* HelloWorldAssembly.swift */; };
+		ED3AE44422C6275C00FA0EC5 /* HelloWorldCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE44222C6275C00FA0EC5 /* HelloWorldCoordinator.swift */; };
+		ED3AE44522C6275D00FA0EC5 /* HelloWorldModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE44322C6275C00FA0EC5 /* HelloWorldModuleFactory.swift */; };
 		ED8F69762179B839001DBDAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69752179B839001DBDAA /* AppDelegate.swift */; };
 		ED8F697D2179B83A001DBDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8F697C2179B83A001DBDAA /* Assets.xcassets */; };
 		ED8F698B2179B83A001DBDAA /* RoutineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F698A2179B83A001DBDAA /* RoutineTests.swift */; };
@@ -95,7 +101,6 @@
 		ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69BA2179B971001DBDAA /* MainInterface.swift */; };
 		ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69BB2179B971001DBDAA /* MainViewController.swift */; };
 		ED8F6A052179B971001DBDAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69BC2179B971001DBDAA /* MainPresenter.swift */; };
-		ED8F6A062179B971001DBDAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8F69BD2179B971001DBDAA /* Main.storyboard */; };
 		ED8F6A072179B971001DBDAA /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69BE2179B971001DBDAA /* MainRouter.swift */; };
 		ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69BF2179B971001DBDAA /* MainAssembly.swift */; };
 		ED8F6A092179B971001DBDAA /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F69C22179B971001DBDAA /* FontProvider.swift */; };
@@ -177,9 +182,6 @@
 		ED3AE3B022C50B9F00FA0EC5 /* DateServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateServiceAssembly.swift; sourceTree = "<group>"; };
 		ED3AE3B122C50B9F00FA0EC5 /* DateServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateServiceInterface.swift; sourceTree = "<group>"; };
 		ED3AE3B222C50B9F00FA0EC5 /* DateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
-		ED3AE3B422C50B9F00FA0EC5 /* HockeyServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeyServiceInterface.swift; sourceTree = "<group>"; };
-		ED3AE3B522C50B9F00FA0EC5 /* HockeyServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeyServiceAssembly.swift; sourceTree = "<group>"; };
-		ED3AE3B622C50B9F00FA0EC5 /* HockeyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeyService.swift; sourceTree = "<group>"; };
 		ED3AE3B822C50B9F00FA0EC5 /* NotificationServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceAssembly.swift; sourceTree = "<group>"; };
 		ED3AE3B922C50B9F00FA0EC5 /* NotificationServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceInterface.swift; sourceTree = "<group>"; };
 		ED3AE3BA22C50B9F00FA0EC5 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -221,6 +223,15 @@
 		ED3AE3E822C50B9F00FA0EC5 /* UIFont+SizeOfString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+SizeOfString.swift"; sourceTree = "<group>"; };
 		ED3AE3E922C50B9F00FA0EC5 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		ED3AE3EA22C50B9F00FA0EC5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ED3AE43122C5E75E00FA0EC5 /* LocalNotificationService+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalNotificationService+Private.swift"; sourceTree = "<group>"; };
+		ED3AE43322C6000800FA0EC5 /* Date+WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+WeekDay.swift"; sourceTree = "<group>"; };
+		ED3AE43622C6240C00FA0EC5 /* HelloWorldInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldInterface.swift; sourceTree = "<group>"; };
+		ED3AE43722C6240C00FA0EC5 /* HelloWorldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldViewController.swift; sourceTree = "<group>"; };
+		ED3AE43822C6240C00FA0EC5 /* HelloWorldPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldPresenter.swift; sourceTree = "<group>"; };
+		ED3AE43922C6240C00FA0EC5 /* HelloWorldRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldRouter.swift; sourceTree = "<group>"; };
+		ED3AE43A22C6240C00FA0EC5 /* HelloWorldAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldAssembly.swift; sourceTree = "<group>"; };
+		ED3AE44222C6275C00FA0EC5 /* HelloWorldCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldCoordinator.swift; sourceTree = "<group>"; };
+		ED3AE44322C6275C00FA0EC5 /* HelloWorldModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloWorldModuleFactory.swift; sourceTree = "<group>"; };
 		ED8F69722179B839001DBDAA /* Routine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8F69752179B839001DBDAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8F697C2179B83A001DBDAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,7 +245,6 @@
 		ED8F69BA2179B971001DBDAA /* MainInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterface.swift; sourceTree = "<group>"; };
 		ED8F69BB2179B971001DBDAA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ED8F69BC2179B971001DBDAA /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		ED8F69BD2179B971001DBDAA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED8F69BE2179B971001DBDAA /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		ED8F69BF2179B971001DBDAA /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		ED8F69C22179B971001DBDAA /* FontProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
@@ -324,6 +334,7 @@
 			children = (
 				41C3675422946CF300917A5D /* ApplicationCoordinator */,
 				41A6B855220EC43E0023CE19 /* MainGroup */,
+				ED3AE44022C6273700FA0EC5 /* HelloWorldGroup */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -331,8 +342,8 @@
 		41C3675422946CF300917A5D /* ApplicationCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				4172F8AB228AE2BE008A5AE9 /* ApplicationCoordinatorFactory.swift */,
 				4172F898228AE062008A5AE9 /* ApplicationCoordinator.swift */,
+				4172F8AB228AE2BE008A5AE9 /* ApplicationCoordinatorFactory.swift */,
 			);
 			path = ApplicationCoordinator;
 			sourceTree = "<group>";
@@ -466,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3AE3AF22C50B9F00FA0EC5 /* DateService */,
-				ED3AE3B322C50B9F00FA0EC5 /* HockeyService */,
 				ED3AE3B722C50B9F00FA0EC5 /* NotificationService */,
 				ED3AE3BB22C50B9F00FA0EC5 /* ReachabilityService */,
 				ED3AE3BF22C50B9F00FA0EC5 /* StorageService */,
@@ -488,16 +498,6 @@
 				ED3AE3B222C50B9F00FA0EC5 /* DateService.swift */,
 			);
 			path = DateService;
-			sourceTree = "<group>";
-		};
-		ED3AE3B322C50B9F00FA0EC5 /* HockeyService */ = {
-			isa = PBXGroup;
-			children = (
-				ED3AE3B422C50B9F00FA0EC5 /* HockeyServiceInterface.swift */,
-				ED3AE3B522C50B9F00FA0EC5 /* HockeyServiceAssembly.swift */,
-				ED3AE3B622C50B9F00FA0EC5 /* HockeyService.swift */,
-			);
-			path = HockeyService;
 			sourceTree = "<group>";
 		};
 		ED3AE3B722C50B9F00FA0EC5 /* NotificationService */ = {
@@ -535,6 +535,7 @@
 			children = (
 				ED3AE3C422C50B9F00FA0EC5 /* Models */,
 				ED3AE3CC22C50B9F00FA0EC5 /* LocalNotificationService.swift */,
+				ED3AE43122C5E75E00FA0EC5 /* LocalNotificationService+Private.swift */,
 				ED3AE3CD22C50B9F00FA0EC5 /* LocalNotificationServiceAssembly.swift */,
 				ED3AE3CE22C50B9F00FA0EC5 /* LocalNotificationInterface.swift */,
 			);
@@ -615,8 +616,39 @@
 				ED3AE3E622C50B9F00FA0EC5 /* Codable+Dicitionary.swift */,
 				ED3AE3E722C50B9F00FA0EC5 /* SessionManager+Multipart.swift */,
 				ED3AE3E822C50B9F00FA0EC5 /* UIFont+SizeOfString.swift */,
+				ED3AE43322C6000800FA0EC5 /* Date+WeekDay.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED3AE43522C6240C00FA0EC5 /* HelloWorld */ = {
+			isa = PBXGroup;
+			children = (
+				ED3AE43622C6240C00FA0EC5 /* HelloWorldInterface.swift */,
+				ED3AE43A22C6240C00FA0EC5 /* HelloWorldAssembly.swift */,
+				ED3AE43822C6240C00FA0EC5 /* HelloWorldPresenter.swift */,
+				ED3AE43722C6240C00FA0EC5 /* HelloWorldViewController.swift */,
+				ED3AE43922C6240C00FA0EC5 /* HelloWorldRouter.swift */,
+			);
+			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		ED3AE44022C6273700FA0EC5 /* HelloWorldGroup */ = {
+			isa = PBXGroup;
+			children = (
+				ED3AE44122C6275C00FA0EC5 /* HelloWorldCoordinator */,
+				ED3AE43522C6240C00FA0EC5 /* HelloWorld */,
+			);
+			path = HelloWorldGroup;
+			sourceTree = "<group>";
+		};
+		ED3AE44122C6275C00FA0EC5 /* HelloWorldCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ED3AE44222C6275C00FA0EC5 /* HelloWorldCoordinator.swift */,
+				ED3AE44322C6275C00FA0EC5 /* HelloWorldModuleFactory.swift */,
+			);
+			path = HelloWorldCoordinator;
 			sourceTree = "<group>";
 		};
 		ED8F69692179B839001DBDAA = {
@@ -690,7 +722,6 @@
 				ED8F69BA2179B971001DBDAA /* MainInterface.swift */,
 				ED8F69BF2179B971001DBDAA /* MainAssembly.swift */,
 				ED8F69BC2179B971001DBDAA /* MainPresenter.swift */,
-				ED8F69BD2179B971001DBDAA /* Main.storyboard */,
 				ED8F69BB2179B971001DBDAA /* MainViewController.swift */,
 				ED8F69BE2179B971001DBDAA /* MainRouter.swift */,
 			);
@@ -897,7 +928,6 @@
 				ED8F6AA7217F7B61001DBDAA /* Foros-Bold.otf in Resources */,
 				ED8F6A212179B971001DBDAA /* LaunchScreen.storyboard in Resources */,
 				ED8F6A3A2179C548001DBDAA /* Localizable.strings in Resources */,
-				ED8F6A062179B971001DBDAA /* Main.storyboard in Resources */,
 				ED8F697D2179B83A001DBDAA /* Assets.xcassets in Resources */,
 				41CAA233227F1C6700188189 /* GoogleService-Info.plist in Resources */,
 			);
@@ -942,33 +972,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RoutineTests/Pods-RoutineTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS12.0/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift-iOS12.0/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS12.0/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord-iOS12.0/MagicalRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/PinCodeTextField-iOS12.0/PinCodeTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/PocketSVG-iOS12.0/PocketSVG.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS12.0/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library-iOS12.0/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability-iOS12.0/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SteviaLayout-iOS12.0/Stevia.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.0/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll-iOS12.0/UIScrollView_InfiniteScroll.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit-iOS12.0/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb-iOS12.0/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketSVG.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1020,33 +1040,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Routine/Pods-Routine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift-iOS10.0/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS10.0/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord-iOS10.0/MagicalRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/PinCodeTextField-iOS10.0/PinCodeTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/PocketSVG-iOS10.0/PocketSVG.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS10.0/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library-iOS10.0/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability-iOS10.0/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SteviaLayout-iOS10.0/Stevia.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll-iOS10.0/UIScrollView_InfiniteScroll.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit-iOS10.0/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb-iOS10.0/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketSVG.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1126,6 +1136,7 @@
 				ED8F6A032179B971001DBDAA /* MainInterface.swift in Sources */,
 				ED3AE40822C50B9F00FA0EC5 /* NotificationServiceAssembly.swift in Sources */,
 				4172F899228AE062008A5AE9 /* ApplicationCoordinator.swift in Sources */,
+				ED3AE44422C6275C00FA0EC5 /* HelloWorldCoordinator.swift in Sources */,
 				ED3AE40222C50B9F00FA0EC5 /* DateServiceAssembly.swift in Sources */,
 				ED3AE40922C50B9F00FA0EC5 /* NotificationServiceInterface.swift in Sources */,
 				ED3AE42622C50B9F00FA0EC5 /* StringService.swift in Sources */,
@@ -1138,6 +1149,7 @@
 				ED3AE41322C50B9F00FA0EC5 /* DayOfWeek.swift in Sources */,
 				ED8F6A0B2179B971001DBDAA /* ColorProvider.swift in Sources */,
 				ED3AE3EC22C50B9F00FA0EC5 /* ConfigurableEntityInterface.swift in Sources */,
+				ED3AE44522C6275D00FA0EC5 /* HelloWorldModuleFactory.swift in Sources */,
 				ED3AE42122C50B9F00FA0EC5 /* Language.swift in Sources */,
 				ED3AE3FF22C50B9F00FA0EC5 /* RequestObject.swift in Sources */,
 				EDE9894D21E9DE8E00870F25 /* UIView+Subviews.swift in Sources */,
@@ -1154,11 +1166,11 @@
 				ED3AE3F622C50B9F00FA0EC5 /* MultipartOperation.swift in Sources */,
 				ED3AE43022C50B9F00FA0EC5 /* Coordinator.swift in Sources */,
 				ED3AE3EE22C50B9F00FA0EC5 /* CoreDataRepository.swift in Sources */,
-				ED3AE40522C50B9F00FA0EC5 /* HockeyServiceInterface.swift in Sources */,
 				ED3AE40F22C50B9F00FA0EC5 /* StorageServiceAssembly.swift in Sources */,
 				ED3AE40022C50B9F00FA0EC5 /* NetworkRequest.swift in Sources */,
 				ED3AE3F222C50B9F00FA0EC5 /* OperationHandlerContainerInterface.swift in Sources */,
 				ED3AE3F922C50B9F00FA0EC5 /* RESTRequestObject.swift in Sources */,
+				ED3AE43D22C6240C00FA0EC5 /* HelloWorldPresenter.swift in Sources */,
 				ED8F6A092179B971001DBDAA /* FontProvider.swift in Sources */,
 				ED3AE3FC22C50B9F00FA0EC5 /* RESTOperation.swift in Sources */,
 				ED3AE40E22C50B9F00FA0EC5 /* StorageService.swift in Sources */,
@@ -1168,11 +1180,12 @@
 				EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */,
 				ED3AE3F022C50B9F00FA0EC5 /* BaseResponseModels.swift in Sources */,
 				ED3AE42522C50B9F00FA0EC5 /* StringServiceInterface.swift in Sources */,
+				ED3AE43F22C6240C00FA0EC5 /* HelloWorldAssembly.swift in Sources */,
 				ED3AE42C22C50B9F00FA0EC5 /* Codable+Dicitionary.swift in Sources */,
-				ED3AE40722C50B9F00FA0EC5 /* HockeyService.swift in Sources */,
+				ED3AE43B22C6240C00FA0EC5 /* HelloWorldInterface.swift in Sources */,
+				ED3AE43222C5E75E00FA0EC5 /* LocalNotificationService+Private.swift in Sources */,
 				ED8F6A0A2179B971001DBDAA /* ImageProvider.swift in Sources */,
 				ED3AE42722C50B9F00FA0EC5 /* StringServiceAssembly.swift in Sources */,
-				ED3AE40622C50B9F00FA0EC5 /* HockeyServiceAssembly.swift in Sources */,
 				ED3AE42922C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED3AE40C22C50B9F00FA0EC5 /* ReachabilityServiceAssembly.swift in Sources */,
 				41CAA231227F186F00188189 /* R.generated.swift in Sources */,
@@ -1191,15 +1204,18 @@
 				ED8F6A082179B971001DBDAA /* MainAssembly.swift in Sources */,
 				ED3AE42F22C50B9F00FA0EC5 /* Module.swift in Sources */,
 				ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */,
+				ED3AE43422C6000800FA0EC5 /* Date+WeekDay.swift in Sources */,
 				ED3AE42222C50B9F00FA0EC5 /* LanguageServiceInterface.swift in Sources */,
 				ED3AE42A22C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift in Sources */,
 				ED3AE40B22C50B9F00FA0EC5 /* ReachabilityService.swift in Sources */,
 				ED8F6A052179B971001DBDAA /* MainPresenter.swift in Sources */,
 				ED3AE42022C50B9F00FA0EC5 /* WindowServiceInterface.swift in Sources */,
 				ED3AE42322C50B9F00FA0EC5 /* LanguageService.swift in Sources */,
+				ED3AE43E22C6240C00FA0EC5 /* HelloWorldRouter.swift in Sources */,
 				ED3AE3F422C50B9F00FA0EC5 /* DownloadOperationHandler.swift in Sources */,
 				ED8F69762179B839001DBDAA /* AppDelegate.swift in Sources */,
 				ED8F6A152179B971001DBDAA /* UIImage+ImageColor.swift in Sources */,
+				ED3AE43C22C6240C00FA0EC5 /* HelloWorldViewController.swift in Sources */,
 				ED3AE41822C50B9F00FA0EC5 /* LocalNotificationService.swift in Sources */,
 				860AC68721B7A1B1007317B2 /* UIView+Shadow.swift in Sources */,
 				ED3AE3EF22C50B9F00FA0EC5 /* IdentifierModelInterface.swift in Sources */,

@@ -2,10 +2,6 @@ import UIKit
 
 final class ModuleService: ModuleServiceInterface {
 
-    static let shared = ModuleService()
-
-    private init() {}
-
     func obtainAvailableModulesAndActionsIds() -> [ModuleDescription] {
         return [
             ModuleDescription(name: R.string.localizable.main_name.key,

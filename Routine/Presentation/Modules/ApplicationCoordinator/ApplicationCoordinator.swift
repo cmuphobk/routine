@@ -57,5 +57,15 @@ extension ApplicationCoordinator: UINavigationControllerDelegate {
 }
 
 extension ApplicationCoordinator: MainCoordinatorDelegate {
+    func didTriggerHelloWorld() {
+        let helloWorldCoordinator = self.coordinatorFactory.makeHelloWorldCoordinator(
+            navigationController: self.navigationController,
+            delegate: self)
+        self.childCoordinators.append(helloWorldCoordinator)
+        helloWorldCoordinator.start()
+    }
+}
+
+extension ApplicationCoordinator: HelloWorldCoordinatorDelegate {
 
 }

@@ -1,13 +1,8 @@
 import Foundation
 
 enum ModuleServiceAssembly {
-
     static func build() -> ModuleServiceInterface {
-
-        let moduleService = ModuleService.shared
-
+        let moduleService = ModuleService()
         return moduleService
-
     }
-
 }

@@ -8,48 +8,6 @@ protocol Module {
 
 typealias ModuleDescription = (name: String, alias: String)
 
-protocol ModuleInput: Module {
-    func configureModule()
-}
-
-extension ModuleInput {
-    func configureModule() {
-
-    }
-}
-
-protocol ModuleOutput: class {
-
-}
-
-protocol ViewInput: class {
-    func setupInitialState()
-}
-
-extension ViewInput {
-    func setupInitialState() {
-
-    }
-}
-
-protocol ViewOutput: Module {
-    func didTriggerViewReadyEvent()
-}
-
-extension ViewOutput {
-    func didTriggerViewReadyEvent() {
-
-    }
-}
-
-protocol RouterInput: class {
-
-}
-
-protocol RouterOutput: class {
-
-}
-
 protocol BasePresenter {
     associatedtype ViewType//: ViewInput
     associatedtype RouterType//: RouterInput
@@ -60,6 +18,10 @@ protocol BasePresenter {
 protocol BaseView {
     associatedtype OutputType//: ViewOutput
     var output: OutputType! { get set }
+
+    var color: ColorTheme! { get set }
+    var font: FontTheme! { get set }
+    var image: ImageTheme! { get set }
 }
 
 protocol BaseRouter {

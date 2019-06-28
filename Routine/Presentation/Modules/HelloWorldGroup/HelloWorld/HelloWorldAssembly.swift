@@ -1,13 +1,13 @@
 import UIKit
 
-enum MainAssembly {
+enum HelloWorldAssembly {
 
-    static func buildMainScreenModuleWith(coordinator: MainCoordinator) ->
-    (input: MainModuleInput?, view: UIViewController) {
+    static func buildHelloWorldScreenModuleWith(coordinator: HelloWorldCoordinator) ->
+        (input: HelloWorldModuleInput?, view: UIViewController) {
         // Creating module components
-        let viewController = MainViewController()
-        let presenter = MainPresenter()
-        let router = MainRouter()
+        let viewController = HelloWorldViewController()
+        let presenter = HelloWorldPresenter()
+        let router = HelloWorldRouter()
 
         // Inject properties
         viewController.output = presenter

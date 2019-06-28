@@ -1,21 +1,24 @@
 import UIKit
 
-protocol MainModuleInput: ModuleInput {
+protocol MainModuleInput: Module {
     func configureModule()
 }
 
-protocol MainViewInput: ViewInput {
+protocol MainViewInput: class {
+    func setup(viewModel: MainViewModel)
 }
 
-protocol MainViewOutput: ViewOutput {
-    var localizeService: StringServiceInterface! { get }
-
+protocol MainViewOutput: class {
     func didTriggerViewReadyEvent()
     func didTriggerViewWillAppear()
+
+    func didTriggerHelloWorld()
 }
 
-protocol MainRouterInput: RouterInput {
+protocol MainRouterInput: class {
+    func didTriggerHelloWorld()
 }
 
-protocol MainRouterOutput: RouterOutput {
+protocol MainRouterOutput: class {
+    func didTriggerHelloWorld()
 }

@@ -41,6 +41,7 @@ final class RESTOperationHandler<T: Decodable>: RequestOperationHandler, DecodeR
         guard self.status == .unknown else {
             return nil
         }
+        // FIXME: - 
         return AppDelegate.serviceProvider.makeStringService().localizeId(R.string.localizable.error_network.key)
     }
 

@@ -15,18 +15,23 @@ final class MainPresenter: Module, BasePresenter {
 
 // MARK: - MainScreenModuleInput
 extension MainPresenter: MainModuleInput {
-
+    func configureModule() {
+    }
 }
 
 // MARK: - MainViewOutput
 extension MainPresenter: MainViewOutput {
 
     func didTriggerViewReadyEvent() {
-        self.view?.setupInitialState()
+        let title = self.localizeService.localizeId(R.string.localizable.go_to_hello_world.key)
+        let model = MainViewModel(titleButton: title)
+        self.view?.setup(viewModel: model)
     }
 
     func didTriggerViewWillAppear() {
 
     }
-
+    func didTriggerHelloWorld() {
+        self.router.didTriggerHelloWorld()
+    }
 }

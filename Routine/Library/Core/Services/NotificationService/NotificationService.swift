@@ -4,10 +4,6 @@ final class NotificationService: NotificationServiceInterface {
 
     private var `default` = NotificationCenter.default
 
-    static var shared = NotificationService()
-
-    private init () {}
-
     func addObserver(_ observer: Any,
                      selector aSelector: Selector,
                      name aName: NSNotification.Name?,

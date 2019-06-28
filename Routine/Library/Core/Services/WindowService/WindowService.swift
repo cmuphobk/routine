@@ -2,10 +2,6 @@ import UIKit
 
 final class WindowService: WindowServiceInterface {
 
-    static let shared = WindowService()
-
-    private init() {}
-
     private let screenHeightIphone5s: CGFloat = 568.0
 
     var screenWidth: CGFloat {

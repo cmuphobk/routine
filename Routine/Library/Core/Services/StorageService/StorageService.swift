@@ -2,10 +2,6 @@ import Foundation
 
 final class StorageService: StorageServiceInterface {
 
-    static var shared = StorageService()
-
-    private init () {}
-
     private var standart = UserDefaults.standard
 
     func object(forKey defaultName: String) -> Any? {

@@ -1,7 +1,6 @@
 import Foundation
 
 final class ServiceProvider: ServiceProviderInterface {
-
     //store all singletone services
 
     //sigletone services
@@ -16,12 +15,6 @@ final class ServiceProvider: ServiceProviderInterface {
     var notificationService: NotificationServiceInterface!
     var reachabilityService: ReachabilityServiceInterface!
     var magicalRecordService: MagicalRecordServiceInterface!
-    var hockeyService: HockeyServiceInterface!
-
-    static var shared = ServiceProvider()
-
-    //build all service-dependencies in project
-    private init () { }
 
     //make services
     func makeLanguageService() -> LanguageServiceInterface {
@@ -66,9 +59,5 @@ final class ServiceProvider: ServiceProviderInterface {
 
     func makeNotificationService() -> NotificationServiceInterface {
         return self.notificationService
-    }
-
-    func makeHockeyService() -> HockeyServiceInterface {
-        return self.hockeyService
     }
 }

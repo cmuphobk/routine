@@ -41,13 +41,12 @@ protocol Coordinatorable: AnyObject, Navigationable {
 }
 
 extension Coordinatorable {
-    // FIXME: - не тестировалось
     func viewControllerDidBackForward(_ viewController: UIViewController) {
         for childCoordinator in self.childCoordinators {
             if let index = childCoordinator.childViewControllers.index(ref: viewController) {
                 childCoordinator.childViewControllers.remove(at: index)
                 if childCoordinator.childViewControllers.count == 0 {
-                    childCoordinator.parentCoordinator?.childNeedFinish(self)
+                    childCoordinator.parentCoordinator?.childNeedFinish(childCoordinator)
                 }
                 return
             }
@@ -70,7 +69,7 @@ extension Coordinatorable {
             }
 
             self.childCoordinators.remove(at: index)
-            self.childDidFinish(self)
+            self.childDidFinish(child)
             return
         }
     }

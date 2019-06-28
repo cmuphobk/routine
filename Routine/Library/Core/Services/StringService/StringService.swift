@@ -1,13 +1,8 @@
 import Foundation
 
 class StringService: StringServiceInterface {
-
     var windowService: WindowServiceInterface!
     var languageService: LanguageServiceInterface!
-
-    static var shared = StringService()
-
-    private init () {}
 
     var styleHtmlString: String = ""
 
@@ -21,13 +16,10 @@ class StringService: StringServiceInterface {
 
         if count >= 5 && count <= 20 {
             return self.localized(string: str5)
-
         } else if mod == 1 {
             return self.localized(string: str1)
-
         } else if mod == 2 || mod == 3 || mod == 4 {
             return self.localized(string: str24)
-
         } else {
             return self.localized(string: str5)
         }

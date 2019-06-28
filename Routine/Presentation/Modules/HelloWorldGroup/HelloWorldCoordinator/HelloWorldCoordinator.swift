@@ -1,10 +1,10 @@
 import UIKit
 
-protocol MainCoordinatorDelegate: class {
-    func didTriggerHelloWorld()
+protocol HelloWorldCoordinatorDelegate: class {
+
 }
 
-class MainCoordinator: Coordinatorable {
+class HelloWorldCoordinator: Coordinatorable {
 
     // MARK: - Coordinatorable
     var navigationController: UINavigationController
@@ -14,15 +14,15 @@ class MainCoordinator: Coordinatorable {
     var childViewControllers: [UIViewController] = []
 
     // MARK: - MainCoordinator
-    var factory = MainModuleFactory()
-    weak var delegate: MainCoordinatorDelegate?
+    var factory = HelloWorldModuleFactory()
+    weak var delegate: HelloWorldCoordinatorDelegate?
 
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
-        let module = self.factory.makeMainViewController(with: self)
+        let module = self.factory.makeHelloWorldViewController(with: self)
         self.push(viewController: module.view, animated: true)
     }
 
@@ -31,8 +31,6 @@ class MainCoordinator: Coordinatorable {
     }
 }
 
-extension MainCoordinator: MainRouterOutput {
-    func didTriggerHelloWorld() {
-        self.delegate?.didTriggerHelloWorld()
-    }
+extension HelloWorldCoordinator: HelloWorldRouterOutput {
+
 }

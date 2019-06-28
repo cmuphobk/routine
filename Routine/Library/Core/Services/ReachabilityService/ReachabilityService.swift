@@ -7,10 +7,6 @@ final class ReachabilityService: ReachabilityServiceInterface {
 
     var notificationService: NotificationServiceInterface!
 
-    static var shared = ReachabilityService()
-
-    private init () { }
-
     func configure() {
         self.notificationService.addObserver(self,
                                              selector: #selector(checkForReachability),

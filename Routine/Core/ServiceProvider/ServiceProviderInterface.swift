@@ -12,5 +12,4 @@ protocol ServiceProviderInterface {
     func makeReachabilityService() -> ReachabilityServiceInterface
     func makeMagicalRecordService() -> MagicalRecordServiceInterface
     func makeNotificationService() -> NotificationServiceInterface
-    func makeHockeyService() -> HockeyServiceInterface
 }

@@ -12,9 +12,7 @@ final class FileService: FileServiceInterface {
     func obtainImage(_ imageUrl: String, success: @escaping (URL) -> Void, failure: @escaping (String?) -> Void) {
 
         let fileManager = FileManager.default
-        var fileUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileName: String = String( imageUrl.split(separator: "/").last ?? "" )
-        fileUrl.appendPathComponent("images_" + fileName)
+        let fileUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if fileManager.fileExists(atPath: fileUrl.path) {
             OperationQueue.main.addOperation({
@@ -62,10 +60,7 @@ final class FileService: FileServiceInterface {
     func obtainDocument(_ documentUrl: String, success: @escaping (URL) -> Void, failure: @escaping (String?) -> Void) {
 
         let fileManager = FileManager.default
-        var fileUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-
-        let fileName: String = String(documentUrl.split(separator: "/").last ?? "")
-        fileUrl.appendPathComponent("documents_" + String(fileName))
+        let fileUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if fileManager.fileExists(atPath: fileUrl.path) {
             OperationQueue.main.addOperation({

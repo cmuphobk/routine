@@ -1,11 +1,6 @@
 "main_name" = "Рабочий стол";
 "main_alias" = "Рабочий стол";
 
-"menu_name" = "Меню";
-"menu_alias" = "Меню";
-
-"logo_string" = "Рутина";
-
 "short_monday" = "Пн";
 "short_tuesday" = "Вт";
 "short_wednesday" = "Ср";
@@ -21,8 +16,6 @@
 "full_friday" = "Пятница";
 "full_saturday" = "Суббота";
 "full_sunday" = "Воскресенье";
-
-"full_allday" = "Каждый день";
 
 "error_network" = "Ошибка соединения!";
 
@@ -42,3 +35,6 @@
 "usage_1" = "usage_1";
 "usage_2_4" = "usage_2_4";
 "usage_5" = "usage_5";
+
+"go_to_hello_world" = "Go to Hello World";
+"hello_world" = "Hello world!!!";

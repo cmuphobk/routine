@@ -98,21 +98,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     
     fileprivate init() {}
@@ -120,8 +113,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
     struct localizable {
+      /// en translation: Go to Hello World
+      /// 
+      /// Locales: en, ru
+      static let go_to_hello_world = Rswift.StringResource(key: "go_to_hello_world", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Hello world!!!
+      /// 
+      /// Locales: en, ru
+      static let hello_world = Rswift.StringResource(key: "hello_world", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: count_days
       /// 
       /// Locales: en, ru
@@ -186,18 +187,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, ru
       static let full_tuesday = Rswift.StringResource(key: "full_tuesday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// en translation: Каждый день
-      /// 
-      /// Locales: en, ru
-      static let full_allday = Rswift.StringResource(key: "full_allday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// en translation: Меню
-      /// 
-      /// Locales: en, ru
-      static let menu_alias = Rswift.StringResource(key: "menu_alias", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// en translation: Меню
-      /// 
-      /// Locales: en, ru
-      static let menu_name = Rswift.StringResource(key: "menu_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Ошибка соединения!
       /// 
       /// Locales: en, ru
@@ -226,10 +215,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, ru
       static let main_name = Rswift.StringResource(key: "main_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
-      /// en translation: Рутина
-      /// 
-      /// Locales: en, ru
-      static let logo_string = Rswift.StringResource(key: "logo_string", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Сб
       /// 
       /// Locales: en, ru
@@ -254,6 +239,20 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, ru
       static let short_thursday = Rswift.StringResource(key: "short_thursday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      
+      /// en translation: Go to Hello World
+      /// 
+      /// Locales: en, ru
+      static func go_to_hello_world(_: Void = ()) -> String {
+        return NSLocalizedString("go_to_hello_world", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Hello world!!!
+      /// 
+      /// Locales: en, ru
+      static func hello_world(_: Void = ()) -> String {
+        return NSLocalizedString("hello_world", bundle: R.hostingBundle, comment: "")
+      }
       
       /// en translation: count_days
       /// 
@@ -367,27 +366,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("full_tuesday", bundle: R.hostingBundle, comment: "")
       }
       
-      /// en translation: Каждый день
-      /// 
-      /// Locales: en, ru
-      static func full_allday(_: Void = ()) -> String {
-        return NSLocalizedString("full_allday", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// en translation: Меню
-      /// 
-      /// Locales: en, ru
-      static func menu_alias(_: Void = ()) -> String {
-        return NSLocalizedString("menu_alias", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// en translation: Меню
-      /// 
-      /// Locales: en, ru
-      static func menu_name(_: Void = ()) -> String {
-        return NSLocalizedString("menu_name", bundle: R.hostingBundle, comment: "")
-      }
-      
       /// en translation: Ошибка соединения!
       /// 
       /// Locales: en, ru
@@ -435,13 +413,6 @@ struct R: Rswift.Validatable {
       /// Locales: en, ru
       static func main_name(_: Void = ()) -> String {
         return NSLocalizedString("main_name", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// en translation: Рутина
-      /// 
-      /// Locales: en, ru
-      static func logo_string(_: Void = ()) -> String {
-        return NSLocalizedString("logo_string", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Сб
@@ -513,7 +484,6 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try launchScreen.validate()
-      try main.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -526,24 +496,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
-      let name = "Main"
-      
-      func mainViewController(_: Void = ()) -> MainViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
       }
       
       fileprivate init() {}

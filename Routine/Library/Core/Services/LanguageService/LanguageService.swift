@@ -2,9 +2,6 @@ import Foundation
 
 // Singlton
 final class LanguageService: LanguageServiceInterface {
-    static let shared = LanguageService() // Instance
-
-    private init() {}
 
     private lazy var ruLanguage = Language(code: "ru", subCode: "ru", name: "Русский")
     private lazy var enLanguage = Language(code: "en", subCode: "us", name: "English")

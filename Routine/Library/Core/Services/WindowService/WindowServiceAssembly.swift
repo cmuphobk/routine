@@ -1,12 +1,8 @@
 import Foundation
 
 enum WindowServiceAssembly {
-
     static func build() -> WindowServiceInterface {
-
-        let windowService = WindowService.shared
+        let windowService = WindowService()
         return windowService
-
     }
-
 }

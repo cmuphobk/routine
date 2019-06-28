@@ -1,12 +1,8 @@
 import UIKit
 
 class MainModuleFactory {
-
-    func makeMainViewController(with coordinator: MainCoordinator,
-                                completion: (MainModuleInput?) -> Void) {
-
-        MainAssembly.buildMainScreenModuleWith(coordinator: coordinator,
-                                               completion: completion)
+    func makeMainViewController(with coordinator: MainCoordinator) ->
+        (input: MainModuleInput?, view: UIViewController) {
+        return MainAssembly.buildMainScreenModuleWith(coordinator: coordinator)
     }
-
 }
