@@ -1,4 +1,5 @@
 import UIKit
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -6,14 +7,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var applicationCoordinator: ApplicationCoordinator?
 
+    private let cultureCoreDataModelName = "RoutineModel"
     static let serviceProvider = ServiceProviderAssembly.build()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        MagicalRecord.setupCoreDataStack(withStoreNamed: self.cultureCoreDataModelName)
+
         let serviceProvider = AppDelegate.serviceProvider
-        serviceProvider.makeMagicalRecordService().setupCoreDataStack()
+
         let currentLanguage = serviceProvider.makeLanguageService().currentLanguage().name
         serviceProvider.makeLanguageService().setLanguage(languageName: currentLanguage)
         serviceProvider.makeLocalNotificationService().configure(application: application)
@@ -69,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate.
         //Save data if appropriate. See also applicationDidEnterBackground:.
-        AppDelegate.serviceProvider.makeMagicalRecordService().cleanUp()
+        MagicalRecord.cleanUp()
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

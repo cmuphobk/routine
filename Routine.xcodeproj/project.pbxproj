@@ -76,9 +76,6 @@
 		ED3AE42522C50B9F00FA0EC5 /* StringServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3DD22C50B9F00FA0EC5 /* StringServiceInterface.swift */; };
 		ED3AE42622C50B9F00FA0EC5 /* StringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3DE22C50B9F00FA0EC5 /* StringService.swift */; };
 		ED3AE42722C50B9F00FA0EC5 /* StringServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3DF22C50B9F00FA0EC5 /* StringServiceAssembly.swift */; };
-		ED3AE42822C50B9F00FA0EC5 /* MagicalRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E122C50B9F00FA0EC5 /* MagicalRecordService.swift */; };
-		ED3AE42922C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E222C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift */; };
-		ED3AE42A22C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E322C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift */; };
 		ED3AE42B22C50B9F00FA0EC5 /* Array+AnyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E522C50B9F00FA0EC5 /* Array+AnyObject.swift */; };
 		ED3AE42C22C50B9F00FA0EC5 /* Codable+Dicitionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E622C50B9F00FA0EC5 /* Codable+Dicitionary.swift */; };
 		ED3AE42D22C50B9F00FA0EC5 /* SessionManager+Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AE3E722C50B9F00FA0EC5 /* SessionManager+Multipart.swift */; };
@@ -214,9 +211,6 @@
 		ED3AE3DD22C50B9F00FA0EC5 /* StringServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringServiceInterface.swift; sourceTree = "<group>"; };
 		ED3AE3DE22C50B9F00FA0EC5 /* StringService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringService.swift; sourceTree = "<group>"; };
 		ED3AE3DF22C50B9F00FA0EC5 /* StringServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringServiceAssembly.swift; sourceTree = "<group>"; };
-		ED3AE3E122C50B9F00FA0EC5 /* MagicalRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicalRecordService.swift; sourceTree = "<group>"; };
-		ED3AE3E222C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceInterface.swift; sourceTree = "<group>"; };
-		ED3AE3E322C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicalRecordServiceAssembly.swift; sourceTree = "<group>"; };
 		ED3AE3E522C50B9F00FA0EC5 /* Array+AnyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+AnyObject.swift"; sourceTree = "<group>"; };
 		ED3AE3E622C50B9F00FA0EC5 /* Codable+Dicitionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Dicitionary.swift"; sourceTree = "<group>"; };
 		ED3AE3E722C50B9F00FA0EC5 /* SessionManager+Multipart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SessionManager+Multipart.swift"; sourceTree = "<group>"; };
@@ -485,7 +479,6 @@
 				ED3AE3D322C50B9F00FA0EC5 /* WindowService */,
 				ED3AE3D722C50B9F00FA0EC5 /* LanguageService */,
 				ED3AE3DC22C50B9F00FA0EC5 /* StringService */,
-				ED3AE3E022C50B9F00FA0EC5 /* MagicalRecordService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -595,16 +588,6 @@
 				ED3AE3DF22C50B9F00FA0EC5 /* StringServiceAssembly.swift */,
 			);
 			path = StringService;
-			sourceTree = "<group>";
-		};
-		ED3AE3E022C50B9F00FA0EC5 /* MagicalRecordService */ = {
-			isa = PBXGroup;
-			children = (
-				ED3AE3E122C50B9F00FA0EC5 /* MagicalRecordService.swift */,
-				ED3AE3E222C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift */,
-				ED3AE3E322C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift */,
-			);
-			path = MagicalRecordService;
 			sourceTree = "<group>";
 		};
 		ED3AE3E422C50B9F00FA0EC5 /* Extensions */ = {
@@ -1176,7 +1159,6 @@
 				ED3AE40E22C50B9F00FA0EC5 /* StorageService.swift in Sources */,
 				EDC891CF21CE55BD0002CD9E /* FileServiceInterface.swift in Sources */,
 				ED3AE3FD22C50B9F00FA0EC5 /* RESTCode.swift in Sources */,
-				ED3AE42822C50B9F00FA0EC5 /* MagicalRecordService.swift in Sources */,
 				EDC891CD21CE55AF0002CD9E /* FileServiceAssembly.swift in Sources */,
 				ED3AE3F022C50B9F00FA0EC5 /* BaseResponseModels.swift in Sources */,
 				ED3AE42522C50B9F00FA0EC5 /* StringServiceInterface.swift in Sources */,
@@ -1186,7 +1168,6 @@
 				ED3AE43222C5E75E00FA0EC5 /* LocalNotificationService+Private.swift in Sources */,
 				ED8F6A0A2179B971001DBDAA /* ImageProvider.swift in Sources */,
 				ED3AE42722C50B9F00FA0EC5 /* StringServiceAssembly.swift in Sources */,
-				ED3AE42922C50B9F00FA0EC5 /* MagicalRecordServiceInterface.swift in Sources */,
 				ED3AE40C22C50B9F00FA0EC5 /* ReachabilityServiceAssembly.swift in Sources */,
 				41CAA231227F186F00188189 /* R.generated.swift in Sources */,
 				ED3AE3ED22C50B9F00FA0EC5 /* Repository.swift in Sources */,
@@ -1206,7 +1187,6 @@
 				ED8F6A042179B971001DBDAA /* MainViewController.swift in Sources */,
 				ED3AE43422C6000800FA0EC5 /* Date+WeekDay.swift in Sources */,
 				ED3AE42222C50B9F00FA0EC5 /* LanguageServiceInterface.swift in Sources */,
-				ED3AE42A22C50B9F00FA0EC5 /* MagicalRecordServiceAssembly.swift in Sources */,
 				ED3AE40B22C50B9F00FA0EC5 /* ReachabilityService.swift in Sources */,
 				ED8F6A052179B971001DBDAA /* MainPresenter.swift in Sources */,
 				ED3AE42022C50B9F00FA0EC5 /* WindowServiceInterface.swift in Sources */,

@@ -10,6 +10,5 @@ protocol ServiceProviderInterface {
     func makeModuleService() -> ModuleServiceInterface
     func makeWindowService() -> WindowServiceInterface
     func makeReachabilityService() -> ReachabilityServiceInterface
-    func makeMagicalRecordService() -> MagicalRecordServiceInterface
     func makeNotificationService() -> NotificationServiceInterface
 }

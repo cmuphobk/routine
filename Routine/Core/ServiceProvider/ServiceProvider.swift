@@ -14,7 +14,6 @@ final class ServiceProvider: ServiceProviderInterface {
     var windowService: WindowServiceInterface!
     var notificationService: NotificationServiceInterface!
     var reachabilityService: ReachabilityServiceInterface!
-    var magicalRecordService: MagicalRecordServiceInterface!
 
     //make services
     func makeLanguageService() -> LanguageServiceInterface {
@@ -51,10 +50,6 @@ final class ServiceProvider: ServiceProviderInterface {
 
     func makeReachabilityService() -> ReachabilityServiceInterface {
         return self.reachabilityService
-    }
-
-    func makeMagicalRecordService() -> MagicalRecordServiceInterface {
-        return self.magicalRecordService
     }
 
     func makeNotificationService() -> NotificationServiceInterface {

@@ -16,7 +16,7 @@ final class HelloWorldPresenter: Module, BasePresenter {
 // MARK: - HelloWorldScreenModuleInput
 extension HelloWorldPresenter: HelloWorldModuleInput {
     func configureModule() {
-        
+
     }
 }
 

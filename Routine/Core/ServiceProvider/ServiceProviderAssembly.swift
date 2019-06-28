@@ -16,7 +16,6 @@ enum ServiceProviderAssembly {
         serviceProvider.notificationService = NotificationServiceAssembly.build()
         serviceProvider.reachabilityService = ReachabilityServiceAssembly.build(notificationService:
             serviceProvider.notificationService)
-        serviceProvider.magicalRecordService = MagicalRecordServiceAssembly.build()
 
         serviceProvider.stringService = StringServiceAssembly.build(windowService: serviceProvider.windowService,
                                                                     languageService: serviceProvider.languageService)
