@@ -1,6 +1,9 @@
 "main_name" = "Рабочий стол";
 "main_alias" = "Рабочий стол";
 
+"hello_world_name" = "Hello world";
+"hello_world_alias" = "Hello world";
+
 "short_monday" = "Пн";
 "short_tuesday" = "Вт";
 "short_wednesday" = "Ср";

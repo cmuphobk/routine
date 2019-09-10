@@ -506,9 +506,9 @@
 		ED3AE3BB22C50B9F00FA0EC5 /* ReachabilityService */ = {
 			isa = PBXGroup;
 			children = (
-				ED3AE3BC22C50B9F00FA0EC5 /* ReachabilityService.swift */,
 				ED3AE3BD22C50B9F00FA0EC5 /* ReachabilityServiceAssembly.swift */,
 				ED3AE3BE22C50B9F00FA0EC5 /* ReachabilityServiceInterface.swift */,
+				ED3AE3BC22C50B9F00FA0EC5 /* ReachabilityService.swift */,
 			);
 			path = ReachabilityService;
 			sourceTree = "<group>";
@@ -516,9 +516,9 @@
 		ED3AE3BF22C50B9F00FA0EC5 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
-				ED3AE3C022C50B9F00FA0EC5 /* StorageService.swift */,
 				ED3AE3C122C50B9F00FA0EC5 /* StorageServiceAssembly.swift */,
 				ED3AE3C222C50B9F00FA0EC5 /* StorageServiceInterface.swift */,
+				ED3AE3C022C50B9F00FA0EC5 /* StorageService.swift */,
 			);
 			path = StorageService;
 			sourceTree = "<group>";
@@ -527,10 +527,10 @@
 			isa = PBXGroup;
 			children = (
 				ED3AE3C422C50B9F00FA0EC5 /* Models */,
-				ED3AE3CC22C50B9F00FA0EC5 /* LocalNotificationService.swift */,
-				ED3AE43122C5E75E00FA0EC5 /* LocalNotificationService+Private.swift */,
 				ED3AE3CD22C50B9F00FA0EC5 /* LocalNotificationServiceAssembly.swift */,
 				ED3AE3CE22C50B9F00FA0EC5 /* LocalNotificationInterface.swift */,
+				ED3AE3CC22C50B9F00FA0EC5 /* LocalNotificationService.swift */,
+				ED3AE43122C5E75E00FA0EC5 /* LocalNotificationService+Private.swift */,
 			);
 			path = LocalNotificationService;
 			sourceTree = "<group>";

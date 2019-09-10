@@ -113,12 +113,20 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
     struct localizable {
       /// en translation: Go to Hello World
       /// 
       /// Locales: en, ru
       static let go_to_hello_world = Rswift.StringResource(key: "go_to_hello_world", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Hello world
+      /// 
+      /// Locales: en, ru
+      static let hello_world_alias = Rswift.StringResource(key: "hello_world_alias", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Hello world
+      /// 
+      /// Locales: en, ru
+      static let hello_world_name = Rswift.StringResource(key: "hello_world_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Hello world!!!
       /// 
       /// Locales: en, ru
@@ -245,6 +253,20 @@ struct R: Rswift.Validatable {
       /// Locales: en, ru
       static func go_to_hello_world(_: Void = ()) -> String {
         return NSLocalizedString("go_to_hello_world", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Hello world
+      /// 
+      /// Locales: en, ru
+      static func hello_world_alias(_: Void = ()) -> String {
+        return NSLocalizedString("hello_world_alias", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Hello world
+      /// 
+      /// Locales: en, ru
+      static func hello_world_name(_: Void = ()) -> String {
+        return NSLocalizedString("hello_world_name", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Hello world!!!

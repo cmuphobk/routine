@@ -1,12 +1,18 @@
 import UIKit
 
-protocol Module {
-    var name: String { get set }
-    var alias: String { get set }
-    var viewController: UIViewController! { get }
+protocol Nameable {
+    var name: String { get }
 }
 
-typealias ModuleDescription = (name: String, alias: String)
+struct ModuleDescription: Nameable, CustomStringConvertible {
+    var name: String
+    var description: String
+}
+
+protocol Module {
+    var description: ModuleDescription { get }
+    var viewController: UIViewController! { get }
+}
 
 protocol BasePresenter {
     associatedtype ViewType//: ViewInput
